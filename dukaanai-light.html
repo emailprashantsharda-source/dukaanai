@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DukaanAI – AI Business Manager for Every Small Shop in India</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0F1B2D;
+  --navy-mid: #1E3350;
+  --accent: #E8640A;
+  --accent-light: #FFF0E6;
+  --green: #0D7A55;
+  --green-light: #E6F5F0;
+  --red-light: #FEF0F0;
+  --red: #D93025;
+  --bg: #FFFFFF;
+  --bg2: #F8F7F4;
+  --bg3: #F2F0EC;
+  --border: #E5E2DC;
+  --text: #0F1B2D;
+  --text-2: #4A5568;
+  --text-3: #8A9BB0;
+  --shadow-sm: 0 1px 4px rgba(15,27,45,0.06), 0 4px 16px rgba(15,27,45,0.04);
+  --shadow-md: 0 4px 24px rgba(15,27,45,0.10), 0 1px 4px rgba(15,27,45,0.06);
+  --shadow-lg: 0 8px 48px rgba(15,27,45,0.14);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+section[id], div[id] { scroll-margin-top: 72px; }
+body { font-family:'Instrument Sans', sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; }
+
+/* NAV */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 5%; height:64px;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.logo { display:flex; align-items:center; gap:0.5rem; font-family:'Fraunces',serif; font-weight:600; font-size:1.3rem; color:var(--navy); text-decoration:none; }
+.logo-mark {
+  width:32px; height:32px; border-radius:8px;
+  background:var(--navy); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.9rem;
+}
+.logo em { font-style:normal; color:var(--accent); }
+nav ul { list-style:none; display:flex; gap:2rem; align-items:center; }
+nav ul a { color:var(--text-2); text-decoration:none; font-size:0.9rem; font-weight:500; transition:color 0.2s; }
+nav ul a:hover { color:var(--navy); }
+.nav-cta {
+  background:var(--navy); color:#fff !important;
+  padding:0.5rem 1.2rem; border-radius:8px;
+  font-size:0.88rem !important; font-weight:600 !important;
+  transition:background 0.2s !important;
+}
+.nav-cta:hover { background:var(--navy-mid) !important; }
+
+/* HERO */
+.hero {
+  padding:8rem 5% 5rem;
+  display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
+  max-width:1200px; margin:0 auto;
+}
+.hero-badge {
+  display:inline-flex; align-items:center; gap:0.4rem;
+  background:var(--accent-light); color:var(--accent);
+  border:1px solid #F5C4A0;
+  padding:0.35rem 0.9rem; border-radius:999px;
+  font-size:0.78rem; font-weight:600;
+  margin-bottom:1.4rem;
+  animation:fadeUp 0.5s ease both;
+}
+.hero h1 {
+  font-family:'Fraunces', serif;
+  font-size:clamp(2.4rem, 4vw, 3.4rem);
+  font-weight:700; line-height:1.15; color:var(--navy);
+  animation:fadeUp 0.5s 0.1s ease both;
+}
+.hero h1 em { font-style:italic; color:var(--accent); }
+.hero p {
+  margin-top:1.2rem; color:var(--text-2);
+  font-size:1.05rem; line-height:1.75; max-width:460px;
+  animation:fadeUp 0.5s 0.2s ease both;
+}
+.hero-actions {
+  display:flex; gap:0.8rem; margin-top:2rem; flex-wrap:wrap;
+  animation:fadeUp 0.5s 0.3s ease both;
+}
+.btn-primary {
+  background:var(--navy); color:#fff;
+  padding:0.75rem 1.6rem; border-radius:8px;
+  font-size:0.95rem; font-weight:600; text-decoration:none;
+  display:inline-flex; align-items:center; gap:0.5rem;
+  transition:background 0.2s, transform 0.2s; box-shadow:var(--shadow-sm);
+}
+.btn-primary:hover { background:var(--navy-mid); transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.btn-outline {
+  border:1.5px solid var(--border); color:var(--navy);
+  padding:0.75rem 1.6rem; border-radius:8px;
+  font-size:0.95rem; font-weight:600; text-decoration:none;
+  display:inline-flex; align-items:center; gap:0.5rem;
+  transition:border-color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color:var(--navy); background:var(--bg2); }
+.hero-trust {
+  display:flex; gap:1.5rem; margin-top:2rem; flex-wrap:wrap;
+  animation:fadeUp 0.5s 0.4s ease both;
+}
+.trust-pill {
+  display:flex; align-items:center; gap:0.4rem;
+  color:var(--text-2); font-size:0.82rem;
+}
+.trust-pill svg { color:var(--green); }
+
+/* HERO CARD */
+.hero-visual { animation:fadeUp 0.6s 0.2s ease both; }
+.dash-card {
+  background:#fff; border:1px solid var(--border);
+  border-radius:16px; overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.dash-topbar {
+  background:var(--navy); padding:0.75rem 1.2rem;
+  display:flex; align-items:center; gap:0.5rem;
+}
+.dash-dot { width:9px; height:9px; border-radius:50%; }
+.dash-title { color:rgba(255,255,255,0.5); font-size:0.78rem; margin-left:auto; }
+.dash-body { padding:1.2rem; }
+.stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; margin-bottom:0.8rem; }
+.stat-box {
+  background:var(--bg2); border-radius:10px; padding:0.9rem;
+  border:1px solid var(--border);
+}
+.stat-lbl { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-3); font-weight:600; }
+.stat-num { font-family:'Fraunces',serif; font-size:1.5rem; font-weight:700; color:var(--navy); margin-top:0.2rem; }
+.stat-delta { font-size:0.72rem; margin-top:0.15rem; }
+.delta-up { color:var(--green); }
+.delta-dn { color:var(--red); }
+
+/* AI INSIGHTS PANEL */
+.ai-panel {
+  background:linear-gradient(135deg, #FFF8F3 0%, #F8F7F4 100%);
+  border:1px solid #F0DDD0;
+  border-radius:10px; padding:0.9rem; margin-bottom:0.8rem;
+}
+.ai-panel-header {
+  display:flex; align-items:center; gap:0.5rem; margin-bottom:0.7rem;
+}
+.ai-label {
+  font-size:0.68rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.1em; color:var(--accent);
+}
+.live-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--green); margin-left:auto;
+  box-shadow:0 0 0 2px var(--green-light);
+  animation:blink 1.6s infinite;
+}
+.insight-item {
+  display:flex; align-items:flex-start; gap:0.6rem;
+  padding:0.5rem 0; border-bottom:1px solid #EDE8E3;
+  opacity:0.4; transition:opacity 0.4s;
+  font-size:0.8rem; color:var(--text-2); line-height:1.4;
+}
+.insight-item:last-child { border-bottom:none; }
+.insight-item.active { opacity:1; }
+.i-tag {
+  font-size:0.62rem; font-weight:700; padding:0.15rem 0.45rem;
+  border-radius:4px; white-space:nowrap; flex-shrink:0; margin-top:1px;
+}
+.tag-g { background:var(--green-light); color:var(--green); }
+.tag-o { background:var(--accent-light); color:var(--accent); }
+.tag-r { background:var(--red-light); color:var(--red); }
+.tag-b { background:#EEF4FF; color:#3B6FD4; }
+.insight-item strong { color:var(--navy); }
+
+/* VOICE CARD */
+.voice-card {
+  background:#fff; border:1.5px solid #E0EAF8;
+  border-radius:10px; padding:0.9rem;
+  display:flex; align-items:center; gap:1rem;
+}
+.mic-wrap {
+  position:relative; width:40px; height:40px; flex-shrink:0;
+  background:var(--navy); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+}
+.mic-wrap::before {
+  content:''; position:absolute;
+  width:54px; height:54px; border-radius:50%;
+  border:1.5px solid rgba(15,27,45,0.15);
+  animation:ripple 2s ease-out infinite;
+}
+.mic-wrap svg { width:18px; height:18px; fill:#fff; }
+.voice-info { flex:1; }
+.voice-title { font-weight:600; font-size:0.85rem; color:var(--navy); }
+.voice-sub { font-size:0.75rem; color:var(--text-3); margin-top:0.15rem; }
+.voice-chat { display:flex; flex-direction:column; gap:0.3rem; align-items:flex-end; }
+.bubble {
+  padding:0.3rem 0.75rem; border-radius:12px; font-size:0.75rem;
+}
+.bubble.u { background:var(--bg3); color:var(--text-2); }
+.bubble.a { background:var(--navy); color:#fff; font-weight:600; }
+
+/* SOCIAL PROOF STRIP */
+.proof-strip {
+  background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  padding:1.5rem 5%; text-align:center;
+}
+.proof-strip p { font-size:0.82rem; color:var(--text-3); margin-bottom:1rem; letter-spacing:0.05em; text-transform:uppercase; font-weight:600; }
+.proof-logos { display:flex; justify-content:center; align-items:center; gap:2.5rem; flex-wrap:wrap; }
+.proof-logo {
+  font-family:'Fraunces',serif; font-size:1rem; font-weight:600;
+  color:var(--text-3); letter-spacing:-0.01em;
+}
+
+/* FEATURES */
+.features { padding:6rem 5%; max-width:1200px; margin:0 auto; }
+.section-eyebrow {
+  font-size:0.75rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.12em; color:var(--accent); margin-bottom:0.8rem;
+}
+.section-title {
+  font-family:'Fraunces', serif;
+  font-size:clamp(1.9rem, 3vw, 2.6rem);
+  font-weight:700; color:var(--navy); line-height:1.2; max-width:540px;
+}
+.section-sub { color:var(--text-2); margin-top:0.8rem; max-width:480px; line-height:1.7; }
+.feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.feat-card {
+  background:#fff; border:1px solid var(--border);
+  border-radius:14px; padding:1.8rem;
+  transition:box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+.feat-card:hover { box-shadow:var(--shadow-md); transform:translateY(-3px); border-color:#D0CBBE; }
+.feat-icon {
+  width:44px; height:44px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem; margin-bottom:1rem;
+}
+.feat-card h3 { font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--navy); margin-bottom:0.5rem; }
+.feat-card p { font-size:0.88rem; color:var(--text-2); line-height:1.65; }
+.feat-tag { display:inline-block; margin-top:0.8rem; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--accent); }
+
+/* BENTO SECTION */
+.bento { padding:0 5% 6rem; max-width:1200px; margin:0 auto; }
+.bento-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:1.2rem; }
+.bento-card {
+  background:var(--bg2); border:1px solid var(--border);
+  border-radius:16px; padding:2rem; overflow:hidden; position:relative;
+}
+.bento-card.span-7 { grid-column:span 7; }
+.bento-card.span-5 { grid-column:span 5; }
+.bento-card.span-4 { grid-column:span 4; }
+.bento-card.span-8 { grid-column:span 8; }
+.bento-card.dark { background:var(--navy); color:#fff; }
+.bento-card.accent { background:var(--accent); color:#fff; }
+.bento-eyebrow { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-3); margin-bottom:0.6rem; }
+.bento-card.dark .bento-eyebrow { color:rgba(255,255,255,0.4); }
+.bento-card.accent .bento-eyebrow { color:rgba(255,255,255,0.7); }
+.bento-h { font-family:'Fraunces',serif; font-size:1.3rem; font-weight:700; line-height:1.25; color:var(--navy); }
+.bento-card.dark .bento-h, .bento-card.accent .bento-h { color:#fff; }
+.bento-p { font-size:0.85rem; color:var(--text-2); margin-top:0.5rem; line-height:1.6; }
+.bento-card.dark .bento-p { color:rgba(255,255,255,0.65); }
+.bento-card.accent .bento-p { color:rgba(255,255,255,0.85); }
+.big-stat { font-family:'Fraunces',serif; font-size:3.5rem; font-weight:700; color:var(--navy); line-height:1; margin-top:1rem; }
+.bento-card.dark .big-stat { color:#fff; }
+.big-unit { font-size:1rem; font-weight:400; color:var(--text-3); }
+
+/* INSIGHT SCROLL in bento */
+.insight-scroll { display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem; }
+.i-row {
+  display:flex; gap:0.5rem; align-items:center;
+  padding:0.45rem 0.7rem; border-radius:7px;
+  background:#fff; border:1px solid var(--border);
+  font-size:0.78rem; color:var(--text-2);
+}
+.i-row .i-tag { font-size:0.6rem; }
+.i-row strong { color:var(--navy); }
+
+/* HOW */
+.how { background:var(--navy); padding:6rem 5%; }
+.how-inner { max-width:1200px; margin:0 auto; }
+.how .section-eyebrow { color:rgba(255,255,255,0.4); }
+.how .section-title { color:#fff; }
+.steps-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; margin-top:3rem; }
+.step-card { position:relative; }
+.step-num {
+  font-family:'Fraunces',serif; font-size:0.8rem; font-weight:600;
+  color:rgba(255,255,255,0.25); margin-bottom:1rem;
+  display:flex; align-items:center; gap:0.5rem;
+}
+.step-num::after {
+  content:''; flex:1; height:1px;
+  background:rgba(255,255,255,0.1);
+}
+.step-card:last-child .step-num::after { display:none; }
+.step-card h4 { font-family:'Fraunces',serif; font-size:1.05rem; font-weight:600; color:#fff; margin-bottom:0.5rem; }
+.step-card p { font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.65; }
+
+/* LANG STRIP */
+.lang { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:3.5rem 5%; }
+.lang-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+.lang h2 { font-family:'Fraunces',serif; font-size:1.8rem; font-weight:700; color:var(--navy); }
+.lang p { color:var(--text-2); margin-top:0.4rem; font-size:0.9rem; }
+.lang-pills { display:flex; gap:0.6rem; flex-wrap:wrap; }
+.lang-pill {
+  background:#fff; border:1px solid var(--border);
+  padding:0.5rem 1rem; border-radius:8px;
+  font-size:0.88rem; color:var(--navy); font-weight:500;
+  box-shadow:var(--shadow-sm);
+}
+
+/* PRICING */
+.pricing { padding:6rem 5%; max-width:1200px; margin:0 auto; }
+.plans { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.plan {
+  background:#fff; border:1px solid var(--border);
+  border-radius:16px; padding:2rem;
+}
+.plan.featured {
+  background:var(--navy); border-color:var(--navy);
+  position:relative; transform:scale(1.02);
+  box-shadow:var(--shadow-lg);
+}
+.plan-badge {
+  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
+  background:var(--accent); color:#fff;
+  font-size:0.68rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.08em; padding:0.3rem 0.9rem; border-radius:999px;
+  white-space:nowrap;
+}
+.plan-name { font-family:'Fraunces',serif; font-size:1.1rem; font-weight:600; color:var(--navy); }
+.plan.featured .plan-name { color:#fff; }
+.plan-price { font-family:'Fraunces',serif; font-size:2.8rem; font-weight:700; color:var(--navy); margin:0.8rem 0 0.2rem; line-height:1; }
+.plan.featured .plan-price { color:#fff; }
+.plan-price span { font-size:0.95rem; font-weight:400; color:var(--text-3); font-family:'Instrument Sans',sans-serif; }
+.plan.featured .plan-price span { color:rgba(255,255,255,0.5); }
+.plan-desc { font-size:0.85rem; color:var(--text-2); margin-bottom:1.5rem; line-height:1.5; }
+.plan.featured .plan-desc { color:rgba(255,255,255,0.6); }
+.plan-divider { height:1px; background:var(--border); margin-bottom:1.2rem; }
+.plan.featured .plan-divider { background:rgba(255,255,255,0.12); }
+.plan-feats { list-style:none; display:flex; flex-direction:column; gap:0.6rem; margin-bottom:1.8rem; }
+.plan-feats li { font-size:0.88rem; color:var(--text-2); display:flex; gap:0.5rem; align-items:flex-start; }
+.plan.featured .plan-feats li { color:rgba(255,255,255,0.75); }
+.plan-feats li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
+.plan.featured .plan-feats li::before { color:#5DEBB5; }
+.btn-plan-dark { background:var(--navy); color:#fff; padding:0.8rem; border-radius:8px; text-align:center; font-weight:600; font-size:0.9rem; text-decoration:none; display:block; transition:background 0.2s; }
+.btn-plan-dark:hover { background:var(--navy-mid); }
+.btn-plan-white { background:#fff; color:var(--navy); padding:0.8rem; border-radius:8px; text-align:center; font-weight:600; font-size:0.9rem; text-decoration:none; display:block; transition:box-shadow 0.2s; }
+.btn-plan-white:hover { box-shadow:var(--shadow-md); }
+.btn-plan-outline { border:1.5px solid var(--border); color:var(--navy); padding:0.8rem; border-radius:8px; text-align:center; font-weight:600; font-size:0.9rem; text-decoration:none; display:block; transition:border-color 0.2s; }
+.btn-plan-outline:hover { border-color:var(--navy); }
+
+/* TESTIMONIALS */
+.testi { padding:6rem 5%; background:var(--bg2); }
+.testi-inner { max-width:1200px; margin:0 auto; }
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.t-card {
+  background:#fff; border:1px solid var(--border);
+  border-radius:14px; padding:1.8rem;
+}
+.t-stars { color:#F5A623; font-size:0.85rem; margin-bottom:1rem; }
+.t-quote { font-family:'Fraunces',serif; font-style:italic; font-size:1rem; color:var(--navy); line-height:1.65; }
+.t-author { display:flex; align-items:center; gap:0.8rem; margin-top:1.4rem; padding-top:1.2rem; border-top:1px solid var(--border); }
+.t-avatar {
+  width:36px; height:36px; border-radius:50%;
+  background:var(--navy); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces',serif; font-size:1rem; font-weight:600;
+}
+.t-name { font-weight:600; font-size:0.88rem; color:var(--navy); }
+.t-loc { font-size:0.78rem; color:var(--text-3); margin-top:0.1rem; }
+
+/* CTA */
+.cta-section {
+  padding:7rem 5%;
+  background:var(--navy);
+  text-align:center;
+}
+.cta-section h2 {
+  font-family:'Fraunces',serif;
+  font-size:clamp(2rem, 4vw, 3rem);
+  font-weight:700; color:#fff; max-width:560px; margin:0 auto;
+  line-height:1.2;
+}
+.cta-section p { color:rgba(255,255,255,0.55); margin:1rem 0 2.5rem; font-size:1rem; }
+.cta-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+.btn-cta-white { background:#fff; color:var(--navy); padding:0.9rem 2rem; border-radius:8px; font-weight:600; font-size:1rem; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; transition:box-shadow 0.2s; }
+.btn-cta-white:hover { box-shadow:0 4px 20px rgba(255,255,255,0.3); }
+.btn-cta-outline { border:1.5px solid rgba(255,255,255,0.25); color:#fff; padding:0.9rem 2rem; border-radius:8px; font-weight:600; font-size:1rem; text-decoration:none; display:inline-flex; align-items:center; gap:0.5rem; transition:border-color 0.2s; }
+.btn-cta-outline:hover { border-color:rgba(255,255,255,0.6); }
+
+/* FOOTER */
+footer {
+  background:#fff; border-top:1px solid var(--border);
+  padding:2rem 5%; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+}
+.footer-nav { display:flex; gap:1.5rem; }
+.footer-nav a { color:var(--text-3); text-decoration:none; font-size:0.85rem; }
+.footer-nav a:hover { color:var(--navy); }
+footer p { color:var(--text-3); font-size:0.83rem; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+@keyframes ripple {
+  0%   { transform:scale(0.9); opacity:0.6; }
+  100% { transform:scale(1.5); opacity:0; }
+}
+
+@media (max-width:900px) {
+  .hero { grid-template-columns:1fr; }
+  .feat-grid { grid-template-columns:1fr 1fr; }
+  .bento-card.span-7, .bento-card.span-5, .bento-card.span-4, .bento-card.span-8 { grid-column:span 12; }
+  .steps-grid { grid-template-columns:1fr 1fr; }
+  .plans { grid-template-columns:1fr; }
+  .plan.featured { transform:none; }
+  .testi-grid { grid-template-columns:1fr; }
+  nav ul { display:none; }
+}
+@media (max-width:600px) {
+  .feat-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark">🛒</div>
+    Dukaan<em>AI</em>
+  </a>
+  <ul>
+    <li><a href="javascript:void(0)" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">Features</a></li>
+    <li><a href="javascript:void(0)" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</a></li>
+    <li><a href="javascript:void(0)" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Pricing</a></li>
+    <li><a href="https://forms.gle/xrHkiNVaaHYCA1HS6" target="_blank" class="nav-cta">Get Early Access</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1200px;margin:0 auto">
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">🇮🇳 Built for Every Indian Small Business</div>
+    <h1>The AI brain for<br>every <em>small business.</em></h1>
+    <p>Billing, stock, udhar, and AI insights — all in one app. For kirana stores, pan shops, tea stalls, saloons, boutiques, and every micro-business in India.</p>
+    <div class="hero-actions">
+      <a href="https://forms.gle/xrHkiNVaaHYCA1HS6" target="_blank" class="btn-primary">🚀 Get Early Access</a>
+      <a href="javascript:void(0)" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})" class="btn-outline">See how it works →</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Free to start
+      </div>
+      <div class="trust-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Hindi + English
+      </div>
+      <div class="trust-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Works offline
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="dash-card">
+      <div class="dash-topbar">
+        <div class="dash-dot" style="background:#ff5f57"></div>
+        <div class="dash-dot" style="background:#febc2e"></div>
+        <div class="dash-dot" style="background:#28c840"></div>
+        <span class="dash-title">DukaanAI Dashboard</span>
+      </div>
+      <div class="dash-body">
+        <div class="stats-row">
+          <div class="stat-box">
+            <div class="stat-lbl">Today's Sales</div>
+            <div class="stat-num">₹12,450</div>
+            <div class="stat-delta delta-up">↑ 18% vs yesterday</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-lbl">Udhar Due</div>
+            <div class="stat-num">₹3,200</div>
+            <div class="stat-delta delta-dn">4 customers</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-lbl">Low Stock</div>
+            <div class="stat-num">7</div>
+            <div class="stat-delta delta-dn">Items to reorder</div>
+          </div>
+        </div>
+
+        <!-- AI INSIGHTS -->
+        <div class="ai-panel">
+          <div class="ai-panel-header">
+            <span class="ai-label">🤖 AI Insights — Today</span>
+            <span class="live-dot"></span>
+          </div>
+          <div id="insightList">
+            <div class="insight-item active">
+              <span class="i-tag tag-g">📦 Reorder</span>
+              <span>Stock Maggi before weekend — demand spikes <strong>40%</strong> Sat–Sun</span>
+            </div>
+            <div class="insight-item">
+              <span class="i-tag tag-o">⏰ Peak Hour</span>
+              <span>Busiest window is <strong>6–8 PM</strong> — keep extra staff at counter</span>
+            </div>
+            <div class="insight-item">
+              <span class="i-tag tag-o">💰 Margin</span>
+              <span>Switch to Amul Taaza 500ml — earns <strong>₹2 more</strong> per unit</span>
+            </div>
+            <div class="insight-item">
+              <span class="i-tag tag-r">📒 Udhar</span>
+              <span>Ramesh hasn't paid in <strong>22 days</strong> — ₹850 pending. Remind?</span>
+            </div>
+            <div class="insight-item">
+              <span class="i-tag tag-b">🌧️ Weather</span>
+              <span>Rain tomorrow — stock chai &amp; biscuits. Last rain = <strong>+35%</strong> sales</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VOICE CARD -->
+        <div class="voice-card">
+          <div class="mic-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v6a2 2 0 0 0 4 0V5a2 2 0 0 0-2-2zM7 11a5 5 0 0 0 10 0h2a7 7 0 0 1-6 6.93V21h-2v-3.07A7 7 0 0 1 5 11h2z"/></svg>
+          </div>
+          <div class="voice-info">
+            <div class="voice-title">🎙️ AI Voice Assistant</div>
+            <div class="voice-sub">बोलो, DukaanAI सुनेगा — Hindi &amp; English</div>
+          </div>
+          <div class="voice-chat">
+            <div class="bubble u">"Aaj kitna hua?"</div>
+            <div class="bubble a">₹12,450 — 18% zyada 📈</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <p>Trusted by small business owners across India</p>
+  <div class="proof-logos">
+    <span class="proof-logo">Kirana Stores</span>
+    <span class="proof-logo">•</span>
+    <span class="proof-logo">Pan Shops</span>
+    <span class="proof-logo">•</span>
+    <span class="proof-logo">Tea Stalls</span>
+    <span class="proof-logo">•</span>
+    <span class="proof-logo">Saloons</span>
+    <span class="proof-logo">•</span>
+    <span class="proof-logo">Boutiques</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features" class="features">
+  <div class="section-eyebrow">Features</div>
+  <div class="section-title">Everything your business needs</div>
+  <div class="section-sub">One app to replace your notebook, calculator, and guesswork — built for every type of Indian small business.</div>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon" style="background:#EEF4FF">🧾</div>
+      <h3>Smart Billing</h3>
+      <p>Tap to build cart, auto-total, send WhatsApp receipt. Cash, UPI, or Udhar — all tracked and reconciled.</p>
+      <span class="feat-tag">Core feature</span>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon" style="background:var(--green-light)">📦</div>
+      <h3>Inventory Alerts</h3>
+      <p>Real-time stock tracking with expiry and low-stock alerts. Know what to reorder before customers ask.</p>
+      <span class="feat-tag">Auto-managed</span>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon" style="background:var(--red-light)">📒</div>
+      <h3>Udhar Ledger</h3>
+      <p>Track credit per customer, send WhatsApp reminders. Never lose money you're owed again.</p>
+      <span class="feat-tag">Zero leakage</span>
+    </div>
+    <div class="feat-card" style="border-color:#F0DDD0;background:#FFF8F3">
+      <div class="feat-icon" style="background:var(--accent-light)">🤖</div>
+      <h3>AI Business Insights</h3>
+      <p>Daily tips on restocking, margins, peak hours — powered by your own sales data. Your data, your advantage.</p>
+      <span class="feat-tag" style="color:var(--accent)">AI powered</span>
+    </div>
+    <div class="feat-card" style="border-color:#F0DDD0;background:#FFF8F3">
+      <div class="feat-icon" style="background:var(--accent-light)">🎙️</div>
+      <h3>Hindi Voice Assistant</h3>
+      <p>Ask "aaj kitna hua?" or "kaunsa item kam hai?" — DukaanAI answers instantly in Hindi or English.</p>
+      <span class="feat-tag" style="color:var(--accent)">AI powered</span>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon" style="background:#F5F0FF">📊</div>
+      <h3>Daily Reports</h3>
+      <p>Profit, trends, top products — summarised every morning so you always know how your store performed.</p>
+      <span class="feat-tag">Auto-generated</span>
+    </div>
+  </div>
+</section>
+
+<!-- BENTO -->
+<section class="bento">
+  <div class="bento-grid">
+    <div class="bento-card span-7 dark">
+      <div class="bento-eyebrow">AI Insights Engine</div>
+      <div class="bento-h">Your business data becomes your competitive advantage</div>
+      <div class="bento-p">DukaanAI reads your sales patterns and gives actionable tips every morning — whether you run a kirana, salon, tea stall, or boutique.</div>
+      <div class="insight-scroll">
+        <div class="i-row"><span class="i-tag tag-g">Reorder</span> Stock Maggi before weekend — <strong>40% spike</strong> expected</div>
+        <div class="i-row"><span class="i-tag tag-o">Peak</span> Busiest time is <strong>6–8 PM</strong> — staff accordingly</div>
+        <div class="i-row"><span class="i-tag tag-b">Weather</span> Rain tomorrow → chai, biscuits = <strong>+35% sales</strong></div>
+      </div>
+    </div>
+    <div class="bento-card span-5 accent">
+      <div class="bento-eyebrow">Voice Assistant</div>
+      <div class="bento-h">बोलो, DukaanAI सुनेगा</div>
+      <div class="bento-p">Ask anything in Hindi or English. No typing needed. Built for store owners who are always busy.</div>
+      <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.5rem">
+        <div style="background:rgba(255,255,255,0.15);border-radius:10px;padding:0.6rem 0.9rem;font-size:0.8rem">"Ramesh ka udhar kitna hai?"</div>
+        <div style="background:#fff;color:var(--accent);border-radius:10px;padding:0.6rem 0.9rem;font-size:0.8rem;font-weight:600">₹850 — 22 din se pending 🔔</div>
+        <div style="background:rgba(255,255,255,0.15);border-radius:10px;padding:0.6rem 0.9rem;font-size:0.8rem">"Aaj kya reorder karna hai?"</div>
+        <div style="background:#fff;color:var(--accent);border-radius:10px;padding:0.6rem 0.9rem;font-size:0.8rem;font-weight:600">7 items low — Maggi, Atta, Tata Salt...</div>
+      </div>
+    </div>
+    <div class="bento-card span-4">
+      <div class="bento-eyebrow">Average store result</div>
+      <div class="bento-h">Margin improvement</div>
+      <div class="big-stat">+23<span class="big-unit">%</span></div>
+      <div class="bento-p" style="margin-top:0.5rem">Within 60 days of using AI insights on product mix & reordering.</div>
+    </div>
+    <div class="bento-card span-8">
+      <div class="bento-eyebrow">Payment Modes</div>
+      <div class="bento-h">Cash · UPI · Udhar — all tracked</div>
+      <div class="bento-p">Every sale, every mode. Your day-end cash drawer reconciles automatically.</div>
+      <div style="display:flex;gap:0.8rem;margin-top:1.2rem;flex-wrap:wrap">
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.85rem;font-weight:600;color:var(--navy)">💵 Cash ₹8,200</div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:0.6rem 1.2rem;font-size:0.85rem;font-weight:600;color:var(--navy)">📱 UPI ₹4,250</div>
+        <div style="background:var(--red-light);border:1px solid #F5C2C2;border-radius:8px;padding:0.6rem 1.2rem;font-size:0.85rem;font-weight:600;color:var(--red)">📒 Udhar ₹3,200</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section id="how" class="how">
+  <div class="how-inner">
+    <div class="section-eyebrow">How It Works</div>
+    <div class="section-title">Set up in 5 minutes. Run your store all day.</div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01 ————</div>
+        <h4>Add Your Products</h4>
+        <p>Enter your inventory once — names, prices, stock. Scan barcode or type manually.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02 ————</div>
+        <h4>Bill Every Sale</h4>
+        <p>Tap to build cart, pick Cash/UPI/Udhar, send WhatsApp receipt in one tap.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03 ————</div>
+        <h4>Stock Manages Itself</h4>
+        <p>Inventory drops automatically. Expiry alerts. Reorder reminders. No manual counting.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h4>AI Advises You Daily</h4>
+        <p>Every morning get tips — what to stock, when to discount, what's trending in your store.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANG -->
+<div class="lang">
+  <div class="lang-inner">
+    <div>
+      <h2>हिंदी और English — दोनों में</h2>
+      <p>Switch languages with one tap. Speak, type, read — your way.</p>
+    </div>
+    <div class="lang-pills">
+      <div class="lang-pill">🇮🇳 हिंदी</div>
+      <div class="lang-pill">🇬🇧 English</div>
+      <div class="lang-pill">🔄 One-tap switch</div>
+      <div class="lang-pill">🎙️ Voice input</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing">
+  <div class="section-eyebrow">Pricing</div>
+  <div class="section-title">Simple, transparent pricing</div>
+  <div class="section-sub">No hidden fees. No lock-ins. Cancel anytime.</div>
+  <div class="plans">
+    <div class="plan">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">₹0 <span>/ month</span></div>
+      <div class="plan-desc">Get started and see the difference</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-feats">
+        <li>Up to 100 products</li>
+        <li>Basic billing & receipts</li>
+        <li>Udhar ledger</li>
+        <li>WhatsApp receipt sharing</li>
+        <li>1 store</li>
+      </ul>
+      <a href="https://forms.gle/xrHkiNVaaHYCA1HS6" target="_blank" class="btn-plan-outline">Get Started Free</a>
+    </div>
+    <div class="plan featured">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">₹299 <span>/ month</span></div>
+      <div class="plan-desc">For growing stores that want full control</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-feats">
+        <li>Unlimited products</li>
+        <li>AI Business Insights</li>
+        <li>Hindi Voice Assistant</li>
+        <li>Expiry & reorder alerts</li>
+        <li>Cash drawer reconciliation</li>
+        <li>Daily profit reports</li>
+        <li>Priority WhatsApp support</li>
+      </ul>
+      <a href="https://forms.gle/xrHkiNVaaHYCA1HS6" target="_blank" class="btn-plan-white">Start 14-day Free Trial</a>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Business</div>
+      <div class="plan-price">₹799 <span>/ month</span></div>
+      <div class="plan-desc">For chains and multi-store owners</div>
+      <div class="plan-divider"></div>
+      <ul class="plan-feats">
+        <li>Everything in Pro</li>
+        <li>Up to 5 stores</li>
+        <li>Staff accounts & roles</li>
+        <li>Consolidated reports</li>
+        <li>Dedicated account manager</li>
+        <li>Custom integrations</li>
+      </ul>
+      <a href="https://wa.me/917838361200?text=Hi%2C%20I%27m%20interested%20in%20DukaanAI%20Business%20plan" target="_blank" class="btn-plan-dark">Contact Sales →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="testi-inner">
+    <div class="section-eyebrow">Stories</div>
+    <div class="section-title">Store owners love DukaanAI</div>
+    <div class="testi-grid">
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-quote">"Pehle udhar ka hisaab bahut mushkil tha. Ab ek click mein sab pata chal jaata hai. Bilkul best app!"</div>
+        <div class="t-author">
+          <div class="t-avatar">R</div>
+          <div>
+            <div class="t-name">Ramesh Gupta</div>
+            <div class="t-loc">Kirana Store, Jaipur</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-quote">"The AI tip about stocking chips before IPL was spot on — I made double profit that week. Highly recommended."</div>
+        <div class="t-author">
+          <div class="t-avatar">S</div>
+          <div>
+            <div class="t-name">Suresh Nair</div>
+            <div class="t-loc">Grocery Shop, Kochi</div>
+          </div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <div class="t-quote">"WhatsApp receipt feature is a game changer. Customers love it and it saves me so much time at the counter."</div>
+        <div class="t-author">
+          <div class="t-avatar">P</div>
+          <div>
+            <div class="t-name">Priya Sharma</div>
+            <div class="t-loc">Provision Store, Pune</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Every small business deserves smarter tools.</h2>
+  <p>Join the waitlist — free forever to start.</p>
+  <div class="cta-actions">
+    <a href="https://forms.gle/xrHkiNVaaHYCA1HS6" target="_blank" class="btn-cta-white">🚀 Join the Waitlist</a>
+    <a href="https://wa.me/917838361200?text=Hi%2C%20I%27m%20interested%20in%20DukaanAI" target="_blank" class="btn-cta-outline">💬 Chat on WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="logo" style="font-size:1.1rem">
+    <div class="logo-mark" style="width:26px;height:26px;font-size:0.8rem">🛒</div>
+    Dukaan<em>AI</em>
+  </a>
+  <div class="footer-nav">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Support</a>
+    <a href="https://wa.me/917838361200" target="_blank">Contact</a>
+  </div>
+  <p>© 2026 DukaanAI · Made with ❤️ in India</p>
+</footer>
+
+<script>
+(function(){
+  const items = document.querySelectorAll('#insightList .insight-item');
+  let cur = 0;
+  setInterval(() => {
+    items[cur].classList.remove('active');
+    cur = (cur + 1) % items.length;
+    items[cur].classList.add('active');
+  }, 2500);
+})();
+</script>
+</body>
+</html>
