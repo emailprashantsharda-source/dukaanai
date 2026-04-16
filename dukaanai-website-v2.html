@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DukaanAI – Smart Store Manager for Every Kirana</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #FF6B00;
+    --saffron-light: #FF8C35;
+    --green: #00A86B;
+    --dark: #0D0D0D;
+    --card-bg: #141414;
+    --border: rgba(255,255,255,0.08);
+    --text-muted: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 5%;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,13,13,0.85);
+    backdrop-filter: blur(12px);
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.4rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .logo-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--saffron);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+  .logo span { color: var(--saffron); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+  nav ul a:hover { color: #fff; }
+  .nav-cta {
+    background: var(--saffron);
+    color: #fff !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  .nav-cta:hover { background: var(--saffron-light) !important; color: #fff !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 5% 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255,107,0,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,107,0,0.12);
+    border: 1px solid rgba(255,107,0,0.3);
+    color: var(--saffron);
+    padding: 0.4rem 1rem; border-radius: 999px;
+    font-size: 0.8rem; font-weight: 500;
+    margin-bottom: 1.8rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 800; line-height: 1.1;
+    max-width: 800px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 em { font-style: normal; color: var(--saffron); }
+  .hero p {
+    font-size: 1.15rem; color: var(--text-muted);
+    max-width: 520px; margin: 1.5rem auto 0;
+    line-height: 1.7;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; margin-top: 2.5rem;
+    animation: fadeUp 0.6s 0.3s ease both;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .btn-primary {
+    background: var(--saffron); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-size: 1rem; font-weight: 500;
+    text-decoration: none; transition: transform 0.2s, background 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-primary:hover { background: var(--saffron-light); transform: translateY(-2px); }
+  .btn-secondary {
+    border: 1px solid var(--border); color: #fff;
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-size: 1rem; font-weight: 500;
+    text-decoration: none; transition: border-color 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.3); }
+
+  /* TRUST STRIP */
+  .trust {
+    display: flex; align-items: center; justify-content: center;
+    gap: 2rem; margin-top: 3rem; flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .trust-item { display: flex; align-items: center; gap: 0.4rem; color: var(--text-muted); font-size: 0.85rem; }
+  .trust-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+  /* SCREEN MOCKUP */
+  .mockup-wrap {
+    margin-top: 4rem; width: 100%; max-width: 860px;
+    position: relative;
+    animation: fadeUp 0.7s 0.5s ease both;
+  }
+  .mockup {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+  }
+  .mockup-bar {
+    background: #1a1a1a; padding: 0.7rem 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .mockup-screen {
+    padding: 1.5rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem;
+  }
+  .stat-card {
+    background: #1e1e1e; border-radius: 10px; padding: 1rem;
+    border: 1px solid var(--border);
+  }
+  .stat-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat-val { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 700; margin-top: 0.3rem; }
+  .stat-change { font-size: 0.75rem; color: var(--green); margin-top: 0.2rem; }
+  .stat-change.red { color: #ff4d4d; }
+
+  /* FEATURES */
+  section { padding: 6rem 5%; }
+  .section-label {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--saffron); font-weight: 500; margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800; max-width: 560px; line-height: 1.2;
+  }
+  .features-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.8rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .feature-card:hover { border-color: rgba(255,107,0,0.4); transform: translateY(-4px); }
+  .feat-icon {
+    font-size: 1.6rem; margin-bottom: 1rem;
+    width: 48px; height: 48px;
+    background: rgba(255,107,0,0.1);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .feature-card h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+  /* HOW IT WORKS */
+  .how { background: #0a0a0a; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; margin-top: 3rem; }
+  .step { text-align: center; }
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem; font-weight: 800;
+    color: rgba(255,107,0,0.15);
+    line-height: 1;
+  }
+  .step h4 { font-family: 'Syne', sans-serif; margin: 0.5rem 0 0.4rem; font-size: 1.05rem; }
+  .step p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; }
+
+  /* LANG STRIP */
+  .lang-strip {
+    background: rgba(255,107,0,0.06);
+    border-top: 1px solid rgba(255,107,0,0.15);
+    border-bottom: 1px solid rgba(255,107,0,0.15);
+    padding: 3rem 5%;
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+  }
+  .lang-content h2 { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; }
+  .lang-content p { color: var(--text-muted); margin-top: 0.5rem; font-size: 0.95rem; }
+  .lang-badges { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .lang-badge {
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.5rem 1rem; font-size: 0.9rem;
+  }
+
+  /* PRICING */
+  .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .plan {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+  }
+  .plan.featured {
+    border-color: var(--saffron);
+    background: rgba(255,107,0,0.05);
+  }
+  .plan-badge {
+    background: var(--saffron); color: #fff;
+    font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px;
+    font-weight: 600; display: inline-block; margin-bottom: 1rem;
+  }
+  .plan-name { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; }
+  .plan-price { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; margin: 0.8rem 0 0.2rem; }
+  .plan-price span { font-size: 1rem; font-weight: 400; color: var(--text-muted); }
+  .plan-desc { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem; }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.8rem; }
+  .plan-features li { font-size: 0.9rem; display: flex; gap: 0.5rem; align-items: flex-start; }
+  .plan-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  /* TESTIMONIALS */
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .testi {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.8rem;
+  }
+  .testi-stars { color: #FFB800; font-size: 0.9rem; margin-bottom: 1rem; }
+  .testi p { color: #ccc; font-size: 0.92rem; line-height: 1.7; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 0.8rem; margin-top: 1.2rem; }
+  .testi-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--saffron); display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.9rem;
+  }
+  .testi-name { font-weight: 500; font-size: 0.9rem; }
+  .testi-loc { color: var(--text-muted); font-size: 0.8rem; }
+
+  /* CTA */
+  .cta-section {
+    text-align: center;
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, rgba(255,107,0,0.1) 0%, transparent 60%);
+  }
+  .cta-section h2 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; max-width: 600px; margin: 0 auto; }
+  .cta-section p { color: var(--text-muted); margin: 1rem 0 2rem; font-size: 1.05rem; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 5%;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { color: var(--text-muted); font-size: 0.85rem; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+  .footer-links a:hover { color: #fff; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    nav ul { display: none; }
+    .mockup-screen { grid-template-columns: repeat(2,1fr); }
+    .lang-strip { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-icon">🛒</div>
+    Dukaan<span>AI</span>
+  </div>
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="https://forms.gle/YOUR_FORM_ID" target="_blank" class="nav-cta">Try Free →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🇮🇳 Made for Indian Kirana Stores</div>
+  <h1>Run Your Store <em>Smarter.</em><br>Sell More, Stress Less.</h1>
+  <p>DukaanAI is the all-in-one AI-powered store manager for kirana and retail shops — billing, stock, credit (udhar), and WhatsApp receipts in one tap.</p>
+  <div class="hero-actions">
+    <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" class="btn-primary">🚀 Start Free Trial</a>
+    <a href="#how" class="btn-secondary">See how it works →</a>
+  </div>
+  <div class="trust">
+    <div class="trust-item"><span class="dot"></span> No internet needed offline</div>
+    <div class="trust-item"><span class="dot"></span> Hindi + English UI</div>
+    <div class="trust-item"><span class="dot"></span> Works on any phone</div>
+    <div class="trust-item"><span class="dot"></span> Free to start</div>
+  </div>
+
+  <!-- MOCKUP -->
+  <div class="mockup-wrap">
+    <div class="mockup">
+      <div class="mockup-bar">
+        <div class="mockup-dot" style="background:#ff5f57"></div>
+        <div class="mockup-dot" style="background:#febc2e"></div>
+        <div class="mockup-dot" style="background:#28c840"></div>
+        <span style="color:#555;font-size:0.8rem;margin-left:auto">DukaanAI Dashboard</span>
+      </div>
+      <div class="mockup-screen">
+        <div class="stat-card">
+          <div class="stat-label">Today's Sales</div>
+          <div class="stat-val">₹12,450</div>
+          <div class="stat-change">↑ 18% vs yesterday</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Udhar Pending</div>
+          <div class="stat-val">₹3,200</div>
+          <div class="stat-change red">4 customers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Low Stock</div>
+          <div class="stat-val">7</div>
+          <div class="stat-change red">Items to reorder</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Top Product</div>
+          <div class="stat-val" style="font-size:1.1rem">Tata Salt</div>
+          <div class="stat-change">34 units sold</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Cash in Drawer</div>
+          <div class="stat-val">₹8,760</div>
+          <div class="stat-change">Reconciled ✓</div>
+        </div>
+        <div class="stat-card" style="background:rgba(255,107,0,0.08);border-color:rgba(255,107,0,0.3)">
+          <div class="stat-label">Cash in Drawer</div>
+          <div class="stat-val">₹8,760</div>
+          <div class="stat-change">Reconciled ✓</div>
+        </div>
+      </div>
+
+      <!-- AI INSIGHTS PANEL -->
+      <div style="border-top:1px solid rgba(255,107,0,0.2);padding:1rem 1.5rem;background:rgba(255,107,0,0.04)">
+        <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.8rem">
+          <span style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--saffron);font-weight:600">🤖 AI Insights — Today</span>
+          <span style="margin-left:auto;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 1.5s infinite"></span>
+        </div>
+        <div class="insights-ticker">
+          <div class="insight-row active">
+            <span class="insight-tag reorder">📦 Reorder</span>
+            <span class="insight-text">Stock Maggi noodles before weekend — demand spikes <strong>40%</strong> on Sat-Sun</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-tag peak">⏰ Peak Hour</span>
+            <span class="insight-text">Your busiest window is <strong>6–8 PM</strong>. Keep 2 helpers ready at checkout</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-tag profit">💰 Profit Alert</span>
+            <span class="insight-text">Switching to Amul Taaza (500ml) boosts margin by <strong>₹2/unit</strong> vs current brand</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-tag udhar">📒 Udhar Risk</span>
+            <span class="insight-text">Ramesh hasn't paid in <strong>22 days</strong> — balance ₹850. Send reminder now?</span>
+          </div>
+          <div class="insight-row">
+            <span class="insight-tag weather">🌧️ Weather</span>
+            <span class="insight-text">Rain forecast tomorrow — stock umbrellas, chai, and biscuits. Last rain = +35% sales</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VOICE FEATURE CARD -->
+    <div class="voice-card">
+      <div class="voice-left">
+        <div class="mic-btn" id="micBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm0 2a2 2 0 0 0-2 2v6a2 2 0 0 0 4 0V5a2 2 0 0 0-2-2zM7 11a5 5 0 0 0 10 0h2a7 7 0 0 1-6 6.93V21h-2v-3.07A7 7 0 0 1 5 11h2z"/></svg>
+          <div class="mic-rings"></div>
+        </div>
+        <div>
+          <div class="voice-label">🎙️ AI Voice Assistant</div>
+          <div class="voice-sub">Hindi &amp; English — बोलो, DukaanAI सुनेगा</div>
+        </div>
+      </div>
+      <div class="voice-demo">
+        <div class="voice-bubble user">"Aaj kitna hua?"</div>
+        <div class="voice-bubble ai">₹12,450 — kal se 18% zyada 📈</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* INSIGHTS TICKER */
+.insights-ticker { display:flex; flex-direction:column; gap:0.5rem; }
+.insight-row {
+  display:flex; align-items:flex-start; gap:0.6rem;
+  padding:0.55rem 0.7rem; border-radius:8px;
+  background:transparent; transition:background 0.3s, opacity 0.3s;
+  opacity:0.35; font-size:0.82rem;
+}
+.insight-row.active { background:rgba(255,255,255,0.04); opacity:1; }
+.insight-tag {
+  font-size:0.65rem; font-weight:700; padding:0.15rem 0.5rem;
+  border-radius:4px; white-space:nowrap; flex-shrink:0; margin-top:1px;
+}
+.insight-tag.reorder  { background:rgba(0,168,107,0.2); color:#00A86B; }
+.insight-tag.peak     { background:rgba(254,188,46,0.2); color:#FEB82E; }
+.insight-tag.profit   { background:rgba(255,107,0,0.2);  color:#FF6B00; }
+.insight-tag.udhar    { background:rgba(255,77,77,0.2);   color:#ff4d4d; }
+.insight-tag.weather  { background:rgba(100,160,255,0.2); color:#64A0FF; }
+.insight-text { color:#ccc; line-height:1.4; }
+.insight-text strong { color:#fff; }
+
+/* VOICE CARD */
+.voice-card {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; flex-wrap:wrap;
+  margin-top:1rem;
+  background:linear-gradient(135deg,rgba(255,107,0,0.12),rgba(0,168,107,0.08));
+  border:1px solid rgba(255,107,0,0.3);
+  border-radius:14px; padding:1.2rem 1.5rem;
+}
+.voice-left { display:flex; align-items:center; gap:1rem; }
+.mic-btn {
+  position:relative; width:44px; height:44px; border-radius:50%;
+  background:var(--saffron); display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; cursor:pointer;
+}
+.mic-rings::before, .mic-rings::after {
+  content:''; position:absolute; border-radius:50%;
+  border:2px solid rgba(255,107,0,0.4);
+  animation:ripple 1.8s ease-out infinite;
+}
+.mic-rings::before { width:60px;height:60px;top:-8px;left:-8px; }
+.mic-rings::after  { width:78px;height:78px;top:-17px;left:-17px;animation-delay:0.6s; }
+.voice-label { font-family:'Syne',sans-serif; font-weight:700; font-size:0.95rem; }
+.voice-sub   { font-size:0.78rem; color:var(--text-muted); margin-top:0.2rem; }
+.voice-demo  { display:flex; flex-direction:column; gap:0.4rem; align-items:flex-end; }
+.voice-bubble {
+  padding:0.4rem 0.9rem; border-radius:20px; font-size:0.82rem;
+  max-width:220px;
+}
+.voice-bubble.user { background:rgba(255,255,255,0.08); color:#ccc; align-self:flex-start; }
+.voice-bubble.ai   { background:var(--saffron); color:#fff; font-weight:500; }
+
+@keyframes ripple {
+  0%   { transform:scale(0.8); opacity:0.8; }
+  100% { transform:scale(1.2); opacity:0; }
+}
+@keyframes pulse {
+  0%,100% { opacity:1; } 50% { opacity:0.3; }
+}
+</style>
+
+<script>
+// Rotate AI insight rows every 2.5s
+(function(){
+  const rows = document.querySelectorAll('.insight-row');
+  let current = 0;
+  setInterval(() => {
+    rows[current].classList.remove('active');
+    current = (current + 1) % rows.length;
+    rows[current].classList.add('active');
+  }, 2500);
+})();
+</script>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-label">Features</div>
+  <div class="section-title">Everything your dukaan needs, nothing it doesn't</div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feat-icon">🧾</div>
+      <h3>Smart Billing</h3>
+      <p>Tap to add products, auto-calculate totals, and send WhatsApp receipts in one click. Cash, UPI, or Udhar — all tracked.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">📦</div>
+      <h3>Stock Manager</h3>
+      <p>Real-time inventory tracking with expiry alerts. Know what to reorder before you run out, not after.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">📒</div>
+      <h3>Udhar Ledger</h3>
+      <p>Track credit for every customer. Send payment reminders on WhatsApp. Never lose money you're owed again.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">🤖</div>
+      <h3>AI Business Insights</h3>
+      <p>Get daily tips like "Stock more atta this week" or "Your peak hour is 6–8 PM" — powered by your own sales data.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">💰</div>
+      <h3>Cash Drawer Reconciliation</h3>
+      <p>Start and end each day with a clear cash count. Catch shortages instantly. Built for real store workflows.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feat-icon">📊</div>
+      <h3>Daily Reports</h3>
+      <p>Profit, sales trends, top products — summarised daily so you always know how your store is performing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="how">
+  <div class="section-label">How It Works</div>
+  <div class="section-title">Set up in 5 minutes, run your store all day</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h4>Add Your Products</h4>
+      <p>Enter your inventory once — names, prices, stock counts. Scan barcode or type manually.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h4>Sell & Bill</h4>
+      <p>Tap products to add to cart. Choose Cash, UPI, or Udhar. Print or WhatsApp the receipt.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h4>Track Everything</h4>
+      <p>Stock falls automatically. Udhar is recorded. Cash drawer stays balanced. All in real time.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h4>Let AI Advise</h4>
+      <p>DukaanAI analyses your patterns and tells you what to buy, when to discount, and what's selling best.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE STRIP -->
+<div class="lang-strip">
+  <div class="lang-content">
+    <h2>हिंदी और English — दोनों में काम करता है</h2>
+    <p>Switch between Hindi and English with one tap. Made for India, for real.</p>
+  </div>
+  <div class="lang-badges">
+    <div class="lang-badge">🇮🇳 हिंदी</div>
+    <div class="lang-badge">🇬🇧 English</div>
+    <div class="lang-badge">🔄 One-tap switch</div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-label">Pricing</div>
+  <div class="section-title">Simple pricing, no surprises</div>
+  <div class="plans">
+    <div class="plan">
+      <div class="plan-name">Free</div>
+      <div class="plan-price">₹0 <span>/ month</span></div>
+      <div class="plan-desc">Perfect to try DukaanAI and get started</div>
+      <ul class="plan-features">
+        <li>Up to 100 products</li>
+        <li>Basic billing & receipts</li>
+        <li>Udhar ledger</li>
+        <li>WhatsApp receipt sharing</li>
+        <li>1 store</li>
+      </ul>
+      <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" class="btn-secondary" style="display:block;text-align:center;border-radius:8px;padding:0.8rem">Get Started Free</a>
+    </div>
+    <div class="plan featured">
+      <div class="plan-badge">MOST POPULAR</div>
+      <div class="plan-name">Pro</div>
+      <div class="plan-price">₹299 <span>/ month</span></div>
+      <div class="plan-desc">For growing stores that want full control</div>
+      <ul class="plan-features">
+        <li>Unlimited products</li>
+        <li>AI Business Insights</li>
+        <li>Expiry alerts & reorder reminders</li>
+        <li>Cash drawer reconciliation</li>
+        <li>Daily profit reports</li>
+        <li>Priority WhatsApp support</li>
+      </ul>
+      <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" class="btn-primary" style="display:block;text-align:center;border-radius:8px;padding:0.8rem">Start 14-day Free Trial</a>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Business</div>
+      <div class="plan-price">₹799 <span>/ month</span></div>
+      <div class="plan-desc">For chains and multi-store owners</div>
+      <ul class="plan-features">
+        <li>Everything in Pro</li>
+        <li>Up to 5 stores</li>
+        <li>Staff accounts & roles</li>
+        <li>Consolidated reports</li>
+        <li>Dedicated account manager</li>
+        <li>Custom integrations</li>
+      </ul>
+      <a href="https://wa.me/917838361200?text=Hi%2C%20I%27m%20interested%20in%20DukaanAI%20for%20my%20store" target="_blank" class="btn-secondary" style="display:block;text-align:center;border-radius:8px;padding:0.8rem">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:#0a0a0a">
+  <div class="section-label">Stories</div>
+  <div class="section-title">Store owners love DukaanAI</div>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p>"Pehle udhar ka hisaab bahut mushkil tha. Ab ek click mein sab pata chal jaata hai. Bilkul best app!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-name">Ramesh Gupta</div>
+          <div class="testi-loc">Kirana Store, Jaipur</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p>"The AI tip about stocking chips before IPL was spot on — I made double profit that week. Highly recommended for any shop."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div>
+          <div class="testi-name">Suresh Nair</div>
+          <div class="testi-loc">Grocery Shop, Kochi</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="testi-stars">★★★★★</div>
+      <p>"WhatsApp receipt feature is a game changer. Customers love it and it saves me so much time at the counter."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-name">Priya Sharma</div>
+          <div class="testi-loc">Provision Store, Pune</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Your dukaan deserves smarter tools.</h2>
+  <p>Join thousands of store owners running their business the smart way.</p>
+  <a href="https://forms.gle/YOUR_FORM_ID" target="_blank" class="btn-primary" style="font-size:1.1rem;padding:1rem 2.5rem">🚀 Try DukaanAI Free →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo" style="font-size:1.1rem">
+    <div class="logo-icon" style="width:24px;height:24px;font-size:0.75rem">🛒</div>
+    Dukaan<span>AI</span>
+  </div>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Support</a>
+    <a href="#">Contact</a>
+  </div>
+  <p>© 2026 DukaanAI. Made with ❤️ in India</p>
+</footer>
+
+</body>
+</html>
