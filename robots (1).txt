@@ -1,0 +1,85 @@
+# robots.txt for hisaabnow.com
+# Last updated: 2026-05-04
+
+# ─── DEFAULT: allow all crawlers ─────────────────────────
+User-agent: *
+Allow: /
+
+# ─── EXPLICITLY ALLOW MAJOR SEARCH CRAWLERS ──────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ─── EXPLICITLY ALLOW AI / LLM CRAWLERS ──────────────────
+# We want HisaabNow to be discoverable when users ask AI
+# assistants about Indian POS billing apps. See llms.txt
+# for AI-friendly site structure.
+
+# OpenAI (ChatGPT search, ChatGPT plugins, GPTBot training)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude web search, Claude crawler)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI / Gemini / Bard
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (used by many AI training pipelines)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# ─── SEO TOOL CRAWLERS (allowed) ─────────────────────────
+# Ahrefs, SEMrush, Majestic, Moz crawl for backlink analysis.
+# We allow them so we can use these tools ourselves later
+# to monitor our own backlinks, rankings, and competitors.
+# If bandwidth becomes a concern, change Allow to Disallow.
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+# ─── SITEMAP ─────────────────────────────────────────────
+Sitemap: https://hisaabnow.com/sitemap.xml
