@@ -1,207 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="hisaabnow Terms of Service — the rules and conditions for using the app."/>
-<meta name="robots" content="index,follow"/>
-<title>Terms of Service — hisaabnow</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="HisaabNow Terms of Service — the rules and conditions for using the app.">
+<meta name="robots" content="index,follow">
+<title>Terms of Service — HisaabNow</title>
+<meta name="theme-color" content="#7C3AED">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --p: #FF6B35; --pd: #C2410C; --pl: #FFF7ED;
-    --t1: #111827; --t2: #374151; --t3: #6B7280;
-    --border: #E5E7EB; --bg: #FFFFFF; --bg-soft: #F9FAFB;
-  }
-  * { box-sizing: border-box; }
-  body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--t2); line-height: 1.65; margin: 0; padding: 0; background: var(--bg); -webkit-font-smoothing: antialiased; }
-  header { background: var(--pl); border-bottom: 1px solid #FED7AA; padding: 22px 20px; }
-  header .inner { max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  header .brand { font-weight: 800; font-size: 20px; color: var(--pd); text-decoration: none; letter-spacing: -0.02em; }
-  header .back { font-size: 13px; color: var(--pd); text-decoration: none; font-weight: 600; padding: 6px 12px; border: 1px solid #FED7AA; border-radius: 999px; background: #fff; }
-  header .back:hover { background: var(--pl); }
-  main { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
-  h1 { font-size: 32px; font-weight: 800; color: var(--t1); letter-spacing: -0.02em; margin: 0 0 8px; line-height: 1.2; }
-  .subtitle { color: var(--t3); font-size: 15px; margin: 0 0 32px; }
-  h2 { font-size: 20px; font-weight: 700; color: var(--t1); margin: 36px 0 12px; letter-spacing: -0.01em; border-top: 1px solid var(--border); padding-top: 28px; }
-  h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
-  h3 { font-size: 16px; font-weight: 700; color: var(--t1); margin: 22px 0 8px; }
-  p { margin: 12px 0; font-size: 15.5px; }
-  ul, ol { padding-left: 22px; margin: 12px 0; }
-  li { margin: 6px 0; font-size: 15.5px; }
-  strong { color: var(--t1); font-weight: 700; }
-  a { color: var(--pd); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
-  a:hover { color: var(--p); }
-  .callout { background: var(--bg-soft); border-left: 3px solid var(--p); padding: 14px 18px; margin: 18px 0; border-radius: 0 8px 8px 0; font-size: 14.5px; }
-  .warn { background: #FEF2F2; border-left: 3px solid #DC2626; padding: 14px 18px; margin: 18px 0; border-radius: 0 8px 8px 0; font-size: 14.5px; color: #7F1D1D; }
-  footer { max-width: 760px; margin: 0 auto; padding: 30px 24px 50px; border-top: 1px solid var(--border); color: var(--t3); font-size: 13px; }
-  footer a { color: var(--t3); margin-right: 14px; }
-  .updated { display: inline-block; background: var(--pl); color: var(--pd); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; margin-bottom: 24px; }
-  @media (max-width: 600px) {
-    h1 { font-size: 26px; }
-    h2 { font-size: 18px; }
-    main { padding: 30px 18px 60px; }
-  }
+:root {
+  --p:        #7C3AED;
+  --p-deep:   #5B21B6;
+  --p-700:    #6D28D9;
+  --p-light:  #F5F3FF;
+  --p-tint:   #FAF7FF;
+  --p-border: #E9D5FF;
+
+  --bg:       #F8F8FA;
+  --card:     #FFFFFF;
+  --surface:  #FAFAFC;
+
+  --y:        #FACC15;
+  --y-deep:   #CA8A04;
+  --y-tint:   #FEF9C3;
+  --y-border: #FDE68A;
+
+  --success:  #10B981;
+  --danger:   #EF4444;
+  --danger-tint: #FEF2F2;
+  --danger-border: #FECACA;
+
+  --t1:       #0F172A;
+  --t2:       #475569;
+  --t3:       #94A3B8;
+
+  --border:        #EEF0F4;
+  --border-strong: #E5E7EB;
+
+  --gradient: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--card);
+  color: var(--t2);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+  font-size: 15.5px;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+}
+a { color: var(--p); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+a:hover { color: var(--p-deep); }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+@media (min-width: 768px) { .wrap, .wrap-wide { padding: 0 32px; } }
+
+/* NAV */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.9);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--border-strong);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 12px; }
+.brand {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 18px; font-weight: 800; letter-spacing: -0.02em;
+  color: var(--t1);
+  text-decoration: none;
+}
+.brand:hover { color: var(--t1); }
+.brand-logo {
+  width: 32px; height: 32px;
+  border-radius: 9px;
+  background: var(--gradient);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.brand-logo::before {
+  content: '';
+  display: block;
+  width: 16px; height: 12px;
+  background:
+    linear-gradient(to top, white 30%, transparent 30%) 0 100% / 3px 100% no-repeat,
+    linear-gradient(to top, white 60%, transparent 60%) 6px 100% / 3px 100% no-repeat,
+    linear-gradient(to top, white 90%, transparent 90%) 12px 100% / 3px 100% no-repeat;
+}
+.brand-logo::after {
+  content: '✦';
+  position: absolute;
+  top: -2px; right: -2px;
+  font-size: 9px;
+  color: var(--y);
+}
+.nav-right { display: flex; align-items: center; gap: 8px; }
+.nav-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px;
+  font-size: 13px; font-weight: 600;
+  color: var(--t2);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all .15s;
+}
+.nav-link:hover { background: var(--surface); color: var(--t1); }
+.nav-cta {
+  padding: 9px 18px;
+  background: var(--p); color: white;
+  border-radius: 999px;
+  font-size: 13.5px; font-weight: 700;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  transition: all .15s;
+}
+.nav-cta:hover { background: var(--p-deep); transform: translateY(-1px); color: white; }
+
+/* PAGE HEAD */
+.page-head { background: var(--p-light); border-bottom: 1px solid var(--p-border); padding: 48px 0 40px; }
+@media (min-width: 700px) { .page-head { padding: 64px 0 56px; } }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: white;
+  color: var(--p-deep);
+  padding: 6px 12px;
+  border: 1px solid var(--p-border);
+  border-radius: 999px;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 18px;
+}
+.eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--p); }
+.page-head h1 {
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 800;
+  color: var(--t1);
+  letter-spacing: -0.03em;
+  margin: 0 0 10px;
+  line-height: 1.1;
+}
+.page-head .subtitle {
+  color: var(--t2);
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 580px;
+  line-height: 1.55;
+}
+
+/* CONTENT */
+main { padding: 48px 0 80px; }
+@media (min-width: 700px) { main { padding: 64px 0 96px; } }
+
+h2 {
+  font-size: 21px; font-weight: 800; color: var(--t1);
+  letter-spacing: -0.02em;
+  margin: 44px 0 14px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border-strong);
+  line-height: 1.25;
+}
+h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+@media (min-width: 700px) { h2 { font-size: 24px; } }
+
+h3 {
+  font-size: 16.5px; font-weight: 700; color: var(--t1);
+  margin: 24px 0 10px;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+
+p { margin: 12px 0; }
+ul, ol { padding-left: 22px; margin: 14px 0; }
+li { margin: 8px 0; }
+strong { color: var(--t1); font-weight: 700; }
+
+/* CALLOUTS */
+.callout {
+  background: var(--p-tint);
+  border: 1px solid var(--p-border);
+  border-left: 3px solid var(--p);
+  padding: 18px 20px;
+  margin: 22px 0;
+  border-radius: 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.callout strong { color: var(--p-deep); }
+
+.warn {
+  background: var(--y-tint);
+  border: 1px solid var(--y-border);
+  border-left: 3px solid var(--y-deep);
+  padding: 18px 20px;
+  margin: 22px 0;
+  border-radius: 10px;
+  font-size: 14.5px;
+  color: #713F12;
+  line-height: 1.6;
+}
+.warn strong { color: #713F12; }
+
+/* FOOTER */
+.footer {
+  padding: 28px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border-strong);
+  font-size: 13px;
+  color: var(--t2);
+}
+.footer-inner {
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between; align-items: center;
+  gap: 14px;
+}
+.footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-weight: 600; }
+.footer-links a { color: var(--t2); text-decoration: none; }
+.footer-links a:hover { color: var(--p); }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="inner">
-    <a href="/" class="brand">hisaabnow</a>
-    <a href="https://app.hisaabnow.com" class="back">Open App →</a>
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap-wide nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-logo"></span>
+      HisaabNow
+    </a>
+    <div class="nav-right">
+      <a href="/" class="nav-link">← Back to home</a>
+      <a href="/#try" class="nav-cta">Try free</a>
+    </div>
   </div>
-</header>
+</nav>
 
+<!-- PAGE HEAD -->
+<section class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Last updated: 24 April 2026
+    </div>
+    <h1>Terms of Service</h1>
+    <p class="subtitle">The agreement between you and HisaabNow when you use the app.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
 <main>
-  <span class="updated">Last updated: 24 April 2026</span>
-  <h1>Terms of Service</h1>
-  <p class="subtitle">The agreement between you and hisaabnow when you use the app.</p>
+  <div class="wrap">
+    <h2>1. Acceptance</h2>
+    <p>By creating an account or using HisaabNow, you agree to these Terms of Service and our <a href="/privacy.html">Privacy Policy</a>. If you do not agree, please do not use the app.</p>
+    <p>These terms constitute a legal contract between you and <strong>Prashant Sharda, sole proprietor</strong>, trading as <strong>HisaabNow</strong>, based at Prateek Wisteria, H-404, Sector 77, Noida, Uttar Pradesh 201301, India.</p>
 
-  <h2>1. Acceptance</h2>
-  <p>By creating an account or using hisaabnow, you agree to these Terms of Service and our <a href="/legal/privacy.html">Privacy Policy</a>. If you do not agree, please do not use the app.</p>
-  <p>These terms constitute a legal contract between you and <strong>Prashant Sharda, sole proprietor</strong>, trading as <strong>hisaabnow</strong>, based at Prateek Wisteria, H-404, Sector 77, Noida, Uttar Pradesh 201301, India.</p>
+    <h2>2. Who can use HisaabNow</h2>
+    <ul>
+      <li>You must be at least <strong>18 years old</strong>.</li>
+      <li>You must be legally competent to enter a contract under Indian law.</li>
+      <li>You must operate or manage a legitimate business. HisaabNow is not designed for personal or household use.</li>
+      <li>You must provide a valid Indian mobile number for OTP-based authentication.</li>
+      <li>You must use the app lawfully and in compliance with applicable laws, including GST, Income Tax, and local business regulations.</li>
+    </ul>
 
-  <h2>2. Who can use hisaabnow</h2>
-  <ul>
-    <li>You must be at least <strong>18 years old</strong>.</li>
-    <li>You must be legally competent to enter a contract under Indian law.</li>
-    <li>You must operate or manage a legitimate business. hisaabnow is not designed for personal or household use.</li>
-    <li>You must provide a valid Indian mobile number for OTP-based authentication.</li>
-    <li>You must use the app lawfully and in compliance with applicable laws, including GST, Income Tax, and local business regulations.</li>
-  </ul>
+    <h2>3. Your account</h2>
+    <ul>
+      <li>Your account is tied to the phone number you register with. You are responsible for keeping this number and your device secure.</li>
+      <li>You may not share your account with others or allow anyone else to log in as you.</li>
+      <li>We may suspend or terminate accounts that violate these terms, are used for fraud, or remain inactive for 365 days or more.</li>
+      <li>You can delete your account at any time (see <a href="/delete-account.html">Delete Account</a>).</li>
+    </ul>
 
-  <h2>3. Your account</h2>
-  <ul>
-    <li>Your account is tied to the phone number you register with. You are responsible for keeping this number and your device secure.</li>
-    <li>You may not share your account with others or allow anyone else to log in as you.</li>
-    <li>We may suspend or terminate accounts that violate these terms, are used for fraud, or remain inactive for 365 days or more.</li>
-    <li>You can delete your account at any time (see <a href="/legal/delete-account.html">Delete Account</a>).</li>
-  </ul>
+    <h2>4. Free tier and paid subscriptions</h2>
+    <p>HisaabNow offers a free tier and paid subscription tiers (Basic, Pro, King). Paid tiers are billed monthly or annually. Features available in each tier are described in the app at the time of purchase.</p>
 
-  <h2>4. Free tier and paid subscriptions</h2>
-  <p>hisaabnow offers a free tier and paid subscription tiers (Basic, Pro, King). Paid tiers are billed monthly or annually. Features available in each tier are described in the app at the time of purchase.</p>
+    <h3>4.1 Pricing</h3>
+    <p>Current pricing is displayed inside the app. Prices are in Indian Rupees (INR) and include applicable taxes unless stated otherwise. We may change pricing from time to time; existing subscribers will be notified at least 30 days before price changes take effect.</p>
 
-  <h3>4.1 Pricing</h3>
-  <p>Current pricing is displayed inside the app. Prices are in Indian Rupees (INR) and include applicable taxes unless stated otherwise. We may change pricing from time to time; existing subscribers will be notified at least 30 days before price changes take effect.</p>
+    <h3>4.2 Payment</h3>
+    <p>Subscription payments are collected via UPI transfer or other payment methods available in the app. Upon confirmation of payment, your account is upgraded to the selected tier, typically within 24 hours.</p>
 
-  <h3>4.2 Payment</h3>
-  <p>Subscription payments are collected via UPI transfer or other payment methods available in the app. Upon confirmation of payment, your account is upgraded to the selected tier, typically within 24 hours.</p>
+    <h3>4.3 Renewals</h3>
+    <p>Subscriptions do not auto-renew at present. Before the end of your subscription period, you will be prompted to renew manually. If you do not renew, your account automatically reverts to the free tier at the end of the paid period.</p>
 
-  <h3>4.3 Renewals</h3>
-  <p>Subscriptions do not auto-renew at present. Before the end of your subscription period, you will be prompted to renew manually. If you do not renew, your account automatically reverts to the free tier at the end of the paid period.</p>
+    <h3>4.4 Refunds</h3>
+    <p>Subscription payments are <strong>non-refundable once activated</strong>. However, if a technical defect in the app (confirmed by our support team) prevents you from using paid features for more than 7 consecutive days, we will issue a pro-rated refund for the unused period.</p>
+    <p>Refund requests must be sent to <a href="mailto:privacy@hisaabnow.com">privacy@hisaabnow.com</a> within 30 days of the issue. Refunds are processed within 15 business days to the original payment method.</p>
 
-  <h3>4.4 Refunds</h3>
-  <p>Subscription payments are <strong>non-refundable once activated</strong>. However, if a technical defect in the app (confirmed by our support team) prevents you from using paid features for more than 7 consecutive days, we will issue a pro-rated refund for the unused period.</p>
-  <p>Refund requests must be sent to <a href="mailto:privacy@hisaabnow.com">privacy@hisaabnow.com</a> within 30 days of the issue. Refunds are processed within 15 business days to the original payment method.</p>
+    <h2>5. Your data and content</h2>
+    <p>You retain full ownership of the business data you enter into HisaabNow — your bills, customers, udhaar, products, and all other records. We do not claim any ownership or usage rights over your business data.</p>
+    <p>You grant us a limited license to process your data only for the purpose of providing the app's functionality (syncing, displaying, backing up, generating reports). This license ends when you delete your account.</p>
 
-  <h2>5. Your data and content</h2>
-  <p>You retain full ownership of the business data you enter into hisaabnow — your bills, customers, udhaar, products, and all other records. We do not claim any ownership or usage rights over your business data.</p>
-  <p>You grant us a limited license to process your data only for the purpose of providing the app's functionality (syncing, displaying, backing up, generating reports). This license ends when you delete your account.</p>
+    <h2>6. Your responsibilities as a data controller</h2>
+    <p>When you enter customer data (names, phone numbers, udhaar amounts), you are acting as a <strong>data controller</strong> under the Digital Personal Data Protection Act, 2023. You are responsible for:</p>
+    <ul>
+      <li>Obtaining your customers' consent before storing their personal data.</li>
+      <li>Using their data only for legitimate business purposes.</li>
+      <li>Responding to your customers' requests to access, correct, or delete their data.</li>
+      <li>Complying with all applicable data protection laws.</li>
+    </ul>
+    <p>HisaabNow acts as a <strong>data processor</strong> and stores your customers' data on your behalf, under your instructions. We do not use your customers' data for any other purpose.</p>
 
-  <h2>6. Your responsibilities as a data controller</h2>
-  <p>When you enter customer data (names, phone numbers, udhaar amounts), you are acting as a <strong>data controller</strong> under the Digital Personal Data Protection Act, 2023. You are responsible for:</p>
-  <ul>
-    <li>Obtaining your customers' consent before storing their personal data.</li>
-    <li>Using their data only for legitimate business purposes.</li>
-    <li>Responding to your customers' requests to access, correct, or delete their data.</li>
-    <li>Complying with all applicable data protection laws.</li>
-  </ul>
-  <p>hisaabnow acts as a <strong>data processor</strong> and stores your customers' data on your behalf, under your instructions. We do not use your customers' data for any other purpose.</p>
+    <h2>7. Acceptable use</h2>
+    <p>You agree <strong>not</strong> to:</p>
+    <ul>
+      <li>Use the app to record transactions for illegal activities or to launder money.</li>
+      <li>Enter false data or impersonate another person or business.</li>
+      <li>Attempt to gain unauthorised access to other users' accounts, our servers, or our infrastructure.</li>
+      <li>Reverse engineer, decompile, or extract source code from the app.</li>
+      <li>Use automated scripts, bots, or scrapers against our services.</li>
+      <li>Resell access to your account or white-label our app without our written permission.</li>
+      <li>Send abusive, threatening, or spam messages through any communication feature.</li>
+      <li>Use the app in a way that violates the rights of any third party, including intellectual property rights.</li>
+    </ul>
+    <p>Violation of these rules may result in account suspension or permanent termination without refund.</p>
 
-  <h2>7. Acceptable use</h2>
-  <p>You agree <strong>not</strong> to:</p>
-  <ul>
-    <li>Use the app to record transactions for illegal activities or to launder money.</li>
-    <li>Enter false data or impersonate another person or business.</li>
-    <li>Attempt to gain unauthorised access to other users' accounts, our servers, or our infrastructure.</li>
-    <li>Reverse engineer, decompile, or extract source code from the app.</li>
-    <li>Use automated scripts, bots, or scrapers against our services.</li>
-    <li>Resell access to your account or white-label our app without our written permission.</li>
-    <li>Send abusive, threatening, or spam messages through any communication feature.</li>
-    <li>Use the app in a way that violates the rights of any third party, including intellectual property rights.</li>
-  </ul>
-  <p>Violation of these rules may result in account suspension or permanent termination without refund.</p>
+    <h2>8. Intellectual property</h2>
+    <p>HisaabNow — including its name, logo, software, design, content, and trademarks — is the property of Prashant Sharda. We grant you a limited, non-exclusive, non-transferable license to use the app for the purposes described in these terms.</p>
+    <p>You may not:</p>
+    <ul>
+      <li>Copy, modify, or create derivative works from any part of HisaabNow.</li>
+      <li>Use our name, logo, or branding without written permission.</li>
+      <li>Frame or mirror any part of the app without written permission.</li>
+    </ul>
 
-  <h2>8. Intellectual property</h2>
-  <p>hisaabnow — including its name, logo, software, design, content, and trademarks — is the property of Prashant Sharda. We grant you a limited, non-exclusive, non-transferable license to use the app for the purposes described in these terms.</p>
-  <p>You may not:</p>
-  <ul>
-    <li>Copy, modify, or create derivative works from any part of hisaabnow.</li>
-    <li>Use our name, logo, or branding without written permission.</li>
-    <li>Frame or mirror any part of the app without written permission.</li>
-  </ul>
+    <h2>9. AI-generated content (Munim)</h2>
+    <p>The Munim AI assistant generates suggestions and insights using a large language model. AI responses are <strong>not financial, legal, or tax advice</strong>. They are educational suggestions to help you think about your business. You remain responsible for all decisions you make.</p>
+    <p>AI may occasionally produce inaccurate, incomplete, or inappropriate responses. Do not rely on AI output for critical business, tax, or legal decisions without independent verification.</p>
 
-  <h2>9. AI-generated content (Munim)</h2>
-  <p>The Munim AI assistant generates suggestions and insights using a large language model. AI responses are <strong>not financial, legal, or tax advice</strong>. They are educational suggestions to help you think about your business. You remain responsible for all decisions you make.</p>
-  <p>AI may occasionally produce inaccurate, incomplete, or inappropriate responses. Do not rely on AI output for critical business, tax, or legal decisions without independent verification.</p>
+    <h2>10. Disclaimers</h2>
+    <div class="warn">
+      <strong>The app is provided "as is" and "as available".</strong> We make no warranties or guarantees about uninterrupted service, error-free operation, or fitness for any particular purpose. Your use of HisaabNow is at your own risk.
+    </div>
+    <p>Specifically, we do not guarantee that:</p>
+    <ul>
+      <li>The app will be available 100% of the time.</li>
+      <li>Bugs will be fixed immediately.</li>
+      <li>Your data will never be lost (we strongly recommend you do not rely solely on the app for business-critical records; periodically export or back up your data).</li>
+      <li>The app will meet every regulatory or compliance requirement for your specific business.</li>
+    </ul>
 
-  <h2>10. Disclaimers</h2>
-  <div class="warn">
-    <strong>The app is provided "as is" and "as available".</strong> We make no warranties or guarantees about uninterrupted service, error-free operation, or fitness for any particular purpose. Your use of hisaabnow is at your own risk.
-  </div>
-  <p>Specifically, we do not guarantee that:</p>
-  <ul>
-    <li>The app will be available 100% of the time.</li>
-    <li>Bugs will be fixed immediately.</li>
-    <li>Your data will never be lost (we strongly recommend you do not rely solely on the app for business-critical records; periodically export or back up your data).</li>
-    <li>The app will meet every regulatory or compliance requirement for your specific business.</li>
-  </ul>
+    <h2>11. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, HisaabNow and its operator shall <strong>not be liable</strong> for:</p>
+    <ul>
+      <li>Indirect, incidental, consequential, or punitive damages of any kind.</li>
+      <li>Loss of profits, revenue, goodwill, data, or business opportunities.</li>
+      <li>Damages arising from your inability to use the app, even if we have been advised of the possibility of such damages.</li>
+      <li>Damages arising from third-party services integrated with the app (Google, OpenAI, payment processors).</li>
+    </ul>
+    <p>Our total aggregate liability in any matter arising from or related to these terms shall <strong>not exceed the amount you paid to us in the 12 months preceding the event giving rise to the claim</strong>, or ₹5,000, whichever is lower.</p>
 
-  <h2>11. Limitation of liability</h2>
-  <p>To the maximum extent permitted by law, hisaabnow and its operator shall <strong>not be liable</strong> for:</p>
-  <ul>
-    <li>Indirect, incidental, consequential, or punitive damages of any kind.</li>
-    <li>Loss of profits, revenue, goodwill, data, or business opportunities.</li>
-    <li>Damages arising from your inability to use the app, even if we have been advised of the possibility of such damages.</li>
-    <li>Damages arising from third-party services integrated with the app (Google, OpenAI, payment processors).</li>
-  </ul>
-  <p>Our total aggregate liability in any matter arising from or related to these terms shall <strong>not exceed the amount you paid to us in the 12 months preceding the event giving rise to the claim</strong>, or ₹5,000, whichever is lower.</p>
+    <h2>12. Indemnification</h2>
+    <p>You agree to indemnify and hold harmless HisaabNow and its operator from any claims, damages, liabilities, losses, or expenses (including reasonable legal fees) arising from:</p>
+    <ul>
+      <li>Your violation of these terms.</li>
+      <li>Your violation of any law or regulation.</li>
+      <li>Your violation of third-party rights, including your customers' data protection rights.</li>
+      <li>Your business activities conducted using the app.</li>
+    </ul>
 
-  <h2>12. Indemnification</h2>
-  <p>You agree to indemnify and hold harmless hisaabnow and its operator from any claims, damages, liabilities, losses, or expenses (including reasonable legal fees) arising from:</p>
-  <ul>
-    <li>Your violation of these terms.</li>
-    <li>Your violation of any law or regulation.</li>
-    <li>Your violation of third-party rights, including your customers' data protection rights.</li>
-    <li>Your business activities conducted using the app.</li>
-  </ul>
+    <h2>13. Changes to these terms</h2>
+    <p>We may update these terms from time to time. Material changes will be notified via an in-app banner at least 7 days before they take effect. Your continued use of the app after the effective date constitutes acceptance of the revised terms. If you do not agree, you should delete your account before the effective date.</p>
 
-  <h2>13. Changes to these terms</h2>
-  <p>We may update these terms from time to time. Material changes will be notified via an in-app banner at least 7 days before they take effect. Your continued use of the app after the effective date constitutes acceptance of the revised terms. If you do not agree, you should delete your account before the effective date.</p>
+    <h2>14. Termination</h2>
+    <p>We may suspend or terminate your account if:</p>
+    <ul>
+      <li>You violate these terms.</li>
+      <li>Your account is used for fraud, abuse, or illegal activity.</li>
+      <li>We are required to do so by law.</li>
+      <li>We discontinue the service (we will provide at least 60 days' notice in such case).</li>
+    </ul>
+    <p>Upon termination, your right to use the app ends immediately. We will provide a reasonable window to export your data unless termination is due to severe breach of these terms.</p>
 
-  <h2>14. Termination</h2>
-  <p>We may suspend or terminate your account if:</p>
-  <ul>
-    <li>You violate these terms.</li>
-    <li>Your account is used for fraud, abuse, or illegal activity.</li>
-    <li>We are required to do so by law.</li>
-    <li>We discontinue the service (we will provide at least 60 days' notice in such case).</li>
-  </ul>
-  <p>Upon termination, your right to use the app ends immediately. We will provide a reasonable window to export your data unless termination is due to severe breach of these terms.</p>
+    <h2>15. Governing law and jurisdiction</h2>
+    <p>These terms are governed by the laws of India. Any disputes shall be subject to the <strong>exclusive jurisdiction of the courts at Noida, Uttar Pradesh</strong>.</p>
+    <p>Before initiating legal proceedings, both parties agree to first attempt resolution in good faith through email correspondence with our grievance officer for a period of at least 30 days.</p>
 
-  <h2>15. Governing law and jurisdiction</h2>
-  <p>These terms are governed by the laws of India. Any disputes shall be subject to the <strong>exclusive jurisdiction of the courts at Noida, Uttar Pradesh</strong>.</p>
-  <p>Before initiating legal proceedings, both parties agree to first attempt resolution in good faith through email correspondence with our grievance officer for a period of at least 30 days.</p>
-
-  <h2>16. Contact</h2>
-  <div class="callout">
-    <strong>Prashant Sharda</strong><br/>
-    Operator, hisaabnow<br/>
-    Address: Prateek Wisteria, H-404, Sector 77, Noida, Uttar Pradesh 201301, India<br/>
-    Legal notices: <a href="mailto:legal@hisaabnow.com">legal@hisaabnow.com</a><br/>
-    Support: <a href="mailto:support@hisaabnow.com">support@hisaabnow.com</a><br/>
-    Privacy and data: <a href="mailto:privacy@hisaabnow.com">privacy@hisaabnow.com</a>
+    <h2>16. Contact</h2>
+    <div class="callout">
+      <strong>Prashant Sharda</strong><br>
+      Operator, HisaabNow<br>
+      Address: Prateek Wisteria, H-404, Sector 77, Noida, Uttar Pradesh 201301, India<br>
+      Legal notices: <a href="mailto:legal@hisaabnow.com">legal@hisaabnow.com</a><br>
+      Support: <a href="mailto:support@hisaabnow.com">support@hisaabnow.com</a><br>
+      Privacy and data: <a href="mailto:privacy@hisaabnow.com">privacy@hisaabnow.com</a>
+    </div>
   </div>
 </main>
 
-<footer>
-  <a href="/legal/privacy.html">Privacy</a>
-  <a href="/legal/terms.html">Terms</a>
-  <a href="/legal/delete-account.html">Delete Account</a>
-  <span style="float:right">© 2026 hisaabnow</span>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap-wide footer-inner">
+    <div>© 2026 HisaabNow · Made in India 🇮🇳</div>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/delete-account.html">Delete Account</a>
+      <a href="mailto:support@hisaabnow.com">Contact</a>
+    </div>
+  </div>
 </footer>
 
 </body>
