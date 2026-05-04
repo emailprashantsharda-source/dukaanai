@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ─── HOMEPAGE ──────────────────────────────────── -->
+  <url>
+    <loc>https://hisaabnow.com/</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/"/>
+    <image:image>
+      <image:loc>https://hisaabnow.com/og-image.png</image:loc>
+      <image:title>HisaabNow — POS Billing App for Indian Shops</image:title>
+      <image:caption>Real profit on every sale. Hindi voice billing. ₹10 trial.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ─── VERTICAL LANDING PAGES (high SEO priority) ─── -->
+  <url>
+    <loc>https://hisaabnow.com/for-salons.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/for-salons.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/for-salons.html?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/for-salons.html"/>
+    <image:image>
+      <image:loc>https://hisaabnow.com/og-for-salons.jpg</image:loc>
+      <image:title>POS App for Salons in India</image:title>
+      <image:caption>Stylist commission tracking, profit per service, repeat-customer alerts.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hisaabnow.com/scene-for-salons.jpg</image:loc>
+      <image:title>Salon stylist drying customer's hair — HisaabNow scene</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://hisaabnow.com/for-cafes.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/for-cafes.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/for-cafes.html?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/for-cafes.html"/>
+    <image:image>
+      <image:loc>https://hisaabnow.com/og-for-cafes.jpg</image:loc>
+      <image:title>POS App for Cafés in India</image:title>
+      <image:caption>Recipe-based cost tracking and Hindi voice billing for the morning rush.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hisaabnow.com/scene-for-cafes.jpg</image:loc>
+      <image:title>Café interior with coffee art on brick wall — HisaabNow scene</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://hisaabnow.com/for-restaurants.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/for-restaurants.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/for-restaurants.html?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/for-restaurants.html"/>
+    <image:image>
+      <image:loc>https://hisaabnow.com/og-for-restaurants.jpg</image:loc>
+      <image:title>Restaurant POS App in India</image:title>
+      <image:caption>Table-wise billing, kitchen tickets, per-dish profit tracking.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hisaabnow.com/scene-for-restaurants.jpg</image:loc>
+      <image:title>Restaurant scene with diners enjoying food — HisaabNow scene</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://hisaabnow.com/for-sweet-shops.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/for-sweet-shops.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/for-sweet-shops.html?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/for-sweet-shops.html"/>
+    <image:image>
+      <image:loc>https://hisaabnow.com/og-for-sweet-shops.jpg</image:loc>
+      <image:title>Sweet Shop Billing Software in India</image:title>
+      <image:caption>Weight-based pricing, festival inventory alerts, expiry tracking.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hisaabnow.com/scene-for-sweet-shops.jpg</image:loc>
+      <image:title>Indian sweet shop interior with traditional mithai — HisaabNow scene</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://hisaabnow.com/for-grocery-stores.html</loc>
+    <lastmod>2026-05-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/for-grocery-stores.html"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/for-grocery-stores.html?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/for-grocery-stores.html"/>
+    <image:image>
+      <image:loc>https://hisaabnow.com/og-for-grocery-stores.jpg</image:loc>
+      <image:title>Grocery Store Billing App in India</image:title>
+      <image:caption>Barcode scan, udhaar khaata with WhatsApp reminders, low-stock alerts.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://hisaabnow.com/scene-for-grocery-stores.jpg</image:loc>
+      <image:title>Grocery store cashier with phone payment — HisaabNow scene</image:title>
+    </image:image>
+  </url>
+
+  <!-- ─── LEGAL PAGES (lower priority) ─────────────── -->
+  <url>
+    <loc>https://hisaabnow.com/legal/privacy.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://hisaabnow.com/legal/terms.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://hisaabnow.com/legal/delete-account.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
