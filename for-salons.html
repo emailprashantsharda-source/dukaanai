@@ -246,46 +246,30 @@ input, select { font-family: inherit; font-size: inherit; }
 .ph-ai-line { display: flex; align-items: flex-start; gap: 8px; font-size: 11.5px; font-weight: 600; color: var(--t1); line-height: 1.4; padding: 5px 0; }
 .ph-ai-line .ic { flex-shrink: 0; width: 14px; height: 14px; display: inline-flex; align-items: center; justify-content: center; margin-top: 1px; }
 
-/* SCENE — atmospheric panel between hero and story
-   Self-contained: uses gradient + decorative emoji as background.
-   No external photo dependencies. Always loads.
-   To swap in a real photo: add background-image with a working URL.
+/* SCENE — atmospheric photo of an actual salons business.
+   Photo at /scene-for-salons.jpg with dark gradient overlay
+   so the white scene caption + heading remain readable.
 */
 .scene {
   position: relative;
   width: 100%;
-  min-height: 280px;
-  background: linear-gradient(135deg, #5B21B6 0%, #7C3AED 50%, #BE185D 100%);
+  min-height: 360px;
+  background:
+    linear-gradient(180deg, rgba(15,12,30,0.18) 0%, rgba(15,12,30,0.78) 100%),
+    url('/scene-for-salons.jpg') center/cover no-repeat,
+    linear-gradient(135deg, #5B21B6 0%, #7C3AED 50%, #BE185D 100%);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
 }
-@media (min-width: 760px) { .scene { min-height: 340px; } }
-
-/* Decorative emoji glyph — huge, faded, in the background */
-.scene::before {
-  content: '💇';
-  position: absolute;
-  right: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 320px;
-  line-height: 1;
-  opacity: 0.18;
-  filter: blur(0.5px);
-  pointer-events: none;
-  user-select: none;
-}
-@media (max-width: 760px) {
-  .scene::before { font-size: 220px; right: -30px; opacity: 0.13; }
-}
+@media (min-width: 760px) { .scene { min-height: 460px; } }
 
 /* Subtle dot pattern overlay */
 .scene::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.08) 1px, transparent 0);
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.04) 1px, transparent 0);
   background-size: 24px 24px;
   pointer-events: none;
 }
