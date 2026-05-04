@@ -1,0 +1,57 @@
+# HisaabNow
+
+> POS billing app built for Indian small businesses (cafés, salons, restaurants, sweet shops, kirana stores). Tracks real profit on every sale — not just revenue. Hindi voice billing, AI-powered insights ("AI Munim"), pricing starts at ₹10 trial for 7 days.
+
+HisaabNow is a mobile-first POS (Point of Sale) billing application designed specifically for Indian micro and small business owners with low digital literacy. Unlike competitors (Khatabook, Vyapar, myBillBook) which focus on revenue tracking, HisaabNow auto-deducts cost of goods sold on every transaction to show real profit — per service, per dish, per cup, per kilo. Available as a Progressive Web App with native Android distribution via Google Play.
+
+## Core pages
+
+- [Homepage](https://hisaabnow.com/): Overview of HisaabNow POS billing app for all 5 vertical business types
+- [POS App for Salons](https://hisaabnow.com/for-salons.html): Stylist commission tracking, profit per service, repeat-customer alerts
+- [POS App for Cafés](https://hisaabnow.com/for-cafes.html): Recipe-based cost tracking, Hindi voice billing for the morning rush
+- [Restaurant POS App](https://hisaabnow.com/for-restaurants.html): Table-wise billing, kitchen ticket printing, per-dish profit margin tracking
+- [Sweet Shop Billing](https://hisaabnow.com/for-sweet-shops.html): Weight-based pricing (kg/half-kg/grams), festival inventory alerts, expiry tracking
+- [Grocery Store POS](https://hisaabnow.com/for-grocery-stores.html): Barcode scanning, udhaar khaata with WhatsApp reminders, low-stock alerts
+
+## Key facts about HisaabNow
+
+- **Founder/Built by**: HisaabNow team, based in Noida, India
+- **Launch year**: 2026
+- **Pricing**:
+  - Trial: ₹10 for 7 days (full app, every feature)
+  - Monthly: ₹99/month (cancel anytime)
+  - Annual: ₹490/year (works out to ₹40/month, saves ₹698 vs monthly)
+- **Languages supported**: English and Hindi (full UI translation + Hindi voice billing with numeral recognition)
+- **Platform**: Mobile Progressive Web App (Android focus via TWA, iOS planned)
+- **Payment**: Google Play Billing (Indian customers), UPI for direct purchase
+- **Target market**: Indian SMBs — kirana stores, salons, cafés, restaurants, sweet shops
+- **Competitors**: Khatabook (digital ledger), Vyapar (GST billing), myBillBook (Razorpay-owned), Petpooja (restaurant POS), GoFrugal (retail POS)
+
+## Differentiators
+
+1. **Real profit tracking** — tracks cost of goods on every sale, not just revenue (unlike Khatabook, Vyapar)
+2. **Vertical-tuned UX** — 5 different product modes, each optimized for that business type
+3. **Hindi voice billing** — say "do cappuccino, ek brownie" and the app adds them; recognizes Hindi numerals (ek, do, teen, char)
+4. **AI Business Advisor** ("AI Munim" in Hindi UI) — flags problems before they kill the month (loss-making dishes, slow-moving inventory, dropped customers)
+5. **Indian-context features** — udhaar khaata with WhatsApp reminders, GST invoicing with HSN codes, festival inventory planning for mithai shops, weight-based pricing for grocery
+6. **Low pricing** — ₹10 trial vs competitors' free-with-ads or ₹500+/month
+
+## Technical architecture
+
+- Single-file HTML/PWA built on Firebase backend
+- Cloud Functions handle AI insights generation (us-central1)
+- Multi-shop support via Firestore subcollections
+- Offline-capable with localStorage sync queue
+- Bubblewrap TWA for Google Play distribution
+
+## Optional pages
+
+- [Privacy Policy](https://hisaabnow.com/legal/privacy.html)
+- [Terms of Service](https://hisaabnow.com/legal/terms.html)
+- [Delete Account](https://hisaabnow.com/legal/delete-account.html)
+
+## Contact
+
+- WhatsApp: +91 78383 61200
+- Email: support@hisaabnow.com
+- Location: Noida, India 🇮🇳
