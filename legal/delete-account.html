@@ -2,518 +2,231 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Delete your HisaabNow account and all associated data. Step-by-step instructions.">
-<meta name="robots" content="index,follow">
-<title>Delete Account — HisaabNow</title>
-<meta name="theme-color" content="#7C3AED">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Your Account — HisaabNow</title>
+<meta name="description" content="How to permanently delete your HisaabNow account and all associated data.">
+<link rel="canonical" href="https://hisaabnow.com/legal/delete-account.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@1,400;1,500&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --p:        #7C3AED;
-  --p-deep:   #5B21B6;
-  --p-700:    #6D28D9;
-  --p-light:  #F5F3FF;
-  --p-tint:   #FAF7FF;
-  --p-border: #E9D5FF;
+  --ink:#000000; --ink-2:#1C1C1C; --text:#18181B; --text-2:#545454; --text-3:#6B6B6B; --text-4:#9C9C9C;
+  --bg:#FFFBF5; --surface:#FFFFFF; --surface-2:#FFF7E0; --surface-3:#FEF3C7; --surface-warm:#FFF1E0;
+  --border:#F0E9DD; --border-2:#EEE5D2; --border-3:#D4C8B5;
+  --gold:#FFC043; --gold-2:#F2B341; --gold-deep:#B8860B; --gold-tint:#FEF3C7; --gold-soft:#FFF7E0;
+  --danger:#E11900;
+  --font-body:'DM Sans',system-ui,-apple-system,sans-serif;
+  --font-display:'DM Sans',system-ui,sans-serif;
+  --font-italic:'Lora',Georgia,serif;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--font-body); font-size:16px; line-height:1.65; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+.legal-header { background:rgba(255,255,255,.92); border-bottom:1px solid var(--border); padding:16px 24px; position:sticky; top:0; z-index:10; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+.legal-header-inner { max-width:820px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.brand { display:inline-flex; align-items:baseline; gap:2px; font-size:20px; font-weight:800; letter-spacing:-.02em; color:var(--ink); text-decoration:none; }
+.brand .wm1 { color:var(--ink); }
+.brand .wm2 { color:var(--gold); }
+.back-link { font-size:14px; font-weight:600; color:var(--text-2); text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:color .15s; }
+.back-link:hover { color:var(--gold-deep); }
+.legal-wrap { max-width:820px; margin:0 auto; padding:48px 24px 80px; }
+h1 { font-family:var(--font-display); font-size:40px; font-weight:800; letter-spacing:-.025em; color:var(--ink); line-height:1.15; margin-bottom:8px; }
+h1 .accent { font-family:var(--font-italic); font-style:italic; font-weight:500; color:var(--gold-deep); }
+.updated { font-size:14px; color:var(--text-3); margin-bottom:32px; font-weight:500; }
+h2 { font-family:var(--font-display); font-size:24px; font-weight:700; color:var(--ink); letter-spacing:-.015em; margin:40px 0 12px; line-height:1.3; }
+h3 { font-family:var(--font-display); font-size:17px; font-weight:700; color:var(--ink-2); margin:24px 0 8px; }
+p { font-size:15.5px; color:var(--text); line-height:1.7; margin:0 0 14px; }
+ul, ol { padding-left:24px; margin:0 0 18px; }
+li { font-size:15.5px; color:var(--text); line-height:1.7; margin:6px 0; }
+li::marker { color:var(--gold-deep); }
+li strong { color:var(--ink); font-weight:700; }
+a { color:var(--gold-deep); text-decoration:none; font-weight:600; border-bottom:1px solid transparent; transition:border-color .15s; }
+a:hover { border-bottom-color:var(--gold); }
 
-  --bg:       #F8F8FA;
-  --card:     #FFFFFF;
-  --surface:  #FAFAFC;
+/* Specific to delete page */
+.warn-banner { background:#FFF1E0; border:1px solid #FFC07A; border-left:4px solid #E55A1B; padding:20px 24px; border-radius:14px; margin:24px 0 36px; font-size:15.5px; line-height:1.6; }
+.warn-banner strong { color:#7A2E08; font-weight:700; }
+.warn-banner p { color:#5A2206; margin-bottom:0; }
 
-  --y:        #FACC15;
-  --y-deep:   #CA8A04;
-  --y-tint:   #FEF9C3;
-  --y-border: #FDE68A;
+.steps { background:var(--surface); border:1px solid var(--border-2); border-radius:16px; padding:24px 28px; margin:24px 0; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+.steps ol { padding-left:20px; }
+.steps li { margin:12px 0; padding-left:6px; }
+.steps li strong { color:var(--ink); }
 
-  --success:  #10B981;
-  --danger:   #EF4444;
-  --danger-tint: #FEF2F2;
-  --danger-border: #FECACA;
+.method-card { background:var(--surface); border:1px solid var(--border-2); border-radius:16px; padding:24px 28px; margin:18px 0; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+.method-card h3 { margin-top:0; }
+.method-card .label { display:inline-block; background:var(--gold-soft); border:1px solid var(--border-2); color:var(--gold-deep); padding:4px 12px; border-radius:100px; font-size:12.5px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:12px; }
 
-  --t1:       #0F172A;
-  --t2:       #475569;
-  --t3:       #94A3B8;
+.cta-btn { display:inline-flex; align-items:center; gap:10px; background:linear-gradient(180deg, var(--ink) 0%, var(--gold) 100%); color:#fff; padding:14px 28px; border-radius:14px; font-size:15.5px; font-weight:700; text-decoration:none; margin-top:8px; transition:transform .12s, box-shadow .15s; box-shadow:0 8px 20px -6px rgba(0,0,0,.25); border-bottom:none; }
+.cta-btn:hover { transform:translateY(-1px); box-shadow:0 12px 24px -6px rgba(0,0,0,.30); border-bottom:none; }
+.cta-btn:active { transform:scale(.98); }
 
-  --border:        #EEF0F4;
-  --border-strong: #E5E7EB;
+.tbl-wrap { overflow-x:auto; margin:16px 0 24px; border-radius:12px; border:1px solid var(--border-2); background:var(--surface); }
+table { width:100%; border-collapse:collapse; font-size:14.5px; }
+th { background:var(--surface-2); font-weight:700; color:var(--ink); text-align:left; padding:12px 16px; border-bottom:1px solid var(--border-2); }
+td { padding:12px 16px; border-bottom:1px solid var(--border); color:var(--text); vertical-align:top; }
+tr:last-child td { border-bottom:none; }
 
-  --gradient: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--card);
-  color: var(--t2);
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-feature-settings: "cv11", "ss01";
-  font-size: 15.5px;
-  line-height: 1.65;
-  letter-spacing: -0.005em;
-}
-a { color: var(--p); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
-a:hover { color: var(--p-deep); }
-
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-.wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-@media (min-width: 768px) { .wrap, .wrap-wide { padding: 0 32px; } }
-
-/* NAV */
-.nav {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,.9);
-  backdrop-filter: saturate(140%) blur(14px);
-  -webkit-backdrop-filter: saturate(140%) blur(14px);
-  border-bottom: 1px solid var(--border-strong);
-}
-.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 12px; }
-.brand {
-  display: inline-flex; align-items: center; gap: 9px;
-  font-size: 18px; font-weight: 800; letter-spacing: -0.02em;
-  color: var(--t1);
-  text-decoration: none;
-}
-.brand:hover { color: var(--t1); }
-.brand-logo {
-  width: 32px; height: 32px;
-  border-radius: 9px;
-  background: var(--gradient);
-  display: flex; align-items: center; justify-content: center;
-  position: relative;
-}
-.brand-logo::before {
-  content: '';
-  display: block;
-  width: 16px; height: 12px;
-  background:
-    linear-gradient(to top, white 30%, transparent 30%) 0 100% / 3px 100% no-repeat,
-    linear-gradient(to top, white 60%, transparent 60%) 6px 100% / 3px 100% no-repeat,
-    linear-gradient(to top, white 90%, transparent 90%) 12px 100% / 3px 100% no-repeat;
-}
-.brand-logo::after {
-  content: '✦';
-  position: absolute;
-  top: -2px; right: -2px;
-  font-size: 9px;
-  color: var(--y);
-}
-.nav-right { display: flex; align-items: center; gap: 8px; }
-.nav-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 8px 14px;
-  font-size: 13px; font-weight: 600;
-  color: var(--t2);
-  border-radius: 999px;
-  text-decoration: none;
-  transition: all .15s;
-}
-.nav-link:hover { background: var(--surface); color: var(--t1); }
-.nav-cta {
-  padding: 9px 18px;
-  background: var(--p); color: white;
-  border-radius: 999px;
-  font-size: 13.5px; font-weight: 700;
-  letter-spacing: -0.005em;
-  text-decoration: none;
-  transition: all .15s;
-}
-.nav-cta:hover { background: var(--p-deep); transform: translateY(-1px); color: white; }
-
-/* PAGE HEAD */
-.page-head { background: var(--p-light); border-bottom: 1px solid var(--p-border); padding: 48px 0 40px; }
-@media (min-width: 700px) { .page-head { padding: 64px 0 56px; } }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: white;
-  color: var(--p-deep);
-  padding: 6px 12px;
-  border: 1px solid var(--p-border);
-  border-radius: 999px;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.01em;
-  margin-bottom: 18px;
-}
-.eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--p); }
-.page-head h1 {
-  font-size: clamp(30px, 5vw, 44px);
-  font-weight: 800;
-  color: var(--t1);
-  letter-spacing: -0.03em;
-  margin: 0 0 10px;
-  line-height: 1.1;
-}
-.page-head .subtitle {
-  color: var(--t2);
-  font-size: 16px;
-  font-weight: 500;
-  max-width: 580px;
-  line-height: 1.55;
-}
-
-/* CONTENT */
-main { padding: 48px 0 80px; }
-@media (min-width: 700px) { main { padding: 64px 0 96px; } }
-
-h2 {
-  font-size: 22px; font-weight: 800; color: var(--t1);
-  letter-spacing: -0.02em;
-  margin: 44px 0 14px;
-  line-height: 1.25;
-}
-@media (min-width: 700px) { h2 { font-size: 26px; } }
-
-h3 {
-  font-size: 16.5px; font-weight: 700; color: var(--t1);
-  margin: 24px 0 10px;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
-}
-
-p { margin: 12px 0; }
-ul, ol { padding-left: 22px; margin: 14px 0; }
-li { margin: 8px 0; }
-strong { color: var(--t1); font-weight: 700; }
-
-/* ──────────────────────────────────────────────────────────
-   DANGER WARNING — top of page
-   Light red bg with red border. Echoes the app's danger zone.
-   ────────────────────────────────────────────────────────── */
-.danger-box {
-  background: var(--danger-tint);
-  border: 1.5px solid var(--danger-border);
-  border-radius: 14px;
-  padding: 20px 22px;
-  margin: 28px 0;
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-}
-.danger-icon {
-  width: 40px; height: 40px;
-  background: var(--gradient-danger);
-  border-radius: 10px;
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  color: white;
-  font-size: 20px;
-  font-weight: 800;
-}
-.danger-content h3 {
-  color: var(--danger-deep);
-  font-size: 15.5px;
-  font-weight: 800;
-  margin: 0 0 6px;
-  letter-spacing: -0.005em;
-}
-.danger-content p {
-  font-size: 14px;
-  color: #7F1D1D;
-  margin: 4px 0;
-  line-height: 1.55;
-}
-
-/* ──────────────────────────────────────────────────────────
-   STEPS — purple numbered circles, mimics app's UI
-   ────────────────────────────────────────────────────────── */
-.steps {
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
-  border-radius: 16px;
-  padding: 24px 28px;
-  margin: 22px 0;
-}
-.steps ol {
-  padding-left: 0;
-  margin: 0;
-  counter-reset: step;
-  list-style: none;
-}
-.steps li {
-  counter-increment: step;
-  padding-left: 44px;
-  position: relative;
-  margin: 16px 0;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--t1);
-}
-.steps li:first-child { margin-top: 0; }
-.steps li:last-child { margin-bottom: 0; }
-.steps li::before {
-  content: counter(step);
-  position: absolute;
-  left: 0;
-  top: 1px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--gradient);
-  color: white;
-  font-weight: 800;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px -2px rgba(124,58,237,.4);
-}
-
-/* ──────────────────────────────────────────────────────────
-   PHRASE BOX — confirmation phrase the user has to type
-   Dashed purple border, monospace
-   ────────────────────────────────────────────────────────── */
-.phrase-box {
-  display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  background: white;
-  border: 1.5px dashed var(--p);
-  border-radius: 8px;
-  padding: 5px 12px;
-  font-weight: 700;
-  color: var(--p-deep);
-  font-size: 13.5px;
-  letter-spacing: 0.02em;
-  margin: 4px 2px;
-  white-space: nowrap;
-}
-
-/* ──────────────────────────────────────────────────────────
-   ALT CARD — option 2 (email request)
-   ────────────────────────────────────────────────────────── */
-.alt-card {
-  background: white;
-  border: 1.5px solid var(--p-border);
-  border-radius: 16px;
-  padding: 24px 26px;
-  margin: 18px 0;
-}
-.alt-card h3 {
-  margin: 0 0 10px;
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--t1);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.alt-card h3::before {
-  content: '✉️';
-  font-size: 18px;
-}
-.alt-card p {
-  font-size: 14.5px;
-  margin: 8px 0;
-  line-height: 1.6;
-}
-.alt-card ul { margin: 10px 0; }
-.alt-card li { font-size: 14.5px; margin: 6px 0; }
-
-.email-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 14px;
-  background: var(--p);
-  color: white;
-  text-decoration: none;
-  padding: 12px 22px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 14.5px;
-  letter-spacing: -0.005em;
-  box-shadow: 0 8px 20px -8px rgba(124,58,237,.45);
-  transition: all .15s;
-}
-.email-btn:hover {
-  background: var(--p-deep);
-  color: white;
-  transform: translateY(-1px);
-}
-.email-btn::after { content: '→'; font-weight: 800; }
-
-/* ──────────────────────────────────────────────────────────
-   OPTION CARDS — visually distinct sections for option 1 / 2
-   ────────────────────────────────────────────────────────── */
-.option-block {
-  margin: 28px 0;
-}
-.option-block .opt-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--p-light);
-  color: var(--p-deep);
-  padding: 5px 11px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.option-block .opt-tag.recommended {
-  background: var(--p);
-  color: white;
-}
-.option-block .opt-tag.recommended::before {
-  content: '⭐';
-  font-size: 11px;
-}
-
-/* FOOTER */
-.footer {
-  padding: 28px 0;
-  background: var(--bg);
-  border-top: 1px solid var(--border-strong);
-  font-size: 13px;
-  color: var(--t2);
-}
-.footer-inner {
-  display: flex; flex-wrap: wrap;
-  justify-content: space-between; align-items: center;
-  gap: 14px;
-}
-.footer-links { display: flex; flex-wrap: wrap; gap: 18px; font-weight: 600; }
-.footer-links a { color: var(--t2); text-decoration: none; }
-.footer-links a:hover { color: var(--p); }
-
-@media (max-width: 600px) {
-  .danger-box { flex-direction: column; gap: 12px; }
-  .steps { padding: 20px 22px; }
-  .alt-card { padding: 20px 22px; }
+.contact { background:var(--surface); border:1px solid var(--border-2); border-radius:16px; padding:24px 28px; margin-top:40px; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+.contact h3 { margin-top:0; font-size:18px; }
+.contact p { margin-bottom:0; font-size:15px; line-height:1.8; }
+.page-footer { margin-top:64px; padding-top:24px; border-top:1px solid var(--border-2); text-align:center; font-size:13.5px; color:var(--text-3); }
+.page-footer a { color:var(--text-2); font-weight:500; margin:0 8px; }
+@media (max-width:600px) {
+  .legal-wrap { padding:32px 18px 64px; }
+  h1 { font-size:32px; }
+  h2 { font-size:21px; margin-top:32px; }
+  h3 { font-size:16px; }
+  body { font-size:15.5px; }
+  p, li { font-size:15px; }
+  .contact, .steps, .method-card { padding:20px; }
+  .warn-banner { padding:16px 18px; font-size:14.5px; }
+  table { font-size:13.5px; }
+  th, td { padding:10px 12px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="wrap-wide nav-inner">
-    <a href="/" class="brand">
-      <span class="brand-logo"></span>
-      HisaabNow
-    </a>
-    <div class="nav-right">
-      <a href="/" class="nav-link">← Back to home</a>
-      <a href="/#try" class="nav-cta">Try free</a>
-    </div>
+<header class="legal-header">
+  <div class="legal-header-inner">
+    <a href="/" class="brand"><span class="wm1">Hisaab</span><span class="wm2">Now</span></a>
+    <a href="/" class="back-link">← Back to home</a>
   </div>
-</nav>
+</header>
 
-<!-- PAGE HEAD -->
-<section class="page-head">
-  <div class="wrap">
-    <div class="eyebrow">
-      <span class="dot"></span>
-      Account & Data Removal
-    </div>
-    <h1>Delete Your Account</h1>
-    <p class="subtitle">Two ways to permanently delete your HisaabNow account and all your data.</p>
+<main class="legal-wrap">
+
+  <h1>Delete <span class="accent">your account</span></h1>
+  <div class="updated">Last updated: 17 April 2026</div>
+
+  <p>You can permanently delete your HisaabNow account and all associated data at any time. This page explains the two ways to do it and what happens to your data afterwards.</p>
+
+  <div class="warn-banner">
+    <p><strong>⚠️ Important:</strong> Account deletion is permanent. All your shops, products, bills, customers, inventory, expenses, and subscription history will be erased and cannot be recovered. Make sure you've exported any data you want to keep before deleting.</p>
   </div>
-</section>
 
-<!-- CONTENT -->
-<main>
-  <div class="wrap">
+  <h2>Option 1 — Delete from inside the app (recommended)</h2>
 
-    <div class="danger-box">
-      <div class="danger-icon">!</div>
-      <div class="danger-content">
-        <h3>This action is permanent</h3>
-        <p>Account deletion cannot be reversed. All your bills, customers, udhaar records, products, and business data will be permanently erased.</p>
-        <p>Before deleting, consider exporting your key reports from the Reports section of the app.</p>
-      </div>
+  <div class="method-card">
+    <div class="label">Fastest · 30 seconds</div>
+    <h3>Steps</h3>
+    <div class="steps">
+      <ol>
+        <li>Open the HisaabNow app on your phone</li>
+        <li>Tap <strong>Settings</strong> (gear icon)</li>
+        <li>Scroll down and tap <strong>Delete My Account</strong></li>
+        <li>Read the confirmation message</li>
+        <li>Type the word <strong>DELETE</strong> to confirm</li>
+        <li>Tap <strong>Delete Permanently</strong></li>
+      </ol>
     </div>
+    <p>Your account is queued for deletion. You will be logged out immediately, and your data will be removed within 24 hours.</p>
+  </div>
 
-    <!-- OPTION 1 -->
-    <div class="option-block">
-      <span class="opt-tag recommended">Recommended</span>
-      <h2>Option 1 — Delete from the app</h2>
-      <p>The fastest way to delete your account is from within the app itself. This deletes everything in under a minute.</p>
+  <h2>Option 2 — Email request</h2>
 
-      <div class="steps">
-        <ol>
-          <li>Open <strong>HisaabNow</strong> on your phone and make sure you are logged in.</li>
-          <li>Tap <strong>More</strong> in the bottom navigation bar.</li>
-          <li>Tap <strong>Settings</strong>.</li>
-          <li>Scroll down to the <strong>Danger Zone</strong> section at the bottom.</li>
-          <li>Tap <strong>Delete My Account</strong>.</li>
-          <li>Read the warning carefully, then type the confirmation phrase exactly as shown:
-            <br><span class="phrase-box">Mera Hisaab Mitao</span> (for Hindi users)
-            <br><span class="phrase-box">Delete my account</span> (for English users)
-          </li>
-          <li>Tap the red <strong>Delete</strong> button to confirm.</li>
-        </ol>
-      </div>
-
-      <p>Your account will be deleted within 60 seconds. You will be logged out automatically, and the app will return to the login screen.</p>
-    </div>
-
-    <!-- OPTION 2 -->
-    <div class="option-block">
-      <span class="opt-tag">Alternate</span>
-      <h2>Option 2 — Email request</h2>
-      <p>If you cannot access the app for any reason (lost phone, uninstalled app, changed phone number), you can email us to request deletion:</p>
-
-      <div class="alt-card">
-        <h3>Email privacy@hisaabnow.com</h3>
-        <p>Send an email from the phone number registered with your account, or from the email you used to communicate with us previously. Include:</p>
-        <ul>
-          <li>Your registered phone number (the one you used to log in)</li>
-          <li>A clear statement: "Please delete my HisaabNow account and all associated data."</li>
-          <li>Reason for deletion (optional — helps us improve)</li>
-        </ul>
-        <p>We will respond within 48 hours to confirm receipt, and complete deletion within 30 days as required by the Digital Personal Data Protection Act, 2023.</p>
-        <a href="mailto:privacy@hisaabnow.com?subject=Account%20Deletion%20Request&body=Please%20delete%20my%20HisaabNow%20account%20and%20all%20associated%20data.%0A%0ARegistered%20phone%20number%3A%20%2B91%20" class="email-btn">Email Deletion Request</a>
-      </div>
-    </div>
-
-    <h2>What gets deleted</h2>
-    <p>When you delete your account, we permanently erase:</p>
+  <div class="method-card">
+    <div class="label">If you can't access the app</div>
+    <h3>How to request via email</h3>
+    <p>If you've lost access to the app or your phone, you can email us to request deletion. We will verify your identity using the phone number on your account before proceeding.</p>
+    <p>Send an email to <a href="mailto:prashantsharda2k@gmail.com">prashantsharda2k@gmail.com</a> with the subject line: <strong>"Delete my HisaabNow account"</strong></p>
+    <p>Include in the email:</p>
     <ul>
-      <li>Your shop profile (shop name, owner name, UPI ID, GSTIN, logo).</li>
-      <li>All your bills, sales records, and invoice history.</li>
-      <li>All products in your inventory.</li>
-      <li>All purchase and expense records.</li>
-      <li>All customer records and udhaar (credit) ledger entries.</li>
-      <li>All supplier records and supplier credit history.</li>
-      <li>Staff and attendance records (if you used these).</li>
-      <li>Your subscription record and any pending subscription requests.</li>
-      <li>Your authentication record (you will no longer be able to log in with this phone number).</li>
+      <li>The mobile number registered with the account (with +91 prefix)</li>
+      <li>The name of your shop (as it appears in the app)</li>
+      <li>The reason for deletion (optional — helps us improve)</li>
     </ul>
-
-    <h2>What we keep</h2>
-    <p>For legal, tax, and audit compliance, we retain the following for a minimum of 5 years:</p>
-    <ul>
-      <li>An anonymised audit log entry recording that a deletion occurred, with date and account ID. This does not contain your phone number, shop name, or any business data.</li>
-    </ul>
-    <p>Additionally, our infrastructure provider (Google Firebase) maintains automated backups for up to 7 days after deletion. These are automatically purged. We do not access these backups except in emergency data recovery scenarios.</p>
-
-    <h2>Your customers' data</h2>
-    <p>Customer names and phone numbers that you saved in your udhaar ledger are deleted along with your account. Note that the same customer's phone number may still exist in another shop's ledger if they have given it to multiple shops. We do not maintain a cross-shop index of customer data.</p>
-
-    <h2>Questions</h2>
-    <p>If you have any questions about deletion or need help with the process, email <a href="mailto:privacy@hisaabnow.com">privacy@hisaabnow.com</a> and we will respond within 48 hours.</p>
-    <p>For your full rights under Indian data protection law, see our <a href="/privacy.html">Privacy Policy</a>.</p>
+    <p>We will respond within 3 business days, verify your account, and confirm deletion within 7 days.</p>
+    <a href="mailto:prashantsharda2k@gmail.com?subject=Delete%20my%20HisaabNow%20account" class="cta-btn">Email us to delete →</a>
   </div>
+
+  <h2>What gets deleted</h2>
+  <ul>
+    <li>Your name, phone number, and shop details</li>
+    <li>All products, prices, and inventory records</li>
+    <li>All sales, bills, and customer records</li>
+    <li>All expense and supplier records</li>
+    <li>Staff and commission settings</li>
+    <li>AI insight history and chat logs with Munim</li>
+    <li>App preferences and configuration</li>
+    <li>Push notification tokens</li>
+  </ul>
+
+  <h2>What we are required to keep</h2>
+  <p>Indian tax law requires us to retain certain financial records for 7 years (GST compliance). After your account is deleted, we keep only the following:</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Data type</th>
+          <th>Retention period</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Payment invoices (subscription)</td>
+          <td>7 years</td>
+          <td>Indian tax law (Section 36 of CGST Act)</td>
+        </tr>
+        <tr>
+          <td>Anonymized usage stats</td>
+          <td>Indefinite</td>
+          <td>Aggregated, cannot be linked to you</td>
+        </tr>
+        <tr>
+          <td>Crash logs</td>
+          <td>90 days</td>
+          <td>To fix bugs that affect other users</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>This retained data does not include your shop's transaction records, customers, or personal information. It cannot be used to identify you after deletion.</p>
+
+  <h2>Timeline</h2>
+  <ul>
+    <li><strong>Immediately:</strong> You are logged out, your account is marked for deletion, and no new logins are accepted</li>
+    <li><strong>Within 24 hours:</strong> Personal data is removed from active servers</li>
+    <li><strong>Within 30 days:</strong> Personal data is also removed from backups</li>
+    <li><strong>Within 90 days:</strong> All non-essential traces (crash logs, sync queues) are purged</li>
+  </ul>
+
+  <h2>What happens to my subscription?</h2>
+  <p>If you have an active paid subscription:</p>
+  <ul>
+    <li><strong>Monthly plans:</strong> Cancelled immediately. No refund for the partial month.</li>
+    <li><strong>Annual plans:</strong> If you have used the app less than 10 times in the past 14 days, a pro-rated refund is available. Otherwise, the subscription is cancelled and no refund is given.</li>
+    <li><strong>Google Play subscriptions:</strong> You must also cancel via Google Play Store (Account → Subscriptions) to stop future charges.</li>
+  </ul>
+
+  <h2>Can I reactivate my account later?</h2>
+  <p>No. Deletion is permanent. If you want to use HisaabNow again, you will need to sign up as a new user and rebuild your data from scratch.</p>
+
+  <h2>If you're having a problem we can solve</h2>
+  <p>If you're deleting because of a bug, billing issue, or unhappiness with a feature, please reach out first. We might be able to fix it. Most issues are resolved in under 24 hours.</p>
+
+  <div class="contact">
+    <h3>Need help or have questions?</h3>
+    <p>
+      Email: <a href="mailto:prashantsharda2k@gmail.com">prashantsharda2k@gmail.com</a><br>
+      WhatsApp: <a href="https://wa.me/917838361200">+91 78383 61200</a><br>
+      We respond within 24 hours, every day.
+    </p>
+  </div>
+
+  <div class="page-footer">
+    © 2026 HisaabNow. All rights reserved.<br>
+    <a href="/legal/privacy.html">Privacy Policy</a> · <a href="/legal/terms.html">Terms of Service</a>
+  </div>
+
 </main>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="wrap-wide footer-inner">
-    <div>© 2026 HisaabNow · Made in India 🇮🇳</div>
-    <div class="footer-links">
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-      <a href="/delete-account.html">Delete Account</a>
-      <a href="mailto:support@hisaabnow.com">Contact</a>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>
