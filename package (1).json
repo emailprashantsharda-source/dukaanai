@@ -1,0 +1,12 @@
+{
+  "name": "hisaabnow-build",
+  "version": "1.0.0",
+  "description": "Build script for generating Hindi versions of HisaabNow vertical pages",
+  "private": true,
+  "scripts": {
+    "build:hi": "node build-hindi.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}
