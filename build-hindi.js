@@ -131,9 +131,44 @@ function stripTags(html) {
   return String(html || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
 
+/**
+ * Recursively walk a JSON-LD object and replace every string value that starts
+ * with `fromPrefix` so its prefix becomes `toPrefix`. This catches @id fields,
+ * cross-references (e.g. WebPage.breadcrumb.@id pointing to BreadcrumbList),
+ * url fields, item fields inside BreadcrumbList ListItems, offer URLs, etc.
+ *
+ * Why this exists: the type-specific handlers below only update each entity's
+ * own @id. Without this pass, a WebPage's `breadcrumb: { @id: ".../for-salons.html#breadcrumb" }`
+ * is left pointing at the English URL while the BreadcrumbList's own @id has been
+ * rewritten to `.../hi/for-salons.html#breadcrumb` — Google can't resolve the
+ * reference and reports the BreadcrumbList as missing itemListElement.
+ */
+function rewritePageUrls(node, fromPrefix, toPrefix) {
+  if (typeof node === 'string') {
+    return node.startsWith(fromPrefix) ? toPrefix + node.slice(fromPrefix.length) : node;
+  }
+  if (Array.isArray(node)) {
+    for (let i = 0; i < node.length; i++) node[i] = rewritePageUrls(node[i], fromPrefix, toPrefix);
+    return node;
+  }
+  if (node && typeof node === 'object') {
+    for (const k of Object.keys(node)) node[k] = rewritePageUrls(node[k], fromPrefix, toPrefix);
+    return node;
+  }
+  return node;
+}
+
 /** Mutate the JSON-LD @graph in-place, translating relevant fields to Hindi. */
 function translateSchema(schema, hi, pageName, meta) {
+  const enUrl = `${BASE_URL}/${pageName}`;
   const hiUrl = `${BASE_URL}/hi/${pageName}`;
+
+  // 0. Rewrite every internal EN page-URL reference to its HI equivalent. This
+  //    handles @ids, cross-references (mainEntity, breadcrumb, isPartOf, etc.),
+  //    url fields, BreadcrumbList ListItem `item` fields, and offer URLs in one
+  //    pass — so the type-specific handlers below only need to set Hindi text.
+  rewritePageUrls(schema, enUrl, hiUrl);
+
   const graph = schema['@graph'] || [];
 
   for (const item of graph) {
