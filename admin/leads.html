@@ -517,7 +517,11 @@ const FIREBASE_CONFIG = {
   appId: "1:448042777087:web:9b4c4a0bd4dbc425bccfca"
 };
 
-const ADMIN_UID = "9AV0qb9zfLakdw0oua4cBV7YF6Z2";
+const ADMIN_UIDS = [
+  "9AV0qb9zfLakdw0oua4cBV7YF6Z2",  // Phone OTP (in-app admin)
+  "tDuagWrvOVWsQWMccHx9jGszksZ2",  // Google: admin@hisaabnow.com
+  "zQbvPSvwXjYsTMQVqmPR332IeQP2",  // Google: prashantsharda2k@gmail.com
+];
 const CF_BASE = "https://us-central1-panshopmanager.cloudfunctions.net";
 
 // ────────────────────────────────────────────────────────────────────
@@ -551,7 +555,7 @@ signinBtn.addEventListener('click', async () => {
 signoutBtn.addEventListener('click', () => auth.signOut());
 
 auth.onAuthStateChanged(async (user) => {
-  if (user && user.uid === ADMIN_UID) {
+  if (user && ADMIN_UIDS.includes(user.uid)) {
     signinView.style.display = 'none';
     mainView.style.display = 'block';
     userInfo.style.display = 'flex';
