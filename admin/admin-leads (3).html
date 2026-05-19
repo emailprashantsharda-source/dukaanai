@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot Leads · HisaabNow Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bricolage+Grotesque:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #FFC043;
+  --gold-deep: #B8860B;
+  --orange: #FF7A1A;
+  --cream: #FFFBF5;
+  --paper: #FFFFFF;
+  --text: #18181B;
+  --text-2: #545454;
+  --text-3: #8A8A8A;
+  --line: #EDE7DC;
+  --line-2: #F4EFE5;
+  --green: #16A34A;
+  --green-bg: #DCFCE7;
+  --blue: #2563EB;
+  --blue-bg: #DBEAFE;
+  --red: #DC2626;
+  --red-bg: #FEE2E2;
+  --gray-bg: #F1F5F9;
+  --gray-text: #475569;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ─── Top bar ─────────────────────────────────────────────────────── */
+.topbar {
+  background: linear-gradient(135deg, #2B1810 0%, #4A2C1A 100%);
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.topbar .logo {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.topbar .logo .accent { color: var(--gold); }
+.topbar .breadcrumb { opacity: .7; font-size: 13px; }
+.topbar .breadcrumb::before { content: '/'; margin: 0 8px; }
+.topbar .spacer { flex: 1; }
+.topbar .user {
+  font-size: 12px; opacity: .8;
+  display: flex; align-items: center; gap: 6px;
+}
+.topbar .user::before {
+  content: ''; width: 8px; height: 8px;
+  border-radius: 50%; background: #22C55E;
+}
+.topbar .signout {
+  font-size: 12px; color: #fff;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 5px 10px; border-radius: 6px;
+  cursor: pointer; font-family: inherit;
+}
+.topbar .signout:hover { background: rgba(255,255,255,.18); }
+
+/* ─── Content ─────────────────────────────────────────────────────── */
+.wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.page-head h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.page-head .sub {
+  color: var(--text-2);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* ─── Stat cards ──────────────────────────────────────────────────── */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.stat {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.stat .lbl {
+  font-size: 11.5px;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-weight: 600;
+}
+.stat .val {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 4px;
+  letter-spacing: -0.02em;
+}
+.stat .delta {
+  font-size: 12px;
+  margin-top: 2px;
+  color: var(--text-3);
+}
+
+/* ─── Filters ─────────────────────────────────────────────────────── */
+.filters {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.filter-group { display: flex; gap: 4px; }
+.chip {
+  padding: 6px 12px;
+  border-radius: 18px;
+  background: var(--gray-bg);
+  border: 1px solid transparent;
+  color: var(--gray-text);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.chip:hover { background: #E2E8F0; }
+.chip.active {
+  background: var(--gold);
+  color: #2B1810;
+  border-color: var(--gold-deep);
+}
+.filters .search {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  background: #FAFAFA;
+}
+.filters .search:focus {
+  border-color: var(--gold);
+  background: #fff;
+}
+.filters .refresh {
+  padding: 8px 14px;
+  background: var(--text);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filters .refresh:hover { background: #000; }
+.filters .export {
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.filters .export:hover { background: var(--cream); }
+
+/* ─── Table ───────────────────────────────────────────────────────── */
+.table-wrap {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.table-scroll {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+thead {
+  background: #FAFAFA;
+  border-bottom: 1px solid var(--line);
+}
+th {
+  text-align: left;
+  padding: 11px 14px;
+  font-weight: 600;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+td {
+  padding: 14px;
+  border-bottom: 1px solid var(--line-2);
+  vertical-align: top;
+}
+tbody tr:hover { background: #FAFBFC; }
+tbody tr:last-child td { border-bottom: none; }
+
+.col-phone {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 14.5px;
+}
+.col-phone .visits {
+  display: inline-block;
+  font-size: 10px;
+  background: var(--gold);
+  color: #2B1810;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.col-meta {
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-top: 3px;
+}
+.cat-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.status-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.status-new       { background: var(--blue-bg); color: var(--blue); }
+.status-contacted { background: #FEF3C7; color: #A16207; }
+.status-converted { background: var(--green-bg); color: var(--green); }
+.status-dropped   { background: var(--gray-bg); color: var(--gray-text); }
+
+.row-actions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.row-actions button, .row-actions a {
+  padding: 5px 10px;
+  font-size: 11.5px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  color: var(--text);
+  white-space: nowrap;
+}
+.row-actions button:hover { background: var(--cream); }
+.row-actions .wa-btn { color: #15803D; border-color: #BBF7D0; background: #F0FDF4; }
+.row-actions .wa-btn:hover { background: #DCFCE7; }
+.row-actions .call-btn { color: var(--gold-deep); border-color: var(--gold); background: #FFF7E0; }
+.row-actions .call-btn:hover { background: #FFE69E; }
+
+.chat-summary {
+  font-size: 11.5px;
+  color: var(--text-2);
+  max-width: 280px;
+  line-height: 1.4;
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ts {
+  font-size: 11.5px;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+.ts strong { color: var(--text); font-weight: 600; }
+
+.note-edit {
+  margin-top: 6px;
+  width: 100%;
+  font-size: 11.5px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-family: inherit;
+  background: #fff;
+  resize: vertical;
+  min-height: 28px;
+  max-height: 80px;
+}
+.note-edit:focus { outline: none; border-color: var(--gold); }
+
+.empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-3);
+}
+.empty .ic { font-size: 48px; margin-bottom: 10px; opacity: .4; }
+
+.loading {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text-3);
+}
+.spinner {
+  display: inline-block;
+  width: 28px; height: 28px;
+  border: 3px solid var(--line);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.toast {
+  position: fixed;
+  bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--text);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s, transform .2s;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Sign-in screen */
+.signin {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-align: center;
+}
+.signin h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.signin p { color: var(--text-2); margin-bottom: 20px; font-size: 13px; }
+.signin .btn {
+  padding: 11px 22px;
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.signin .btn:hover { transform: translateY(-1px); }
+.signin .err {
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 12px;
+  display: none;
+}
+.signin .err.show { display: block; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">Hisaab<span class="accent">Now</span></div>
+  <div class="breadcrumb">Admin</div>
+  <div class="breadcrumb">Chatbot Leads</div>
+  <div class="spacer"></div>
+  <div class="user" id="user-info" style="display: none;"><span id="user-email">—</span></div>
+  <button class="signout" id="btn-signout" style="display: none;">Sign out</button>
+</div>
+
+<!-- Sign-in screen -->
+<div id="signin-view" class="signin">
+  <h2>Admin sign-in</h2>
+  <p>Sign in with the admin Google account to view chatbot leads.</p>
+  <button class="btn" id="btn-signin">Sign in with Google</button>
+  <div class="err" id="signin-err"></div>
+</div>
+
+<!-- Main view -->
+<div class="wrap" id="main-view" style="display: none;">
+
+  <div class="page-head">
+    <div>
+      <h1>Chatbot Leads</h1>
+      <div class="sub">Real-time leads from the HisaabNow website chatbot</div>
+    </div>
+  </div>
+
+  <div class="stats" id="stats">
+    <div class="stat"><div class="lbl">Total</div><div class="val" id="stat-total">—</div><div class="delta">all time</div></div>
+    <div class="stat"><div class="lbl">New</div><div class="val" id="stat-new">—</div><div class="delta">not yet contacted</div></div>
+    <div class="stat"><div class="lbl">Today</div><div class="val" id="stat-today">—</div><div class="delta">last 24h</div></div>
+    <div class="stat"><div class="lbl">Converted</div><div class="val" id="stat-converted">—</div><div class="delta">closed-won</div></div>
+  </div>
+
+  <div class="filters">
+    <div class="filter-group">
+      <button class="chip active" data-status="">All</button>
+      <button class="chip" data-status="new">New</button>
+      <button class="chip" data-status="contacted">Contacted</button>
+      <button class="chip" data-status="converted">Converted</button>
+      <button class="chip" data-status="dropped">Dropped</button>
+    </div>
+    <input class="search" id="search" placeholder="Search phone, category, note…" />
+    <button class="export" id="btn-export">Export CSV</button>
+    <button class="refresh" id="btn-refresh">↻ Refresh</button>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Phone</th>
+            <th>Name</th>
+            <th>Shop &amp; city</th>
+            <th>Business</th>
+            <th>Intent</th>
+            <th>Timing</th>
+            <th>Status</th>
+            <th>Chat</th>
+            <th>Note</th>
+            <th>Created</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="leads-body">
+          <tr><td colspan="11"><div class="loading"><div class="spinner"></div><div style="margin-top:10px">Loading leads…</div></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Firebase v9+ compat builds for simplicity (matches your existing setup) -->
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+
+<script>
+// ════════════════════════════════════════════════════════════════════
+// CONFIG — Replace with your actual Firebase config from panshopmanager
+// ════════════════════════════════════════════════════════════════════
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyB8v9gYxCg4qBfLl2J08D9TeUVygKVAqC8",
+  authDomain: "panshopmanager.firebaseapp.com",
+  projectId: "panshopmanager",
+  storageBucket: "panshopmanager.firebasestorage.app",
+  messagingSenderId: "448042777087",
+  appId: "1:448042777087:web:9b4c4a0bd4dbc425bccfca"
+};
+
+const ADMIN_UIDS = [
+  "9AV0qb9zfLakdw0oua4cBV7YF6Z2",  // Phone OTP (in-app admin)
+  "tDuagWrvOVWsQWMccHx9jGszksZ2",  // Google: admin@hisaabnow.com
+  "zQbvPSvwXjYsTMQVqmPR332IeQP2",  // Google: prashantsharda2k@gmail.com
+];
+const CF_BASE = "https://us-central1-panshopmanager.cloudfunctions.net";
+
+// ────────────────────────────────────────────────────────────────────
+firebase.initializeApp(FIREBASE_CONFIG);
+const auth = firebase.auth();
+
+const signinView = document.getElementById('signin-view');
+const mainView = document.getElementById('main-view');
+const userInfo = document.getElementById('user-info');
+const userEmail = document.getElementById('user-email');
+const signinBtn = document.getElementById('btn-signin');
+const signoutBtn = document.getElementById('btn-signout');
+const signinErr = document.getElementById('signin-err');
+
+let allLeads = [];
+let currentStatus = '';
+let currentSearch = '';
+
+/* ─── Auth ────────────────────────────────────────────────────────── */
+signinBtn.addEventListener('click', async () => {
+  signinErr.classList.remove('show');
+  try {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    await auth.signInWithPopup(provider);
+  } catch (e) {
+    signinErr.textContent = e.message || 'Sign-in failed';
+    signinErr.classList.add('show');
+  }
+});
+
+signoutBtn.addEventListener('click', () => auth.signOut());
+
+auth.onAuthStateChanged(async (user) => {
+  if (user && ADMIN_UIDS.includes(user.uid)) {
+    signinView.style.display = 'none';
+    mainView.style.display = 'block';
+    userInfo.style.display = 'flex';
+    signoutBtn.style.display = 'inline-block';
+    userEmail.textContent = user.email || user.uid.slice(0, 8);
+    await loadLeads();
+  } else if (user) {
+    // Signed in but not admin
+    signinErr.textContent = 'This account does not have admin access.';
+    signinErr.classList.add('show');
+    await auth.signOut();
+  } else {
+    signinView.style.display = 'block';
+    mainView.style.display = 'none';
+    userInfo.style.display = 'none';
+    signoutBtn.style.display = 'none';
+  }
+});
+
+/* ─── API helpers ─────────────────────────────────────────────────── */
+async function callCF(name, body) {
+  const user = auth.currentUser;
+  const token = user ? await user.getIdToken() : null;
+  const r = await fetch(`${CF_BASE}/${name}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { 'Authorization': 'Bearer ' + token } : {}),
+    },
+    body: JSON.stringify(body || {}),
+  });
+  if (!r.ok) {
+    const err = await r.json().catch(() => ({ error: r.statusText }));
+    throw new Error(err.error || 'Request failed');
+  }
+  return r.json();
+}
+
+/* ─── Load leads ──────────────────────────────────────────────────── */
+async function loadLeads() {
+  const tbody = document.getElementById('leads-body');
+  tbody.innerHTML = '<tr><td colspan="11"><div class="loading"><div class="spinner"></div><div style="margin-top:10px">Loading leads…</div></div></td></tr>';
+  try {
+    const data = await callCF('listChatLeads', { limit: 500 });
+    allLeads = data.leads || [];
+    renderStats();
+    renderTable();
+  } catch (e) {
+    tbody.innerHTML = `<tr><td colspan="11"><div class="empty"><div class="ic">⚠️</div><div>${e.message}</div></div></td></tr>`;
+  }
+}
+
+/* ─── Render stats ────────────────────────────────────────────────── */
+function renderStats() {
+  document.getElementById('stat-total').textContent = allLeads.length;
+  document.getElementById('stat-new').textContent = allLeads.filter(l => l.status === 'new').length;
+  const dayAgo = Date.now() - 24 * 3600 * 1000;
+  document.getElementById('stat-today').textContent = allLeads.filter(l => (l.createdAt || 0) > dayAgo).length;
+  document.getElementById('stat-converted').textContent = allLeads.filter(l => l.status === 'converted').length;
+}
+
+/* ─── Render table ────────────────────────────────────────────────── */
+function renderTable() {
+  const tbody = document.getElementById('leads-body');
+  let leads = allLeads.slice();
+  if (currentStatus) leads = leads.filter(l => l.status === currentStatus);
+  if (currentSearch) {
+    const q = currentSearch.toLowerCase();
+    leads = leads.filter(l =>
+      (l.phone || '').toLowerCase().includes(q) ||
+      (l.name || '').toLowerCase().includes(q) ||
+      (l.shopName || '').toLowerCase().includes(q) ||
+      (l.city || '').toLowerCase().includes(q) ||
+      (l.categoryLabel || '').toLowerCase().includes(q) ||
+      (l.category || '').toLowerCase().includes(q) ||
+      (l.note || '').toLowerCase().includes(q) ||
+      (l.chatSummary || '').toLowerCase().includes(q)
+    );
+  }
+  if (leads.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="11"><div class="empty"><div class="ic">📭</div><div>No leads match the current filter</div></div></td></tr>`;
+    return;
+  }
+  tbody.innerHTML = leads.map(renderRow).join('');
+  // Wire row interactions
+  tbody.querySelectorAll('[data-action="status"]').forEach(el => {
+    el.addEventListener('change', e => updateLead(el.dataset.leadid, { status: e.target.value }));
+  });
+  tbody.querySelectorAll('[data-action="note"]').forEach(el => {
+    let timer;
+    el.addEventListener('input', e => {
+      clearTimeout(timer);
+      timer = setTimeout(() => updateLead(el.dataset.leadid, { note: e.target.value }), 800);
+    });
+  });
+}
+
+function renderRow(l) {
+  const visits = l.visits && l.visits > 1 ? `<span class="visits">${l.visits}×</span>` : '';
+  const created = relativeTime(l.createdAt);
+  const status = l.status || 'new';
+  const chatSummary = (l.chatSummary || '').replace(/</g, '&lt;').slice(0, 300);
+  const note = (l.note || '').replace(/"/g, '&quot;');
+  const esc = (s) => (s || '').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const name     = esc(l.name);
+  const shopName = esc(l.shopName);
+  const city     = esc(l.city);
+
+  return `
+    <tr>
+      <td>
+        <div class="col-phone">${l.phone}${visits}</div>
+        <div class="col-meta">${l.lang === 'hi' ? '🌐 Hindi' : '🌐 English'}</div>
+      </td>
+      <td>${name || '<span style="color:#bbb">—</span>'}</td>
+      <td>
+        ${shopName ? `<div style="font-weight:600">${shopName}</div>` : ''}
+        ${city ? `<div style="font-size:11.5px;color:#777;margin-top:2px">📍 ${city}</div>` : ''}
+        ${!shopName && !city ? '<span style="color:#bbb">—</span>' : ''}
+      </td>
+      <td><span class="cat-pill">${l.categoryLabel || l.category}</span></td>
+      <td>${l.intent || '—'}</td>
+      <td>${l.timing || '—'}</td>
+      <td>
+        <select data-action="status" data-leadid="${l.id}" style="border:none;background:transparent;font-family:inherit;cursor:pointer;font-size:11px;font-weight:700;text-transform:uppercase;padding:3px 9px;border-radius:12px;" class="status-pill status-${status}">
+          <option value="new" ${status==='new'?'selected':''}>New</option>
+          <option value="contacted" ${status==='contacted'?'selected':''}>Contacted</option>
+          <option value="converted" ${status==='converted'?'selected':''}>Converted</option>
+          <option value="dropped" ${status==='dropped'?'selected':''}>Dropped</option>
+        </select>
+      </td>
+      <td><div class="chat-summary" title="${chatSummary.replace(/"/g,'&quot;')}">${chatSummary || '—'}</div></td>
+      <td>
+        <textarea class="note-edit" data-action="note" data-leadid="${l.id}" placeholder="Add note…">${note}</textarea>
+      </td>
+      <td class="ts"><strong>${created}</strong></td>
+      <td>
+        <div class="row-actions">
+          <a class="call-btn" href="tel:${l.phone}">📞 Call</a>
+          <a class="wa-btn" href="https://wa.me/${l.phone.replace('+','')}?text=${encodeURIComponent(waOpenerFor(l))}" target="_blank" rel="noopener">💬 WA</a>
+        </div>
+      </td>
+    </tr>
+  `;
+}
+
+function waOpenerFor(l) {
+  const greeting = l.name ? `${l.lang === 'hi' ? 'Namaste' : 'Hi'} ${l.name}` : (l.lang === 'hi' ? 'Namaste' : 'Hi');
+  const shopRef = l.shopName ? ` for ${l.shopName}` : '';
+  if (l.lang === 'hi') {
+    return `${greeting}! Maine HisaabNow ke chatbot pe demo request ki thi${l.shopName ? `. ${l.shopName} ke baare mein baat karni hai` : `. ${l.categoryLabel} ke baare mein baat karni hai`}.`;
+  }
+  return `${greeting}! Thanks for your interest in HisaabNow${shopRef ? shopRef : ` for your ${l.categoryLabel}`}. Following up on your demo request.`;
+}
+
+function relativeTime(ms) {
+  if (!ms) return '—';
+  const diff = Date.now() - ms;
+  const min = Math.floor(diff / 60000);
+  if (min < 1) return 'just now';
+  if (min < 60) return `${min}m ago`;
+  const hr = Math.floor(min / 60);
+  if (hr < 24) return `${hr}h ago`;
+  const d = Math.floor(hr / 24);
+  if (d < 7) return `${d}d ago`;
+  return new Date(ms).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+}
+
+async function updateLead(leadId, updates) {
+  try {
+    await callCF('updateChatLead', { leadId, ...updates });
+    // Update local state
+    const lead = allLeads.find(l => l.id === leadId);
+    if (lead) Object.assign(lead, updates);
+    renderStats();
+    // Update the status-pill class without re-rendering the whole table (preserves focus)
+    if (updates.status) {
+      const sel = document.querySelector(`select[data-leadid="${leadId}"]`);
+      if (sel) sel.className = `status-pill status-${updates.status}`;
+    }
+    showToast(updates.status ? `Marked ${updates.status}` : 'Note saved');
+  } catch (e) {
+    showToast(`Save failed: ${e.message}`, true);
+  }
+}
+
+function showToast(msg, isErr) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = isErr ? '#DC2626' : '#18181B';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ─── Filter chips ────────────────────────────────────────────────── */
+document.querySelectorAll('.chip[data-status]').forEach(c => {
+  c.addEventListener('click', () => {
+    document.querySelectorAll('.chip[data-status]').forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    currentStatus = c.dataset.status;
+    renderTable();
+  });
+});
+
+document.getElementById('search').addEventListener('input', e => {
+  currentSearch = e.target.value;
+  renderTable();
+});
+
+document.getElementById('btn-refresh').addEventListener('click', loadLeads);
+
+document.getElementById('btn-export').addEventListener('click', () => {
+  const rows = [['phone','name','shopName','city','category','intent','timing','status','lang','note','createdAt','visits']];
+  allLeads.forEach(l => {
+    rows.push([
+      l.phone, l.name || '', l.shopName || '', l.city || '',
+      l.categoryLabel || l.category, l.intent, l.timing, l.status,
+      l.lang, (l.note || '').replace(/"/g,'""'),
+      l.createdAt ? new Date(l.createdAt).toISOString() : '',
+      l.visits || 1,
+    ]);
+  });
+  const csv = rows.map(r => r.map(c => `"${(c == null ? '' : c).toString().replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `chatbot-leads-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+});
+</script>
+</body>
+</html>
