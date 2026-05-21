@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Salon POS Software · 7-Day Trial · HisaabNow</title>
-<meta name="description" content="Salon POS + billing software with stylist commission tracking, real profit analytics & Hindi voice billing. 7-day free trial. No card needed."/>
+<meta name="description" content="Salon POS + billing software with stylist commission tracking, real profit analytics & Hindi voice billing. 7-day trial at ₹0. No card needed."/>
 <meta name="keywords" content="salon billing software, salon POS software, salon management software, beauty parlour software, stylist commission app, Hindi voice billing"/>
 <meta name="robots" content="noindex,follow,max-image-preview:large"/>
 <meta name="theme-color" content="#FFFBF5"/>
@@ -54,7 +54,7 @@ function gtag_report_conversion(url) {
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="HisaabNow"/>
 <meta property="og:title" content="Salon POS Software · 7-Day Trial · HisaabNow"/>
-<meta property="og:description" content="Salon POS that tracks stylist commissions, shows real profit, bills by voice in Hindi. 7-day free trial — no card needed."/>
+<meta property="og:description" content="Salon POS that tracks stylist commissions, shows real profit, bills by voice in Hindi. 7-day trial at ₹0 — no card needed."/>
 <meta property="og:url" content="https://hisaabnow.com/lp/salons.html"/>
 <meta property="og:image" content="https://hisaabnow.com/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
@@ -62,7 +62,7 @@ function gtag_report_conversion(url) {
 <meta property="og:image:alt" content="HisaabNow — AI-powered salon POS billing software for India"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Salon POS Software · 7-Day Trial · HisaabNow"/>
-<meta name="twitter:description" content="Salon POS that tracks stylist commissions, shows real profit, bills by voice in Hindi. 7-day free trial."/>
+<meta name="twitter:description" content="Salon POS that tracks stylist commissions, shows real profit, bills by voice in Hindi. 7-day trial at ₹0."/>
 <meta name="twitter:image" content="https://hisaabnow.com/og-image.png"/>
 <meta property="og:locale" content="en_IN"/>
 
@@ -1087,7 +1087,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 .price-card .show-annual { display: none; }
 .price-card[data-cycle-show="monthly"] .show-monthly { display: inline; }
 .price-card[data-cycle-show="annual"] .show-annual { display: inline; }
-.price-card.free .price-num-wrap { margin-bottom: 6px; }
+.price-card.trial .price-num-wrap { margin-bottom: 6px; }
 
 .price-list {
   list-style: none;
@@ -1377,6 +1377,79 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
     animation: none !important;
   }
 }
+
+/* ═══ HERO LEAD FORM ═══ */
+.hero-lead-form {
+  display: flex; flex-direction: column; gap: 10px;
+  max-width: 460px; margin-bottom: 14px;
+}
+.hero-lead-form input {
+  width: 100%; height: 52px; padding: 0 18px;
+  background: var(--surface);
+  border: 1.5px solid var(--border-3, var(--border));
+  border-radius: 14px;
+  color: var(--ink);
+  font: inherit; font-size: 16px; font-weight: 600;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+.hero-lead-form input::placeholder { color: var(--text-4, #94A3B8); }
+.hero-lead-form input:focus {
+  border-color: var(--orange-deep);
+  box-shadow: 0 0 0 3px rgba(184,134,11,.12);
+}
+.hero-lead-form input.invalid {
+  border-color: #DC2626;
+  box-shadow: 0 0 0 3px rgba(220,38,38,.12);
+}
+.hero-lead-form .lead-phone-wrap { position: relative; }
+.hero-lead-form .lead-phone-wrap .prefix {
+  position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  color: var(--text-2, #475569);
+  font-size: 16px; font-weight: 700;
+  pointer-events: none;
+}
+.hero-lead-form .lead-phone-wrap input { padding-left: 46px; }
+.hero-lead-form .btn {
+  height: 54px; min-width: 0; width: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.hero-lead-form .btn .wa-ico {
+  width: 20px; height: 20px; fill: currentColor;
+}
+.hero-lead-form .btn::after { display: none; }
+.hero-lead-note {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: var(--text-3, #64748B);
+  font-weight: 500;
+}
+.hero-lead-form.submitting .btn { opacity: .7; pointer-events: none; }
+.hero-lead-form.submitting .btn::before {
+  content: "";
+  width: 16px; height: 16px;
+  border: 2px solid rgba(255,255,255,.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: leadSpin .8s linear infinite;
+  margin-right: 4px;
+}
+@keyframes leadSpin { to { transform: rotate(360deg); } }
+.hero-lead-form.submitted {
+  background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+  border: 1.5px solid #34D399;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+.hero-lead-form.submitted > * { display: none; }
+.hero-lead-form.submitted::after {
+  content: "✓ Details saved. Opening WhatsApp…";
+  color: #047857;
+  font-weight: 700;
+  font-size: 15px;
+  display: block;
+}
 </style>
 </head>
 <body>
@@ -1393,7 +1466,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
         <button class="active" data-lang-btn="en">EN</button>
         <button data-lang-btn="hi">हिं</button>
       </div>
-      <a href="#" data-hn-chat="demo" class="nav-cta" data-event="nav_cta" data-i18n="nav.cta">Book demo</a>
+      <a href="https://wa.me/919289792666?text=Hi%2C%20I%20want%20a%20demo%20of%20HisaabNow%20for%20my%20salon." target="_blank" rel="noopener" class="nav-cta" data-event="nav_cta" data-i18n="nav.cta">Book demo</a>
     </div>
   </div>
 </nav>
@@ -1419,9 +1492,24 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
           HisaabNow is a complete <b>salon billing software</b>, <b>salon POS software</b> and <b>salon management software</b> — with <b>stylist commission tracking</b>, real profit analytics and <b>Hindi voice billing</b>. The smarter <b>beauty parlour software</b> for India.
         </p>
 
-        <div class="cta-row reveal delay-2">
-          <a href="#" data-hn-chat="demo" class="btn btn-primary" data-event="hero_cta">
-            <span data-i18n="hero.cta1">Book demo</span>
+        <form class="hero-lead-form reveal delay-2" id="heroLeadForm" autocomplete="on" novalidate>
+          <input type="text" name="name" placeholder="Aapka naam" required autocomplete="name" />
+          <div class="lead-phone-wrap">
+            <span class="prefix">+91</span>
+            <input type="tel" name="phone" placeholder="WhatsApp number" required maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" />
+          </div>
+          <input type="text" name="salon" placeholder="Salon name &amp; city (e.g. Glow, Noida)" required autocomplete="organization" />
+          <button type="submit" class="btn btn-primary" data-event="hero_lead_submit">
+            <svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.5-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 1.9.8 2.6.9 3.6.7.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5-1.3c1.5.8 3.2 1.3 5 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+            Get demo on WhatsApp
+          </button>
+          <p class="hero-lead-note">We save your details &amp; open WhatsApp pre-filled. No card. Reply within 1 hour.</p>
+        </form>
+
+        <div class="hero-callout reveal delay-3">
+          Prefer to talk?
+          <a href="tel:+917838361200" class="hero-call-link" data-event="hero_call">
+            📞 Call us
           </a>
         </div>
 
@@ -1539,7 +1627,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
       <div class="outcome reveal delay-2">
         <div class="outcome-icon">🎤</div>
         <h3 data-i18n="out.3.h">Voice billing in Hindi</h3>
-        <p data-i18n="out.3.p">Say "haircut, 250 rupiya" — bill ready. Works in Hindi and English. Hands-free on busy days.</p>
+        <p data-i18n="out.3.p">Say "haircut, 250 rupiya" — bill ready. Works in Hindi and English. No typing needed on busy days.</p>
       </div>
     </div>
   </div>
@@ -1616,8 +1704,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 
     <div class="pricing-grid">
 
-      <!-- FREE TRIAL -->
-      <div class="price-card free reveal">
+      <!-- TRIAL -->
+      <div class="price-card trial reveal">
         <div class="price-tier" data-i18n="pri.c1.t">Trial</div>
         <div class="price-num-wrap">
           <span class="price-num"><span class="ru">₹</span>0</span>
@@ -1632,7 +1720,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
           <li data-i18n="pri.c1.l4">Email + WhatsApp help</li>
           <li data-i18n="pri.c1.l5">No card. No commitment.</li>
         </ul>
-        <a href="#" data-hn-chat="demo" class="price-cta" data-event="price_cta_trial" data-i18n="pri.c1.cta">Book demo</a>
+        <a href="https://wa.me/919289792666?text=Hi%2C%20I%20want%20a%20demo%20of%20HisaabNow%20for%20my%20salon." target="_blank" rel="noopener" class="price-cta" data-event="price_cta_trial" data-i18n="pri.c1.cta">Book demo</a>
       </div>
 
       <!-- PRO (featured) -->
@@ -1659,7 +1747,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
           <li class="price-group" data-i18n="pri.g.support">Support</li>
           <li data-i18n="pri.c2.l6">WhatsApp support, same-day reply</li>
         </ul>
-        <a href="#" data-hn-chat="demo" class="price-cta" data-event="price_cta_pro" data-i18n="pri.c2.cta">Book demo</a>
+        <a href="https://wa.me/919289792666?text=Hi%2C%20I%20want%20a%20demo%20of%20HisaabNow%20Pro%20plan%20for%20my%20salon." target="_blank" rel="noopener" class="price-cta" data-event="price_cta_pro" data-i18n="pri.c2.cta">Book demo</a>
       </div>
 
       <!-- BUSINESS -->
@@ -1686,7 +1774,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
           <li class="price-group" data-i18n="pri.g.psupport">Priority support</li>
           <li data-i18n="pri.c3.l6">Phone + WhatsApp · within 2 hrs</li>
         </ul>
-        <a href="#" data-hn-chat="demo" class="price-cta" data-event="price_cta_business" data-i18n="pri.c3.cta">Book demo</a>
+        <a href="https://wa.me/919289792666?text=Hi%2C%20I%20want%20to%20discuss%20HisaabNow%20Business%20plan%20for%20my%20multiple%20salons." target="_blank" rel="noopener" class="price-cta" data-event="price_cta_business" data-i18n="pri.c3.cta">Book demo</a>
       </div>
     </div>
   </div>
@@ -1761,7 +1849,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 // ── i18n ───────────────────────────────────────────
 const I18N = {
   en: {
-    'nav.cta': 'Try it',
+    'nav.cta': 'Get demo',
     'hero.eye': 'AI salon POS · Made for India 🇮🇳',
     'hero.h1.1': 'The salon POS that knows',
     'hero.h1.2': 'your real profit',
@@ -1798,7 +1886,7 @@ const I18N = {
     'out.2.h': 'Real profit, not just sales',
     'out.2.p': 'After product cost, staff commissions and expenses — you see what actually stays in your pocket each day.',
     'out.3.h': 'Voice billing in Hindi',
-    'out.3.p': 'Say "haircut, 250 rupiya" — bill ready. Works in Hindi and English. Hands-free on busy days.',
+    'out.3.p': 'Say "haircut, 250 rupiya" — bill ready. Works in Hindi and English. No typing needed on busy days.',
 
     'pri.h.1': 'Pick a plan.', 'pri.h.2': 'Start with 7 days at ₹0.',
     'pri.p': 'All paid plans start with a 7-day trial at ₹0. No card needed. Cancel anytime.',
@@ -1825,7 +1913,7 @@ const I18N = {
     'pri.c1.l3': 'AI Smart Advisor insights',
     'pri.c1.l4': 'Email + WhatsApp help',
     'pri.c1.l5': 'No card. No commitment.',
-    'pri.c1.cta': 'Start 7-day trial',
+    'pri.c1.cta': 'Get demo on WhatsApp',
 
     'pri.c2.t': 'Pro',
     'pri.c2.pm': 'per month · billed monthly',
@@ -1837,7 +1925,7 @@ const I18N = {
     'pri.c2.l4': 'Daily profit insights',
     'pri.c2.l5': 'Top sellers, peak hours, slow movers',
     'pri.c2.l6': 'WhatsApp support, same-day reply',
-    'pri.c2.cta': 'Start your trial',
+    'pri.c2.cta': 'Get demo of Pro',
 
     'pri.c3.t': 'Business',
     'pri.c3.pm': 'per month · billed monthly',
@@ -1849,7 +1937,7 @@ const I18N = {
     'pri.c3.l4': 'Predictive reorder alerts',
     'pri.c3.l5': 'Cross-outlet benchmarking',
     'pri.c3.l6': 'Phone + WhatsApp · within 2 hrs',
-    'pri.c3.cta': 'Start your trial',
+    'pri.c3.cta': 'Talk to sales',
 
     'lead.h.1': 'Try HisaabNow', 'lead.h.2': 'for 7 days at ₹0',
     'lead.p': "Drop your WhatsApp number. We'll send the app link, set up your shop, and walk you through it — within an hour.",
@@ -1876,7 +1964,7 @@ const I18N = {
     'sticky.cta': 'Book demo'
   },
   hi: {
-    'nav.cta': 'अभी ट्राय',
+    'nav.cta': 'डेमो लें',
     'hero.eye': 'AI सैलून POS · भारत के लिए 🇮🇳',
     'hero.h1.1': 'सैलून POS जो जाने',
     'hero.h1.2': 'आपका असली मुनाफ़ा',
@@ -1940,7 +2028,7 @@ const I18N = {
     'pri.c1.l3': 'AI स्मार्ट एडवाइज़र',
     'pri.c1.l4': 'Email + WhatsApp सपोर्ट',
     'pri.c1.l5': 'कोई कार्ड नहीं। कोई बंधन नहीं।',
-    'pri.c1.cta': '7-दिन ट्रायल शुरू करें',
+    'pri.c1.cta': 'WhatsApp पे डेमो',
 
     'pri.c2.t': 'Pro',
     'pri.c2.pm': 'प्रति माह · मासिक बिलिंग',
@@ -1952,7 +2040,7 @@ const I18N = {
     'pri.c2.l4': 'रोज़ का मुनाफ़ा',
     'pri.c2.l5': 'टॉप सेलर, पीक टाइम, स्लो मूवर',
     'pri.c2.l6': 'WhatsApp सपोर्ट, उसी दिन जवाब',
-    'pri.c2.cta': 'ट्रायल शुरू करें',
+    'pri.c2.cta': 'Pro का डेमो',
 
     'pri.c3.t': 'Business',
     'pri.c3.pm': 'प्रति माह · मासिक बिलिंग',
@@ -1964,7 +2052,7 @@ const I18N = {
     'pri.c3.l4': 'प्रिडिक्टिव रिऑर्डर अलर्ट',
     'pri.c3.l5': 'क्रॉस-आउटलेट तुलना',
     'pri.c3.l6': 'फ़ोन + WhatsApp · 2 घंटे में',
-    'pri.c3.cta': 'ट्रायल शुरू करें',
+    'pri.c3.cta': 'Sales से बात करें',
 
     'lead.h.1': 'HisaabNow ट्राय करें', 'lead.h.2': '7 दिन ₹0 में',
     'lead.p': 'अपना WhatsApp नंबर दीजिए। हम app link भेजेंगे, आपकी शॉप सेटअप करेंगे, और सब समझाएँगे — एक घंटे में।',
@@ -2285,7 +2373,7 @@ window.HISAABNOW_CHAT_CONFIG = {
     // Custom lead-save function (overrides endpoint above)
     window.HISAABNOW_SAVE_LEAD = async (lead) => { ... return true; };
 
-    // AI free-text fallback
+    // AI open-text fallback
     window.HISAABNOW_AI = {
       enabled: true,
       endpoint: 'https://.../chatbotReply'
@@ -2697,7 +2785,7 @@ const SESSION_KEY = 'hn_chat_session_v2';
 
 /* ─── Language detection ──────────────────────────────────────────── */
 const HINDI_REGEX = /[\u0900-\u097F]/;
-const HINGLISH_WORDS = /\b(hai|hain|kya|kaise|kitna|kitne|kitni|kaha|chahiye|chahta|chahti|bhai|sir|madam|nahi|nahin|haan|kar|karo|karu|karna|mera|meri|mere|tera|teri|tumhara|aapka|aapki|aapke|kaisi|kab|kyu|kyun|abhi|ho|hoga|hogi|hota|hoti|jata|jati|paisa|paise|rupaye|rupay|dukaan|dukan|grahak|graahak|hisaab|sasta|mehnga|free|trial)\b/i;
+const HINGLISH_WORDS = /\b(hai|hain|kya|kaise|kitna|kitne|kitni|kaha|chahiye|chahta|chahti|bhai|sir|madam|nahi|nahin|haan|kar|karo|karu|karna|mera|meri|mere|tera|teri|tumhara|aapka|aapki|aapke|kaisi|kab|kyu|kyun|abhi|ho|hoga|hogi|hota|hoti|jata|jati|paisa|paise|rupaye|rupay|dukaan|dukan|grahak|graahak|hisaab|sasta|mehnga|trial)\b/i;
 
 function detectLang(text) {
   if (HINDI_REGEX.test(text)) return 'hi';
@@ -2744,7 +2832,7 @@ const I = {
     save30: "Save 30%",
     perMonth: "per month",
     perYear: "per year",
-    freeTrial: "7-day trial at ₹0",
+    trialTag: "7-day trial at ₹0",
     forever: "₹0, no card",
     upTo5Shops: "Up to 5 shops",
     singleShop: "Single shop",
@@ -2787,7 +2875,7 @@ const I = {
     save30: "30% bachat",
     perMonth: "per mahina",
     perYear: "per saal",
-    freeTrial: "7 din trial ₹0 mein",
+    trialTag: "7 din trial ₹0 mein",
     forever: "₹0, koi card nahi",
     upTo5Shops: "5 dukaan tak",
     singleShop: "Ek dukaan",
@@ -2900,7 +2988,7 @@ function labelToKey(label) {
 
 /* ─── Pricing data (single source of truth) ───────────────────────── */
 const PLANS = {
-  free: {
+  trial: {
     name: 'Trial',
     monthly: 0, annual: 0,
     monthlyDisplay: '₹0', annualDisplay: '₹0',
@@ -2943,8 +3031,8 @@ function pricingWidgetHtml(cycle) {
       <div class="hn-price-cards">
         <div class="hn-price-card">
           <div class="hn-pc-left">
-            <div class="hn-pc-name">${PLANS.free.name}</div>
-            <div class="hn-pc-tag">${L.freeTrial} · ${L.forever}</div>
+            <div class="hn-pc-name">${PLANS.trial.name}</div>
+            <div class="hn-pc-tag">${L.trialTag} · ${L.forever}</div>
           </div>
           <div class="hn-pc-right">
             <div class="hn-pc-amt">₹0</div>
@@ -3473,7 +3561,7 @@ async function saveLeadToBackend({ partial }) {
   return { saved, leadId };
 }
 
-/* ─── Free-text router ────────────────────────────────────────────── */
+/* ─── Open-text router ────────────────────────────────────────────── */
 async function handleUserText(text) {
   const trimmed = text.trim();
   if (!trimmed) return;
@@ -3731,6 +3819,116 @@ function setupMobileKeyboard() {
 })();
 </script>
 
+
+<!-- ═══ HERO LEAD FORM HANDLER ═══ -->
+<script>
+(function(){
+  /* ──────────────────────────────────────────────────────────────────
+     HERO LEAD FORM — production handler
+     1. POSTs to saveChatLead CF (same endpoint as the chatbot)
+     2. Fires Google Ads conversion event (gtag) if available
+     3. Redirects to WhatsApp pre-filled with the lead's own data
+     Lead lands in /leads admin dashboard with source = 'hisaabnow.com hero form'.
+     Dedupes by phoneDigits in the CF if user later opens the chatbot.
+  ────────────────────────────────────────────────────────────────── */
+  const SAVE_LEAD_ENDPOINT = 'https://us-central1-panshopmanager.cloudfunctions.net/saveChatLead';
+  const WA_NUMBER = '919289792666';
+
+  const form = document.getElementById('heroLeadForm');
+  if (!form) return;
+
+  function flagInvalid(input) {
+    input.classList.add('invalid');
+    input.addEventListener('input', () => input.classList.remove('invalid'), { once: true });
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if (form.classList.contains('submitting') || form.classList.contains('submitted')) return;
+
+    const fd = new FormData(form);
+    const name  = (fd.get('name')  || '').toString().trim();
+    const phone = (fd.get('phone') || '').toString().replace(/\D/g,'').slice(-10);
+    const salon = (fd.get('salon') || '').toString().trim();
+
+    /* Validation: highlight any failing field */
+    let ok = true;
+    if (!name)             { flagInvalid(form.querySelector('[name="name"]'));  ok = false; }
+    if (phone.length !== 10) { flagInvalid(form.querySelector('[name="phone"]')); ok = false; }
+    if (!salon)            { flagInvalid(form.querySelector('[name="salon"]')); ok = false; }
+    if (!ok) return;
+
+    form.classList.add('submitting');
+
+    /* Split "Glow, Noida" → shopName + city */
+    const parts = salon.split(/[,;|]/).map(s=>s.trim()).filter(Boolean);
+    const shopName = parts[0] || salon;
+    const city     = parts.slice(1).join(', ') || '';
+
+    const lead = {
+      phone: '+91' + phone,
+      name, shopName, city,
+      category: 'salon',
+      categoryLabel: 'Salon / Barber / Parlour',
+      intent: 'demo',
+      lang: (window.state && window.state.lang) || document.documentElement.lang || 'en',
+      timing: 'today',
+      chatSummary: 'Hero form submission — Get demo on WhatsApp',
+      source: 'hisaabnow.com hero form',
+      ts: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+      referrer: document.referrer || 'direct',
+      status: 'new'
+    };
+
+    /* ── 1. Save to CRM ── */
+    let saved = false;
+    try {
+      const r = await fetch(SAVE_LEAD_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify(lead),
+        keepalive: true, credentials: 'omit', mode: 'cors', cache: 'no-store'
+      });
+      saved = r.ok;
+    } catch (err) {
+      /* iOS Safari fallback */
+      if (navigator.sendBeacon) {
+        const blob = new Blob([JSON.stringify(lead)], { type: 'text/plain;charset=UTF-8' });
+        saved = navigator.sendBeacon(SAVE_LEAD_ENDPOINT, blob);
+      }
+    }
+
+    /* ── 2. Google Ads conversion (replace AW-XXXX/YYYY with your conversion ID) ── */
+    // if (typeof gtag === 'function') {
+    //   gtag('event', 'conversion', { send_to: 'AW-XXXX/YYYY', value: 1, currency: 'INR' });
+    // }
+
+    /* ── 3. GA4 event ── */
+    if (typeof gtag === 'function') {
+      gtag('event', 'hero_lead_submit', {
+        event_category: 'lead',
+        event_label: shopName + (city ? ' · ' + city : ''),
+        saved: saved
+      });
+    }
+
+    /* ── 4. Open WhatsApp pre-filled ── */
+    const waMsg = encodeURIComponent(
+      `Hi, I'm ${name} from ${shopName}${city ? ', ' + city : ''}. ` +
+      `I saw your ad and want a demo of HisaabNow for my salon. ` +
+      `My number: +91${phone}`
+    );
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${waMsg}`;
+
+    form.classList.remove('submitting');
+    form.classList.add('submitted');
+
+    /* Small delay so users see the green confirmation before WA opens */
+    setTimeout(() => { window.location.href = waUrl; }, 600);
+  });
+})();
+</script>
 
 </body>
 </html>
