@@ -603,6 +603,10 @@ async function loadLeads() {
   try {
     const data = await callCF('listChatLeads', { limit: 500 });
     allLeads = data.leads || [];
+    // Sort by last activity desc — a returning customer who chatted 5 min ago
+    // should appear above someone whose first-and-only touch was last week.
+    // Falls back to createdAt for leads that pre-date the updatedAt field.
+    allLeads.sort((a, b) => (b.updatedAt || b.createdAt || 0) - (a.updatedAt || a.createdAt || 0));
     renderStats();
     renderTable();
   } catch (e) {
@@ -657,7 +661,17 @@ function renderTable() {
 
 function renderRow(l) {
   const visits = l.visits && l.visits > 1 ? `<span class="visits">${l.visits}×</span>` : '';
-  const created = relativeTime(l.createdAt);
+  // Primary timestamp = last activity (updatedAt). For first-time leads
+  // updatedAt === createdAt so this reads the same. For returning visitors
+  // it shows the recent chat, not the stale first-seen date.
+  const lastSeen = relativeTime(l.updatedAt || l.createdAt);
+  // Only show "First seen" subline when the lead has come back at least once
+  // (updatedAt diverges from createdAt by more than a minute, OR visits>1).
+  const isReturning = (l.visits && l.visits > 1) ||
+    (l.updatedAt && l.createdAt && (l.updatedAt - l.createdAt) > 60000);
+  const firstSeenLine = isReturning
+    ? `<div style="font-size:11px;color:#999;margin-top:2px;font-weight:400">First seen ${relativeTime(l.createdAt)}</div>`
+    : '';
   const status = l.status || 'new';
   const chatSummary = (l.chatSummary || '').replace(/</g, '&lt;').slice(0, 300);
   const note = (l.note || '').replace(/"/g, '&quot;');
@@ -693,7 +707,7 @@ function renderRow(l) {
       <td>
         <textarea class="note-edit" data-action="note" data-leadid="${l.id}" placeholder="Add note…">${note}</textarea>
       </td>
-      <td class="ts"><strong>${created}</strong></td>
+      <td class="ts"><strong>${lastSeen}</strong>${firstSeenLine}</td>
       <td>
         <div class="row-actions">
           <a class="call-btn" href="tel:${l.phone}">📞 Call</a>
