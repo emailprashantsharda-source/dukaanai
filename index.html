@@ -3650,7 +3650,7 @@ async function finalizeLead() {
   inputEl.setAttribute('inputmode', 'text');
   inputEl.setAttribute('placeholder', I[state.lang].placeholder);
 
-  const waMsg = buildTeamWaMessage();
+  const waMsg = buildCustomerWaMessage();
   await botSay(I[state.lang].leadSaved.replace(/\n/g, '<br>'), 500);
   setQuickReplies([
     { label: I[state.lang].waContact, userText: false, primary: true,
@@ -3658,20 +3658,19 @@ async function finalizeLead() {
   ]);
 }
 
-function buildTeamWaMessage() {
+function buildCustomerWaMessage() {
+  // CUSTOMER-FACING — this text is pre-filled in the user's WhatsApp app.
+  // Keep it natural and friendly: it's the customer saying hello to our
+  // team, not an internal CRM payload. Full lead data (phone, name, shop,
+  // city, category, etc.) is already saved to Firestore via saveChatLead,
+  // so we don't need to duplicate it here.
   const cat = CATEGORIES[state.category || 'other'];
-  const parts = [
-    '🎯 NEW LEAD via chatbot',
-    `📱 ${state.phone}`,
-    `🏪 ${cat.en.label}`,
-  ];
-  if (state.name)     parts.push(`👤 ${state.name}`);
-  if (state.shopName) parts.push(`🛍️ ${state.shopName}`);
-  if (state.city)     parts.push(`📍 ${state.city}`);
-  parts.push(`💬 ${state.intent || 'demo'}`);
-  parts.push(`⏰ ${state.pendingDemo || 'today'}`);
-  parts.push(`🌐 ${state.lang}`);
-  return parts.join('\n');
+  const label = cat[state.lang] ? cat[state.lang].label : cat.en.label;
+  const namePart = state.name ? ` — ${state.name}` : '';
+  if (state.lang === 'hi') {
+    return `Namaste! Maine HisaabNow website par demo book kiya hai. Mera business: ${label}.${namePart}`;
+  }
+  return `Hi! I just booked a HisaabNow demo on the website. My business: ${label}.${namePart}`;
 }
 
 async function saveLeadToBackend({ partial }) {
