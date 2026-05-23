@@ -3702,13 +3702,17 @@ async function saveLeadToBackend({ partial }) {
       saved = r !== false;
     } else if (CFG.saveLeadEndpoint) {
       const body = JSON.stringify(lead);
-      // Use text/plain Content-Type to keep this a CORS "simple request" —
-      // skips the preflight OPTIONS roundtrip that iOS Safari (and iOS Chrome,
-      // which is WebKit underneath) sometimes blocks due to ITP / cookie rules.
-      // The CF accepts text/plain and parses JSON server-side.
+      // Send as application/json so the Firebase Functions Express body-parser
+      // actually parses it into a JS object. Earlier this used text/plain to
+      // skip the CORS preflight, but Firebase's parser treats text/plain as a
+      // raw STRING — the CF then saw req.body.phone as undefined and rejected
+      // every lead with "Invalid phone number" (400). The CF allows the
+      // hisaabnow.com origin, so the preflight succeeds. credentials:'omit'
+      // means no cookies cross the boundary, so the ITP concern that
+      // originally motivated text/plain doesn't apply here.
       const r = await fetch(CFG.saveLeadEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        headers: { 'Content-Type': 'application/json' },
         body,
         keepalive: true,
         credentials: 'omit',
@@ -3720,14 +3724,22 @@ async function saveLeadToBackend({ partial }) {
         saved = true;
         leadId = data.leadId || null;
       } else {
-        console.warn('[hn-bot] save lead non-OK:', r.status);
+        // Surface the actual server error so admin testing isn't blind.
+        const errText = await r.text().catch(() => '');
+        console.error('[hn-bot] save lead non-OK:', r.status, errText);
       }
     }
   } catch (e) {
-    console.warn('[hn-bot] save lead failed (will try sendBeacon):', e);
-    // BELT-AND-BRACES: if fetch failed entirely (network, CORS, ITP),
-    // use sendBeacon. It's fire-and-forget but guarantees delivery on
-    // iOS Safari where fetch can fail silently mid-flow.
+    console.error('[hn-bot] save lead failed (will try sendBeacon):', e);
+    // BELT-AND-BRACES: if fetch failed entirely (network, CORS), use
+    // sendBeacon. It's fire-and-forget but guarantees delivery on iOS Safari
+    // where fetch can fail silently mid-flow. sendBeacon doesn't let us set
+    // custom Content-Type headers — it always sends as the Blob's type, and
+    // application/json from a Blob triggers preflight (which beacons can't
+    // do). So for the beacon path we fall back to text/plain; if the CF
+    // can't parse it, at least the raw bytes hit Firestore via the beacon
+    // logger, and the next finalize call (with proper JSON) overwrites the
+    // same doc (saveChatLead dedupes by phoneDigits).
     try {
       if (navigator.sendBeacon && CFG.saveLeadEndpoint) {
         const blob = new Blob([JSON.stringify(lead)], { type: 'text/plain;charset=UTF-8' });
