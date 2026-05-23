@@ -2,7 +2,7 @@
 <html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
 <title>POS Billing App for Cafés, Salons &amp; Restaurants — HisaabNow</title>
 
 <!-- Google Analytics 4 -->
@@ -2642,9 +2642,12 @@ document.addEventListener('DOMContentLoaded', () => {
   #hn-bot .hn-panel {
     bottom: 0; right: 0; left: 0;
     width: 100%;
-    /* Use --hn-vh set by JS if available; falls back to 100dvh, then 100vh */
-    height: var(--hn-vh, 100dvh);
-    height: var(--hn-vh, 100vh); /* fallback for browsers without dvh */
+    /* Full-screen on mobile. With interactive-widget=resizes-content in the
+       viewport meta, 100dvh automatically becomes the area above the
+       on-screen keyboard, so the panel stays "full" and the input stays
+       visible without any JS resize gymnastics. */
+    height: 100dvh;
+    height: 100vh; /* fallback for browsers without dvh */
     border-radius: 0;
     padding-bottom: env(safe-area-inset-bottom, 0);
   }
@@ -3576,12 +3579,16 @@ async function handlePhoneSubmission(raw) {
   state.phone = '+91' + valid;
   saveSession();
 
-  // Save the lead immediately with just phone+category. If user bails out
-  // before answering name/shop/city, we still have the core lead. Subsequent
-  // saves will UPDATE the same doc (saveChatLead dedupes by phoneDigits).
-  await saveLeadToBackend({ partial: true });
+  // Fire the partial lead save in the BACKGROUND. Do NOT await it — the CF
+  // can cold-start for several seconds, and blocking here causes a dead
+  // silence between the user's phone bubble and the next bot prompt.
+  // saveChatLead dedupes by phoneDigits, so the later finalize call will
+  // UPDATE the same doc with name/shop/city.
+  saveLeadToBackend({ partial: true }).catch(e => {
+    console.warn('[hn-bot] partial save bg failed (will retry on finalize):', e);
+  });
 
-  // Now ask for name (optional, skippable).
+  // Immediately ask for name (optional, skippable) — no awkward pause.
   await askName();
 }
 
@@ -3935,34 +3942,27 @@ document.addEventListener('click', (e) => {
 });
 
 /* ─── Mobile keyboard handling ────────────────────────────────────── */
-/* When the on-screen keyboard opens on Android/iOS, the layout viewport
-   doesn't always shrink (especially in Chrome Android), so the chat
-   panel's bottom can be hidden behind the keyboard. We use the
-   visualViewport API to detect the actual visible height and resize
-   the panel to fit. */
-function setupMobileKeyboard() {
-  if (!window.visualViewport) return;
-  const vv = window.visualViewport;
-  const updatePanelHeight = () => {
-    // Only apply on small screens (matches CSS @media max-width: 520px)
-    if (window.innerWidth > 520) {
-      root.style.removeProperty('--hn-vh');
-      return;
-    }
-    root.style.setProperty('--hn-vh', vv.height + 'px');
-  };
-  vv.addEventListener('resize', updatePanelHeight);
-  vv.addEventListener('scroll', updatePanelHeight);
-  window.addEventListener('resize', updatePanelHeight);
-  updatePanelHeight();
+/* With `interactive-widget=resizes-content` in the viewport meta + 100dvh
+   on .hn-panel, the browser handles keyboard layout automatically: the
+   layout viewport shrinks to the area above the keyboard, so the panel
+   stays full-height and the input stays visible.
 
-  // On input focus, scroll messages to bottom so the user sees the latest
-  // bot reply just above the keyboard.
+   We DROPPED the old visualViewport-based --hn-vh resize because the
+   `vv.resize` + `vv.scroll` listeners were racing on Android Chrome
+   (keyboard animation + URL-bar collapse fire both events out of order),
+   which made the panel snap between half-screen and full-screen
+   unpredictably during keyboard show/hide.
+
+   All that's left is to make sure the input + latest bot message are
+   scrolled into view when the user taps the input. */
+function setupMobileKeyboard() {
+  if (!inputEl) return;
   inputEl.addEventListener('focus', () => {
+    // Wait for the keyboard to finish opening before measuring/scrolling.
     setTimeout(() => {
-      updatePanelHeight();
+      try { inputEl.scrollIntoView({ block: 'end', behavior: 'smooth' }); } catch (e) {}
       scrollBottom();
-    }, 250); // wait for keyboard to finish opening
+    }, 300);
   });
 }
 
