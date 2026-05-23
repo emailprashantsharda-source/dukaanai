@@ -3660,17 +3660,18 @@ async function finalizeLead() {
 
 function buildCustomerWaMessage() {
   // CUSTOMER-FACING — this text is pre-filled in the user's WhatsApp app.
-  // Keep it natural and friendly: it's the customer saying hello to our
-  // team, not an internal CRM payload. Full lead data (phone, name, shop,
-  // city, category, etc.) is already saved to Firestore via saveChatLead,
-  // so we don't need to duplicate it here.
+  // Professional opener: leads with the customer's business need, mentions
+  // category for context, references the website to anchor the source.
+  // Full lead data (phone, name, shop, city, category, intent, timing) is
+  // already in Firestore via saveChatLead — the team cross-references by
+  // phone number on the receiving side, so no need to dump it here.
   const cat = CATEGORIES[state.category || 'other'];
   const label = cat[state.lang] ? cat[state.lang].label : cat.en.label;
-  const namePart = state.name ? ` — ${state.name}` : '';
+  const sign = state.name ? `\n— ${state.name}` : '';
   if (state.lang === 'hi') {
-    return `Namaste! Maine HisaabNow website par demo book kiya hai. Mera business: ${label}.${namePart}`;
+    return `Namaste, main apni ${label} ke liye billing & POS solution dhundh raha hoon. Maine hisaabnow.com par demo request kiya hai — kya aap help kar sakte hain?${sign}`;
   }
-  return `Hi! I just booked a HisaabNow demo on the website. My business: ${label}.${namePart}`;
+  return `Hi, I'm looking for a billing & POS solution for my ${label} business and have just requested a demo on hisaabnow.com. Could you help me get started?${sign}`;
 }
 
 async function saveLeadToBackend({ partial }) {
