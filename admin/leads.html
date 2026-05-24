@@ -309,6 +309,19 @@ tbody tr:last-child td { border-bottom: none; }
 .row-actions .wa-btn:hover { background: #DCFCE7; }
 .row-actions .call-btn { color: var(--gold-deep); border-color: var(--gold); background: #FFF7E0; }
 .row-actions .call-btn:hover { background: #FFE69E; }
+/* Delete button — kept subtle by default so it doesn't visually compete with
+   Call/WA (the primary actions). Turns red on hover to telegraph destructiveness. */
+.row-actions .del-btn {
+  color: #999;
+  border-color: var(--line);
+  background: #fff;
+  padding: 5px 8px;
+}
+.row-actions .del-btn:hover {
+  color: #B91C1C;
+  border-color: #FCA5A5;
+  background: #FEF2F2;
+}
 
 .chat-summary {
   font-size: 11.5px;
@@ -657,6 +670,9 @@ function renderTable() {
       timer = setTimeout(() => updateLead(el.dataset.leadid, { note: e.target.value }), 800);
     });
   });
+  tbody.querySelectorAll('[data-action="delete"]').forEach(el => {
+    el.addEventListener('click', () => deleteLead(el.dataset.leadid, el.dataset.phone));
+  });
 }
 
 function renderRow(l) {
@@ -712,6 +728,7 @@ function renderRow(l) {
         <div class="row-actions">
           <a class="call-btn" href="tel:${l.phone}">📞 Call</a>
           <a class="wa-btn" href="https://wa.me/${l.phone.replace('+','')}?text=${encodeURIComponent(waOpenerFor(l))}" target="_blank" rel="noopener">💬 WA</a>
+          <button class="del-btn" data-action="delete" data-leadid="${l.id}" data-phone="${l.phone}" title="Delete lead" aria-label="Delete lead">🗑</button>
         </div>
       </td>
     </tr>
@@ -755,6 +772,23 @@ async function updateLead(leadId, updates) {
     showToast(updates.status ? `Marked ${updates.status}` : 'Note saved');
   } catch (e) {
     showToast(`Save failed: ${e.message}`, true);
+  }
+}
+
+async function deleteLead(leadId, phone) {
+  // Hard delete — confirm before removing. Use 'Dropped' status for soft delete
+  // (just filters out of the active view); use this only for spam, tests, or
+  // truly irrelevant entries you want gone from Firestore.
+  if (!confirm(`Delete lead ${phone}?\n\nThis permanently removes it from the database. To just hide it from the active list, mark it "Dropped" instead.`)) return;
+  try {
+    await callCF('deleteChatLead', { leadId });
+    // Remove from local state and re-render (no need to round-trip the full list).
+    allLeads = allLeads.filter(l => l.id !== leadId);
+    renderStats();
+    renderTable();
+    showToast(`Deleted ${phone}`);
+  } catch (e) {
+    showToast(`Delete failed: ${e.message}`, true);
   }
 }
 
