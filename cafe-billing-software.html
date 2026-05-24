@@ -42,24 +42,66 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://hisaabnow.com/#org",
+      "name": "HisaabNow",
+      "url": "https://hisaabnow.com/",
+      "logo": "https://hisaabnow.com/logo.png",
+      "email": "support@hisaabnow.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Prateek Wisteria, H-404, Sector 77",
+        "addressLocality": "Noida",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "201301",
+        "addressCountry": "IN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@hisaabnow.com",
+          "telephone": "+91-78383-61200",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "privacy",
+          "email": "privacy@hisaabnow.com",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        }
+      ],
+      "sameAs": []
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://hisaabnow.com/cafe-billing-software#app",
       "name": "HisaabNow for Cafés",
       "description": "POS billing app for Indian cafés. Recipe builder with auto-cost, Hindi voice billing, Ingredient stock auto-alert, WhatsApp receipts in 2 taps.",
       "url": "https://hisaabnow.com/cafe-billing-software",
       "datePublished": "2026-04-15",
-      "dateModified": "2026-05-04",
+      "dateModified": "2026-05-25",
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Point of Sale",
       "operatingSystem": "Android",
-      "inLanguage": ["en", "hi"],
+      "inLanguage": [
+        "en",
+        "hi"
+      ],
       "countriesSupported": "IN",
       "offers": {
-        "@type": "Offer",
-        "name": "Trial",
-        "price": "10",
+        "@type": "AggregateOffer",
         "priceCurrency": "INR",
-        "description": "7-day full-feature trial",
+        "lowPrice": "0",
+        "highPrice": "799",
+        "offerCount": "3",
+        "description": "7-day free trial, no card needed; Pro ₹499/month; Business ₹799/month.",
         "eligibleRegion": {
           "@type": "Country",
           "name": "India"
@@ -74,15 +116,7 @@
         }
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "HisaabNow",
-        "url": "https://hisaabnow.com/",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN",
-          "addressRegion": "Uttar Pradesh",
-          "addressLocality": "Noida"
-        }
+        "@id": "https://hisaabnow.com/#org"
       }
     },
     {
@@ -92,9 +126,7 @@
       "name": "HisaabNow Cafés POS",
       "description": "Point-of-sale, billing, GST invoicing, profit tracking, and customer management for cafés in India.",
       "provider": {
-        "@type": "Organization",
-        "name": "HisaabNow",
-        "url": "https://hisaabnow.com/"
+        "@id": "https://hisaabnow.com/#org"
       },
       "areaServed": {
         "@type": "Country",
@@ -105,29 +137,83 @@
         "audienceType": "Owners of cafés in India"
       },
       "offers": {
-        "@type": "Offer",
-        "price": "10",
+        "@type": "AggregateOffer",
         "priceCurrency": "INR",
-        "description": "7-day trial; ₹490/year or ₹99/month thereafter"
+        "lowPrice": "0",
+        "highPrice": "799",
+        "offerCount": "3",
+        "description": "7-day free trial; Pro ₹499/month; Business ₹799/month thereafter"
       }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "HisaabNow", "item": "https://hisaabnow.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Cafés", "item": "https://hisaabnow.com/cafe-billing-software" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "HisaabNow",
+          "item": "https://hisaabnow.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cafés",
+          "item": "https://hisaabnow.com/cafe-billing-software"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "@id": "https://hisaabnow.com/cafe-billing-software#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "How does recipe-based cost tracking work for coffee?", "acceptedAnswer": { "@type": "Answer", "text": "Define each menu item once with its recipe — for cappuccino: 18g beans, 150ml milk, 1 cup, 1 paper sleeve. Set ingredient costs (beans ₹2,400/kg, milk ₹62/L). The app calculates real cost per cappuccino (~₹47) automatically. Every sale shows actual profit, and ingredient stock auto-deducts. This is what makes it the best recipe costing app for Indian cafés." } },
-        { "@type": "Question", "name": "Does voice billing work in a noisy cafe environment?", "acceptedAnswer": { "@type": "Answer", "text": "Voice billing uses your phone's microphone with browser speech recognition. In a typical cafe (background music + 8-10 customers chatting) it works well — say \"do cappuccino, ek cheese sandwich\" and items go to the bill. For very loud environments (espresso grinding right next to phone), tap-billing is faster. Most owners use voice during prep and tap during peak rush." } },
-        { "@type": "Question", "name": "Can I split costs across different coffee bean batches?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Track ingredient batches separately — when you buy a new lot of beans at a different price, log it as a new batch. The app uses weighted-average cost so your profit numbers stay accurate even when bean prices fluctuate. Critical for cafés serving specialty single-origin coffees." } },
-        { "@type": "Question", "name": "How do I handle combos, add-ons, and customizations?", "acceptedAnswer": { "@type": "Answer", "text": "Create combos as menu items (e.g., \"Cappuccino + Croissant\" priced at ₹240 instead of ₹280 separately). Add-ons like extra shot, oat milk, syrup are modifiers — tap an item, add the modifier, price adjusts automatically. Customizations like \"less sugar\" attach as notes to the kitchen ticket without changing price." } },
-        { "@type": "Question", "name": "Can I print kitchen tickets to a separate printer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Connect a Bluetooth thermal printer in the kitchen — order placed at counter prints on the kitchen printer instantly. Customer receipts print on the counter printer (or go to WhatsApp). Two separate printers, one phone, no shouting orders across the cafe." } },
-        { "@type": "Question", "name": "What happens during the morning rush — is it fast enough?", "acceptedAnswer": { "@type": "Answer", "text": "Built for the 7am rush. Tap-billing averages 8 seconds per order from open to print. Voice billing is 3-5 seconds when it works. Pre-saved customer profiles speed up regulars (\"Aditya's usual\" = double espresso). At 60 orders/hour the app keeps up — that's beyond most cafés' actual peak." } }
+        {
+          "@type": "Question",
+          "name": "How does recipe-based cost tracking work for coffee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Define each menu item once with its recipe — for cappuccino: 18g beans, 150ml milk, 1 cup, 1 paper sleeve. Set ingredient costs (beans ₹2,400/kg, milk ₹62/L). The app calculates real cost per cappuccino (~₹47) automatically. Every sale shows actual profit, and ingredient stock auto-deducts. This is what makes it the best recipe costing app for Indian cafés."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does voice billing work in a noisy cafe environment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voice billing uses your phone's microphone with browser speech recognition. In a typical cafe (background music + 8-10 customers chatting) it works well — say \"do cappuccino, ek cheese sandwich\" and items go to the bill. For very loud environments (espresso grinding right next to phone), tap-billing is faster. Most owners use voice during prep and tap during peak rush."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I split costs across different coffee bean batches?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Track ingredient batches separately — when you buy a new lot of beans at a different price, log it as a new batch. The app uses weighted-average cost so your profit numbers stay accurate even when bean prices fluctuate. Critical for cafés serving specialty single-origin coffees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I handle combos, add-ons, and customizations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Create combos as menu items (e.g., \"Cappuccino + Croissant\" priced at ₹240 instead of ₹280 separately). Add-ons like extra shot, oat milk, syrup are modifiers — tap an item, add the modifier, price adjusts automatically. Customizations like \"less sugar\" attach as notes to the kitchen ticket without changing price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I print kitchen tickets to a separate printer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Connect a Bluetooth thermal printer in the kitchen — order placed at counter prints on the kitchen printer instantly. Customer receipts print on the counter printer (or go to WhatsApp). Two separate printers, one phone, no shouting orders across the cafe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens during the morning rush — is it fast enough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Built for the 7am rush. Tap-billing averages 8 seconds per order from open to print. Voice billing is 3-5 seconds when it works. Pre-saved customer profiles speed up regulars (\"Aditya's usual\" = double espresso). At 60 orders/hour the app keeps up — that's beyond most cafés' actual peak."
+          }
+        }
       ]
     }
   ]
@@ -681,7 +767,7 @@ h1 .accent {
     <span class="wrong-vert-q" data-i18n="wv.q">Run a different business?</span>
     <span class="wrong-vert-row">
       <a href="/salon-billing-software" class="mini-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="ws.for-salons">Salons</span></a>
-          <a href="/for-restaurants.html" class="mini-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
+          <a href="/restaurant-pos" class="mini-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
           <a href="/sweet-shop-billing-software" class="mini-chip" title="Sweet shop billing software"><span class="em">🍬</span><span data-i18n="ws.for-sweet-shops">Sweet Shops</span></a>
           <a href="/grocery-billing-software" class="mini-chip" title="Grocery billing software & kirana POS"><span class="em">🛒</span><span data-i18n="ws.for-grocery-stores">Grocery Stores</span></a>
     </span>
@@ -809,7 +895,7 @@ h1 .accent {
     <div class="other-eye reveal" data-i18n="vs.eye">Same app, also for</div>
     <div class="other-row reveal delay-1">
       <a href="/salon-billing-software" class="vert-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="vs.for-salons">Salon billing software</span></a>
-          <a href="/for-restaurants.html" class="vert-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="vs.for-restaurants">Restaurant POS app</span></a>
+          <a href="/restaurant-pos" class="vert-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="vs.for-restaurants">Restaurant POS system</span></a>
           <a href="/sweet-shop-billing-software" class="vert-chip" title="Sweet shop billing software"><span class="em">🍬</span><span data-i18n="vs.for-sweet-shops">Sweet shop billing software</span></a>
           <a href="/grocery-billing-software" class="vert-chip" title="Grocery billing software & kirana POS"><span class="em">🛒</span><span data-i18n="vs.for-grocery-stores">Grocery billing software</span></a>
     </div>
@@ -938,7 +1024,7 @@ h1 .accent {
       <span class="lead-wv-q" data-i18n="lwv.q">Not the right business for you?</span>
       <span class="lead-wv-row">
         <a href="/salon-billing-software" class="mini-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="ws.for-salons">Salons</span></a>
-          <a href="/for-restaurants.html" class="mini-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
+          <a href="/restaurant-pos" class="mini-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
           <a href="/sweet-shop-billing-software" class="mini-chip" title="Sweet shop billing software"><span class="em">🍬</span><span data-i18n="ws.for-sweet-shops">Sweet Shops</span></a>
           <a href="/grocery-billing-software" class="mini-chip" title="Grocery billing software & kirana POS"><span class="em">🛒</span><span data-i18n="ws.for-grocery-stores">Grocery Stores</span></a>
       </span>
@@ -959,6 +1045,7 @@ h1 .accent {
   <div class="wrap footer-inner">
     <div>© 2026 HisaabNow · Made in India 🇮🇳</div>
     <div class="footer-links">
+      <a href="/about" data-i18n="foot.about">About</a>
       <a href="#faq" data-i18n="foot.faq">FAQ</a>
       <a href="/legal/privacy.html" data-i18n="foot.priv">Privacy</a>
       <a href="/legal/terms.html" data-i18n="foot.terms">Terms</a>
@@ -1028,7 +1115,7 @@ const I18N = {
     'closer.p': 'By spotting low-margin items hiding in plain sight. The cappuccino sells more, but espresso earns more per cup. Now you know.',
     'vs.eye': 'Same app, also for',
     'vs.for-salons': 'Salon billing software',
-    'vs.for-restaurants': 'Restaurant POS app',
+    'vs.for-restaurants': 'Restaurant POS system',
     'vs.for-sweet-shops': 'Sweet shop billing software',
     'vs.for-grocery-stores': 'Grocery billing software',
     'pri.h.1': 'One app.', 'pri.h.2': 'Three ways to pay.',
@@ -1066,7 +1153,7 @@ const I18N = {
     'faq.a5': 'Yes. Connect a Bluetooth thermal printer in the kitchen — order placed at counter prints on the kitchen printer instantly. Customer receipts print on the counter printer (or go to WhatsApp). Two separate printers, one phone, no shouting orders across the cafe.',
     'faq.q6': 'What happens during the morning rush — is it fast enough?',
     'faq.a6': 'Built for the 7am rush. Tap-billing averages 8 seconds per order from open to print. Voice billing is 3-5 seconds when it works. Pre-saved customer profiles speed up regulars ("Aditya\'s usual" = double espresso). At 60 orders/hour the app keeps up — that\'s beyond most cafés\' actual peak.',
-    'foot.priv': 'Privacy', 'foot.terms': 'Terms', 'foot.delete': 'Delete Account', 'foot.contact': 'Contact', 'foot.faq': 'FAQ',
+    'foot.priv': 'Privacy', 'foot.terms': 'Terms', 'foot.delete': 'Delete Account', 'foot.contact': 'Contact', 'foot.about': 'About', 'foot.faq': 'FAQ',
     'abt.eye': 'ABOUT HISAABNOW',
     'abt.p': "HisaabNow is built in <strong>Noida, India</strong> by a team of POS and Indian SMB specialists. Launched April 2026 to help India's 60+ million micro and small business owners — kirana shops, salons, cafés, restaurants, and sweet shops — track real profit on every sale, not just revenue. Available in English and Hindi with voice billing for the morning rush.",
   },

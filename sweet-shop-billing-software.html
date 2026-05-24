@@ -42,24 +42,66 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://hisaabnow.com/#org",
+      "name": "HisaabNow",
+      "url": "https://hisaabnow.com/",
+      "logo": "https://hisaabnow.com/logo.png",
+      "email": "support@hisaabnow.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Prateek Wisteria, H-404, Sector 77",
+        "addressLocality": "Noida",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "201301",
+        "addressCountry": "IN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@hisaabnow.com",
+          "telephone": "+91-78383-61200",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "privacy",
+          "email": "privacy@hisaabnow.com",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        }
+      ],
+      "sameAs": []
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://hisaabnow.com/sweet-shop-billing-software#app",
       "name": "HisaabNow for Sweet Shops",
       "description": "POS billing app for Indian sweet shops. Weight-based pricing, Festival inventory alerts, Expiry tracking — never waste, Tray-to-bill counter mode.",
       "url": "https://hisaabnow.com/sweet-shop-billing-software",
       "datePublished": "2026-04-15",
-      "dateModified": "2026-05-04",
+      "dateModified": "2026-05-25",
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Point of Sale",
       "operatingSystem": "Android",
-      "inLanguage": ["en", "hi"],
+      "inLanguage": [
+        "en",
+        "hi"
+      ],
       "countriesSupported": "IN",
       "offers": {
-        "@type": "Offer",
-        "name": "Trial",
-        "price": "10",
+        "@type": "AggregateOffer",
         "priceCurrency": "INR",
-        "description": "7-day full-feature trial",
+        "lowPrice": "0",
+        "highPrice": "799",
+        "offerCount": "3",
+        "description": "7-day free trial, no card needed; Pro ₹499/month; Business ₹799/month.",
         "eligibleRegion": {
           "@type": "Country",
           "name": "India"
@@ -74,15 +116,7 @@
         }
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "HisaabNow",
-        "url": "https://hisaabnow.com/",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN",
-          "addressRegion": "Uttar Pradesh",
-          "addressLocality": "Noida"
-        }
+        "@id": "https://hisaabnow.com/#org"
       }
     },
     {
@@ -92,9 +126,7 @@
       "name": "HisaabNow Sweet Shops POS",
       "description": "Point-of-sale, billing, GST invoicing, profit tracking, and customer management for sweet shops in India.",
       "provider": {
-        "@type": "Organization",
-        "name": "HisaabNow",
-        "url": "https://hisaabnow.com/"
+        "@id": "https://hisaabnow.com/#org"
       },
       "areaServed": {
         "@type": "Country",
@@ -105,29 +137,83 @@
         "audienceType": "Owners of sweet shops in India"
       },
       "offers": {
-        "@type": "Offer",
-        "price": "10",
+        "@type": "AggregateOffer",
         "priceCurrency": "INR",
-        "description": "7-day trial; ₹490/year or ₹99/month thereafter"
+        "lowPrice": "0",
+        "highPrice": "799",
+        "offerCount": "3",
+        "description": "7-day free trial; Pro ₹499/month; Business ₹799/month thereafter"
       }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "HisaabNow", "item": "https://hisaabnow.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Sweet Shops", "item": "https://hisaabnow.com/sweet-shop-billing-software" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "HisaabNow",
+          "item": "https://hisaabnow.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sweet Shops",
+          "item": "https://hisaabnow.com/sweet-shop-billing-software"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "@id": "https://hisaabnow.com/sweet-shop-billing-software#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "How does weight-based pricing work (kg, gram, half-kg)?", "acceptedAnswer": { "@type": "Answer", "text": "Set a price per kg for each mithai (e.g., kaju katli ₹1,200/kg). At the counter, type the weight: 250g auto-calculates ₹300, 1.5kg auto-calculates ₹1,800. No mental math, no rounding errors. Critical for any sweet shop billing software serving Indian customers." } },
-        { "@type": "Question", "name": "Does it remind me about festival stock (Diwali, Holi, Eid)?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Munim sends festival alerts 2 weeks before each major festival. Diwali: order ladoo dabbas, dry fruits, gift boxes. Holi: gujiya, thandai mix. Raksha Bandhan: rakhi-themed boxes. Eid: sheer khurma ingredients. Based on previous years' sales patterns. Indian-festival-aware unlike generic halwai billing apps." } },
-        { "@type": "Question", "name": "How does expiry tracking work for fresh mithai?", "acceptedAnswer": { "@type": "Answer", "text": "Set shelf-life per item (kaju katli: 7 days, soan papdi: 30 days, fresh chamcham: 2 days). When you log a fresh batch, the app counts down. 2 days before expiry, it suggests \"discount soan papdi 20% to clear stock.\" Catches expiring inventory before you have to throw it away." } },
-        { "@type": "Question", "name": "Can I handle gift box orders with custom mithai mixes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Build a gift box bill with multiple items (kaju katli 250g + soan papdi 250g + dry fruits 100g + box ₹50). Total weight, total price, customer name — all on one receipt. Common for Diwali corporate orders. Save the box recipe to reuse for repeat orders." } },
-        { "@type": "Question", "name": "What about wholesale or bulk orders to other shops?", "acceptedAnswer": { "@type": "Answer", "text": "Mark a customer as \"wholesale\" — they get a different price tier (your wholesale rate, not retail MRP). Bulk orders, delivery notes, GST invoices for B2B sales — all handled. Profit reports separate retail counter sales from wholesale revenue so you know your margin mix." } },
-        { "@type": "Question", "name": "Does it work for namkeen / savory counter alongside sweets?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — most sweet shops also sell namkeen (sev, bhujia, mathri). Add them as separate categories with the same weight-based pricing. Reports show sweet vs namkeen revenue separately so you know which side of the counter actually earns. Many of our mithai shop POS users sell both." } }
+        {
+          "@type": "Question",
+          "name": "How does weight-based pricing work (kg, gram, half-kg)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Set a price per kg for each mithai (e.g., kaju katli ₹1,200/kg). At the counter, type the weight: 250g auto-calculates ₹300, 1.5kg auto-calculates ₹1,800. No mental math, no rounding errors. Critical for any sweet shop billing software serving Indian customers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it remind me about festival stock (Diwali, Holi, Eid)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — Munim sends festival alerts 2 weeks before each major festival. Diwali: order ladoo dabbas, dry fruits, gift boxes. Holi: gujiya, thandai mix. Raksha Bandhan: rakhi-themed boxes. Eid: sheer khurma ingredients. Based on previous years' sales patterns. Indian-festival-aware unlike generic halwai billing apps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does expiry tracking work for fresh mithai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Set shelf-life per item (kaju katli: 7 days, soan papdi: 30 days, fresh chamcham: 2 days). When you log a fresh batch, the app counts down. 2 days before expiry, it suggests \"discount soan papdi 20% to clear stock.\" Catches expiring inventory before you have to throw it away."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I handle gift box orders with custom mithai mixes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Build a gift box bill with multiple items (kaju katli 250g + soan papdi 250g + dry fruits 100g + box ₹50). Total weight, total price, customer name — all on one receipt. Common for Diwali corporate orders. Save the box recipe to reuse for repeat orders."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about wholesale or bulk orders to other shops?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mark a customer as \"wholesale\" — they get a different price tier (your wholesale rate, not retail MRP). Bulk orders, delivery notes, GST invoices for B2B sales — all handled. Profit reports separate retail counter sales from wholesale revenue so you know your margin mix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work for namkeen / savory counter alongside sweets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — most sweet shops also sell namkeen (sev, bhujia, mathri). Add them as separate categories with the same weight-based pricing. Reports show sweet vs namkeen revenue separately so you know which side of the counter actually earns. Many of our mithai shop POS users sell both."
+          }
+        }
       ]
     }
   ]
@@ -682,7 +768,7 @@ h1 .accent {
     <span class="wrong-vert-row">
       <a href="/salon-billing-software" class="mini-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="ws.for-salons">Salons</span></a>
           <a href="/cafe-billing-software" class="mini-chip" title="Cafe billing software & POS"><span class="em">☕</span><span data-i18n="ws.for-cafes">Cafés</span></a>
-          <a href="/for-restaurants.html" class="mini-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
+          <a href="/restaurant-pos" class="mini-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
           <a href="/grocery-billing-software" class="mini-chip" title="Grocery billing software & kirana POS"><span class="em">🛒</span><span data-i18n="ws.for-grocery-stores">Grocery Stores</span></a>
     </span>
   </div>
@@ -810,7 +896,7 @@ h1 .accent {
     <div class="other-row reveal delay-1">
       <a href="/salon-billing-software" class="vert-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="vs.for-salons">Salon billing software</span></a>
           <a href="/cafe-billing-software" class="vert-chip" title="Cafe billing software & POS"><span class="em">☕</span><span data-i18n="vs.for-cafes">Cafe billing software</span></a>
-          <a href="/for-restaurants.html" class="vert-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="vs.for-restaurants">Restaurant POS app</span></a>
+          <a href="/restaurant-pos" class="vert-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="vs.for-restaurants">Restaurant POS system</span></a>
           <a href="/grocery-billing-software" class="vert-chip" title="Grocery billing software & kirana POS"><span class="em">🛒</span><span data-i18n="vs.for-grocery-stores">Grocery billing software</span></a>
     </div>
     <a href="/" class="other-back reveal delay-2" data-i18n="vs.back">← Browse all 5 businesses on the homepage</a>
@@ -939,7 +1025,7 @@ h1 .accent {
       <span class="lead-wv-row">
         <a href="/salon-billing-software" class="mini-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="ws.for-salons">Salons</span></a>
           <a href="/cafe-billing-software" class="mini-chip" title="Cafe billing software & POS"><span class="em">☕</span><span data-i18n="ws.for-cafes">Cafés</span></a>
-          <a href="/for-restaurants.html" class="mini-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
+          <a href="/restaurant-pos" class="mini-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
           <a href="/grocery-billing-software" class="mini-chip" title="Grocery billing software & kirana POS"><span class="em">🛒</span><span data-i18n="ws.for-grocery-stores">Grocery Stores</span></a>
       </span>
     </div>
@@ -959,6 +1045,7 @@ h1 .accent {
   <div class="wrap footer-inner">
     <div>© 2026 HisaabNow · Made in India 🇮🇳</div>
     <div class="footer-links">
+      <a href="/about" data-i18n="foot.about">About</a>
       <a href="#faq" data-i18n="foot.faq">FAQ</a>
       <a href="/legal/privacy.html" data-i18n="foot.priv">Privacy</a>
       <a href="/legal/terms.html" data-i18n="foot.terms">Terms</a>
@@ -1029,7 +1116,7 @@ const I18N = {
     'vs.eye': 'Same app, also for',
     'vs.for-salons': 'Salon billing software',
     'vs.for-cafes': 'Cafe billing software',
-    'vs.for-restaurants': 'Restaurant POS app',
+    'vs.for-restaurants': 'Restaurant POS system',
     'vs.for-grocery-stores': 'Grocery billing software',
     'pri.h.1': 'One app.', 'pri.h.2': 'Three ways to pay.',
     'pri.p': 'No setup fee. No per-bill charge. Cancel anytime.',
@@ -1066,7 +1153,7 @@ const I18N = {
     'faq.a5': 'Mark a customer as "wholesale" — they get a different price tier (your wholesale rate, not retail MRP). Bulk orders, delivery notes, GST invoices for B2B sales — all handled. Profit reports separate retail counter sales from wholesale revenue so you know your margin mix.',
     'faq.q6': 'Does it work for namkeen / savory counter alongside sweets?',
     'faq.a6': 'Yes — most sweet shops also sell namkeen (sev, bhujia, mathri). Add them as separate categories with the same weight-based pricing. Reports show sweet vs namkeen revenue separately so you know which side of the counter actually earns. Many of our <b>mithai shop POS</b> users sell both.',
-    'foot.priv': 'Privacy', 'foot.terms': 'Terms', 'foot.delete': 'Delete Account', 'foot.contact': 'Contact', 'foot.faq': 'FAQ',
+    'foot.priv': 'Privacy', 'foot.terms': 'Terms', 'foot.delete': 'Delete Account', 'foot.contact': 'Contact', 'foot.about': 'About', 'foot.faq': 'FAQ',
     'abt.eye': 'ABOUT HISAABNOW',
     'abt.p': "HisaabNow is built in <strong>Noida, India</strong> by a team of POS and Indian SMB specialists. Launched April 2026 to help India's 60+ million micro and small business owners — kirana shops, salons, cafés, restaurants, and sweet shops — track real profit on every sale, not just revenue. Available in English and Hindi with voice billing for the morning rush.",
   },
