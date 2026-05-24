@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://hisaabnow.com/grocery-billing-software">
 <meta property="og:locale" content="en_IN">
 <meta property="og:locale:alternate" content="hi_IN">
-<meta property="og:image" content="https://hisaabnow.com/og-for-grocery-stores.jpg">
+<meta property="og:image" content="https://hisaabnow.com/og-for-kirana.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Kirana Billing App &amp; POS for Dukaan — Udhaar Khaata | HisaabNow">
 <meta name="twitter:description" content="Kirana billing app &amp; POS for Indian dukaan owners. Udhaar khaata, Hindi voice billing, barcode scan, stock alerts. 7-day free trial.">
-<meta name="twitter:image" content="https://hisaabnow.com/og-for-grocery-stores.jpg">
+<meta name="twitter:image" content="https://hisaabnow.com/og-for-kirana.jpg">
 
 <!-- JSON-LD: SoftwareApplication + BreadcrumbList + Service + FAQPage.
      India geo signals included for India-focused traffic targeting. -->
@@ -43,24 +43,66 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://hisaabnow.com/#org",
+      "name": "HisaabNow",
+      "url": "https://hisaabnow.com/",
+      "logo": "https://hisaabnow.com/logo.png",
+      "email": "support@hisaabnow.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Prateek Wisteria, H-404, Sector 77",
+        "addressLocality": "Noida",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "201301",
+        "addressCountry": "IN"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@hisaabnow.com",
+          "telephone": "+91-78383-61200",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "privacy",
+          "email": "privacy@hisaabnow.com",
+          "availableLanguage": [
+            "English",
+            "Hindi"
+          ]
+        }
+      ],
+      "sameAs": []
+    },
+    {
       "@type": "SoftwareApplication",
       "@id": "https://hisaabnow.com/grocery-billing-software#app",
       "name": "HisaabNow for Grocery Stores",
       "description": "POS billing app for Indian grocery stores. Barcode scan to bill, Udhaar khaata with auto-WhatsApp, Low-stock alerts on bestsellers, Real margin per SKU.",
       "url": "https://hisaabnow.com/grocery-billing-software",
       "datePublished": "2026-04-15",
-      "dateModified": "2026-05-04",
+      "dateModified": "2026-05-25",
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Point of Sale",
       "operatingSystem": "Android",
-      "inLanguage": ["en", "hi"],
+      "inLanguage": [
+        "en",
+        "hi"
+      ],
       "countriesSupported": "IN",
       "offers": {
-        "@type": "Offer",
-        "name": "Trial",
-        "price": "10",
+        "@type": "AggregateOffer",
         "priceCurrency": "INR",
-        "description": "7-day full-feature trial",
+        "lowPrice": "0",
+        "highPrice": "799",
+        "offerCount": "3",
+        "description": "7-day free trial, no card needed; Pro ₹499/month; Business ₹799/month.",
         "eligibleRegion": {
           "@type": "Country",
           "name": "India"
@@ -75,15 +117,7 @@
         }
       },
       "publisher": {
-        "@type": "Organization",
-        "name": "HisaabNow",
-        "url": "https://hisaabnow.com/",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN",
-          "addressRegion": "Uttar Pradesh",
-          "addressLocality": "Noida"
-        }
+        "@id": "https://hisaabnow.com/#org"
       }
     },
     {
@@ -93,9 +127,7 @@
       "name": "HisaabNow Grocery Stores POS",
       "description": "Point-of-sale, billing, GST invoicing, profit tracking, and customer management for grocery stores in India.",
       "provider": {
-        "@type": "Organization",
-        "name": "HisaabNow",
-        "url": "https://hisaabnow.com/"
+        "@id": "https://hisaabnow.com/#org"
       },
       "areaServed": {
         "@type": "Country",
@@ -106,29 +138,83 @@
         "audienceType": "Owners of grocery stores in India"
       },
       "offers": {
-        "@type": "Offer",
-        "price": "10",
+        "@type": "AggregateOffer",
         "priceCurrency": "INR",
-        "description": "7-day trial; ₹490/year or ₹99/month thereafter"
+        "lowPrice": "0",
+        "highPrice": "799",
+        "offerCount": "3",
+        "description": "7-day free trial; Pro ₹499/month; Business ₹799/month thereafter"
       }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "HisaabNow", "item": "https://hisaabnow.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Grocery Stores", "item": "https://hisaabnow.com/grocery-billing-software" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "HisaabNow",
+          "item": "https://hisaabnow.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grocery Stores",
+          "item": "https://hisaabnow.com/grocery-billing-software"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "@id": "https://hisaabnow.com/grocery-billing-software#faq",
       "mainEntity": [
-        { "@type": "Question", "name": "How does udhaar khaata with WhatsApp reminders work?", "acceptedAnswer": { "@type": "Answer", "text": "Add customer's name and phone number once. Mark a bill as udhaar (credit) — it goes to their khaata. After 7 days unpaid, the app sends a polite WhatsApp reminder. After 14 days, a stronger nudge. After 21 days, it alerts you to call directly. You don't lift a finger. Built specifically for the way Indian kirana store billing software needs to work." } },
-        { "@type": "Question", "name": "Can I scan barcodes with my phone camera?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open the bill screen, tap scan, point camera at barcode — beep, item added, total updated. Works with most product barcodes (atta packs, oil bottles, soap, biscuits). For items without printed barcodes (loose grain), search by name or use a custom code. USB barcode scanners also supported for high-volume counters." } },
-        { "@type": "Question", "name": "How does it handle MRP-based pricing?", "acceptedAnswer": { "@type": "Answer", "text": "Most kirana items have a printed MRP. Set MRP and your purchase cost — the app calculates margin automatically. You can also set a discount (₹2 off MRP, common for regulars) and the app tracks how much you give in discounts vs your real margin. Useful for spotting items where you're over-discounting." } },
-        { "@type": "Question", "name": "What about loose grain or flour sold by weight?", "acceptedAnswer": { "@type": "Answer", "text": "Set price per kg for loose items (atta ₹35/kg, dal ₹110/kg). At the counter, type the weight and the bill calculates automatically. Works the same way as sweet shop weight pricing — common for Indian kirana stores selling everything from rice to spices loose." } },
-        { "@type": "Question", "name": "Does it support multiple shops or just one?", "acceptedAnswer": { "@type": "Answer", "text": "Multi-shop is included on the annual plan. Run two or more kirana stores with separate inventory, separate udhaar khaata, separate staff logins per shop — but consolidated profit reports across all shops. Common for owners with one main store and one neighborhood branch." } },
-        { "@type": "Question", "name": "How does it compare to Khatabook for udhaar tracking?", "acceptedAnswer": { "@type": "Answer", "text": "Khatabook does udhaar well — that's its core feature. HisaabNow does udhaar plus billing, GST, barcode, stock, profit, and customer management in one app. If you only need a digital khaata, Khatabook works. If you want to actually run the shop end-to-end with one app, HisaabNow. Many of our users were on Khatabook before and switched to consolidate." } }
+        {
+          "@type": "Question",
+          "name": "How does udhaar khaata with WhatsApp reminders work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Add customer's name and phone number once. Mark a bill as udhaar (credit) — it goes to their khaata. After 7 days unpaid, the app sends a polite WhatsApp reminder. After 14 days, a stronger nudge. After 21 days, it alerts you to call directly. You don't lift a finger. Built specifically for the way Indian kirana store billing software needs to work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I scan barcodes with my phone camera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Open the bill screen, tap scan, point camera at barcode — beep, item added, total updated. Works with most product barcodes (atta packs, oil bottles, soap, biscuits). For items without printed barcodes (loose grain), search by name or use a custom code. USB barcode scanners also supported for high-volume counters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does it handle MRP-based pricing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most kirana items have a printed MRP. Set MRP and your purchase cost — the app calculates margin automatically. You can also set a discount (₹2 off MRP, common for regulars) and the app tracks how much you give in discounts vs your real margin. Useful for spotting items where you're over-discounting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about loose grain or flour sold by weight?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Set price per kg for loose items (atta ₹35/kg, dal ₹110/kg). At the counter, type the weight and the bill calculates automatically. Works the same way as sweet shop weight pricing — common for Indian kirana stores selling everything from rice to spices loose."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it support multiple shops or just one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multi-shop is included on the annual plan. Run two or more kirana stores with separate inventory, separate udhaar khaata, separate staff logins per shop — but consolidated profit reports across all shops. Common for owners with one main store and one neighborhood branch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does it compare to Khatabook for udhaar tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Khatabook does udhaar well — that's its core feature. HisaabNow does udhaar plus billing, GST, barcode, stock, profit, and customer management in one app. If you only need a digital khaata, Khatabook works. If you want to actually run the shop end-to-end with one app, HisaabNow. Many of our users were on Khatabook before and switched to consolidate."
+          }
+        }
       ]
     }
   ]
@@ -683,7 +769,7 @@ h1 .accent {
     <span class="wrong-vert-row">
       <a href="/salon-billing-software" class="mini-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="ws.for-salons">Salons</span></a>
           <a href="/cafe-billing-software" class="mini-chip" title="Cafe billing software & POS"><span class="em">☕</span><span data-i18n="ws.for-cafes">Cafés</span></a>
-          <a href="/for-restaurants.html" class="mini-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
+          <a href="/restaurant-pos" class="mini-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
           <a href="/sweet-shop-billing-software" class="mini-chip" title="Sweet shop billing software"><span class="em">🍬</span><span data-i18n="ws.for-sweet-shops">Sweet Shops</span></a>
     </span>
   </div>
@@ -811,7 +897,7 @@ h1 .accent {
     <div class="other-row reveal delay-1">
       <a href="/salon-billing-software" class="vert-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="vs.for-salons">Salon billing software</span></a>
           <a href="/cafe-billing-software" class="vert-chip" title="Cafe billing software & POS"><span class="em">☕</span><span data-i18n="vs.for-cafes">Cafe billing software</span></a>
-          <a href="/for-restaurants.html" class="vert-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="vs.for-restaurants">Restaurant POS app</span></a>
+          <a href="/restaurant-pos" class="vert-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="vs.for-restaurants">Restaurant POS system</span></a>
           <a href="/sweet-shop-billing-software" class="vert-chip" title="Sweet shop billing software"><span class="em">🍬</span><span data-i18n="vs.for-sweet-shops">Sweet shop billing software</span></a>
     </div>
     <a href="/" class="other-back reveal delay-2" data-i18n="vs.back">← Browse all 5 businesses on the homepage</a>
@@ -940,7 +1026,7 @@ h1 .accent {
       <span class="lead-wv-row">
         <a href="/salon-billing-software" class="mini-chip" title="Salon billing software & POS"><span class="em">💇</span><span data-i18n="ws.for-salons">Salons</span></a>
           <a href="/cafe-billing-software" class="mini-chip" title="Cafe billing software & POS"><span class="em">☕</span><span data-i18n="ws.for-cafes">Cafés</span></a>
-          <a href="/for-restaurants.html" class="mini-chip" title="Restaurant POS app"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
+          <a href="/restaurant-pos" class="mini-chip" title="Restaurant POS system"><span class="em">🍽️</span><span data-i18n="ws.for-restaurants">Restaurants</span></a>
           <a href="/sweet-shop-billing-software" class="mini-chip" title="Sweet shop billing software"><span class="em">🍬</span><span data-i18n="ws.for-sweet-shops">Sweet Shops</span></a>
       </span>
     </div>
@@ -960,6 +1046,7 @@ h1 .accent {
   <div class="wrap footer-inner">
     <div>© 2026 HisaabNow · Made in India 🇮🇳</div>
     <div class="footer-links">
+      <a href="/about" data-i18n="foot.about">About</a>
       <a href="#faq" data-i18n="foot.faq">FAQ</a>
       <a href="/legal/privacy.html" data-i18n="foot.priv">Privacy</a>
       <a href="/legal/terms.html" data-i18n="foot.terms">Terms</a>
@@ -1030,7 +1117,7 @@ const I18N = {
     'vs.eye': 'Same app, also for',
     'vs.for-salons': 'Salon billing software',
     'vs.for-cafes': 'Cafe billing software',
-    'vs.for-restaurants': 'Restaurant POS app',
+    'vs.for-restaurants': 'Restaurant POS system',
     'vs.for-sweet-shops': 'Sweet shop billing software',
     'pri.h.1': 'One app.', 'pri.h.2': 'Three ways to pay.',
     'pri.p': 'No setup fee. No per-bill charge. Cancel anytime.',
@@ -1067,7 +1154,7 @@ const I18N = {
     'faq.a5': 'Multi-shop is included on the annual plan. Run two or more kirana stores with separate inventory, separate udhaar khaata, separate staff logins per shop — but consolidated profit reports across all shops. Common for owners with one main store and one neighborhood branch.',
     'faq.q6': 'How does it compare to Khatabook for udhaar tracking?',
     'faq.a6': "Khatabook does udhaar well — that's its core feature. HisaabNow does udhaar plus billing, GST, barcode, stock, profit, and customer management in one app. If you only need a digital khaata, Khatabook works. If you want to actually run the shop end-to-end with one app, HisaabNow. Many of our users were on Khatabook before and switched to consolidate.",
-    'foot.priv': 'Privacy', 'foot.terms': 'Terms', 'foot.delete': 'Delete Account', 'foot.contact': 'Contact', 'foot.faq': 'FAQ',
+    'foot.priv': 'Privacy', 'foot.terms': 'Terms', 'foot.delete': 'Delete Account', 'foot.contact': 'Contact', 'foot.about': 'About', 'foot.faq': 'FAQ',
     'abt.eye': 'ABOUT HISAABNOW',
     'abt.p': "HisaabNow is built in <strong>Noida, India</strong> by a team of POS and Indian SMB specialists. Launched April 2026 to help India's 60+ million micro and small business owners — kirana shops, salons, cafés, restaurants, and sweet shops — track real profit on every sale, not just revenue. Available in English and Hindi with voice billing for the morning rush.",
   },
