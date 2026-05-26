@@ -455,7 +455,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
   margin: 0 0 24px;
 }
 @media (min-width: 880px) { .hero-sub { font-size: 18px; } }
-.hero-sub b { color: var(--ink); font-weight: 700; }
+.hero-sub b { color: var(--text, #18181B); font-weight: 600; }
 
 .cta-row {
   display: flex; flex-wrap: wrap;
@@ -1610,14 +1610,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: 44px;
+  font-size: 34px;
   font-weight: 700;
-  line-height: 1.02;
+  line-height: 1.05;
   letter-spacing: -0.04em;
   color: var(--ink);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
-@media (min-width: 600px) { .hero h1 { font-size: 60px; } }
+@media (min-width: 600px) { .hero h1 { font-size: 60px; line-height: 1.02; margin-bottom: 20px; } }
 @media (min-width: 1000px) { .hero h1 { font-size: 72px; } }
 
 .hero h1 .accent {
@@ -1640,13 +1640,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 }
 
 .hero-sub {
-  font-size: 17px;
+  font-size: 14.5px;
   color: var(--text-2);
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.45;
   max-width: 560px;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
+@media (min-width: 600px) { .hero-sub { font-size: 16px; line-height: 1.55; margin-bottom: 28px; } }
 @media (min-width: 880px) { .hero-sub { font-size: 20px; } }
 
 .cta-row {
@@ -2566,7 +2567,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
           <span data-i18n="hero.h1.1">Salon billing software</span> <span class="accent" data-i18n="hero.h1.2">that does it all.</span>
         </h1>
         <p class="hero-sub reveal delay-2" data-i18n="hero.sub">
-          <b>Billing · Commissions · Appointments · Bulk WhatsApp · Loyalty CRM · Udhaar · Cash flow · AI insights.</b> Built for Indian salons &amp; saloons.
+          <b>Billing · Commissions · Appointments · Bulk WhatsApp · Loyalty CRM · Udhaar · Cash flow · AI insights.</b> Built for Indian salons, saloons &amp; barber shops.
         </p>
 
         <span id="lead" class="scroll-anchor" aria-hidden="true"></span>
@@ -3265,7 +3266,7 @@ const I18N = {
     'usp.cue': '↑ Demo form is above. Fill it and we’ll reply in 1 hour.',
     'hero.h1.1': 'Salon billing software',
     'hero.h1.2': 'that does it all.',
-    'hero.sub': '<b>Billing · Commissions · Appointments · Bulk WhatsApp · Loyalty CRM · Udhaar · Cash flow · AI insights.</b> Built for Indian salons & saloons.',
+    'hero.sub': '<b>Billing · Commissions · Appointments · Bulk WhatsApp · Loyalty CRM · Udhaar · Cash flow · AI insights.</b> Built for Indian salons, saloons & barber shops.',
     'hero.cta1': 'Book demo',
     'hero.or': 'or',
     'hero.call': '<b>Call now: +91 78383 61200</b>',
@@ -3391,7 +3392,7 @@ const I18N = {
     'usp.cue': '↑ डेमो फ़ॉर्म ऊपर है। भर दें, 1 घंटे में जवाब।',
     'hero.h1.1': 'सैलून बिलिंग सॉफ़्टवेयर',
     'hero.h1.2': 'जो सब कुछ करे।',
-    'hero.sub': '<b>बिलिंग · कमीशन · अपॉइंटमेंट · बल्क WhatsApp · लॉयल्टी CRM · उधार · कैश फ्लो · AI इनसाइट्स।</b> भारतीय सैलून के लिए।',
+    'hero.sub': '<b>बिलिंग · कमीशन · अपॉइंटमेंट · बल्क WhatsApp · लॉयल्टी CRM · उधार · कैश फ्लो · AI इनसाइट्स।</b> भारतीय सैलून, सलून और बार्बर शॉप के लिए।',
     'hero.cta1': 'डेमो बुक करें',
     'hero.or': 'या',
     'hero.call': '<b>अभी कॉल करें: +91 78383 61200</b>',
