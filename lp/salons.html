@@ -1382,6 +1382,39 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
   outline: none;
   transition: border-color .15s, box-shadow .15s;
 }
+
+/* Qualifier dropdown — styled to match input fields */
+.hero-lead-form select.hero-lead-select {
+  width: 100%; height: 52px; padding: 0 42px 0 18px;
+  background: var(--surface);
+  border: 1.5px solid var(--border-3, var(--border));
+  border-radius: 14px;
+  color: var(--ink);
+  font: inherit; font-size: 16px; font-weight: 600;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9"><path d="M1 1l6 6 6-6" stroke="%23B8860B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+}
+.hero-lead-form select.hero-lead-select:focus {
+  border-color: var(--gold-deep, #B8860B);
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, .12);
+}
+/* Style the placeholder option (when nothing selected) */
+.hero-lead-form select.hero-lead-select:invalid,
+.hero-lead-form select.hero-lead-select option[value=""] {
+  color: var(--text-3, #6B6B6B);
+  font-weight: 500;
+}
+.hero-lead-form select.hero-lead-select option {
+  color: var(--ink);
+  font-weight: 600;
+}
 .hero-lead-form input::placeholder { color: var(--text-4, #94A3B8); }
 .hero-lead-form input:focus {
   border-color: var(--orange-deep);
@@ -2584,8 +2617,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
             <input type="tel" name="phone" placeholder="WhatsApp number" data-i18n-placeholder="form.ph.phone" required maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" />
           </div>
           <input type="text" name="salon" placeholder="Salon name &amp; city (e.g. Glow, Noida)" data-i18n-placeholder="form.ph.salon" required autocomplete="organization" />
-          <select name="biggest_problem" required style="width:100%;padding:13px 14px;border:1px solid var(--border-2,#EEE5D2);border-radius:10px;font-size:15px;background:#fff;color:var(--text,#18181B);font-family:inherit;margin-top:10px;-webkit-appearance:none;appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"8\" viewBox=\"0 0 12 8\"><path d=\"M1 1l5 5 5-5\" stroke=\"%23545454\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"/></svg>');background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;">
-            <option value="" disabled selected data-i18n="form.q">What's your biggest problem?</option>
+          <select name="biggest_problem" class="hero-lead-select" required>
+            <option value="" disabled selected data-i18n="form.q">Pick your biggest problem</option>
             <option value="commission" data-i18n="form.q1">Tracking stylist commissions</option>
             <option value="appointments" data-i18n="form.q2">Managing appointments</option>
             <option value="customers" data-i18n="form.q3">Sending WhatsApp offers</option>
@@ -3211,7 +3244,7 @@ const I18N = {
     'nav.cta': 'Get demo',
     'hero.eye': 'Salon billing software & POS · Made for India 🇮🇳',
     // Form qualifier dropdown
-    'form.q': "What's your biggest problem?",
+    'form.q': "Pick your biggest problem",
     'form.q1': 'Tracking stylist commissions',
     'form.q2': 'Managing appointments',
     'form.q3': 'Sending WhatsApp offers',
@@ -3337,7 +3370,7 @@ const I18N = {
     'nav.cta': 'डेमो लें',
     'hero.eye': 'सैलून बिलिंग सॉफ़्टवेयर और POS · भारत के लिए 🇮🇳',
     // Form qualifier dropdown
-    'form.q': 'आपकी सबसे बड़ी समस्या क्या है?',
+    'form.q': 'अपनी सबसे बड़ी समस्या चुनें',
     'form.q1': 'स्टाइलिस्ट कमीशन ट्रैक करना',
     'form.q2': 'अपॉइंटमेंट मैनेज करना',
     'form.q3': 'WhatsApp ऑफर भेजना',
