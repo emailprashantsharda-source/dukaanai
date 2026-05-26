@@ -189,6 +189,7 @@ function gtag_report_conversion(url) {
 
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
+.scroll-anchor { display: block; height: 0; scroll-margin-top: 80px; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -1475,6 +1476,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
           <b>Billing · Commissions · Appointments · Bulk WhatsApp · Loyalty CRM · Udhaar · Cash flow · AI insights.</b> Built for Indian salons &amp; saloons.
         </p>
 
+        <span id="lead" class="scroll-anchor" aria-hidden="true"></span>
         <form class="hero-lead-form reveal delay-2" id="heroLeadForm" autocomplete="on" novalidate>
           <input type="text" name="name" placeholder="Your name" data-i18n-placeholder="form.ph.name" required autocomplete="name" />
           <div class="lead-phone-wrap">
@@ -2389,12 +2391,25 @@ window.addEventListener('hisaab:langchange', function(ev) {
     const name  = (fd.get('name')  || '').toString().trim();
     const phone = (fd.get('phone') || '').toString().replace(/\D/g,'').slice(-10);
     const salon = (fd.get('salon') || '').toString().trim();
+    const biggestProblem = (fd.get('biggest_problem') || '').toString().trim();
+
+    /* Map dropdown values to human-readable labels for CRM + WhatsApp */
+    const PROBLEM_LABELS = {
+      'commission':   'Tracking stylist commissions',
+      'appointments': 'Managing appointments',
+      'customers':    'Sending WhatsApp offers to customers',
+      'udhaar':       'Customer credit / udhaar management',
+      'profit':       'Knowing real profit per service',
+      'other':        'Something else'
+    };
+    const problemLabel = PROBLEM_LABELS[biggestProblem] || biggestProblem;
 
     /* Validation: highlight any failing field */
     let ok = true;
     if (!name)             { flagInvalid(form.querySelector('[name="name"]'));  ok = false; }
     if (phone.length !== 10) { flagInvalid(form.querySelector('[name="phone"]')); ok = false; }
     if (!salon)            { flagInvalid(form.querySelector('[name="salon"]')); ok = false; }
+    if (!biggestProblem)   { flagInvalid(form.querySelector('[name="biggest_problem"]')); ok = false; }
     if (!ok) return;
 
     form.classList.add('submitting');
@@ -2410,9 +2425,11 @@ window.addEventListener('hisaab:langchange', function(ev) {
       category: 'salon',
       categoryLabel: 'Salon / Barber / Parlour',
       intent: 'demo',
+      biggestProblem: biggestProblem,
+      biggestProblemLabel: problemLabel,
       lang: (window.state && window.state.lang) || document.documentElement.lang || 'en',
       timing: 'today',
-      chatSummary: 'Hero form submission — Get demo on WhatsApp',
+      chatSummary: 'Hero form submission — ' + problemLabel,
       source: 'hisaabnow.com hero form',
       ts: new Date().toISOString(),
       userAgent: navigator.userAgent,
@@ -2449,16 +2466,21 @@ window.addEventListener('hisaab:langchange', function(ev) {
       }
     }
 
-    /* ── 2. Google Ads conversion (replace AW-XXXX/YYYY with your conversion ID) ── */
-    // if (typeof gtag === 'function') {
-    //   gtag('event', 'conversion', { send_to: 'AW-XXXX/YYYY', value: 1, currency: 'INR' });
-    // }
+    /* ── 2. Google Ads conversion tracking ── */
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18164394593/Nc-iCP-Yu60cEOHUutVD',
+        'value': 499.0,
+        'currency': 'INR'
+      });
+    }
 
     /* ── 3. GA4 event ── */
     if (typeof gtag === 'function') {
       gtag('event', 'hero_lead_submit', {
         event_category: 'lead',
         event_label: shopName + (city ? ' · ' + city : ''),
+        biggest_problem: biggestProblem,
         saved: saved
       });
     }
@@ -2466,6 +2488,7 @@ window.addEventListener('hisaab:langchange', function(ev) {
     /* ── 4. Open WhatsApp pre-filled ── */
     const waMsg = encodeURIComponent(
       `Hi, I'm ${name} from ${shopName}${city ? ', ' + city : ''}. ` +
+      `My biggest problem: ${problemLabel}. ` +
       `I saw your ad and want a demo of HisaabNow for my salon. ` +
       `My number: +91${phone}`
     );
