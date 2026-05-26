@@ -68,8 +68,6 @@ function gtag_report_conversion(url) {
 <meta property="og:locale" content="en_IN"/>
 
 <link rel="dns-prefetch" href="//wa.me"/>
-<!-- LCP optimization: preload hero phone mockup (~280×544 image is the Largest Contentful Paint candidate) -->
-<link rel="preload" as="image" href="mobile-app.webp" type="image/webp" imagesrcset="mobile-app.webp" fetchpriority="high"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -542,18 +540,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
   color: var(--text-2);
 }
 
-.kw-line {
-  margin: 0 0 22px;
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: var(--text-3);
-  font-weight: 500;
-  letter-spacing: -0.003em;
-}
-.kw-line b {
-  color: var(--text-2);
-  font-weight: 700;
-}
+.kw-line { display: none; } /* legacy class — paragraph removed */
 .hero-trust .item { display: inline-flex; align-items: center; gap: 7px; }
 .hero-trust .check {
   display: inline-flex; align-items: center; justify-content: center;
@@ -1488,17 +1475,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
           <b>Billing · Commissions · Appointments · Bulk WhatsApp · Loyalty CRM · Udhaar · Cash flow · AI insights.</b> Built for Indian salons &amp; saloons.
         </p>
 
-        <p class="kw-line reveal delay-2" data-i18n="hero.kw">
-          HisaabNow is a complete <b>salon billing software</b>, <b>salon POS software</b> and <b>salon management software</b> — with <b>stylist commission tracking</b>, real profit analytics and <b>Hindi voice billing</b>. The smarter <b>beauty parlour software</b> for India.
-        </p>
-
         <form class="hero-lead-form reveal delay-2" id="heroLeadForm" autocomplete="on" novalidate>
-          <input type="text" name="name" placeholder="Aapka naam" required autocomplete="name" />
+          <input type="text" name="name" placeholder="Your name" data-i18n-placeholder="form.ph.name" required autocomplete="name" />
           <div class="lead-phone-wrap">
             <span class="prefix">+91</span>
-            <input type="tel" name="phone" placeholder="WhatsApp number" required maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" />
+            <input type="tel" name="phone" placeholder="WhatsApp number" data-i18n-placeholder="form.ph.phone" required maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" />
           </div>
-          <input type="text" name="salon" placeholder="Salon name &amp; city (e.g. Glow, Noida)" required autocomplete="organization" />
+          <input type="text" name="salon" placeholder="Salon name &amp; city (e.g. Glow, Noida)" data-i18n-placeholder="form.ph.salon" required autocomplete="organization" />
           <select name="biggest_problem" required style="width:100%;padding:13px 14px;border:1px solid var(--border-2,#EEE5D2);border-radius:10px;font-size:15px;background:#fff;color:var(--text,#18181B);font-family:inherit;margin-top:10px;-webkit-appearance:none;appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"8\" viewBox=\"0 0 12 8\"><path d=\"M1 1l5 5 5-5\" stroke=\"%23545454\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"/></svg>');background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;">
             <option value="" disabled selected data-i18n="form.q">What's your biggest problem?</option>
             <option value="commission" data-i18n="form.q1">Tracking stylist commissions</option>
@@ -1539,14 +1522,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
         </div>
       </div>
 
-      <div class="hero-phone-stage reveal delay-1">
-        <div class="hero-phone">
-          <picture>
-            <source srcset="mobile-app.webp" type="image/webp">
-            <img src="mobile-app.jpg" alt="HisaabNow mobile dashboard showing Revenue This Month ₹4.5 lakh for Looks Saloon" width="280" height="544" loading="eager" decoding="async" fetchpriority="high"/>
-          </picture>
-        </div>
-      </div>
+      <!-- Hero phone mockup temporarily removed —
+           awaiting regenerated dashboard image showing monthly numbers
+           (Revenue This Month ₹8.5 lakh, AOV ~₹1,800, ~280 bills, vs last month)
+           to match the AI Q&A copy below. Old daily-numbers image contradicted text. -->
     </div>
   </div>
 
@@ -1737,14 +1716,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 
         <div class="advisor-stats">
           <div class="advisor-stat">
-            <div class="advisor-sl" data-i18n="adv.s1.l">TODAY'S SALES</div>
+            <div class="advisor-sl" data-i18n="adv.s1.l">THIS MONTH'S SALES</div>
             <div class="advisor-sv" id="advisor-stat-sales">₹0</div>
-            <div class="advisor-su" data-i18n="adv.s1.s">↑ 24% vs yesterday</div>
+            <div class="advisor-su" data-i18n="adv.s1.s">↑ 24% vs last month</div>
           </div>
           <div class="advisor-stat warn">
             <div class="advisor-sl" data-i18n="adv.s2.l">COMMISSION DUE</div>
             <div class="advisor-sv" id="advisor-stat-commission">₹0</div>
-            <div class="advisor-su" data-i18n="adv.s2.s">3 stylists this week</div>
+            <div class="advisor-su" data-i18n="adv.s2.s">8 stylists this month</div>
           </div>
           <div class="advisor-stat alert">
             <div class="advisor-sl" data-i18n="adv.s3.l">LOW STOCK</div>
@@ -1756,7 +1735,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
         <div class="advisor-block">
           <div class="advisor-bhead">
             <span class="advisor-bicon">⚡</span>
-            <span class="advisor-btitle" data-i18n="adv.db.insights">AI INSIGHTS — TODAY</span>
+            <span class="advisor-btitle" data-i18n="adv.db.insights">AI INSIGHTS — THIS MONTH</span>
             <div class="advisor-bpulse"></div>
           </div>
           <div class="advisor-list" id="advisor-list"></div>
@@ -1937,6 +1916,9 @@ const I18N = {
     'form.q4': 'Customer credit / udhaar',
     'form.q5': 'Knowing real profit',
     'form.q6': 'Something else',
+    'form.ph.name': 'Your name',
+    'form.ph.phone': 'WhatsApp number',
+    'form.ph.salon': 'Salon name & city (e.g. Glow, Noida)',
     // USP Carousel
     'usp.eye': 'EVERYTHING YOUR SALON NEEDS',
     'usp.h.1': 'One app.',
@@ -1955,7 +1937,6 @@ const I18N = {
     'hero.h1.1': 'Salon billing software',
     'hero.h1.2': 'that does it all.',
     'hero.sub': '<b>Billing · Commissions · Appointments · Bulk WhatsApp · Loyalty CRM · Udhaar · Cash flow · AI insights.</b> Built for Indian salons & saloons.',
-    'hero.kw': 'HisaabNow is a complete <b>salon billing software</b>, <b>salon POS software</b> and <b>salon management software</b> — with <b>stylist commission tracking</b>, real profit analytics and <b>Hindi voice billing</b>. The smarter <b>beauty parlour software</b> for India.',
     'hero.cta1': 'Book demo',
     'hero.or': 'or',
     'hero.call': '<b>Call now: +91 78383 61200</b>',
@@ -1974,10 +1955,10 @@ const I18N = {
     'adv.h.2': 'runs your salon',
     'adv.p': "Reads your daily numbers, finds what's working, flags what isn't. Updates every few seconds — exactly like the live app.",
     'adv.db.title': 'Salon Dashboard', 'adv.db.live': 'LIVE',
-    'adv.s1.l': "TODAY'S SALES", 'adv.s1.s': '↑ 24% vs yesterday',
-    'adv.s2.l': 'COMMISSION DUE', 'adv.s2.s': '3 stylists this week',
+    'adv.s1.l': "THIS MONTH'S SALES", 'adv.s1.s': '↑ 24% vs last month',
+    'adv.s2.l': 'COMMISSION DUE', 'adv.s2.s': '8 stylists this month',
     'adv.s3.l': 'LOW STOCK', 'adv.s3.s': 'Items to reorder',
-    'adv.db.insights': 'AI INSIGHTS — TODAY',
+    'adv.db.insights': 'AI INSIGHTS — THIS MONTH',
     'adv.voice.t': 'AI Voice Commands',
     'adv.voice.s': 'Ask in Hindi or English — instant answers',
 
@@ -2033,6 +2014,9 @@ const I18N = {
     'form.q4': 'ग्राहक का उधार',
     'form.q5': 'असली मुनाफ़ा जानना',
     'form.q6': 'कुछ और',
+    'form.ph.name': 'आपका नाम',
+    'form.ph.phone': 'WhatsApp नंबर',
+    'form.ph.salon': 'सैलून का नाम और शहर (जैसे: Glow, Noida)',
     // USP Carousel
     'usp.eye': 'आपके सैलून के लिए सब कुछ',
     'usp.h.1': 'एक ऐप।',
@@ -2051,7 +2035,6 @@ const I18N = {
     'hero.h1.1': 'सैलून बिलिंग सॉफ़्टवेयर',
     'hero.h1.2': 'जो सब कुछ करे।',
     'hero.sub': '<b>बिलिंग · कमीशन · अपॉइंटमेंट · बल्क WhatsApp · लॉयल्टी CRM · उधार · कैश फ्लो · AI इनसाइट्स।</b> भारतीय सैलून के लिए।',
-    'hero.kw': 'HisaabNow एक संपूर्ण <b>सैलून बिलिंग सॉफ़्टवेयर</b>, <b>सैलून POS सॉफ़्टवेयर</b> और <b>सैलून मैनेजमेंट सॉफ़्टवेयर</b> है — <b>स्टाइलिस्ट कमीशन ट्रैकिंग</b>, असली मुनाफ़ा एनालिटिक्स और <b>हिंदी वॉइस बिलिंग</b> के साथ। भारत के लिए स्मार्ट <b>ब्यूटी पार्लर सॉफ़्टवेयर</b>।',
     'hero.cta1': 'डेमो बुक करें',
     'hero.or': 'या',
     'hero.call': '<b>अभी कॉल करें: +91 78383 61200</b>',
@@ -2070,10 +2053,10 @@ const I18N = {
     'adv.h.2': 'आपका सैलून चलाए',
     'adv.p': 'रोज़ के नंबर पढ़कर बताए — क्या काम कर रहा है, क्या नहीं। हर कुछ सेकंड में नई जानकारी — बिल्कुल लाइव app की तरह।',
     'adv.db.title': 'सैलून डैशबोर्ड', 'adv.db.live': 'लाइव',
-    'adv.s1.l': 'आज की बिक्री', 'adv.s1.s': '↑ 24% कल से ज़्यादा',
-    'adv.s2.l': 'कमीशन बाकी', 'adv.s2.s': '3 स्टाइलिस्ट इस हफ़्ते',
+    'adv.s1.l': 'इस महीने की बिक्री', 'adv.s1.s': '↑ 24% पिछले महीने से ज़्यादा',
+    'adv.s2.l': 'कमीशन बाकी', 'adv.s2.s': '8 स्टाइलिस्ट इस महीने',
     'adv.s3.l': 'स्टॉक कम', 'adv.s3.s': 'आइटम मंगाएँ',
-    'adv.db.insights': 'AI सलाह — आज',
+    'adv.db.insights': 'AI सलाह — इस महीने',
     'adv.voice.t': 'AI वॉइस कमांड',
     'adv.voice.s': 'हिंदी या English में पूछें — तुरंत जवाब',
 
@@ -2258,9 +2241,9 @@ window.addEventListener('hisaab:langchange', () => {
     if (aiStarted) return;
     aiStarted = true;
     aiRenderInsights();
-    aiAnimCount('advisor-stat-sales', 8650, '₹');
-    aiAnimCount('advisor-stat-commission', 2840, '₹');
-    setTimeout(() => { const s = document.getElementById('advisor-stat-stock'); if (s) s.textContent = '3'; }, 700);
+    aiAnimCount('advisor-stat-sales', 850000, '₹');
+    aiAnimCount('advisor-stat-commission', 32000, '₹');
+    setTimeout(() => { const s = document.getElementById('advisor-stat-stock'); if (s) s.textContent = '5'; }, 700);
     setInterval(aiCycleInsight, 3200);
     setInterval(aiCycleVoice, 4500);
   };
