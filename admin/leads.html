@@ -495,6 +495,7 @@ tbody tr:last-child td { border-bottom: none; }
             <th>Name</th>
             <th>Shop &amp; city</th>
             <th>Business</th>
+            <th>Source</th>
             <th>Intent</th>
             <th>Timing</th>
             <th>Status</th>
@@ -505,7 +506,7 @@ tbody tr:last-child td { border-bottom: none; }
           </tr>
         </thead>
         <tbody id="leads-body">
-          <tr><td colspan="11"><div class="loading"><div class="spinner"></div><div style="margin-top:10px">Loading leads…</div></div></td></tr>
+          <tr><td colspan="12"><div class="loading"><div class="spinner"></div><div style="margin-top:10px">Loading leads…</div></div></td></tr>
         </tbody>
       </table>
     </div>
@@ -612,7 +613,7 @@ async function callCF(name, body) {
 /* ─── Load leads ──────────────────────────────────────────────────── */
 async function loadLeads() {
   const tbody = document.getElementById('leads-body');
-  tbody.innerHTML = '<tr><td colspan="11"><div class="loading"><div class="spinner"></div><div style="margin-top:10px">Loading leads…</div></div></td></tr>';
+  tbody.innerHTML = '<tr><td colspan="12"><div class="loading"><div class="spinner"></div><div style="margin-top:10px">Loading leads…</div></div></td></tr>';
   try {
     const data = await callCF('listChatLeads', { limit: 500 });
     allLeads = data.leads || [];
@@ -623,7 +624,7 @@ async function loadLeads() {
     renderStats();
     renderTable();
   } catch (e) {
-    tbody.innerHTML = `<tr><td colspan="11"><div class="empty"><div class="ic">⚠️</div><div>${e.message}</div></div></td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="12"><div class="empty"><div class="ic">⚠️</div><div>${e.message}</div></div></td></tr>`;
   }
 }
 
@@ -651,11 +652,15 @@ function renderTable() {
       (l.categoryLabel || '').toLowerCase().includes(q) ||
       (l.category || '').toLowerCase().includes(q) ||
       (l.note || '').toLowerCase().includes(q) ||
-      (l.chatSummary || '').toLowerCase().includes(q)
+      (l.chatSummary || '').toLowerCase().includes(q) ||
+      (l.source || '').toLowerCase().includes(q) ||
+      (l.lpVariant || '').toLowerCase().includes(q) ||
+      (l.cta || '').toLowerCase().includes(q) ||
+      (l.utmCampaign || '').toLowerCase().includes(q)
     );
   }
   if (leads.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="11"><div class="empty"><div class="ic">📭</div><div>No leads match the current filter</div></div></td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="12"><div class="empty"><div class="ic">📭</div><div>No leads match the current filter</div></div></td></tr>`;
     return;
   }
   tbody.innerHTML = leads.map(renderRow).join('');
@@ -709,6 +714,7 @@ function renderRow(l) {
         ${!shopName && !city ? '<span style="color:#bbb">—</span>' : ''}
       </td>
       <td><span class="cat-pill">${l.categoryLabel || l.category}</span></td>
+      <td>${renderSourceCell(l)}</td>
       <td>${l.intent || '—'}</td>
       <td>${l.timing || '—'}</td>
       <td>
@@ -742,6 +748,37 @@ function waOpenerFor(l) {
     return `${greeting}! Maine HisaabNow ke chatbot pe demo request ki thi${l.shopName ? `. ${l.shopName} ke baare mein baat karni hai` : `. ${l.categoryLabel} ke baare mein baat karni hai`}.`;
   }
   return `${greeting}! Thanks for your interest in HisaabNow${shopRef ? shopRef : ` for your ${l.categoryLabel}`}. Following up on your demo request.`;
+}
+
+/* ─── Render Source cell — shows LP variant + paid/organic + which CTA ─── */
+function renderSourceCell(l) {
+  // lpVariant: 'salons' (set by lp/salons.html) → known LP
+  // No lpVariant → legacy or homepage lead
+  const lpVariant = l.lpVariant || null;
+  const cta = l.cta || null;
+  const paid = l.paidClick === true || !!l.gclid;
+
+  // Legacy leads (no lpVariant): fall back to old source string for context
+  if (!lpVariant) {
+    const legacySource = l.source || '';
+    const isLegacyHero = legacySource.toLowerCase().includes('hero');
+    const label = isLegacyHero ? 'homepage' : (legacySource ? 'other' : '—');
+    return `<div style="font-size:11.5px;color:#888;">${label}</div>`;
+  }
+
+  // New leads with proper attribution
+  const lpBadge = `<span style="display:inline-block;padding:2px 7px;border-radius:10px;background:#E8F5E9;color:#2E7D32;font-size:10.5px;font-weight:700;letter-spacing:0.3px;text-transform:uppercase;">${lpVariant}-lp</span>`;
+  const paidBadge = paid
+    ? `<span title="Came from a paid Google Ads click (gclid present)" style="display:inline-block;margin-left:4px;padding:2px 6px;border-radius:10px;background:#FFF3E0;color:#E65100;font-size:10px;font-weight:700;">💰 PAID</span>`
+    : `<span title="Organic / direct traffic (no gclid)" style="display:inline-block;margin-left:4px;padding:2px 6px;border-radius:10px;background:#F5F5F5;color:#666;font-size:10px;font-weight:700;">🌱 organic</span>`;
+  const ctaLine = cta
+    ? `<div style="font-size:10.5px;color:#888;margin-top:3px">via ${cta}</div>`
+    : '';
+  const campLine = l.utmCampaign
+    ? `<div style="font-size:10px;color:#aaa;margin-top:1px" title="UTM Campaign">${l.utmCampaign}</div>`
+    : '';
+
+  return `<div style="line-height:1.3">${lpBadge}${paidBadge}${ctaLine}${campLine}</div>`;
 }
 
 function relativeTime(ms) {
