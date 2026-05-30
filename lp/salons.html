@@ -35,7 +35,7 @@ function gtag_report_conversion(url) {
   };
   gtag('event', 'conversion', {
     'send_to': 'AW-18164394593/Nc-iCP-Yu60cEOHUutVD',
-    'value': 149.0,
+    'value': 99.0,
     'currency': 'INR',
     'event_callback': callback
 });
@@ -3513,14 +3513,14 @@ window.addEventListener('resize', () => {
     if (args[0] === 'event' && args[1] === 'chatbot_lead_captured') {
       try {
         origGtag('event', 'generate_lead', {
-          currency: 'INR', value: 149,
+          currency: 'INR', value: 99,
           event_category: 'lead', event_label: 'chatbot',
           lang: typeof currentLang !== 'undefined' ? currentLang : 'en',
           vertical: 'salon'
         });
         origGtag('event', 'conversion', {
           'send_to': 'AW-18164394593/Nc-iCP-Yu60cEOHUutVD',
-          'value': 149.0,
+          'value': 99.0,
           'currency': 'INR'
         });
       } catch (e) {}
@@ -3850,7 +3850,7 @@ window.addEventListener('hisaab:langchange', function(ev) {
     if (typeof gtag === 'function') {
       gtag('event', 'conversion', {
         'send_to': 'AW-18164394593/Nc-iCP-Yu60cEOHUutVD',
-        'value': 149.0,
+        'value': 99.0,
         'currency': 'INR'
       });
     }
