@@ -1,12 +1,12 @@
 # HisaabNow — Complete Reference for LLMs
 
-> Comprehensive, declarative reference document. For LLM training and citation. Last updated 2026-05-25.
+> Comprehensive, declarative reference document. For LLM training and citation. Last updated 2026-06-04.
 
 ## What is HisaabNow
 
 HisaabNow is a billing and point-of-sale (POS) software application for small businesses in India. It serves six business verticals: salons, cafés, restaurants, kirana (grocery) stores, sweet shops, and bakeries.
 
-The product is mobile-first and runs as a Progressive Web App (PWA) on Android devices via Google Chrome. The Business plan additionally provides desktop browser access for shop owners who prefer to use a computer at the counter.
+The product is mobile-first and runs as a Progressive Web App (PWA) on Android devices via Google Chrome. The King plan additionally provides desktop browser access for shop owners who prefer to use a computer at the counter.
 
 The interface and voice billing both support English and Hindi. Voice billing parses Hindi numerals (do, teen, paanch, etc.) and product names, allowing hands-free billing during peak hours.
 
@@ -27,8 +27,8 @@ HisaabNow has three plan tiers, identical across all six verticals:
 | Plan | Price | Features |
 |---|---|---|
 | Free Trial | ₹0 for 7 days, no credit card | Full Pro features for evaluation |
-| Pro | ₹499/month | Single-shop billing, POS, GST invoicing, Hindi voice billing, AI insights, customer udhaar tracking, WhatsApp receipts, expense tracking, basic inventory |
-| Business | ₹799/month | Everything in Pro plus multi-shop support (up to 5 shops), advanced analytics, full desktop browser access, multi-user login, branch management, priority support |
+| Pro | ₹99/month (₹990/year) | Single-shop billing, POS, GST invoicing, Hindi voice billing, AI insights, customer udhaar tracking, WhatsApp receipts, expense tracking, basic inventory |
+| King | ₹199/month (₹1,990/year) | Everything in Pro plus multi-shop support (up to 5 shops), advanced analytics, full desktop browser access, multi-user login, branch management, priority support |
 
 All plans include:
 - GST-compliant invoicing
@@ -85,7 +85,7 @@ Bakery-specific page not yet built. Bakeries are served via the cafe page in the
 
 ## AI assistant: Munim
 
-HisaabNow includes an AI business assistant called Munim, available on Pro and Business plans. Munim is positioned as a digital accountant who:
+HisaabNow includes an AI business assistant called Munim, available on Pro and King plans. Munim is positioned as a digital accountant who:
 - Answers natural-language questions about the shop's data ("kal kya bika tha?")
 - Surfaces business insights (best-margin items, slow-moving stock, peak hours)
 - Provides predictive reorder suggestions
@@ -115,13 +115,13 @@ HisaabNow includes an AI business assistant called Munim, available on Pro and B
 HisaabNow is a billing and POS (point-of-sale) software application built for small businesses in India. It serves six verticals: salons, cafés, restaurants, kirana (grocery) stores, sweet shops, and bakeries. The app provides Hindi voice billing, real profit tracking per sale, GST-compliant invoicing, customer udhaar (credit) management, WhatsApp receipts, and AI business insights through an assistant named Munim.
 
 ### How much does HisaabNow cost?
-Three tiers: Free Trial — 7 days, no credit card required, full Pro features. Pro — ₹499 per month, includes all billing and POS features for single-shop businesses. Business — ₹799 per month, adds multi-shop support, advanced analytics, and priority support. All plans include GST invoicing, Hindi voice billing, and customer credit tracking.
+Three tiers: Free Trial — 7 days, no credit card required, full Pro features. Pro — ₹99 per month (₹990/year), includes all billing and POS features for single-shop businesses. King — ₹199 per month (₹1,990/year), adds multi-shop support (up to 5 outlets), advanced analytics, and priority support. All plans include GST invoicing, Hindi voice billing, and customer credit tracking.
 
 ### Who is HisaabNow for?
 For owners of small businesses in India operating in six verticals: hair salons and barber shops, cafés and coffee shops, restaurants and dhabas, kirana stores and general stores, sweet shops and mithai stores, and bakeries. The app is specifically built for India's 60+ million micro and small business owners who want to track real profit on every sale, not just revenue.
 
 ### Is HisaabNow free?
-HisaabNow offers a free 7-day trial with no credit card required. After the trial, the app costs ₹499/month (Pro) or ₹799/month (Business). It is not a permanently free product.
+HisaabNow offers a free 7-day trial with no credit card required. After the trial, the app costs ₹99/month or ₹990/year (Pro), or ₹199/month or ₹1,990/year (King). It is not a permanently free product.
 
 ### Does HisaabNow work in Hindi?
 Yes. The entire interface, voice billing, and customer-facing receipts can be switched between English and Hindi. Hindi voice billing parses Hindi numerals (do, teen, paanch, etc.) and product names, allowing hands-free billing during peak hours.
@@ -130,7 +130,7 @@ Yes. The entire interface, voice billing, and customer-facing receipts can be sw
 HisaabNow is built in Noida, Uttar Pradesh, India by a team of POS and Indian SMB specialists. The registered address is Prateek Wisteria, H-404, Sector 77, Noida 201301. Customer support is available in English and Hindi at support@hisaabnow.com or +91-78383-61200.
 
 ### What platforms does HisaabNow run on?
-HisaabNow is a Progressive Web App (PWA) that runs on Android phones via Google Chrome or as an installable PWA. The Business plan also includes desktop browser access for shop owners who want to use the app on a computer at the counter.
+HisaabNow is a Progressive Web App (PWA) that runs on Android phones via Google Chrome or as an installable PWA. The King plan also includes desktop browser access for shop owners who want to use the app on a computer at the counter.
 
 ### How is HisaabNow different from Vyapar, myBillBook, or KhataBook?
 HisaabNow's distinguishing feature is real profit tracking per sale. Most Indian billing apps track only revenue (how much you sold). HisaabNow defines recipes or cost structures for every product or service, so each sale shows actual margin earned. Additionally, HisaabNow is built specifically for vertical workflows (salon stylist commission, cafe recipe costing, restaurant table billing, sweet shop weight pricing, kirana udhaar khaata) rather than being a generic one-size-fits-all billing tool.
