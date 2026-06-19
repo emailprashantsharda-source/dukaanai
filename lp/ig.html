@@ -312,5 +312,67 @@ src="https://www.facebook.com/tr?id=1670925877471743&ev=PageView&noscript=1"
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 </script>
+<script>
+/* ── Meta Pixel deep events (LP funnel tracking) ────────────────── */
+(function(){
+  if (typeof fbq !== 'function') return;
+  var fired = {};
+  function once(key){ if(fired[key]) return false; fired[key]=1; return true; }
+  function ev(name, params){ try{ fbq('trackCustom', name, params||{}); }catch(e){} }
+  function std(name, params){ try{ fbq('track', name, params||{}); }catch(e){} }
+
+  /* 1. CTA clicks → Lead (optimization event) + which placement */
+  function ctaLocation(el){
+    if(el.closest('header')) return 'header';
+    if(el.closest('.sticky')) return 'sticky';
+    if(el.closest('.close')) return 'close';
+    if(el.closest('.hero')) return 'hero';
+    return 'other';
+  }
+  document.querySelectorAll('a[href*="app.hisaabnow.com"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var loc = ctaLocation(a);
+      std('Lead', { content_name:'get_started', source:loc });
+      ev('GetStartedClick', { location:loc });
+    });
+  });
+
+  /* 2. WhatsApp click → Contact */
+  var wa = document.querySelector('.wa-float');
+  if(wa){ wa.addEventListener('click', function(){ std('Contact', { method:'whatsapp' }); }); }
+
+  /* 3. Scroll depth → 25 / 50 / 75 / 100 (once each) */
+  var marks = [25,50,75,100];
+  function onScroll(){
+    var st = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = h>0 ? Math.round((st/h)*100) : 0;
+    marks.forEach(function(m){
+      if(pct >= m && once('scroll'+m)) ev('ScrollDepth', { percent:m });
+    });
+    if(pct >= 100) window.removeEventListener('scroll', onScroll);
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+
+  /* 4. Section views → features / how-it-works / close (once each) */
+  var secMap = [['.feats','features'],['.steps','how_it_works'],['.close','final_cta']];
+  if('IntersectionObserver' in window){
+    var sio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var name = e.target.getAttribute('data-sec');
+        if(name && once('sec_'+name)){ ev('ViewSection', { section:name }); sio.unobserve(e.target); }
+      });
+    }, { threshold:.35 });
+    secMap.forEach(function(pair){
+      var el = document.querySelector(pair[0]);
+      if(el){ el.setAttribute('data-sec', pair[1]); sio.observe(el); }
+    });
+  }
+
+  /* 5. Engaged dwell → 30s on page */
+  setTimeout(function(){ if(once('dwell30')) ev('TimeOnPage', { seconds:30 }); }, 30000);
+})();
+</script>
 </body>
 </html>
