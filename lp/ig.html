@@ -8,6 +8,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-QZ3LYFSXX1');
+  gtag('event', 'lp_view');
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -342,6 +343,7 @@ src="https://www.facebook.com/tr?id=1670925877471743&ev=PageView&noscript=1"
       var loc = ctaLocation(a);
       std('Lead', { content_name:'get_started', source:loc });
       ev('GetStartedClick', { location:loc });
+      try{ if(window.gtag) gtag('event','lp_get_started',{location:loc}); }catch(e){}
     });
   });
 
