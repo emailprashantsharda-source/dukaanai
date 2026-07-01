@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How HisaabNow works — for your kind of shop</title>
+<meta name="description" content="See exactly how HisaabNow runs your shop — pick your business type and walk through every step, from menu and billing to udhaar, teams, cash flow and AI insights. Restaurants get tables & KOT, cafés get Swiggy-style ordering.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://hisaabnow.com/howitworks">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How HisaabNow works">
+<meta property="og:description" content="Pick your business type and walk through the whole app — billing, tables, udhaar, teams, cash flow, AI insights and more.">
+<meta property="og:url" content="https://hisaabnow.com/howitworks">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFFBF5; --card:#FFFFFF; --ink:#18181B; --ink-2:#52525B; --ink-3:#8A8A93;
+    --gold:#FFC043; --gold-soft:#FFF4D6; --gold-deep:#B8860B; --line:#F0E9DD; --line-2:#EFE7DA;
+    --green:#06C167; --green-soft:#E6F8EE; --danger:#E11900; --ink-line:#ECE3D5;
+    --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:28px;
+    --disp:"Bricolage Grotesque",system-ui,sans-serif;
+    --body:"Inter",system-ui,sans-serif;
+    --hi:"Noto Sans Devanagari","Inter",sans-serif;
+    --shadow:0 1px 2px rgba(24,24,27,.04),0 8px 24px rgba(24,24,27,.06);
+    --shadow-lg:0 2px 6px rgba(24,24,27,.05),0 24px 60px rgba(184,134,11,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body); color:var(--ink); background:var(--cream); line-height:1.5; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:linear-gradient(var(--ink-line) 1px,transparent 1px); background-size:100% 34px; background-position:0 -1px;
+  }
+  html[data-lang="hi"] body{font-family:var(--hi)}
+  html[data-lang="hi"] .disp{font-family:var(--hi)}
+  .disp{font-family:var(--disp); letter-spacing:-.02em; line-height:1.05}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px}
+
+  header{position:sticky; top:0; z-index:50; background:rgba(255,251,245,.82); backdrop-filter:saturate(1.4) blur(12px); border-bottom:1px solid var(--line)}
+  .bar{display:flex; align-items:center; gap:14px; height:62px}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--disp); font-weight:800; font-size:19px; letter-spacing:-.02em}
+  .mark{width:34px; height:34px; border-radius:9px; background:var(--gold); display:grid; place-items:center; box-shadow:inset 0 0 0 1px rgba(184,134,11,.25)}
+  .mark svg{width:19px; height:19px}
+  .spacer{flex:1}
+  .lang{border:1px solid var(--line); background:var(--card); color:var(--ink-2); font-family:var(--body); font-weight:700; font-size:13px; padding:7px 11px; border-radius:9px; cursor:pointer}
+  .lang:hover{border-color:var(--gold-deep); color:var(--ink)}
+  .btn{font-family:var(--body); font-weight:700; font-size:14px; border:none; cursor:pointer; border-radius:11px; padding:10px 16px; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:transform .12s ease, box-shadow .18s ease}
+  .btn svg{width:16px; height:16px}
+  .btn-gold{background:var(--ink); color:#fff}
+  .btn-gold:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(24,24,27,.18)}
+  .btn-ghost{background:var(--card); color:var(--ink); border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--gold-deep)}
+  .header .btn{padding:9px 15px}
+
+  .hero{padding:52px 0 26px; display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:16px}
+  .eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--green); animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .hero h1{font-size:clamp(32px,5vw,52px); font-weight:800; margin-bottom:16px}
+  .hero h1 em{font-style:normal; color:var(--gold-deep)}
+  .hero p.sub{font-size:17px; color:var(--ink-2); max-width:46ch; margin-bottom:26px; font-weight:450}
+  .hero-cta{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .hero .btn-gold{padding:14px 22px; font-size:15px}
+  .hero-note{font-size:13px; color:var(--ink-3); margin-top:14px; display:flex; align-items:center; gap:6px}
+  .hero-note svg{width:14px;height:14px;color:var(--green)}
+
+  .phone-stage{display:grid; place-items:center; position:relative}
+  .phone{width:274px; background:#0e0e10; border-radius:38px; padding:9px; box-shadow:var(--shadow-lg); position:relative; z-index:2}
+  .phone::before{content:""; position:absolute; top:15px; left:50%; transform:translateX(-50%); width:78px; height:5px; border-radius:3px; background:#2a2a2e; z-index:3}
+  .screen{background:var(--cream); border-radius:30px; overflow:hidden; height:512px; display:flex; flex-direction:column}
+  .scr-top{background:var(--card); padding:26px 16px 12px; border-bottom:1px solid var(--line)}
+  .scr-shop{display:flex; align-items:center; gap:9px}
+  .scr-shop .ic{width:30px;height:30px;border-radius:8px;background:var(--gold);display:grid;place-items:center;font-size:15px}
+  .scr-shop .ic svg{width:16px;height:16px}
+  .scr-shop .nm{font-family:var(--disp); font-weight:800; font-size:15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:130px}
+  .scr-shop .bal{margin-left:auto; text-align:right}
+  .scr-shop .bal small{display:block; font-size:9px; color:var(--ink-3); text-transform:uppercase; letter-spacing:.04em}
+  .scr-shop .bal b{font-size:14px}
+  .scr-title{display:flex; align-items:center; gap:8px; padding:12px 16px 4px; font-family:var(--disp); font-weight:800; font-size:16px}
+  .scr-title .em{font-size:17px}
+  .scr-tabs{display:flex; gap:6px; padding:2px 16px 4px}
+  .scr-tabs .tb{font-size:11px; font-weight:700; padding:5px 12px; border-radius:999px; background:var(--cream); color:var(--ink-3); border:1px solid var(--line)}
+  .scr-tabs .tb.on{background:var(--gold-soft); color:var(--gold-deep); border-color:var(--gold)}
+  .scr-body{flex:1; overflow:hidden; padding:5px 14px 12px; position:relative}
+  .scr-fade{opacity:0; transform:translateY(8px); transition:opacity .34s ease, transform .34s ease}
+  .scr-fade.in{opacity:1; transform:none}
+  .scr-search{display:flex; align-items:center; gap:7px; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:9px 11px; margin-bottom:9px; font-size:12px; color:var(--ink-3)}
+  .row{display:flex; align-items:center; gap:11px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin-bottom:8px}
+  .row .rc{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex-shrink:0;font-size:16px}
+  .row .rt{flex:1; min-width:0}
+  .row .rt b{display:block; font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .row .rt span{font-size:11px; color:var(--ink-3)}
+  .row .rm{font-size:13px; font-weight:700; font-variant-numeric:tabular-nums; white-space:nowrap}
+  .row.hl{border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-soft)}
+  .row.hl .rc{background:var(--gold)}
+  .row.tbl{border-color:var(--green); background:var(--green-soft)}
+  /* zomato/swiggy stepper + ADD */
+  .stp{display:flex; align-items:center; border:1.5px solid var(--green); border-radius:9px; overflow:hidden; background:#fff}
+  .stp .sb{width:26px;height:30px;display:grid;place-items:center;color:var(--green);font-weight:800;font-size:16px;background:var(--green-soft);cursor:pointer}
+  .stp b{min-width:24px;text-align:center;font-size:13px;color:var(--green);font-weight:800}
+  .addpill{border:1.5px solid var(--green); color:var(--green); font-weight:800; font-size:12px; letter-spacing:.03em; padding:7px 16px; border-radius:9px; background:#fff}
+  .scr-cta{margin-top:4px; background:var(--ink); color:#fff; border-radius:12px; padding:12px; text-align:center; font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center; gap:8px}
+  .scr-cta svg{width:16px;height:16px}
+  .scr-cta.gold{background:var(--gold); color:#3a2a00}
+  .scr-cta.green{background:var(--green); color:#fff}
+  .scr-cta .cartc{background:rgba(255,255,255,.22); border-radius:6px; padding:2px 8px; font-size:12px; margin-right:auto}
+  .scr-nav{display:flex; border-top:1px solid var(--line); background:var(--card)}
+  .scr-nav .nv{flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 0 10px; font-size:9px; font-weight:600; color:var(--ink-3)}
+  .scr-nav .nv svg{width:18px; height:18px}
+  .scr-nav .nv.on{color:var(--gold-deep)}
+  .scr-pill{display:inline-flex;align-items:center;gap:6px;background:var(--green-soft);color:#046b3a;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;margin-bottom:9px}
+  .scr-pill.live{background:#FDECEC;color:var(--danger)}
+  .scr-pill.live .ld{width:7px;height:7px;border-radius:50%;background:var(--danger);animation:pulse 1.1s infinite}
+
+  section.blk{padding:44px 0}
+  .sec-head{max-width:640px; margin-bottom:22px}
+  .sec-eyebrow{font-weight:700; font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:10px}
+  .sec-head h2{font-size:clamp(26px,3.6vw,36px); font-weight:800; margin-bottom:10px}
+  .sec-head p{font-size:16px; color:var(--ink-2)}
+
+  /* category — compact bar + popup */
+  .cats-wrap{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:22px; padding:14px 18px; background:var(--card); border:1px solid var(--line); border-radius:var(--r-md)}
+  .cats-now{display:inline-flex; align-items:center; gap:9px; font-weight:700; font-size:15px; color:var(--ink)}
+  .cats-now .ce{font-size:20px}
+  .cats-now small{display:block; font-size:11px; font-weight:600; color:var(--ink-3); text-transform:uppercase; letter-spacing:.04em}
+  .cats-change{margin-left:auto; border:1px solid var(--gold); background:var(--gold-soft); color:#6b5200; font-family:var(--body); font-weight:700; font-size:13.5px; padding:9px 16px; border-radius:999px; cursor:pointer; display:inline-flex; align-items:center; gap:7px}
+  .cats-change:hover{background:var(--gold); color:#3a2a00}
+  .cats-change svg{width:15px;height:15px}
+
+  .modal{position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(24,24,27,.55); backdrop-filter:blur(5px)}
+  .modal.open{display:flex}
+  .modal-card{background:var(--card); border-radius:24px; max-width:460px; width:100%; padding:32px 26px 28px; text-align:center; box-shadow:var(--shadow-lg); animation:pop .26s cubic-bezier(.2,.9,.3,1.2)}
+  @keyframes pop{from{transform:translateY(14px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+  .modal-emoji{width:58px;height:58px;margin:0 auto 12px;border-radius:16px;background:var(--gold-soft);display:grid;place-items:center;font-size:30px}
+  .modal-card h2{font-size:25px; font-weight:800; margin-bottom:6px}
+  .modal-card p{color:var(--ink-2); font-size:15px; margin-bottom:22px}
+  .modal-cats{display:grid; grid-template-columns:1fr 1fr; gap:11px}
+  .mcat{display:flex; align-items:center; gap:11px; padding:15px 15px; border:1px solid var(--line); border-radius:15px; background:var(--cream); cursor:pointer; font-family:var(--body); font-weight:700; font-size:14.5px; color:var(--ink); text-align:left; transition:border-color .14s, background .14s, transform .12s}
+  .mcat:hover{border-color:var(--gold); background:var(--gold-soft); transform:translateY(-2px)}
+  .mcat.on{border-color:var(--gold); background:var(--gold-soft)}
+  .mcat .me{font-size:24px; flex-shrink:0}
+
+  .rail{display:flex; gap:8px; overflow-x:auto; padding:4px 2px 4px; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; scrollbar-width:thin}
+  .rail::-webkit-scrollbar{height:5px}
+  .rail::-webkit-scrollbar-thumb{background:var(--line-2); border-radius:5px}
+  .rstep{flex:0 0 auto; display:flex; align-items:center; gap:9px; padding:9px 14px 9px 9px; border:1px solid var(--line); border-radius:999px; background:var(--card); cursor:pointer; white-space:nowrap; scroll-snap-align:center; transition:border-color .16s, background .16s, transform .12s}
+  .rstep:hover{border-color:var(--gold-deep)}
+  .rstep.on{border-color:var(--gold); background:var(--gold-soft)}
+  .rstep .rn{width:26px;height:26px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:13px;background:var(--gold-soft);color:var(--gold-deep);border:1px solid var(--gold)}
+  .rstep.on .rn{background:var(--gold);color:#3a2a00}
+  .rstep .rl{font-weight:600;font-size:13.5px}
+  .rstep.tblstep .rn{background:var(--green-soft);color:#046b3a;border-color:var(--green)}
+  .rstep.tblstep.on .rn{background:var(--green);color:#fff}
+  .prog{height:4px; background:var(--line); border-radius:4px; margin:12px 2px 0; overflow:hidden}
+  .prog i{display:block; height:100%; width:0; background:var(--gold); border-radius:4px}
+
+  .fpanel{display:grid; grid-template-columns:1fr 300px; gap:38px; align-items:center; margin-top:22px; background:var(--card); border:1px solid var(--line); border-radius:var(--r-lg); padding:34px; box-shadow:var(--shadow)}
+  .fdetail .kicker{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px}
+  .fdetail .kicker .kn{width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--disp);font-size:12px}
+  .fdetail h3{font-family:var(--disp); font-size:26px; font-weight:800; margin-bottom:8px}
+  .fdetail .what{font-size:15.5px; color:var(--ink-2); margin-bottom:22px}
+  .flist{list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:20px}
+  .flist li{display:flex; gap:12px; font-size:14.5px; align-items:flex-start}
+  .flist .k{width:24px;height:24px;border-radius:7px;flex-shrink:0;display:grid;place-items:center;background:var(--gold-soft); color:var(--gold-deep); font-weight:800; font-size:12px; font-family:var(--disp)}
+  .flist li span:last-child{padding-top:2px}
+  .ftip{display:flex; gap:9px; background:var(--gold-soft); border-radius:12px; padding:12px 14px; font-size:13.5px; color:#6b5200}
+  .ftip svg{width:17px;height:17px;flex-shrink:0;color:var(--gold-deep);margin-top:1px}
+  .fphone{display:grid; place-items:center}
+  .fphone .phone{width:250px}
+  .fphone .screen{height:486px}
+
+  .band{background:var(--ink); color:#fff; border-radius:var(--r-xl); padding:46px; text-align:center; position:relative; overflow:hidden}
+  .band::before{content:"★"; position:absolute; right:-10px; top:-30px; font-size:200px; color:rgba(255,192,67,.08); font-family:var(--disp)}
+  .band h2{font-family:var(--disp); font-size:clamp(26px,3.6vw,38px); font-weight:800; margin-bottom:12px; position:relative}
+  .band p{color:#c9c9cf; font-size:16px; max-width:44ch; margin:0 auto 24px; position:relative}
+  .band .btn-gold{background:var(--gold); color:#3a2a00; padding:15px 26px; font-size:16px; position:relative}
+  .band .btn-gold:hover{box-shadow:0 10px 28px rgba(255,192,67,.35)}
+  .band .bnote{color:#8a8a93; font-size:13px; margin-top:16px; position:relative}
+
+  footer{padding:38px 0 60px; text-align:center; color:var(--ink-3); font-size:14px}
+  footer a{color:var(--ink-2); font-weight:600; text-decoration:none}
+  footer a:hover{color:var(--gold-deep)}
+  .fask{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); background:var(--card); padding:10px 16px; border-radius:11px; margin-bottom:20px}
+  .fask svg{width:17px;height:17px;color:var(--gold-deep)}
+
+  .sticky{position:fixed; left:0; right:0; bottom:0; z-index:60; padding:12px 16px calc(12px + env(safe-area-inset-bottom)); background:rgba(255,251,245,.9); backdrop-filter:blur(12px); border-top:1px solid var(--line); display:none; gap:10px; align-items:center}
+  .sticky b{font-family:var(--disp); font-weight:800; font-size:15px; flex:1}
+  .sticky .btn-gold{padding:12px 18px}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr; gap:26px; padding:30px 0 16px; text-align:center}
+    .hero .phone-stage{order:-1}
+    .hero .eyebrow{justify-content:center}
+    .hero-cta{justify-content:center}
+    .hero-note{justify-content:center}
+    .hero p.sub{margin-left:auto; margin-right:auto}
+    .sec-head{margin-left:auto; margin-right:auto; text-align:center}
+    .cats-wrap{justify-content:center; text-align:center}
+    .cats-change{margin-left:0}
+    .fpanel{grid-template-columns:1fr; padding:24px 22px}
+    .fphone{order:-1}
+    .fdetail{text-align:center}
+    .fdetail .kicker{justify-content:center}
+    .flist{text-align:left; max-width:340px; margin-left:auto; margin-right:auto}
+    .ftip{text-align:left}
+    .modal-cats{grid-template-columns:1fr}
+    .header-install{display:none}
+    .sticky{display:flex}
+    footer{padding-bottom:96px}
+  }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important; animation:none!important; scroll-behavior:auto} .scr-fade{opacity:1;transform:none} }
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px; border-radius:6px}
+</style>
+</head>
+<body>
+
+<div class="modal" id="catModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+    <div class="modal-emoji">🏪</div>
+    <h2 class="disp" id="cmTitle" data-t="modal.title">Which shop do you run?</h2>
+    <p data-t="modal.sub">Pick your business type — the whole demo customizes to it.</p>
+    <div class="modal-cats" id="modalCats"></div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap bar">
+    <div class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#3a2a00" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8l3 3v15H7z"/><path d="M15 3v3h3"/><path d="M10 12h5M10 16h5M10 8h2"/></svg></span>
+      HisaabNow
+    </div>
+    <div class="spacer"></div>
+    <button class="lang" id="langBtn">हिं</button>
+    <a class="btn btn-gold header-install install" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg><span data-t="cta.install">Install free</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span><span data-t="hero.eyebrow">Built for your kind of shop</span></div>
+      <h1 class="disp" data-t="hero.h1">See exactly how <em>HisaabNow</em> runs your shop.</h1>
+      <p class="sub" data-t="hero.sub">Pick your business type and walk through the whole app — billing, udhaar, teams, cash flow and AI insights, tuned to how you actually work.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold install" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg><span data-t="cta.install">Install free</span></a>
+        <a class="btn btn-ghost" href="#walk"><span data-t="hero.explore">Pick your shop type</span></a>
+      </div>
+      <div class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-t="hero.note">No card needed · works on any phone</span></div>
+    </div>
+    <div class="phone-stage"><div class="phone"><div class="screen" id="heroScreen"></div></div></div>
+  </section>
+
+  <section class="wrap blk" id="walk">
+    <div class="sec-head">
+      <div class="sec-eyebrow" data-t="walk.eyebrow">The full walkthrough</div>
+      <h2 class="disp" data-t="walk.h2">Set up your shop, step by step</h2>
+      <p data-t="walk.p">Choose your business type — the whole walkthrough retunes to it. Then tap any step to see that screen and the real actions you'd take.</p>
+    </div>
+    <div class="cats-wrap">
+      <span class="cats-now" id="catsNow"></span>
+      <button class="cats-change" id="catsChange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg><span data-t="cats.change">Change shop type</span></button>
+    </div>
+    <div class="rail" id="rail"></div>
+    <div class="prog"><i id="prog"></i></div>
+    <div class="fpanel">
+      <div class="fdetail" id="fdetail"></div>
+      <div class="fphone"><div class="phone"><div class="screen" id="fScreen"></div></div></div>
+    </div>
+  </section>
+
+  <section class="wrap blk">
+    <div class="band">
+      <h2 data-t="band.h">Your menu, bills and khata — all in one place.</h2>
+      <p data-t="band.p">Join the shopkeepers who close their day in seconds, not hours. Free to start.</p>
+      <a class="btn btn-gold install" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></svg><span data-t="cta.installNow">Install HisaabNow free</span></a>
+      <div class="bnote" data-t="band.note">Works on Android and any browser · your data stays yours</div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <a class="fask" id="askBtn" href="https://hisaabnow.com/support/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 2.5"/><path d="M12 17h.01"/></svg><span data-t="foot.ask">Still have a question? Ask Munim</span></a>
+    <div data-t="foot.copy">HisaabNow — billing &amp; khata for Indian shops.</div>
+  </footer>
+</main>
+
+<div class="sticky">
+  <b data-t="sticky.t">Ready to start?</b>
+  <a class="btn btn-gold install" href="#"><span data-t="cta.install">Install free</span></a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(id){return document.getElementById(id);};
+  function P(k){ try{ return new URLSearchParams(location.search).get(k); }catch(e){ return null; } }
+  var LANG=(P("lang")==="hi")?"hi":"en";
+  var RM=function(){ return window.matchMedia && window.matchMedia("(prefers-reduced-motion:reduce)").matches; };
+  var L=function(o){ return o?(o[LANG]!=null?o[LANG]:o.en):""; };
+
+  var CFG={
+    WEB_APP_URL:"https://app.hisaabnow.com/",
+    PLAY_URL:"https://play.google.com/store/apps/details?id=com.hisaabnow.app",
+    USE_PLAY:false,
+    SUPPORT_URL:"https://hisaabnow.com/support/"
+  };
+  function installURL(){
+    var p; try{ p=new URLSearchParams(location.search); }catch(e){ p=new URLSearchParams(""); }
+    var q=new URLSearchParams();
+    q.set("utm_source", p.get("utm_source")||"howitworks");
+    q.set("utm_medium", p.get("utm_medium")||"reactivation");
+    q.set("utm_campaign", p.get("utm_campaign")||"howitworks");
+    var uid=p.get("uid")||p.get("id")||p.get("ref"); if(uid) q.set("ref", uid);
+    q.set("src","howitworks");
+    var android=/Android/i.test(navigator.userAgent||"");
+    var base=(CFG.USE_PLAY && android && CFG.PLAY_URL)?CFG.PLAY_URL:CFG.WEB_APP_URL;
+    return base+(base.indexOf("?")>-1?"&":"?")+q.toString();
+  }
+  function wireInstall(){
+    var url=installURL();
+    [].forEach.call(document.querySelectorAll(".install"),function(a){ a.setAttribute("href",url); a.setAttribute("target","_blank"); a.setAttribute("rel","noopener"); });
+  }
+
+  var T={
+    en:{"cta.install":"Install free","cta.installNow":"Install HisaabNow free",
+      "hero.eyebrow":"Built for your kind of shop","hero.h1":'See exactly how <em>HisaabNow</em> runs your shop.',
+      "hero.sub":"Pick your business type and walk through the whole app — billing, udhaar, teams, cash flow and AI insights, tuned to how you actually work.",
+      "hero.explore":"Pick your shop type","hero.note":"No card needed · works on any phone",
+      "walk.eyebrow":"The full walkthrough","walk.h2":"Set up your shop, step by step",
+      "walk.p":"Choose your business type — the whole walkthrough retunes to it. Then tap any step to see that screen and the real actions you'd take.",
+      "cats.label":"I run a…","cats.change":"Change shop type","cats.showing":"Showing",
+      "modal.title":"Which shop do you run?","modal.sub":"Pick your business type — the whole demo customizes to it.",
+      "band.h":"Your menu, bills and khata — all in one place.","band.p":"Join the shopkeepers who close their day in seconds, not hours. Free to start.",
+      "band.note":"Works on Android and any browser · your data stays yours","foot.ask":"Still have a question? Ask Munim",
+      "foot.copy":"HisaabNow — billing & khata for Indian shops.","sticky.t":"Ready to start?","kicker":"Step"},
+    hi:{"cta.install":"फ्री इंस्टॉल करें","cta.installNow":"HisaabNow फ्री इंस्टॉल करें",
+      "hero.eyebrow":"आपकी दुकान के लिए बना","hero.h1":'देखिए <em>HisaabNow</em> आपकी दुकान कैसे चलाता है।',
+      "hero.sub":"अपना बिज़नेस टाइप चुनें और पूरा ऐप देखें — बिलिंग, उधार, टीम, कैश फ़्लो और AI इनसाइट्स, आपके काम के हिसाब से।",
+      "hero.explore":"अपनी दुकान चुनें","hero.note":"कार्ड की ज़रूरत नहीं · किसी भी फ़ोन पर चले",
+      "walk.eyebrow":"पूरा वॉकथ्रू","walk.h2":"अपनी दुकान स्टेप-दर-स्टेप सेट करें",
+      "walk.p":"अपना बिज़नेस टाइप चुनें — पूरा वॉकथ्रू उसी के हिसाब से बदल जाए। फिर कोई भी स्टेप टैप करके स्क्रीन और असली एक्शन देखें।",
+      "cats.label":"मेरी दुकान है…","cats.change":"दुकान बदलें","cats.showing":"दिखा रहे हैं",
+      "modal.title":"आपकी कौन सी दुकान है?","modal.sub":"अपना बिज़नेस टाइप चुनें — पूरा डेमो उसी के हिसाब से बदल जाए।",
+      "band.h":"मेन्यू, बिल और खाता — सब एक जगह।","band.p":"उन दुकानदारों से जुड़िए जो अपना दिन घंटों में नहीं, सेकंडों में बंद करते हैं। शुरू करना फ्री।",
+      "band.note":"Android और किसी भी ब्राउज़र पर चले · आपका डेटा आपका","foot.ask":"कोई सवाल है? मुनीम से पूछें",
+      "foot.copy":"HisaabNow — भारतीय दुकानों के लिए बिलिंग और खाता।","sticky.t":"शुरू करने को तैयार?","kicker":"स्टेप"}
+  };
+  function t(k){ return (T[LANG]&&T[LANG][k]!=null)?T[LANG][k]:(T.en[k]!=null?T.en[k]:k); }
+
+  /* ══════════ CATEGORIES (icons + verticals match the app's Shop type) ══════════ */
+  var CATS=[
+    { id:"grocery", ce:"🛒", type:"retail", tables:false,
+      label:{en:"Grocery / Kirana",hi:"ग्रोसरी / किराना"}, shop:{en:"Sharma Store",hi:"शर्मा स्टोर"},
+      noun:{en:"products",hi:"प्रोडक्ट"},
+      menu:[{ic:"🍞",t:{en:"Bread",hi:"ब्रेड"},cat:{en:"Bakery · 38%",hi:"बेकरी · 38%"},m:"₹40"},
+            {ic:"🥛",t:{en:"Milk 1L",hi:"दूध 1L"},cat:{en:"Dairy · 20%",hi:"डेयरी · 20%"},m:"₹60"}],
+      sig:{en:"Cooking oil 1L",hi:"तेल 1L"}, sell:"₹140", cost:"₹120", pct:"14%",
+      billItems:[{ic:"🍞",t:{en:"Bread ×2",hi:"ब्रेड ×2"},m:"₹80"},{ic:"🥛",t:{en:"Milk 1L",hi:"दूध 1L"},m:"₹60"}], billTotal:"₹140" },
+    { id:"cafe", ce:"☕", type:"food", tables:false,
+      label:{en:"Café",hi:"कैफ़े"}, shop:{en:"Brew Point Café",hi:"ब्रू पॉइंट कैफ़े"},
+      noun:{en:"dishes",hi:"आइटम"},
+      menu:[{ic:"☕",t:{en:"Cappuccino",hi:"कैपचीनो"},cat:{en:"Hot · 80%",hi:"हॉट · 80%"},m:"₹110"},
+            {ic:"🥤",t:{en:"Cold Coffee",hi:"कोल्ड कॉफ़ी"},cat:{en:"Cold · 78%",hi:"कोल्ड · 78%"},m:"₹120"}],
+      sig:{en:"Cappuccino",hi:"कैपचीनो"}, ings:[{ic:"🥛",t:{en:"Milk",hi:"दूध"},m:"₹8"},{ic:"☕",t:{en:"Coffee powder",hi:"कॉफ़ी पाउडर"},m:"₹6"}], sell:"₹110", cost:"₹22", pct:"80%",
+      dishes:[{ic:"☕",t:{en:"Cappuccino",hi:"कैपचीनो"},price:"₹110",qty:2},{ic:"🥪",t:{en:"Veg Sandwich",hi:"वेज सैंडविच"},price:"₹90",qty:1},{ic:"🍫",t:{en:"Brownie",hi:"ब्राउनी"},price:"₹70",add:true}], cartCount:{en:"3 items",hi:"3 आइटम"}, cartTotal:"₹310" },
+    { id:"restaurant", ce:"🍽️", type:"food", tables:true,
+      label:{en:"Restaurant",hi:"रेस्टोरेंट"}, shop:{en:"Spice Villa",hi:"स्पाइस विला"},
+      noun:{en:"dishes",hi:"डिश"},
+      menu:[{ic:"🧆",t:{en:"Paneer Tikka",hi:"पनीर टिक्का"},cat:{en:"Starter · 57%",hi:"स्टार्टर · 57%"},m:"₹220"},
+            {ic:"🍛",t:{en:"Dal Makhani",hi:"दाल मखनी"},cat:{en:"Main · 60%",hi:"मेन · 60%"},m:"₹180"}],
+      sig:{en:"Paneer Tikka",hi:"पनीर टिक्का"}, ings:[{ic:"🧀",t:{en:"Paneer",hi:"पनीर"},m:"₹70"},{ic:"🌶️",t:{en:"Spices + oil",hi:"मसाले + तेल"},m:"₹25"}], sell:"₹220", cost:"₹95", pct:"57%",
+      dishes:[{ic:"🧆",t:{en:"Paneer Tikka",hi:"पनीर टिक्का"},price:"₹220",qty:1},{ic:"🍛",t:{en:"Dal Makhani",hi:"दाल मखनी"},price:"₹180",qty:1},{ic:"🫓",t:{en:"Butter Naan",hi:"बटर नान"},price:"₹40",add:true}], cartCount:{en:"2 items",hi:"2 आइटम"}, cartTotal:"₹400" },
+    { id:"sweet", ce:"🍬", type:"food", tables:false,
+      label:{en:"Sweet Shop",hi:"मिठाई की दुकान"}, shop:{en:"Gupta Sweets",hi:"गुप्ता स्वीट्स"},
+      noun:{en:"items",hi:"आइटम"},
+      menu:[{ic:"🍥",t:{en:"Kaju Katli 250g",hi:"काजू कतली 250g"},cat:{en:"Dry · 34%",hi:"ड्राई · 34%"},m:"₹280"},
+            {ic:"🍮",t:{en:"Gulab Jamun",hi:"गुलाब जामुन"},cat:{en:"Hot · 45%",hi:"हॉट · 45%"},m:"₹120"}],
+      sig:{en:"Kaju Katli 250g",hi:"काजू कतली 250g"}, ings:[{ic:"🥜",t:{en:"Kaju",hi:"काजू"},m:"₹150"},{ic:"🍬",t:{en:"Sugar + ghee",hi:"चीनी + घी"},m:"₹35"}], sell:"₹280", cost:"₹185", pct:"34%",
+      dishes:[{ic:"🍥",t:{en:"Kaju Katli 250g",hi:"काजू कतली 250g"},price:"₹280",qty:1},{ic:"🍮",t:{en:"Gulab Jamun",hi:"गुलाब जामुन"},price:"₹120",qty:1},{ic:"🥟",t:{en:"Samosa",hi:"समोसा"},price:"₹20",add:true}], cartCount:{en:"2 items",hi:"2 आइटम"}, cartTotal:"₹400" },
+    { id:"bakery", ce:"🥐", type:"food", tables:false,
+      label:{en:"Bakery",hi:"बेकरी"}, shop:{en:"Crust Bakery",hi:"क्रस्ट बेकरी"},
+      noun:{en:"items",hi:"आइटम"},
+      menu:[{ic:"🎂",t:{en:"Chocolate Cake",hi:"चॉकलेट केक"},cat:{en:"Cakes · 49%",hi:"केक · 49%"},m:"₹450"},
+            {ic:"🥐",t:{en:"Veg Puff",hi:"वेज पफ"},cat:{en:"Snacks · 55%",hi:"स्नैक्स · 55%"},m:"₹30"}],
+      sig:{en:"Chocolate Cake",hi:"चॉकलेट केक"}, ings:[{ic:"🌾",t:{en:"Flour + cocoa",hi:"मैदा + कोको"},m:"₹120"},{ic:"🍦",t:{en:"Cream + eggs",hi:"क्रीम + अंडे"},m:"₹90"}], sell:"₹450", cost:"₹230", pct:"49%",
+      dishes:[{ic:"🎂",t:{en:"Chocolate Cake",hi:"चॉकलेट केक"},price:"₹450",qty:1},{ic:"🍪",t:{en:"Cookies 250g",hi:"कुकीज़ 250g"},price:"₹120",qty:1},{ic:"🥐",t:{en:"Veg Puff",hi:"वेज पफ"},price:"₹30",add:true}], cartCount:{en:"2 items",hi:"2 आइटम"}, cartTotal:"₹570" },
+    { id:"salon", ce:"💇", type:"salon", tables:false,
+      label:{en:"Salon / Spa",hi:"सैलून / स्पा"}, shop:{en:"Glow Salon",hi:"ग्लो सैलून"},
+      noun:{en:"services",hi:"सर्विस"},
+      menu:[{ic:"💇",t:{en:"Haircut",hi:"हेयरकट"},cat:{en:"Hair · 90%",hi:"हेयर · 90%"},m:"₹150"},
+            {ic:"✨",t:{en:"Facial",hi:"फेशियल"},cat:{en:"Skin · 76%",hi:"स्किन · 76%"},m:"₹500"}],
+      sig:{en:"Facial",hi:"फेशियल"}, sell:"₹500", cost:"₹120", pct:"76%", dur:{en:"45 min",hi:"45 मिनट"},
+      billItems:[{ic:"💇",t:{en:"Haircut",hi:"हेयरकट"},m:"₹150"},{ic:"✨",t:{en:"Facial",hi:"फेशियल"},m:"₹500"}], billTotal:"₹650" }
+  ];
+  function catById(id){ for(var i=0;i<CATS.length;i++){ if(CATS[i].id===id) return CATS[i]; } return CATS[0]; }
+  var CAT=catById(P("cat")||"grocery");
+  var SHOP=function(){ return L(CAT.shop); };
+
+  /* ══════════ screen renderer ══════════ */
+  function rowHTML(r){
+    var right="";
+    if(r.qty!=null){ right='<div class="stp"><div class="sb">−</div><b>'+r.qty+'</b><div class="sb">+</div></div>'; }
+    else if(r.add){ right='<div class="addpill">ADD</div>'; }
+    else if(r.m){ right='<div class="rm" style="color:'+(r.mc||"var(--ink)")+'">'+r.m+'</div>'; }
+    return '<div class="row'+(r.hl?" hl":"")+(r.tbl?" tbl":"")+'">'+
+      '<div class="rc" style="background:'+(r.hl?"":(r.bg||"var(--cream)"))+'">'+(r.ic||"•")+'</div>'+
+      '<div class="rt"><b>'+L(r.t)+'</b>'+(r.s?'<span>'+L(r.s)+'</span>':"")+'</div>'+right+'</div>';
+  }
+  function screenHTML(s){
+    var tabs=s.tabs?'<div class="scr-tabs">'+s.tabs.map(function(x,i){return '<span class="tb'+(i===s.tabOn?" on":"")+'">'+L(x)+'</span>';}).join("")+'</div>':"";
+    var search=s.search?'<div class="scr-search">🔍 '+L(s.search)+'</div>':"";
+    var pill=s.pill?'<div class="scr-pill'+(s.pillLive?" live":"")+'">'+(s.pillLive?'<span class="ld"></span>':"")+L(s.pill)+'</div>':"";
+    var rows=(s.rows||[]).map(rowHTML).join("");
+    var cta="";
+    if(s.cta){
+      var cart=s.cartc?'<span class="cartc">'+s.cartc+'</span>':"";
+      cta='<div class="scr-cta '+(s.ctaClass||"")+'">'+cart+
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="'+(s.ctaIcon||"M12 5v14M5 12h14")+'"/></svg>'+L(s.cta)+'</div>';
+    }
+    var balStr=(s.bal&&typeof s.bal==="object")?L(s.bal):(s.bal||"₹0");
+    return ''+
+      '<div class="scr-top"><div class="scr-shop">'+
+        '<div class="ic">'+(CAT.ce||"🛒")+'</div>'+
+        '<div class="nm">'+SHOP()+'</div>'+
+        '<div class="bal"><small>'+(s.balLabel?L(s.balLabel):(LANG==="hi"?"आज":"Today"))+'</small><b style="color:'+(s.balColor||"var(--green)")+'">'+balStr+'</b></div>'+
+      '</div></div>'+
+      '<div class="scr-title"><span class="em">'+(s.em||"")+'</span>'+L(s.title)+'</div>'+
+      tabs+
+      '<div class="scr-body"><div class="scr-fade in">'+search+pill+rows+cta+'</div></div>'+
+      '<div class="scr-nav">'+
+        '<div class="nv on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg><span>'+(LANG==="hi"?"होम":"Home")+'</span></div>'+
+        '<div class="nv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10v18l-3-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg><span>'+(LANG==="hi"?"बिल":"Bills")+'</span></div>'+
+        '<div class="nv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>'+(LANG==="hi"?"और":"More")+'</span></div>'+
+      '</div>';
+  }
+  function renderScreen(el,s){
+    if(!el) return;
+    var body=el.querySelector(".scr-fade");
+    if(body && !RM()){ body.classList.remove("in"); setTimeout(function(){ el.innerHTML=screenHTML(s); },150); }
+    else { el.innerHTML=screenHTML(s); }
+  }
+
+  /* ══════════ per-category step builders ══════════ */
+  function menuStep(c){
+    var isSvc=c.type==="salon";
+    return { key:"menu", name:{en:"Menu",hi:"मेन्यू"},
+      title:isSvc?{en:"Add your services & prices",hi:"अपनी सर्विस और दाम जोड़ें"}:{en:"Add "+L(c.noun)+" to your Menu",hi:"मेन्यू में "+L(c.noun)+" जोड़ें"},
+      what:isSvc?{en:"List each service with its price so it's ready to bill. A Cost Price (products used) lets HisaabNow track your margin.",hi:"हर सर्विस को दाम के साथ डालें ताकि बिल के लिए तैयार हो। Cost Price (इस्तेमाल प्रोडक्ट) से मार्जिन ट्रैक हो।"}
+        :{en:"Build your catalog. Add each item with a Sell Price to switch it on for billing — add a Cost Price too so margin is tracked.",hi:"अपनी कैटलॉग बनाएं। हर आइटम को Sell Price के साथ जोड़ें ताकि बिलिंग चालू हो — Cost Price भी डालें ताकि मार्जिन ट्रैक हो।"},
+      steps:isSvc?{en:["Open Menu (Catalog) and tap Add item","Enter the service name and Category","Set the Sell Price (and product cost)","Save — the service is live for billing"],hi:["मेन्यू (कैटलॉग) खोलें और Add item दबाएं","सर्विस का नाम और Category डालें","Sell Price सेट करें (और प्रोडक्ट कॉस्ट)","Save करें — सर्विस बिलिंग के लिए तैयार"]}
+        :{en:["Open Menu (Catalog) and tap Add item","Enter the name and Category","Set the Sell Price and Cost Price","Save — it's live for billing"],hi:["मेन्यू (कैटलॉग) खोलें और Add item दबाएं","नाम और Category डालें","Sell Price और Cost Price सेट करें","Save करें — बिलिंग के लिए तैयार"]},
+      tip:{en:"The Menu table shows Sell Price, Cost Price and Margin side by side.",hi:"मेन्यू टेबल में Sell Price, Cost Price और Margin साथ-साथ दिखें।"},
+      screen:{em:"📖",title:{en:"Menu · Catalog",hi:"मेन्यू · कैटलॉग"},bal:(c.menu.length+1)+"",balColor:"var(--ink)",balLabel:c.noun,
+        rows:c.menu.concat([{ic:"➕",t:{en:"Add item",hi:"आइटम जोड़ें"},s:{en:"set Sell Price",hi:"Sell Price डालें"},hl:true}]),
+        cta:{en:"Save",hi:"सेव करें"},ctaClass:"gold",ctaIcon:"M20 6 9 17l-5-5"} };
+  }
+  function marginStep(c){
+    if(c.type==="food"){
+      return { key:"margin", name:{en:"Ingredients",hi:"सामग्री"},
+        title:{en:"Add ingredients & see Margin",hi:"सामग्री जोड़ें और Margin देखें"},
+        what:{en:"For made-to-order items, add ingredients with their cost. HisaabNow works out the Margin on every "+L(c.sig).toLowerCase()+" automatically.",hi:"बनने वाले आइटम के लिए सामग्री लागत के साथ जोड़ें। HisaabNow हर "+L(c.sig)+" का Margin अपने-आप निकाले।"},
+        steps:{en:["Open a "+L(c.noun).replace(/s$/,"")+" and tap Recipe / Ingredients","Add each ingredient with its cost","Set the Sell Price","Margin is calculated for you"],hi:["कोई आइटम खोलें और Recipe / Ingredients दबाएं","हर सामग्री लागत के साथ जोड़ें","Sell Price सेट करें","Margin अपने-आप निकल आए"]},
+        tip:{en:"Margin appears in the Menu so you always know what earns most.",hi:"Margin मेन्यू में दिखे ताकि पता रहे सबसे ज़्यादा क्या कमाता है।"},
+        screen:{em:"📋",title:{en:L(c.sig)+" · Recipe",hi:L(c.sig)+" · रेसिपी"},bal:c.pct,balColor:"var(--green)",balLabel:{en:"Margin",hi:"मार्जिन"},
+          rows:c.ings.concat([{ic:"📊",t:{en:"Sell "+c.sell+" · Cost "+c.cost,hi:"Sell "+c.sell+" · Cost "+c.cost},s:{en:"Margin",hi:"मार्जिन"},hl:true,m:c.pct,mc:"var(--green)"}]),
+          cta:{en:"Save recipe",hi:"रेसिपी सेव करें"},ctaClass:"gold",ctaIcon:"M20 6 9 17l-5-5"} };
+    }
+    if(c.type==="salon"){
+      return { key:"margin", name:{en:"Pricing",hi:"प्राइसिंग"},
+        title:{en:"Price each service & see Margin",hi:"हर सर्विस का दाम और Margin"},
+        what:{en:"Set the price and time for each service, and the product cost it uses. HisaabNow shows the Margin so you price with confidence.",hi:"हर सर्विस का दाम और समय सेट करें, और इस्तेमाल प्रोडक्ट की लागत। HisaabNow Margin दिखाए ताकि सही दाम तय करें।"},
+        steps:{en:["Open a service in the Menu","Set the Sell Price and duration","Add the product cost it uses","Margin is calculated for you"],hi:["मेन्यू में कोई सर्विस खोलें","Sell Price और समय सेट करें","इस्तेमाल प्रोडक्ट की लागत डालें","Margin अपने-आप निकल आए"]},
+        tip:{en:"Duration helps you plan the day and avoid double-booking.",hi:"समय से दिन प्लान करें और डबल-बुकिंग से बचें।"},
+        screen:{em:"💇",title:{en:L(c.sig)+" · Pricing",hi:L(c.sig)+" · दाम"},bal:c.pct,balColor:"var(--green)",balLabel:{en:"Margin",hi:"मार्जिन"},
+          rows:[{ic:"⏱️",t:{en:"Duration",hi:"समय"},s:{en:"time per service",hi:"प्रति सर्विस समय"},m:L(c.dur)},
+                {ic:"🧴",t:{en:"Product cost",hi:"प्रोडक्ट लागत"},s:{en:"per service",hi:"प्रति सर्विस"},m:c.cost},
+                {ic:"📊",t:{en:"Sell "+c.sell+" · Cost "+c.cost,hi:"Sell "+c.sell+" · Cost "+c.cost},s:{en:"Margin",hi:"मार्जिन"},hl:true,m:c.pct,mc:"var(--green)"}],
+          cta:{en:"Save service",hi:"सर्विस सेव करें"},ctaClass:"gold",ctaIcon:"M20 6 9 17l-5-5"} };
+    }
+    // retail
+    return { key:"margin", name:{en:"Cost & Margin",hi:"लागत और मार्जिन"},
+      title:{en:"Set Cost Price & see Margin",hi:"Cost Price डालें और Margin देखें"},
+      what:{en:"Add the Cost Price you buy each product at. HisaabNow compares it with your Sell Price and shows the Margin on every sale.",hi:"हर प्रोडक्ट की खरीद लागत (Cost Price) डालें। HisaabNow उसे Sell Price से मिलाकर हर बिक्री का Margin दिखाए।"},
+      steps:{en:["Open a product in the Menu","Enter the Cost Price you buy it at","Keep the Sell Price you charge","Margin is calculated for you"],hi:["मेन्यू में कोई प्रोडक्ट खोलें","खरीद लागत (Cost Price) डालें","अपना Sell Price रखें","Margin अपने-आप निकल आए"]},
+      tip:{en:"Cost recorded here powers your real profit and AI insights.",hi:"यहाँ दर्ज लागत आपके असली मुनाफ़े और AI इनसाइट्स में जाए।"},
+      screen:{em:"🏷️",title:{en:L(c.sig)+" · Pricing",hi:L(c.sig)+" · दाम"},bal:c.pct,balColor:"var(--green)",balLabel:{en:"Margin",hi:"मार्जिन"},
+        rows:[{ic:"🛒",t:{en:"Cost Price",hi:"लागत"},s:{en:"you buy at",hi:"खरीद पर"},m:c.cost},
+              {ic:"🏷️",t:{en:"Sell Price",hi:"बिक्री दाम"},s:{en:"you charge",hi:"आप लें"},m:c.sell},
+              {ic:"📊",t:{en:"Margin",hi:"मार्जिन"},s:{en:"per sale",hi:"प्रति बिक्री"},hl:true,m:c.pct,mc:"var(--green)"}],
+        cta:{en:"Save",hi:"सेव करें"},ctaClass:"gold",ctaIcon:"M20 6 9 17l-5-5"} };
+  }
+  function tablesStep(c){
+    return { key:"tables", tbl:true, name:{en:"Tables",hi:"टेबल"},
+      title:{en:"Run tables, orders & KOT",hi:"टेबल, ऑर्डर और KOT चलाएं"},
+      what:{en:"Seat a table, take the order, and send it to the kitchen as a KOT. Track Dine-in and Takeaway, and free the table once it's paid.",hi:"टेबल बैठाएं, ऑर्डर लें, और किचन को KOT भेजें। Dine-in और Takeaway ट्रैक करें, पेमेंट के बाद टेबल खाली करें।"},
+      steps:{en:["Open Tables and tap a Free table","Add items, pick Order type (Dine-in / Takeaway)","Tap Send to kitchen — a KOT goes to the Kitchen","Kitchen marks Ready → take payment, table frees up"],hi:["Tables खोलें और कोई Free टेबल टैप करें","आइटम जोड़ें, Order type चुनें (Dine-in / Takeaway)","Send to kitchen दबाएं — KOT किचन जाए","किचन Ready करे → पेमेंट लें, टेबल खाली हो"]},
+      tip:{en:"A Kitchen note like \"less spicy, no onion\" rides along with the KOT.",hi:"KOT के साथ किचन नोट जैसे \"कम तीखा, बिना प्याज़\" भी जाए।"},
+      screen:{em:"🍽️",title:{en:"Tables",hi:"टेबल"},bal:{en:"3 open",hi:"3 खुले"},balColor:"var(--ink)",balLabel:{en:"Orders",hi:"ऑर्डर"},
+        tabs:[{en:"Tables",hi:"टेबल"},{en:"Orders",hi:"ऑर्डर"}],tabOn:0,
+        rows:[{ic:"🍽️",t:{en:"Table 1 · Dine-in",hi:"टेबल 1 · Dine-in"},s:{en:"tap to add items",hi:"आइटम जोड़ने को टैप करें"},hl:true,m:"₹840"},
+              {ic:"🟢",t:{en:"Table 2 · Free",hi:"टेबल 2 · खाली"},s:{en:"ready to seat",hi:"बैठाने को तैयार"},m:""},
+              {ic:"👨‍🍳",t:{en:"Table 3 · in kitchen",hi:"टेबल 3 · किचन में"},s:{en:"KOT sent",hi:"KOT भेजा"},m:"₹560"}],
+        cta:{en:"Send to kitchen",hi:"किचन भेजें"},ctaClass:"green",ctaIcon:"M4 12h16M4 12l4-4M4 12l4 4"} };
+  }
+  function billStep(c){
+    if(c.type==="food"){
+      var items=c.dishes.map(function(d){ return {ic:d.ic,t:d.t,s:{en:d.price,hi:d.price},qty:d.qty,add:d.add,hl:!!d.add}; });
+      return { key:"bill", name:{en:"Billing",hi:"बिलिंग"},
+        title:{en:"Take orders, Swiggy-style",hi:"ऑर्डर लें, Swiggy स्टाइल"},
+        what:{en:"Search or tap a dish, then ADD and set quantity with the − + stepper — just like Swiggy or Zomato. Your cart total runs live, then take the payment.",hi:"डिश खोजें या टैप करें, फिर ADD करें और − + स्टेपर से मात्रा सेट करें — बिल्कुल Swiggy या Zomato जैसा। कार्ट टोटल लाइव चले, फिर पेमेंट लें।"},
+        steps:{en:["Search or tap dishes on the menu","Tap ADD, then use − + to set quantity","Watch the cart total update live","Choose Cash / UPI / Udhaar and Complete sale"],hi:["मेन्यू पर डिश खोजें या टैप करें","ADD दबाएं, फिर − + से मात्रा सेट करें","कार्ट टोटल लाइव अपडेट देखें","Cash / UPI / Udhaar चुनें और Complete sale"]},
+        tip:c.tables?{en:"Dine-in orders can go through Tables and the Kitchen (KOT) first.",hi:"Dine-in ऑर्डर पहले Tables और किचन (KOT) से जा सकते हैं।"}:{en:"Put it on Udhaar and it goes straight to that customer's khata.",hi:"Udhaar चुनें तो सीधे उस ग्राहक के खाते में जाए।"},
+        screen:{em:"🧾",title:{en:"New order",hi:"नया ऑर्डर"},bal:c.cartTotal,balColor:"var(--ink)",balLabel:{en:"Cart",hi:"कार्ट"},
+          search:{en:"Search service or product…",hi:"सर्विस या प्रोडक्ट खोजें…"},
+          rows:items,
+          cartc:L(c.cartCount),cta:{en:"Complete sale · "+c.cartTotal,hi:"Complete sale · "+c.cartTotal},ctaClass:"green",ctaIcon:"M20 6 9 17l-5-5"} };
+    }
+    // retail + salon: tap list
+    var isSvc=c.type==="salon";
+    return { key:"bill", name:{en:"Billing",hi:"बिलिंग"},
+      title:{en:"Make a bill in seconds",hi:"सेकंडों में बिल बनाएं"},
+      what:isSvc?{en:"Tap the services given, choose how the customer paid, and Complete the sale. Share it on WhatsApp — no printer needed.",hi:"दी गई सर्विस टैप करें, पेमेंट का तरीका चुनें, और Complete करें। WhatsApp पर भेजें — प्रिंटर की ज़रूरत नहीं।"}
+        :{en:"Tap items into the cart, choose how the customer paid, and Complete the sale. Share it on WhatsApp — no printer needed.",hi:"आइटम कार्ट में टैप करें, पेमेंट का तरीका चुनें, और Complete करें। WhatsApp पर भेजें — प्रिंटर की ज़रूरत नहीं।"},
+      steps:{en:["Open New Sale and tap "+(isSvc?"services":"items"),"Choose Cash, UPI, Card or Udhaar","Tap Complete sale","Share the bill on WhatsApp"],hi:["नई बिक्री खोलें और "+(isSvc?"सर्विस":"आइटम")+" टैप करें","Cash, UPI, Card या Udhaar चुनें","Complete sale दबाएं","बिल WhatsApp पर भेजें"]},
+      tip:{en:"Choose Udhaar and the bill goes straight to that customer's khata.",hi:"Udhaar चुनें तो बिल सीधे उस ग्राहक के खाते में जाए।"},
+      screen:{em:"🧾",title:{en:"New bill",hi:"नया बिल"},bal:c.billTotal,balColor:"var(--ink)",balLabel:{en:"Total",hi:"कुल"},
+        rows:c.billItems.concat([{ic:"💳",t:{en:"Cash · UPI · Card · Udhaar",hi:"Cash · UPI · Card · Udhaar"},s:{en:"choose payment",hi:"पेमेंट चुनें"},hl:true}]),
+        cta:{en:"Complete sale · "+c.billTotal,hi:"Complete sale · "+c.billTotal},ctaClass:"green",ctaIcon:"M20 6 9 17l-5-5"} };
+  }
+
+  /* ══════════ shared steps ══════════ */
+  function sharedSteps(c){
+    var custNoun=c.type==="salon"?{en:"client",hi:"क्लाइंट"}:{en:"customer",hi:"ग्राहक"};
+    var custPlural=c.type==="salon"?{en:"Clients",hi:"क्लाइंट"}:{en:"Customers",hi:"ग्राहक"};
+    return [
+    { key:"purchase", name:{en:"Purchases",hi:"खरीद"},
+      title:{en:"Record purchases with Stock In",hi:"Stock In से खरीद दर्ज करें"},
+      what:{en:"When stock arrives, log it against a supplier. Quantities go up and your Dena (payable) stays tracked.",hi:"स्टॉक आए तो सप्लायर के साथ दर्ज करें। मात्रा बढ़े और आपका Dena ट्रैक रहे।"},
+      steps:{en:["Open Purchases → Stock In","Pick the Supplier","Add items with Cost Price and quantity","Save — stock rises and Dena updates"],hi:["खरीद → Stock In खोलें","Supplier चुनें","Cost Price और मात्रा के साथ आइटम डालें","Save करें — स्टॉक बढ़े और Dena अपडेट हो"]},
+      tip:{en:"Cost recorded here feeds your real profit and margin.",hi:"यहाँ दर्ज लागत आपके असली मुनाफ़े और मार्जिन में जाए।"},
+      screen:{em:"📦",title:{en:"Stock In",hi:"स्टॉक इन"},bal:"₹1,152",balColor:"var(--ink)",balLabel:{en:"Purchase",hi:"खरीद"},
+        rows:[{ic:"🚚",t:{en:"Verma Distributors",hi:"वर्मा डिस्ट्रीब्यूटर"},s:{en:"supplier",hi:"सप्लायर"}},
+              {ic:"📦",t:{en:"Stock item ×24",hi:"स्टॉक आइटम ×24"},s:{en:"@ ₹48 cost",hi:"@ ₹48 लागत"},m:"₹1,152"},
+              {ic:"➕",t:{en:"Add item",hi:"आइटम जोड़ें"},hl:true}],
+        cta:{en:"Save purchase",hi:"खरीद सेव करें"},ctaClass:"gold",ctaIcon:"M20 6 9 17l-5-5"} },
+    { key:"udhaar", name:{en:"Udhaar",hi:"उधार"},
+      title:{en:"Track udhaar in a digital khata",hi:"उधार डिजिटल खाते में रखें"},
+      what:{en:"Keep every "+L(custNoun)+"'s credit in one clean khata and nudge them to pay with one WhatsApp tap.",hi:"हर "+L(custNoun)+" का उधार एक साफ़ खाते में रखें और एक WhatsApp टैप से याद दिलाएं।"},
+      steps:{en:["Add the "+L(custNoun)+", then the udhaar amount","See who owes what at a glance","Tap Send reminder","A polite WhatsApp message goes out"],hi:[L(custNoun)+" जोड़ें, फिर उधार रकम डालें","एक नज़र में देखें किसका कितना बकाया","Send reminder दबाएं","एक नम्र WhatsApp मैसेज चला जाए"]},
+      tip:{en:"Marking a bill as Udhaar adds to the khata automatically.",hi:"बिल को Udhaar मार्क करने पर खाते में अपने-आप जुड़े।"},
+      screen:{em:"📓",title:{en:"Udhaar khata",hi:"उधार खाता"},bal:"₹1,650",balColor:"var(--danger)",balLabel:{en:"Outstanding",hi:"बकाया"},
+        rows:[{ic:"👤",t:{en:"Ramesh",hi:"रमेश"},s:{en:"since 12 days",hi:"12 दिन से"},m:"₹1,200",mc:"var(--danger)"},
+              {ic:"👤",t:{en:"Sunita",hi:"सुनीता"},s:{en:"since 3 days",hi:"3 दिन से"},m:"₹450",mc:"var(--danger)"},
+              {ic:"💬",t:{en:"Send reminder",hi:"रिमाइंडर भेजें"},s:{en:"on WhatsApp",hi:"WhatsApp पर"},hl:true}],
+        cta:{en:"Remind on WhatsApp",hi:"WhatsApp पर याद दिलाएं"},ctaIcon:"M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"} },
+    { key:"teams", name:{en:"Teams",hi:"टीम"},
+      title:{en:"Add your staff with roles",hi:"अपने स्टाफ को रोल के साथ जोड़ें"},
+      what:{en:"Give staff their own login as Manager or Cashier — everyone works under the same shop.",hi:"स्टाफ को Manager या Cashier के रूप में अपना लॉगिन दें — सब एक ही दुकान में काम करें।"},
+      steps:{en:["Open Team → Add Staff","Enter their name and phone number","Pick a Role: Manager or Cashier","They log in with their own number"],hi:["Team → Add Staff खोलें","उनका नाम और फ़ोन नंबर डालें","Role चुनें: Manager या Cashier","वो अपने नंबर से लॉगिन करें"]},
+      tip:{en:"Cashiers bill and collect; Managers also see reports.",hi:"Cashier बिल और वसूली करें; Manager रिपोर्ट भी देखें।"},
+      screen:{em:"👥",title:{en:"Team",hi:"टीम"},bal:{en:"2 staff",hi:"2 स्टाफ"},balColor:"var(--ink)",balLabel:{en:"Members",hi:"सदस्य"},
+        rows:[{ic:"🧑‍💼",t:{en:"Amit",hi:"अमित"},s:{en:"Manager",hi:"मैनेजर"},m:"✓",mc:"var(--green)"},
+              {ic:"🧑‍💻",t:{en:"Priya",hi:"प्रिया"},s:{en:"Cashier",hi:"कैशियर"},m:"✓",mc:"var(--green)"},
+              {ic:"➕",t:{en:"Add Staff",hi:"स्टाफ जोड़ें"},s:{en:"name + phone + role",hi:"नाम + फ़ोन + रोल"},hl:true}],
+        cta:{en:"Add staff",hi:"स्टाफ जोड़ें"},ctaClass:"gold",ctaIcon:"M12 5v14M5 12h14"} },
+    { key:"cash", name:{en:"Cash flow",hi:"कैश फ़्लो"},
+      title:{en:"See your cash flow",hi:"अपना कैश फ़्लो देखें"},
+      what:{en:"Money in, money out, and what's left in hand — plus expenses, all in one view.",hi:"पैसा आया, पैसा गया, और हाथ में क्या बचा — साथ में खर्चे, सब एक जगह।"},
+      steps:{en:["Open Cash flow","See Total in and Total out for the day","Add expenses, withdrawals and deposits","Cash in hand updates live"],hi:["Cash flow खोलें","दिन का Total in और Total out देखें","खर्चे, निकासी और जमा जोड़ें","Cash in hand लाइव अपडेट हो"]},
+      tip:{en:"Log expenses here so your profit stays honest.",hi:"खर्चे यहाँ दर्ज करें ताकि मुनाफ़ा सही रहे।"},
+      screen:{em:"💵",title:{en:"Cash flow",hi:"कैश फ़्लो"},bal:"₹5,400",balColor:"var(--green)",balLabel:{en:"In hand",hi:"हाथ में"},
+        rows:[{ic:"⬆️",t:{en:"Total in",hi:"कुल आया"},s:{en:"sales + deposits",hi:"बिक्री + जमा"},m:"₹8,600",mc:"var(--green)"},
+              {ic:"⬇️",t:{en:"Total out",hi:"कुल गया"},s:{en:"purchases + expenses",hi:"खरीद + खर्चे"},m:"₹3,200",mc:"var(--danger)"},
+              {ic:"🧾",t:{en:"Cash in hand",hi:"हाथ में नकद"},s:{en:"withdraw · deposit",hi:"निकासी · जमा"},hl:true,m:"₹5,400"}],
+        cta:{en:"Add expense",hi:"खर्च जोड़ें"},ctaClass:"gold",ctaIcon:"M12 5v14M5 12h14"} },
+    { key:"ai", name:{en:"AI Insights",hi:"AI इनसाइट्स"},
+      title:{en:"Get AI Insights for you",hi:"आपके लिए AI इनसाइट्स"},
+      what:{en:"The AI Munim reads your live sales and tells you what's working, what to restock, and where your profit is.",hi:"AI मुनीम आपकी लाइव बिक्री पढ़कर बताए क्या चल रहा है, क्या रीस्टॉक करना है, और मुनाफ़ा कहाँ है।"},
+      steps:{en:["Open the dashboard","Read Insights for you","Act on restock and top-seller tips","Ask the AI Munim any question"],hi:["डैशबोर्ड खोलें","Insights for you पढ़ें","रीस्टॉक और टॉप-सेलर टिप्स पर काम करें","AI मुनीम से कोई भी सवाल पूछें"]},
+      tip:{en:"Insights sharpen the more you bill — your data stays yours.",hi:"जितना बिल करें, इनसाइट्स उतने सटीक — डेटा आपका ही रहे।"},
+      screen:{em:"🧠",title:{en:"Insights for you",hi:"आपके लिए इनसाइट्स"},bal:"↑ 18%",balColor:"var(--green)",balLabel:{en:"Profit",hi:"मुनाफ़ा"},
+        rows:[{ic:"🏆",t:{en:"Top seller: "+L(c.menu[0].t),hi:"टॉप सेलर: "+L(c.menu[0].t)},s:{en:"42% of sales",hi:"बिक्री का 42%"}},
+              {ic:"⚠️",t:{en:"Restock "+L(c.menu[1].t).toLowerCase()+" soon",hi:L(c.menu[1].t)+" जल्दी रीस्टॉक करें"},s:{en:"running low",hi:"कम पड़ रहा"},hl:true},
+              {ic:"📈",t:{en:"Profit up 18%",hi:"मुनाफ़ा 18% ऊपर"},s:{en:"vs last week",hi:"पिछले हफ़्ते से"},mc:"var(--green)"}],
+        cta:{en:"Ask the AI Munim",hi:"AI मुनीम से पूछें"},ctaClass:"gold",ctaIcon:"M12 3a9 9 0 0 1 9 9 9 9 0 0 1-9 9c-1.6 0-3-.4-4.3-1L3 21l1-4.7A9 9 0 0 1 12 3z"} },
+    { key:"loyalty", name:{en:"Loyalty",hi:"लॉयल्टी"},
+      title:{en:"Reward regulars & run WhatsApp campaigns",hi:"रेगुलर को इनाम और WhatsApp कैंपेन"},
+      what:{en:L(custPlural)+" earn Visits automatically. Spot your Loyal (5+) regulars, send coupons, and broadcast a WhatsApp Campaign.",hi:L(custPlural)+" अपने-आप Visits कमाएं। Loyal (5+) रेगुलर पहचानें, कूपन भेजें, और WhatsApp Campaign चलाएं।"},
+      steps:{en:["Add a "+L(custNoun)+" (or they're saved from a bill)","Visits add up with each visit","Loyal (5+) regulars are flagged","Send a Coupon or WhatsApp Campaign"],hi:[L(custNoun)+" जोड़ें (या बिल से सेव हों)","हर विज़िट पर Visits बढ़ें","Loyal (5+) रेगुलर फ़्लैग हों","Coupon या WhatsApp Campaign भेजें"]},
+      tip:{en:"Loyalty CRM auto-rewards — no spreadsheets to maintain.",hi:"Loyalty CRM अपने-आप इनाम दे — कोई स्प्रेडशीट नहीं।"},
+      screen:{em:"🎁",title:{en:"Loyalty · Marketing",hi:"लॉयल्टी · मार्केटिंग"},bal:"18",balColor:"var(--ink)",balLabel:{en:"Loyal (5+)",hi:"Loyal (5+)"},
+        rows:[{ic:"👤",t:{en:"Ramesh · 6 visits",hi:"रमेश · 6 विज़िट"},s:{en:"Loyal (5+)",hi:"Loyal (5+)"},m:"⭐",mc:"var(--gold-deep)"},
+              {ic:"🏷️",t:{en:"Coupon: 10% off",hi:"कूपन: 10% छूट"},s:{en:"auto-reward",hi:"ऑटो-रिवॉर्ड"}},
+              {ic:"📣",t:{en:"WhatsApp Campaign",hi:"WhatsApp कैंपेन"},s:{en:"broadcast to regulars",hi:"रेगुलर को भेजें"},hl:true}],
+        cta:{en:"Send campaign",hi:"कैंपेन भेजें"},ctaIcon:"M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5z"} },
+    { key:"supplier", name:{en:"Suppliers",hi:"सप्लायर"},
+      title:{en:"Add suppliers & track Dena",hi:"सप्लायर जोड़ें और Dena ट्रैक करें"},
+      what:{en:"Save your suppliers and always know your Dena — exactly what you owe each one.",hi:"अपने सप्लायर सेव करें और हमेशा जानें आपका Dena — हर एक को कितना देना है।"},
+      steps:{en:["Open Suppliers → Add supplier","Enter their name and phone","Each Stock In adds to their Dena","Record payments to clear it"],hi:["Suppliers → Add supplier खोलें","उनका नाम और फ़ोन डालें","हर Stock In उनके Dena में जुड़े","पेमेंट दर्ज करके क्लियर करें"]},
+      tip:{en:"Stock In links each purchase to the right supplier automatically.",hi:"Stock In हर खरीद को सही सप्लायर से अपने-आप जोड़े।"},
+      screen:{em:"🚚",title:{en:"Suppliers",hi:"सप्लायर"},bal:"₹4,200",balColor:"var(--danger)",balLabel:{en:"Total Dena",hi:"कुल देना"},
+        rows:[{ic:"🏭",t:{en:"Verma Distributors",hi:"वर्मा डिस्ट्रीब्यूटर"},s:{en:"Dena · to pay",hi:"देना · बकाया"},hl:true,m:"₹4,200",mc:"var(--danger)"},
+              {ic:"🏬",t:{en:"Gupta Traders",hi:"गुप्ता ट्रेडर्स"},s:{en:"settled",hi:"चुकता"},m:"₹0",mc:"var(--green)"},
+              {ic:"➕",t:{en:"Add supplier",hi:"सप्लायर जोड़ें"},s:{en:"name + phone",hi:"नाम + फ़ोन"}}],
+        cta:{en:"Add supplier",hi:"सप्लायर जोड़ें"},ctaClass:"gold",ctaIcon:"M12 5v14M5 12h14"} },
+    { key:"biz", name:{en:"Business",hi:"बिज़नेस"},
+      title:{en:"Manage multiple shops",hi:"कई दुकानें संभालें"},
+      what:{en:"Run more than one outlet? Switch between shops and compare them from Business Manager. Each shop keeps its own stock, staff and khata.",hi:"एक से ज़्यादा दुकान? Business Manager से दुकानें स्विच करें और तुलना करें। हर दुकान का अपना स्टॉक, स्टाफ और खाता।"},
+      steps:{en:["Open Settings → Business Manager","See My Businesses","Switch shop in one tap","Compare across all your shops"],hi:["Settings → Business Manager खोलें","My Businesses देखें","एक टैप में दुकान स्विच करें","सभी दुकानों की तुलना करें"]},
+      tip:{en:"Each outlet is fully separate — no mixing of stock or cash.",hi:"हर दुकान पूरी तरह अलग — स्टॉक या कैश मिक्स नहीं।"},
+      screen:{em:"🏢",title:{en:"Business Manager",hi:"बिज़नेस मैनेजर"},bal:"2",balColor:"var(--ink)",balLabel:{en:"Outlets",hi:"दुकानें"},
+        rows:[{ic:"🏪",t:c.shop,s:{en:"active · Noida",hi:"चालू · नोएडा"},hl:true,m:"✓",mc:"var(--green)"},
+              {ic:"🏪",t:{en:L(c.shop)+" 2",hi:L(c.shop)+" 2"},s:{en:"Sector 18",hi:"सेक्टर 18"}},
+              {ic:"📊",t:{en:"Compare all shops",hi:"सभी दुकानों की तुलना"},s:{en:"sales · profit",hi:"बिक्री · मुनाफ़ा"}}],
+        cta:{en:"Switch shop",hi:"दुकान स्विच करें"},ctaClass:"gold",ctaIcon:"M4 12h16M4 12l4-4M4 12l4 4M20 8l-4 4"} },
+    { key:"voice", name:{en:"Voice",hi:"वॉइस"},
+      title:{en:"Bill by voice",hi:"बोलकर बिल बनाएं"},
+      what:{en:"Hands full? Tap the mic and speak the order in Hindi or English — items drop straight into the bill.",hi:"हाथ भरे हैं? माइक दबाएं और हिंदी या इंग्लिश में ऑर्डर बोलें — आइटम सीधे बिल में आ जाएं।"},
+      steps:{en:["Open New Sale and tap the mic","Speak the items out loud","Watch them appear while it's Listening…","Complete the sale as usual"],hi:["नई बिक्री खोलें और माइक दबाएं","आइटम बोलें","Listening… के दौरान वो जुड़ते जाएं","हमेशा की तरह बिल Complete करें"]},
+      tip:{en:"Voice understands mixed Hindi-English — great when the counter is busy.",hi:"वॉइस हिंग्लिश समझे — जब काउंटर व्यस्त हो तब बढ़िया।"},
+      screen:{em:"🎙️",title:{en:"Voice billing",hi:"वॉइस बिलिंग"},bal:c.type==="salon"?c.billTotal:(c.type==="food"?c.cartTotal:c.billTotal),balColor:"var(--ink)",balLabel:{en:"Total",hi:"कुल"},
+        pill:{en:"Listening…",hi:"सुन रहा है…"},pillLive:true,
+        rows:[{ic:(c.menu[0].ic||"🧾"),t:{en:L(c.menu[0].t)+" ×2",hi:L(c.menu[0].t)+" ×2"},s:{en:"added by voice",hi:"आवाज़ से जुड़ा"},m:c.menu[0].m},
+              {ic:(c.menu[1].ic||"🧾"),t:{en:L(c.menu[1].t)+" ×1",hi:L(c.menu[1].t)+" ×1"},s:{en:"added by voice",hi:"आवाज़ से जुड़ा"},m:c.menu[1].m},
+              {ic:"🎙️",t:{en:"Speak the next item",hi:"अगला आइटम बोलें"},s:{en:"Listening…",hi:"सुन रहा है…"},hl:true}],
+        cta:{en:"Complete sale",hi:"Complete sale"},ctaClass:"green",ctaIcon:"M20 6 9 17l-5-5"} }
+    ];
+  }
+
+  function STEPS(c){
+    var arr=[ menuStep(c), marginStep(c) ];
+    if(c.tables) arr.push(tablesStep(c));
+    arr.push(billStep(c));
+    return arr.concat(sharedSteps(c));
+  }
+
+  /* ══════════ state + render ══════════ */
+  var steps=STEPS(CAT), cur=0, timer=null, PROG_MS=5200;
+  function drawModalCats(){
+    $("modalCats").innerHTML=CATS.map(function(c){
+      return '<button class="mcat'+(c.id===CAT.id?" on":"")+'" data-id="'+c.id+'"><span class="me">'+c.ce+'</span>'+L(c.label)+'</button>';
+    }).join("");
+    [].forEach.call($("modalCats").querySelectorAll(".mcat"),function(b){ b.addEventListener("click",function(){ setCat(b.dataset.id); closeModal(); }); });
+  }
+  function updateCatsBar(){
+    $("catsNow").innerHTML='<span class="ce">'+CAT.ce+'</span><span><small>'+t("cats.showing")+'</small>'+L(CAT.label)+'</span>';
+  }
+  function openModal(){ drawModalCats(); $("catModal").classList.add("open"); $("catModal").setAttribute("aria-hidden","false"); }
+  function closeModal(){ $("catModal").classList.remove("open"); $("catModal").setAttribute("aria-hidden","true"); }
+  function drawRail(){
+    $("rail").innerHTML=steps.map(function(s,i){
+      return '<button class="rstep'+(i===cur?" on":"")+(s.tbl?" tblstep":"")+'" data-i="'+i+'"><span class="rn">'+(i+1)+'</span><span class="rl">'+L(s.name)+'</span></button>';
+    }).join("");
+    [].forEach.call($("rail").querySelectorAll(".rstep"),function(b){ b.addEventListener("click",function(){ select(+b.dataset.i,true); }); });
+  }
+  function centerRail(i){
+    var rail=$("rail"); if(!rail) return;
+    var b=rail.querySelectorAll(".rstep")[i]; if(!b) return;
+    rail.scrollTo({left:Math.max(0,b.offsetLeft-(rail.clientWidth/2)+(b.clientWidth/2)),behavior:RM()?"auto":"smooth"});
+  }
+  function select(i,manual){
+    cur=i;
+    [].forEach.call($("rail").querySelectorAll(".rstep"),function(b,bi){ b.classList.toggle("on",bi===i); });
+    centerRail(i);
+    var s=steps[i];
+    $("fdetail").innerHTML=
+      '<div class="kicker"><span class="kn">'+(i+1)+'</span>'+t("kicker")+' '+(i+1)+' / '+steps.length+'</div>'+
+      '<h3 class="disp">'+L(s.title)+'</h3>'+
+      '<p class="what">'+L(s.what)+'</p>'+
+      '<ul class="flist">'+ (s.steps[LANG]||s.steps.en).map(function(x,xi){ return '<li><span class="k">'+(xi+1)+'</span><span>'+x+'</span></li>'; }).join("") +'</ul>'+
+      '<div class="ftip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 3h6c0-1.5.5-2.5 1-3a7 7 0 0 0-4-12z"/></svg><span>'+L(s.tip)+'</span></div>';
+    renderScreen($("fScreen"),s.screen);
+    restartProg();
+    if(manual){ clearInterval(timer); timer=null; startAuto(7000); }
+  }
+  function restartProg(){
+    var bar=$("prog"); if(!bar) return;
+    bar.style.transition="none"; bar.style.width="0%"; void bar.offsetWidth;
+    if(RM()) return;
+    bar.style.transition="width "+PROG_MS+"ms linear"; bar.style.width="100%";
+  }
+  function startAuto(delay){
+    if(RM()) return;
+    setTimeout(function(){ clearInterval(timer); timer=setInterval(function(){ select((cur+1)%steps.length,false); },PROG_MS); },delay||0);
+  }
+
+  /* hero cycles by step key so it works for any category */
+  var HERO_KEYS=["bill","ai","udhaar","voice"], hIdx=0, heroTimer=null;
+  function idxByKey(k){ for(var i=0;i<steps.length;i++){ if(steps[i].key===k) return i; } return 0; }
+  function heroTick(){ renderScreen($("heroScreen"),steps[idxByKey(HERO_KEYS[hIdx])].screen); hIdx=(hIdx+1)%HERO_KEYS.length; }
+  function startHero(){ heroTick(); if(RM()) return; clearInterval(heroTimer); heroTimer=setInterval(heroTick,2800); }
+
+  function setCat(id){
+    CAT=catById(id); steps=STEPS(CAT); cur=0;
+    updateCatsBar(); drawRail(); select(0,false); startAuto(0);
+    hIdx=0; startHero();
+  }
+
+  function applyStatic(){
+    document.documentElement.setAttribute("data-lang",LANG);
+    document.documentElement.setAttribute("lang",LANG);
+    [].forEach.call(document.querySelectorAll("[data-t]"),function(el){ el.innerHTML=t(el.getAttribute("data-t")); });
+    $("langBtn").textContent=LANG==="hi"?"EN":"हिं";
+    $("askBtn").setAttribute("href",CFG.SUPPORT_URL+(LANG==="hi"?"?lang=hi":""));
+  }
+
+  function boot(){
+    applyStatic(); wireInstall();
+    updateCatsBar(); drawRail(); select(0,false); startAuto(0); startHero();
+    $("catsChange").addEventListener("click",openModal);
+    $("catModal").addEventListener("click",function(e){ if(e.target===$("catModal")) closeModal(); });
+    document.addEventListener("keydown",function(e){ if(e.key==="Escape") closeModal(); });
+    if(!P("cat")) openModal();   // first-time visitors pick their shop
+  }
+  $("langBtn").addEventListener("click",function(){
+    LANG=LANG==="hi"?"en":"hi"; steps=STEPS(CAT);
+    applyStatic(); wireInstall();
+    updateCatsBar(); drawRail(); select(cur,false); hIdx=0; heroTick();
+    if($("catModal").classList.contains("open")) drawModalCats();
+  });
+  boot();
+})();
+
+</script>
+</body>
+</html>
