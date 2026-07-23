@@ -1980,7 +1980,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
   .brand-logo { width: 28px; height: 28px; }
   .nav-right { gap: 8px; }
   .lang-toggle { font-size: 12px; padding: 2px; }
-  .lang-toggle button, .lang-toggle a { padding: 5px 9px; }
+  .lang-toggle button, .lang-toggle a {
+  text-decoration: none; padding: 5px 9px; }
   .nav-cta {
     padding: 8px 14px;
     font-size: 13px;
@@ -1995,7 +1996,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 }
 </style>
 <script id="HN_LANG_REDIRECT">
-// Legacy support: /?lang=hi was never a real page. Send it to /hi/.
+// Legacy support: ?lang=hi was never a real page. Send it to the Hindi URL.
 (function(){try{var p=new URLSearchParams(location.search);
 if(p.get('lang')==='hi'){location.replace('/hi/'+location.hash);}}catch(e){}})();
 </script>
@@ -2743,12 +2744,11 @@ function applyLang(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Language is decided by URL (/ = English, /hi/ = हिंदी), not by JS repaint.
-  // One URL, one language — that is what search and AI crawlers need.
+  let saved = null;
+  try { saved = localStorage.getItem('hn_lang'); } catch(e){}
+  /* language is decided by the URL, not repainted by JS */
   document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      try { localStorage.setItem('hn_lang', btn.getAttribute('data-lang-btn')); } catch(e){}
-    });
+    btn.addEventListener('click', () => { try { localStorage.setItem('hn_lang', btn.getAttribute('data-lang-btn')); } catch(e){} });
   });
 });
 
