@@ -24,7 +24,7 @@
 <meta property="article:modified_time" content="2026-05-06T00:00:00+05:30">
 <link rel="canonical" href="https://hisaabnow.com/">
 <link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/">
-<link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/?lang=hi">
+<link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/">
 <link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/">
 
 <meta name="theme-color" content="#FFFBF5">
@@ -474,13 +474,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
   font-size: 13px;
   font-weight: 700;
 }
-.lang-toggle button {
+.lang-toggle button, .lang-toggle a {
+  text-decoration: none;
   padding: 6px 12px;
   border-radius: 999px;
   color: var(--text-3);
   transition: background .15s, color .15s;
 }
-.lang-toggle button.active {
+.lang-toggle button.active, .lang-toggle a.active {
   background: rgba(0,0,0,0.08);
   color: var(--ink);
 }
@@ -1979,7 +1980,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
   .brand-logo { width: 28px; height: 28px; }
   .nav-right { gap: 8px; }
   .lang-toggle { font-size: 12px; padding: 2px; }
-  .lang-toggle button { padding: 5px 9px; }
+  .lang-toggle button, .lang-toggle a { padding: 5px 9px; }
   .nav-cta {
     padding: 8px 14px;
     font-size: 13px;
@@ -1993,6 +1994,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
   .lang-toggle { display: none; }
 }
 </style>
+<script id="HN_LANG_REDIRECT">
+// Legacy support: /?lang=hi was never a real page. Send it to /hi/.
+(function(){try{var p=new URLSearchParams(location.search);
+if(p.get('lang')==='hi'){location.replace('/hi/'+location.hash);}}catch(e){}})();
+</script>
 </head>
 <body>
 
@@ -2020,8 +2026,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
     </div>
     <div class="nav-right">
       <div class="lang-toggle" role="group" aria-label="Language">
-        <button class="active" data-lang-btn="en" aria-label="English">EN</button>
-        <button data-lang-btn="hi" aria-label="हिंदी">हिं</button>
+        <a href="/" class="active" data-lang-btn="en" hreflang="en" aria-label="English">EN</a>
+        <a href="/hi/" data-lang-btn="hi" hreflang="hi" aria-label="हिंदी">हिं</a>
       </div>
       <a href="https://app.hisaabnow.com/?utm_source=website&utm_medium=homepage&utm_campaign=cta" class="nav-cta" data-i18n="nav.cta">Get Started</a>
     </div>
@@ -2737,11 +2743,12 @@ function applyLang(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  let saved = null;
-  try { saved = localStorage.getItem('hn_lang'); } catch(e){}
-  if (saved && I18N[saved]) applyLang(saved);
+  // Language is decided by URL (/ = English, /hi/ = हिंदी), not by JS repaint.
+  // One URL, one language — that is what search and AI crawlers need.
   document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang-btn')));
+    btn.addEventListener('click', () => {
+      try { localStorage.setItem('hn_lang', btn.getAttribute('data-lang-btn')); } catch(e){}
+    });
   });
 });
 
