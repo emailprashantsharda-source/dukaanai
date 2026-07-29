@@ -99,9 +99,9 @@
         "@type": "AggregateOffer",
         "priceCurrency": "INR",
         "lowPrice": "0",
-        "highPrice": "1990",
+        "highPrice": "7990",
         "offerCount": "5",
-        "description": "7-day free trial, no card needed; Pro ₹99/month or ₹990/year; King ₹199/month or ₹1,990/year.",
+        "description": "7-day free trial, no card needed; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year. Annual = 2 months free.",
         "eligibleRegion": {
           "@type": "Country",
           "name": "India"
@@ -140,9 +140,9 @@
         "@type": "AggregateOffer",
         "priceCurrency": "INR",
         "lowPrice": "0",
-        "highPrice": "1990",
+        "highPrice": "7990",
         "offerCount": "5",
-        "description": "7-day free trial; Pro ₹99/month or ₹990/year; King ₹199/month or ₹1,990/year"
+        "description": "7-day free trial; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year"
       }
     },
     {
@@ -966,7 +966,7 @@ h1 .accent {
       <div class="pricing-toggle" id="pricing-toggle" role="tablist">
         <span class="pill" id="pricing-pill"></span>
         <button type="button" class="active" data-cycle="monthly" onclick="setPricing('monthly')" data-i18n="pri.tog.m">Monthly</button>
-        <button type="button" data-cycle="annual" onclick="setPricing('annual')"><span data-i18n="pri.tog.a">Annual</span><span class="save-badge" data-i18n="pri.tog.s">SAVE 17%</span></button>
+        <button type="button" data-cycle="annual" onclick="setPricing('annual')"><span data-i18n="pri.tog.a">Annual</span><span class="save-badge" data-i18n="pri.tog.s">2 MONTHS FREE</span></button>
       </div>
     </div>
     <div class="pricing-grid">
@@ -985,15 +985,15 @@ h1 .accent {
         <div class="price-tier" data-i18n="pri.c2.t">Pro</div>
         <div class="price-tagline" data-i18n="pri.c2.tag">Everything for one store</div>
         <div class="price-num-wrap">
-          <span class="price-num show-monthly"><span class="ru">₹</span>99</span>
-          <span class="price-num show-annual"><span class="ru">₹</span>990</span>
-          <span class="price-num-was show-annual">₹1,188</span>
+          <span class="price-num show-monthly"><span class="ru">₹</span>499</span>
+          <span class="price-num show-annual"><span class="ru">₹</span>4,990</span>
+          <span class="price-num-was show-annual">₹5,988</span>
         </div>
         <div class="price-period">
           <span class="show-monthly" data-i18n="pri.c2.pm">per month · billed monthly</span>
-          <span class="show-annual" data-i18n="pri.c2.pa">per year · ₹83/month effective</span>
+          <span class="show-annual" data-i18n="pri.c2.pa">per year · ₹416/month effective</span>
         </div>
-        <div class="price-saves show-annual" data-i18n="pri.c2.save">Save ₹198/year</div>
+        <div class="price-saves show-annual" data-i18n="pri.c2.save">Save ₹998/year · 2 months free</div>
         <ul class="price-list">
           <li data-i18n="pri.c2.l1">1 store, unlimited bills</li>
           <li data-i18n="pri.c2.l2">Barcode billing — phone camera or USB scanner</li>
@@ -1009,15 +1009,15 @@ h1 .accent {
         <div class="price-tier" data-i18n="pri.c3.t">King</div>
         <div class="price-tagline" data-i18n="pri.c3.tag">For chains &amp; multi-store</div>
         <div class="price-num-wrap">
-          <span class="price-num show-monthly"><span class="ru">₹</span>199</span>
-          <span class="price-num show-annual"><span class="ru">₹</span>1,990</span>
-          <span class="price-num-was show-annual">₹2,388</span>
+          <span class="price-num show-monthly"><span class="ru">₹</span>799</span>
+          <span class="price-num show-annual"><span class="ru">₹</span>7,990</span>
+          <span class="price-num-was show-annual">₹9,588</span>
         </div>
         <div class="price-period">
           <span class="show-monthly" data-i18n="pri.c3.pm">per month · billed monthly</span>
-          <span class="show-annual" data-i18n="pri.c3.pa">per year · ₹166/month effective</span>
+          <span class="show-annual" data-i18n="pri.c3.pa">per year · ₹666/month effective</span>
         </div>
-        <div class="price-saves show-annual" data-i18n="pri.c3.save">Save ₹398/year</div>
+        <div class="price-saves show-annual" data-i18n="pri.c3.save">Save ₹1,598/year · 2 months free</div>
         <ul class="price-list">
           <li data-i18n="pri.c3.l1">Up to 5 stores, one dashboard</li>
           <li data-i18n="pri.c3.l2">Cross-store stock &amp; sales view</li>
@@ -1211,14 +1211,14 @@ const I18N = {
     'vs.for-sweet-shops': 'Sweet shop billing software',
     'pri.h.1': 'Pick a plan.', 'pri.h.2': 'Start with a 7-day trial.',
     'pri.p': 'All paid plans include a 7-day trial. No card needed. Cancel anytime.',
-    'pri.tog.m': 'Monthly', 'pri.tog.a': 'Annual', 'pri.tog.s': 'SAVE 17%',
+    'pri.tog.m': 'Monthly', 'pri.tog.a': 'Annual', 'pri.tog.s': '2 MONTHS FREE',
     'pri.c1.t': 'Trial', 'pri.c1.p': '7 days · all King features',
     'pri.c1.l1': 'Try every feature without limits', 'pri.c1.l2': 'No card, no commitment', 'pri.c1.l3': 'Convert to any plan after 7 days',
     'pri.c1.cta': 'Start trial',
-    'pri.c2.t': 'Pro', 'pri.c2.tag': 'Everything for one store', 'pri.c2.pm': 'per month · billed monthly', 'pri.c2.pa': 'per year · ₹83/month effective', 'pri.c2.save': 'Save ₹198/year',
+    'pri.c2.t': 'Pro', 'pri.c2.tag': 'Everything for one store', 'pri.c2.pm': 'per month · billed monthly', 'pri.c2.pa': 'per year · ₹416/month effective', 'pri.c2.save': 'Save ₹998/year · 2 months free',
     'pri.c2.l1': '1 store, unlimited bills', 'pri.c2.l2': 'Barcode billing — phone camera or USB scanner', 'pri.c2.l3': 'Udhaar khaata with auto-WhatsApp reminders', 'pri.c2.l4': 'Low-stock alerts on your bestsellers', 'pri.c2.l5': 'Real margin per SKU (beyond MRP − cost)', 'pri.c2.l6': 'GST invoices with HSN codes', 'pri.c2.l7': 'WhatsApp support · same-day',
     'pri.c2.cta': 'Start trial',
-    'pri.c3.t': 'King', 'pri.c3.tag': 'For chains &amp; multi-store', 'pri.c3.pm': 'per month · billed monthly', 'pri.c3.pa': 'per year · ₹166/month effective', 'pri.c3.save': 'Save ₹398/year',
+    'pri.c3.t': 'King', 'pri.c3.tag': 'For chains &amp; multi-store', 'pri.c3.pm': 'per month · billed monthly', 'pri.c3.pa': 'per year · ₹666/month effective', 'pri.c3.save': 'Save ₹1,598/year · 2 months free',
     'pri.c3.l1': 'Up to 5 stores, one dashboard', 'pri.c3.l2': 'Cross-store stock &amp; sales view', 'pri.c3.l3': 'Predictive reorder alerts', 'pri.c3.l4': 'Supplier purchase &amp; expense tracking', 'pri.c3.l5': 'Advanced AI Munim (any business question)', 'pri.c3.l6': 'Priority phone + WhatsApp · within 2 hrs',
     'pri.c3.cta': 'Start trial',
     'lead.h.1': 'Try HisaabNow', 'lead.h.2': 'free for 7 days.',
@@ -1317,14 +1317,14 @@ const I18N = {
     'vs.for-sweet-shops': 'मिठाई बिलिंग सॉफ़्टवेयर',
     'pri.h.1': 'प्लान चुनें।', 'pri.h.2': '7 दिन ट्रायल से शुरू करें।',
     'pri.p': 'हर पेड प्लान के साथ 7 दिन का ट्रायल। कार्ड नहीं चाहिए। कभी भी कैंसल।',
-    'pri.tog.m': 'मासिक', 'pri.tog.a': 'सालाना', 'pri.tog.s': '17% बचत',
+    'pri.tog.m': 'मासिक', 'pri.tog.a': 'सालाना', 'pri.tog.s': '2 महीने free',
     'pri.c1.t': 'ट्रायल', 'pri.c1.p': '7 दिन · सभी King फ़ीचर',
     'pri.c1.l1': 'हर फ़ीचर बिना लिमिट आज़माएँ', 'pri.c1.l2': 'कार्ड नहीं, कोई बंधन नहीं', 'pri.c1.l3': '7 दिन बाद किसी भी प्लान पर जाएँ',
     'pri.c1.cta': 'ट्रायल शुरू',
-    'pri.c2.t': 'Pro', 'pri.c2.tag': 'एक स्टोर के लिए सब कुछ', 'pri.c2.pm': 'हर महीने · मासिक बिलिंग', 'pri.c2.pa': 'हर साल · ₹83/महीना असल', 'pri.c2.save': '₹198/साल बचाएँ',
+    'pri.c2.t': 'Pro', 'pri.c2.tag': 'एक स्टोर के लिए सब कुछ', 'pri.c2.pm': 'हर महीने · मासिक बिलिंग', 'pri.c2.pa': 'हर साल · ₹416/महीना असल', 'pri.c2.save': '₹998/साल बचत · 2 महीने free',
     'pri.c2.l1': '1 स्टोर, अनलिमिटेड बिल', 'pri.c2.l2': 'बारकोड बिलिंग — फ़ोन कैमरा या USB स्कैनर', 'pri.c2.l3': 'ऑटो-WhatsApp रिमाइंडर के साथ उधार खाता', 'pri.c2.l4': 'टॉप-सेलर पर लो-स्टॉक अलर्ट', 'pri.c2.l5': 'हर SKU का असली मार्जिन (MRP − लागत से आगे)', 'pri.c2.l6': 'HSN कोड के साथ GST इनवॉइस', 'pri.c2.l7': 'WhatsApp सपोर्ट · उसी दिन',
     'pri.c2.cta': 'ट्रायल शुरू',
-    'pri.c3.t': 'King', 'pri.c3.tag': 'चेन और मल्टी-स्टोर के लिए', 'pri.c3.pm': 'हर महीने · मासिक बिलिंग', 'pri.c3.pa': 'हर साल · ₹166/महीना असल', 'pri.c3.save': '₹398/साल बचाएँ',
+    'pri.c3.t': 'King', 'pri.c3.tag': 'चेन और मल्टी-स्टोर के लिए', 'pri.c3.pm': 'हर महीने · मासिक बिलिंग', 'pri.c3.pa': 'हर साल · ₹666/महीना असल', 'pri.c3.save': '₹1,598/साल बचत · 2 महीने free',
     'pri.c3.l1': '5 स्टोर तक, एक डैशबोर्ड', 'pri.c3.l2': 'क्रॉस-स्टोर स्टॉक और सेल्स व्यू', 'pri.c3.l3': 'प्रिडिक्टिव रीऑर्डर अलर्ट', 'pri.c3.l4': 'सप्लायर ख़रीद और ख़र्च ट्रैकिंग', 'pri.c3.l5': 'एडवांस्ड AI मुनीम (कोई भी सवाल)', 'pri.c3.l6': 'प्रायोरिटी फ़ोन + WhatsApp · 2 घंटे में',
     'pri.c3.cta': 'ट्रायल शुरू',
     'lead.h.1': 'HisaabNow आज़माइए', 'lead.h.2': 'मुफ़्त 7 दिन।',
