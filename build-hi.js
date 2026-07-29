@@ -37,7 +37,21 @@ const PAGES = [
     },
     schemaText: {
       "POS & billing software for Indian small businesses — cafés, salons, restaurants, sweet shops, and kirana stores. Tracks real profit on every sale, supports Hindi voice billing, and provides AI-driven business insights.":
-        'भारत के छोटे व्यापारियों के लिए POS और बिलिंग सॉफ्टवेयर — कैफे, सैलून, रेस्तरां, मिठाई की दुकान और किराना स्टोर। हर बिल पर असली मुनाफा, हिंदी वॉइस बिलिंग और AI बिजनेस इनसाइट्स।'
+        'भारत के छोटे व्यापारियों के लिए POS और बिलिंग सॉफ्टवेयर — कैफे, सैलून, रेस्तरां, मिठाई की दुकान और किराना स्टोर। हर बिल पर असली मुनाफा, हिंदी वॉइस बिलिंग और AI बिजनेस इनसाइट्स।',
+
+      /* The five plan Offer descriptions. Previously unmapped, so they were
+         served in English inside the Hindi page's JSON-LD. They carry the
+         prices, so they belong here — same byte-for-byte key rule applies. */
+      "7 days, all King features, no card needed":
+        '7 दिन, सभी King फ़ीचर, कार्ड की ज़रूरत नहीं',
+      "Single-salon Pro plan, billed monthly":
+        'एक दुकान के लिए Pro प्लान, मासिक बिलिंग',
+      "Single-salon Pro plan, billed annually — 2 months free (save ₹998)":
+        'एक दुकान के लिए Pro प्लान, सालाना बिलिंग — 2 महीने free (₹998 की बचत)',
+      "Up to 5 outlets, appointments, customer CRM, staff commissions":
+        '5 आउटलेट तक, अपॉइंटमेंट, कस्टमर CRM, स्टाफ़ कमीशन',
+      "Up to 5 outlets, billed annually — 2 months free (save ₹1,598)":
+        '5 आउटलेट तक, सालाना बिलिंग — 2 महीने free (₹1,598 की बचत)'
     }
   },
 
@@ -54,9 +68,15 @@ const PAGES = [
     },
     // Exact English → Hindi for schema prose. Most of this is your own wording
     // from the old build-hindi.js PAGE_META, with the pricing lines rewritten
-    // to Trial / Pro ₹199 / King ₹299.
+    // to Trial / Pro ₹499 / King ₹799.
+    //
+    // WARNING: every key below is matched against the source page BYTE FOR
+    // BYTE (see rewriteSchema → `map[v]`). A key that no longer appears in
+    // salon-billing-software.html does not error — the string is silently
+    // left in English on the Hindi page. So when a price changes in the
+    // source schema, the key here MUST change with it, in the same commit.
     schemaText: {
-      "POS and billing software for India's 60+ million micro and small business owners — salons, kirana stores, cafés, restaurants, sweet shops.":
+      "POS and billing software for India's 60+ million micro and small business owners — salons, kirana, cafés, restaurants, sweet shops.":
         'भारत के 6 करोड़+ छोटे और सूक्ष्म बिज़नेस मालिकों के लिए POS और बिलिंग सॉफ़्टवेयर — सैलून, किराना, कैफ़े, रेस्तरां, मिठाई की दुकानें।',
 
       "Salon POS & Billing Software India · Stylist Commission · HisaabNow":
@@ -64,7 +84,7 @@ const PAGES = [
 
       "HisaabNow for Salons": 'सैलून के लिए HisaabNow',
 
-      "POS billing app for Indian salons. Service catalog with margins, Stylist commission tracking, repeat customer alerts, peak time insights.":
+      "POS billing app for Indian salons. Service catalog with margins, Stylist commission tracking, Repeat customer alerts, Peak hour insights.":
         'भारतीय सैलून के लिए POS बिलिंग ऐप। मार्जिन के साथ सर्विस कैटलॉग, स्टाइलिस्ट कमीशन ट्रैकिंग, दोबारा आने वाले ग्राहक अलर्ट, पीक टाइम इनसाइट।',
 
       "Owners of salons in India": 'भारत में सैलून मालिक',
@@ -75,13 +95,13 @@ const PAGES = [
       "Point-of-sale, billing, GST invoicing, profit tracking, and customer management for salons in India.":
         'भारत में सैलून के लिए पॉइंट-ऑफ़-सेल, बिलिंग, GST इनवॉइसिंग, मुनाफ़ा ट्रैकिंग और ग्राहक मैनेजमेंट।',
 
-      "7-day free trial; Pro ₹199/month or ₹1,990/year; King ₹299/month or ₹2,990/year.":
-        '7 दिन का फ्री ट्रायल; Pro ₹199/महीना या ₹1,990/साल; King ₹299/महीना या ₹2,990/साल।',
+      "7-day free trial; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year. Annual = 2 months free.":
+        '7 दिन का फ्री ट्रायल; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल। सालाना प्लान में 2 महीने free।',
 
       "HisaabNow salon POS plan comparison": 'HisaabNow सैलून POS प्लान तुलना',
 
-      "Compare HisaabNow Free Trial (7 days), Pro (₹199/month), and King (₹299/month) plans for Indian salons, barber shops, and beauty parlours.":
-        'भारतीय सैलून, बार्बर शॉप और ब्यूटी पार्लर के लिए HisaabNow फ्री ट्रायल (7 दिन), Pro (₹199/महीना) और King (₹299/महीना) प्लान की तुलना करें।',
+      "Compare HisaabNow Free Trial (7 days), Pro (₹499/month), and King (₹799/month) plans for Indian salons, barber shops, and beauty parlours.":
+        'भारतीय सैलून, बार्बर शॉप और ब्यूटी पार्लर के लिए HisaabNow फ्री ट्रायल (7 दिन), Pro (₹499/महीना) और King (₹799/महीना) प्लान की तुलना करें।',
 
       "Free Trial": 'फ्री ट्रायल',
       "HisaabNow Free Trial": 'HisaabNow फ्री ट्रायल',
@@ -92,17 +112,17 @@ const PAGES = [
       "7-day free trial with every feature — mobile app, billing & GST invoices, inventory, customer list. No card needed.":
         '7 दिन का फ्री ट्रायल, हर फ़ीचर के साथ — मोबाइल ऐप, बिलिंग और GST इनवॉइस, इन्वेंट्री, ग्राहक लिस्ट। कार्ड की ज़रूरत नहीं।',
 
-      "₹199/month for small businesses & salons — adds desktop panel, expense & profit tracking, WhatsApp receipts, staff management & commission, appointment booking, AI insights.":
-        'छोटे बिज़नेस और सैलून के लिए ₹199/महीना — डेस्कटॉप पैनल, खर्च और मुनाफ़ा ट्रैकिंग, WhatsApp रसीदें, स्टाफ़ मैनेजमेंट और कमीशन, अपॉइंटमेंट बुकिंग, AI इनसाइट शामिल।',
+      "₹499/month for small businesses & salons — adds desktop panel, expense & profit tracking, WhatsApp receipts, staff management & commission, appointment booking, AI insights.":
+        'छोटे बिज़नेस और सैलून के लिए ₹499/महीना — डेस्कटॉप पैनल, खर्च और मुनाफ़ा ट्रैकिंग, WhatsApp रसीदें, स्टाफ़ मैनेजमेंट और कमीशन, अपॉइंटमेंट बुकिंग, AI इनसाइट शामिल।',
 
-      "₹199/month salon POS plan for small businesses & salons — adds desktop panel, expense & profit tracking, WhatsApp receipts, staff management & commission, appointment booking, AI insights.":
-        'छोटे बिज़नेस और सैलून के लिए ₹199/महीना सैलून POS प्लान — डेस्कटॉप पैनल, खर्च और मुनाफ़ा ट्रैकिंग, WhatsApp रसीदें, स्टाफ़ मैनेजमेंट और कमीशन, अपॉइंटमेंट बुकिंग, AI इनसाइट शामिल।',
+      "₹499/month salon POS plan for small businesses & salons — adds desktop panel, expense & profit tracking, WhatsApp receipts, staff management & commission, appointment booking, AI insights.":
+        'छोटे बिज़नेस और सैलून के लिए ₹499/महीना सैलून POS प्लान — डेस्कटॉप पैनल, खर्च और मुनाफ़ा ट्रैकिंग, WhatsApp रसीदें, स्टाफ़ मैनेजमेंट और कमीशन, अपॉइंटमेंट बुकिंग, AI इनसाइट शामिल।',
 
-      "₹299/month for serious businesses — adds full desktop access, multi-user login, branch management, advanced analytics, priority support.":
-        'गंभीर बिज़नेस के लिए ₹299/महीना — पूरा डेस्कटॉप एक्सेस, मल्टी-यूज़र लॉगिन, ब्रांच मैनेजमेंट, एडवांस्ड एनालिटिक्स, प्रायोरिटी सपोर्ट शामिल।',
+      "₹799/month for serious businesses — adds full desktop access, multi-user login, branch management, advanced analytics, priority support.":
+        'गंभीर बिज़नेस के लिए ₹799/महीना — पूरा डेस्कटॉप एक्सेस, मल्टी-यूज़र लॉगिन, ब्रांच मैनेजमेंट, एडवांस्ड एनालिटिक्स, प्रायोरिटी सपोर्ट शामिल।',
 
-      "₹299/month salon POS plan for serious businesses — adds full desktop access, multi-user login, branch management, advanced analytics, priority support.":
-        'गंभीर बिज़नेस के लिए ₹299/महीना सैलून POS प्लान — पूरा डेस्कटॉप एक्सेस, मल्टी-यूज़र लॉगिन, ब्रांच मैनेजमेंट, एडवांस्ड एनालिटिक्स, प्रायोरिटी सपोर्ट शामिल।',
+      "₹799/month salon POS plan for serious businesses — adds full desktop access, multi-user login, branch management, advanced analytics, priority support.":
+        'गंभीर बिज़नेस के लिए ₹799/महीना सैलून POS प्लान — पूरा डेस्कटॉप एक्सेस, मल्टी-यूज़र लॉगिन, ब्रांच मैनेजमेंट, एडवांस्ड एनालिटिक्स, प्रायोरिटी सपोर्ट शामिल।',
 
       "Salons": 'सैलून के लिए POS ऐप'
     }
