@@ -126,6 +126,176 @@ const PAGES = [
 
       "Salons": 'सैलून के लिए POS ऐप'
     }
+  },
+  {
+    src: 'cafe-billing-software.html',
+    out: 'hi/cafe-billing-software.html',
+    enPath: '/cafe-billing-software',
+    hiPath: '/hi/cafe-billing-software',
+    rewriteSchemaUrls: true,
+    head: {
+      title: "कैफ़े बिलिंग सॉफ्टवेयर और POS भारत | HisaabNow",
+      desc: "भारतीय कैफ़े और कॉफ़ी शॉप के लिए बिलिंग सॉफ्टवेयर और POS। रेसिपी कॉस्ट ट्रैकिंग, हिंदी वॉइस बिलिंग, हर कप पर असली मुनाफ़ा। 7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं।",
+      ogAlt: "HisaabNow कैफ़े POS — भारतीय कैफ़े के लिए बिलिंग और मुनाफ़ा ट्रैकिंग"
+    },
+    schemaText: {
+      "HisaabNow for Cafés":
+        "कैफ़े के लिए HisaabNow",
+      "POS billing app for Indian cafés. Recipe builder with auto-cost, Hindi voice billing, Ingredient stock auto-alert, WhatsApp receipts in 2 taps.":
+        "भारतीय कैफ़े के लिए POS बिलिंग ऐप। ऑटो-कॉस्ट के साथ रेसिपी बिल्डर, हिंदी वॉइस बिलिंग, इंग्रेडिएंट स्टॉक अलर्ट, 2 टैप में WhatsApp रसीद।",
+      "7-day free trial, no card needed; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year. Annual = 2 months free.":
+        "7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल। सालाना प्लान में 2 महीने free।",
+      "India":
+        "भारत",
+      "Owners of cafés in India":
+        "भारत में कैफ़े मालिक",
+      "POS billing and management for cafés":
+        "कैफ़े के लिए POS बिलिंग और मैनेजमेंट",
+      "HisaabNow Cafés POS":
+        "HisaabNow कैफ़े POS",
+      "Point-of-sale, billing, GST invoicing, profit tracking, and customer management for cafés in India.":
+        "भारत में कैफ़े के लिए पॉइंट-ऑफ़-सेल, बिलिंग, GST इनवॉइसिंग, मुनाफ़ा ट्रैकिंग और ग्राहक मैनेजमेंट।",
+      "7-day free trial; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year":
+        "7 दिन का फ्री ट्रायल; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल",
+      "Cafés":
+        "कैफ़े"
+    }
+  },
+  {
+    src: 'restaurant-pos.html',
+    out: 'hi/restaurant-pos.html',
+    enPath: '/restaurant-pos',
+    hiPath: '/hi/restaurant-pos',
+    rewriteSchemaUrls: true,
+    head: {
+      title: "रेस्टोरेंट POS सिस्टम और बिलिंग सॉफ्टवेयर | HisaabNow",
+      desc: "भारतीय रेस्टोरेंट और ढाबों के लिए क्लाउड-बेस्ड POS सिस्टम। टेबल-वाइज़ बिलिंग, KOT प्रिंटिंग, हिंदी वॉइस बिलिंग और हर डिश पर असली मुनाफ़ा। 7 दिन का फ्री ट्रायल।",
+      ogAlt: "HisaabNow रेस्टोरेंट POS — टेबल बिलिंग और हर डिश का मुनाफ़ा"
+    },
+    schemaText: {
+      "HisaabNow for Restaurants":
+        "रेस्टोरेंट के लिए HisaabNow",
+      "Restaurant POS system & billing software for Indian restaurants. Table-wise billing, recipe builder with auto-cost, Hindi voice billing, ingredient stock auto-alert, WhatsApp receipts in 2 taps.":
+        "भारतीय रेस्टोरेंट के लिए POS सिस्टम और बिलिंग सॉफ्टवेयर। टेबल-वाइज़ बिलिंग, ऑटो-कॉस्ट रेसिपी बिल्डर, हिंदी वॉइस बिलिंग, इंग्रेडिएंट स्टॉक अलर्ट, 2 टैप में WhatsApp रसीद।",
+      "7-day free trial, no card needed; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year. Annual = 2 months free.":
+        "7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल। सालाना प्लान में 2 महीने free।",
+      "India":
+        "भारत",
+      "Restaurant owners in India":
+        "भारत में रेस्टोरेंट मालिक",
+      "Restaurant POS system and billing software":
+        "रेस्टोरेंट POS सिस्टम और बिलिंग सॉफ्टवेयर",
+      "HisaabNow Restaurant POS":
+        "HisaabNow रेस्टोरेंट POS",
+      "Restaurant POS system, table-wise billing, GST invoicing, recipe-based profit tracking, and customer management for restaurants in India.":
+        "भारत में रेस्टोरेंट के लिए POS सिस्टम, टेबल-वाइज़ बिलिंग, GST इनवॉइसिंग, रेसिपी के हिसाब से मुनाफ़ा ट्रैकिंग और ग्राहक मैनेजमेंट।",
+      "7-day free trial; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year":
+        "7 दिन का फ्री ट्रायल; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल",
+      "Restaurants":
+        "रेस्टोरेंट"
+    }
+  },
+  {
+    src: 'grocery-billing-software.html',
+    out: 'hi/grocery-billing-software.html',
+    enPath: '/grocery-billing-software',
+    hiPath: '/hi/grocery-billing-software',
+    rewriteSchemaUrls: true,
+    head: {
+      title: "ग्रोसरी बिलिंग सॉफ्टवेयर और POS भारत | HisaabNow",
+      desc: "भारतीय किराना, जनरल स्टोर और मिनी-मार्ट के लिए ग्रोसरी बिलिंग सॉफ्टवेयर। बारकोड स्कैन, WhatsApp रिमाइंडर वाला उधार खाता, लो-स्टॉक अलर्ट, हर आइटम पर असली मुनाफ़ा। 7 दिन का फ्री ट्रायल।",
+      ogAlt: "HisaabNow ग्रोसरी POS — बारकोड बिलिंग, उधार खाता और स्टॉक अलर्ट"
+    },
+    schemaText: {
+      "HisaabNow for Grocery Stores":
+        "ग्रोसरी स्टोर के लिए HisaabNow",
+      "POS billing app for Indian grocery stores. Barcode scan to bill, Udhaar khaata with auto-WhatsApp, Low-stock alerts on bestsellers, Real margin per SKU.":
+        "भारतीय ग्रोसरी स्टोर के लिए POS बिलिंग ऐप। बारकोड स्कैन से बिल, ऑटो-WhatsApp वाला उधार खाता, बेस्टसेलर पर लो-स्टॉक अलर्ट, हर SKU पर असली मार्जिन।",
+      "7-day free trial, no card needed; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year. Annual = 2 months free.":
+        "7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल। सालाना प्लान में 2 महीने free।",
+      "India":
+        "भारत",
+      "Owners of grocery stores in India":
+        "भारत में ग्रोसरी स्टोर मालिक",
+      "POS billing and management for grocery stores":
+        "ग्रोसरी स्टोर के लिए POS बिलिंग और मैनेजमेंट",
+      "HisaabNow Grocery Stores POS":
+        "HisaabNow ग्रोसरी स्टोर POS",
+      "Point-of-sale, billing, GST invoicing, profit tracking, and customer management for grocery stores in India.":
+        "भारत में ग्रोसरी स्टोर के लिए पॉइंट-ऑफ़-सेल, बिलिंग, GST इनवॉइसिंग, मुनाफ़ा ट्रैकिंग और ग्राहक मैनेजमेंट।",
+      "7-day free trial; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year":
+        "7 दिन का फ्री ट्रायल; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल",
+      "Grocery Stores":
+        "ग्रोसरी स्टोर"
+    }
+  },
+  {
+    src: 'kirana-billing-app.html',
+    out: 'hi/kirana-billing-app.html',
+    enPath: '/kirana-billing-app',
+    hiPath: '/hi/kirana-billing-app',
+    rewriteSchemaUrls: true,
+    head: {
+      title: "किराना बिलिंग ऐप और दुकान मैनेजमेंट सिस्टम | HisaabNow",
+      desc: "किराना और सुपरमार्केट के लिए HisaabNow — बारकोड से बिल, ऑटो-WhatsApp रिमाइंडर वाला उधार खाता, स्टॉक अलर्ट और हिंदी वॉइस बिलिंग। 7 दिन फ्री में आज़माएं।",
+      ogAlt: "HisaabNow किराना ऐप — बिलिंग, उधार खाता और स्टॉक एक ही ऐप में"
+    },
+    schemaText: {
+      "HisaabNow for Kirana Stores":
+        "किराना स्टोर के लिए HisaabNow",
+      "Kirana billing app and POS for Indian dukaan owners. Barcode scan to bill, udhaar khaata with auto-WhatsApp reminders, Hindi voice billing, low-stock alerts, real margin per SKU.":
+        "भारतीय दुकानदारों के लिए किराना बिलिंग ऐप और POS। बारकोड स्कैन से बिल, ऑटो-WhatsApp रिमाइंडर वाला उधार खाता, हिंदी वॉइस बिलिंग, लो-स्टॉक अलर्ट, हर SKU पर असली मार्जिन।",
+      "7-day free trial, no card needed; Pro ₹99/month or ₹990/year; King ₹199/month or ₹1,990/year.":
+        "7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं; Pro ₹99/महीना या ₹990/साल; King ₹199/महीना या ₹1,990/साल।",
+      "India":
+        "भारत",
+      "Owners of kirana stores and dukaans in India":
+        "भारत में किराना स्टोर और दुकान मालिक",
+      "POS billing and management for kirana stores":
+        "किराना स्टोर के लिए POS बिलिंग और मैनेजमेंट",
+      "HisaabNow Grocery Stores POS":
+        "HisaabNow किराना स्टोर POS",
+      "Point-of-sale, billing, GST invoicing, profit tracking, and customer management for kirana stores and dukaans in India.":
+        "भारत में किराना स्टोर और दुकानों के लिए पॉइंट-ऑफ़-सेल, बिलिंग, GST इनवॉइसिंग, मुनाफ़ा ट्रैकिंग और ग्राहक मैनेजमेंट।",
+      "7-day free trial; Pro ₹99/month or ₹990/year; King ₹199/month or ₹1,990/year":
+        "7 दिन का फ्री ट्रायल; Pro ₹99/महीना या ₹990/साल; King ₹199/महीना या ₹1,990/साल",
+      "Grocery Stores":
+        "किराना स्टोर"
+    }
+  },
+  {
+    src: 'sweet-shop-billing-software.html',
+    out: 'hi/sweet-shop-billing-software.html',
+    enPath: '/sweet-shop-billing-software',
+    hiPath: '/hi/sweet-shop-billing-software',
+    rewriteSchemaUrls: true,
+    head: {
+      title: "मिठाई की दुकान के लिए बिलिंग सॉफ्टवेयर | HisaabNow",
+      desc: "भारतीय मिठाई की दुकानों और हलवाइयों के लिए POS और बिलिंग सॉफ्टवेयर। वज़न के हिसाब से कीमत (किलो/आधा किलो/ग्राम), त्योहार स्टॉक अलर्ट, एक्सपायरी ट्रैकिंग। 7 दिन का फ्री ट्रायल।",
+      ogAlt: "HisaabNow मिठाई दुकान POS — वज़न से बिलिंग और एक्सपायरी ट्रैकिंग"
+    },
+    schemaText: {
+      "HisaabNow for Sweet Shops":
+        "मिठाई की दुकान के लिए HisaabNow",
+      "POS billing app for Indian sweet shops. Weight-based pricing, Festival inventory alerts, Expiry tracking — never waste, Tray-to-bill counter mode.":
+        "भारतीय मिठाई की दुकानों के लिए POS बिलिंग ऐप। वज़न के हिसाब से कीमत, त्योहार पर स्टॉक अलर्ट, एक्सपायरी ट्रैकिंग — कोई बर्बादी नहीं, ट्रे-टू-बिल काउंटर मोड।",
+      "7-day free trial, no card needed; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year. Annual = 2 months free.":
+        "7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल। सालाना प्लान में 2 महीने free।",
+      "India":
+        "भारत",
+      "Owners of sweet shops in India":
+        "भारत में मिठाई की दुकान के मालिक",
+      "POS billing and management for sweet shops":
+        "मिठाई की दुकान के लिए POS बिलिंग और मैनेजमेंट",
+      "HisaabNow Sweet Shops POS":
+        "HisaabNow मिठाई दुकान POS",
+      "Point-of-sale, billing, GST invoicing, profit tracking, and customer management for sweet shops in India.":
+        "भारत में मिठाई की दुकानों के लिए पॉइंट-ऑफ़-सेल, बिलिंग, GST इनवॉइसिंग, मुनाफ़ा ट्रैकिंग और ग्राहक मैनेजमेंट।",
+      "7-day free trial; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year":
+        "7 दिन का फ्री ट्रायल; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल",
+      "Sweet Shops":
+        "मिठाई की दुकानें"
+    }
   }
 ];
 
@@ -345,8 +515,8 @@ for (const cfg of PAGES) {
 /* ── sitemap ─────────────────────────────────────────────────────────── */
 const TODAY = new Date().toISOString().slice(0, 10);
 const PAIRS = PAGES.filter(p => fs.existsSync(p.src)).map(p => ({ en: p.enPath, hi: p.hiPath }));
-const OTHERS = ['/cafe-billing-software', '/restaurant-pos', '/grocery-billing-software',
-                '/kirana-billing-app', '/sweet-shop-billing-software', '/about'];
+// Pages with a Hindi twin are listed via PAGES above; only English-only pages go here.
+const OTHERS = ['/about'];
 
 const alt = (en, hi) => `
     <xhtml:link rel="alternate" hreflang="en-in" href="${ORIGIN}${en}"/>
