@@ -154,7 +154,7 @@
         '<td><button type="button" class="i-del" aria-label="' + esc(t('remove', 'Remove')) + '">×</button></td>';
       rows.appendChild(tr);
       tr.querySelector('.i-del').addEventListener('click', function () { tr.remove(); update(); });
-      tr.querySelectorAll('input,select').forEach(function (el) { el.addEventListener('input', update); });
+      tr.querySelectorAll('input,select').forEach(function (el) { el.addEventListener('input', update); el.addEventListener('change', update); });
       update();
     }
 
@@ -218,7 +218,6 @@
       rows.querySelectorAll('tr').forEach(function (tr, idx) {
         var it = d.items[idx]; var amt = r2(it.qty * it.price);
         tr.querySelector('.i-amt').textContent = inr(amt);
-        tr.querySelector('.i-gst').disabled = !c.registered;
       });
       $('inv-sum').innerHTML =
         '<div><span>' + esc(t('taxableValue', 'Taxable value')) + '</span><b>' + inr(c.taxable) + '</b></div>' +
@@ -226,6 +225,8 @@
           : '<div><span>CGST</span><b>' + inr(c.cgst) + '</b></div><div><span>SGST</span><b>' + inr(c.sgst) + '</b></div>') : '') +
         (c.roundOff ? '<div><span>' + esc(t('roundOff', 'Round off')) + '</span><b>' + inr(c.roundOff) + '</b></div>' : '') +
         '<div class="grand"><span>' + esc(t('total', 'Total')) + '</span><b>' + inr(c.grand) + '</b></div>';
+      var note = $('inv-gst-note');
+      if (note) { var hasRates = d.items.some(function (i) { return i.gst > 0 && (i.desc || i.price); }); note.style.display = (!c.registered && hasRates) ? '' : 'none'; }
       $('inv-supply').textContent = !c.registered ? '' : (c.inter ? t('interState', 'Inter-state sale → IGST') : t('intraState', 'Same-state sale → CGST + SGST'));
       store('hn_inv_seller', { sName: d.sName, sAddr: d.sAddr, sGstin: d.sGstin, sState: d.sState, sPhone: d.sPhone });
     }
@@ -275,7 +276,7 @@
     var saved = store('hn_inv_seller');
     if (saved) { ['sName', 'sAddr', 'sGstin', 'sState', 'sPhone'].forEach(function (k) { var el = $({ sName: 's-name', sAddr: 's-addr', sGstin: 's-gstin', sState: 's-state', sPhone: 's-phone' }[k]); if (el && saved[k]) el.value = saved[k]; }); }
     if (!$('inv-date').value) $('inv-date').value = new Date().toISOString().slice(0, 10);
-    root.querySelectorAll('input,select,textarea').forEach(function (el) { if (!el.closest('#inv-items')) el.addEventListener('input', update); });
+    root.querySelectorAll('input,select,textarea').forEach(function (el) { if (!el.closest('#inv-items')) { el.addEventListener('input', update); el.addEventListener('change', update); } });
     $('inv-add').addEventListener('click', function () { addRow(); });
     $('inv-make').addEventListener('click', render);
     $('inv-print').addEventListener('click', function () { window.print(); });

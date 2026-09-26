@@ -146,6 +146,7 @@
   <div class="row two"><div><label for="inv-no">Invoice number</label><input id="inv-no" maxlength="16" value="INV-001"></div><div><label for="inv-date">Invoice date</label><input id="inv-date" type="date"></div></div>
   <h2 style="font-size:18px;margin:18px 0 6px;">Items</h2>
   <div class="items-wrap"><table class="items"><thead><tr><th style="width:30%">Description</th><th>HSN/SAC</th><th style="width:8%">Qty</th><th style="width:9%">Unit</th><th>Rate ₹ (before GST)</th><th style="width:10%">GST</th><th>Amount</th><th></th></tr></thead><tbody id="inv-items"></tbody></table></div>
+  <div id="inv-gst-note" class="hint bad" style="display:none;margin:0 0 10px;font-size:14px;">GST is not added because the GSTIN above is empty — a business without GST registration can't charge GST. Enter your GSTIN to add GST to these items.</div>
   <button type="button" class="btn ghost" id="inv-add">+ Add item</button>
   <div class="row" style="margin-top:14px;"><div><label for="inv-notes">Notes (optional) — bank details, terms</label><textarea id="inv-notes" rows="2"></textarea></div></div>
   <div class="inv-sumbox"><div id="inv-sum"></div><div><button type="button" class="btn" id="inv-make">Create invoice</button></div></div>

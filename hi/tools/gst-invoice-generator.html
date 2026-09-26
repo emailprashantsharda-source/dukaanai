@@ -146,6 +146,7 @@
   <div class="row two"><div><label for="inv-no">इनवॉइस नंबर</label><input id="inv-no" maxlength="16" value="INV-001"></div><div><label for="inv-date">इनवॉइस की तारीख</label><input id="inv-date" type="date"></div></div>
   <h2 style="font-size:18px;margin:18px 0 6px;">सामान / सेवाएं</h2>
   <div class="items-wrap"><table class="items"><thead><tr><th style="width:30%">विवरण</th><th>HSN/SAC</th><th style="width:8%">मात्रा</th><th style="width:9%">यूनिट</th><th>रेट ₹ (GST से पहले)</th><th style="width:10%">GST</th><th>रकम</th><th></th></tr></thead><tbody id="inv-items"></tbody></table></div>
+  <div id="inv-gst-note" class="hint bad" style="display:none;margin:0 0 10px;font-size:14px;">GST नहीं जुड़ा क्योंकि ऊपर GSTIN खाली है — बिना GST रजिस्ट्रेशन के बिज़नेस GST नहीं ले सकता। इन आइटम पर GST जोड़ने के लिए अपना GSTIN डालें।</div>
   <button type="button" class="btn ghost" id="inv-add">+ आइटम जोड़ें</button>
   <div class="row" style="margin-top:14px;"><div><label for="inv-notes">नोट्स (ज़रूरी नहीं) — बैंक डिटेल, शर्तें</label><textarea id="inv-notes" rows="2"></textarea></div></div>
   <div class="inv-sumbox"><div id="inv-sum"></div><div><button type="button" class="btn" id="inv-make">इनवॉइस बनाएं</button></div></div>
