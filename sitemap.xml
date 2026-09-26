@@ -70,4 +70,36 @@
     <lastmod>2026-09-14</lastmod>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://hisaabnow.com/blog/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/blog/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/blog/gst-invoice-format</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/gst-invoice-format"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/gst-invoice-format"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/gst-invoice-format"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/blog/gst-invoice-format</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/gst-invoice-format"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/gst-invoice-format"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/gst-invoice-format"/>
+  </url>
 </urlset>
