@@ -221,4 +221,29 @@
     <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/profit-margin-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/profit-margin-calculator"/>
   </url>
+  <url>
+    <loc>https://hisaabnow.com/compare/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/compare/petpooja-alternative</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/compare/vyapar-alternative</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/compare/mybillbook-alternative</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/compare/sapaad-alternative</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
