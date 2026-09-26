@@ -157,4 +157,68 @@
     <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/gst-invoice-format"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/gst-invoice-format"/>
   </url>
+  <url>
+    <loc>https://hisaabnow.com/tools/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/tools/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/tools/gst-invoice-generator</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/gst-invoice-generator"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/gst-invoice-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/gst-invoice-generator"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/tools/gst-invoice-generator</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/gst-invoice-generator"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/gst-invoice-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/gst-invoice-generator"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/tools/gst-calculator</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/gst-calculator"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/gst-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/gst-calculator"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/tools/gst-calculator</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/gst-calculator"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/gst-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/gst-calculator"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/tools/profit-margin-calculator</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/profit-margin-calculator"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/profit-margin-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/profit-margin-calculator"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/tools/profit-margin-calculator</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/profit-margin-calculator"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/tools/profit-margin-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/profit-margin-calculator"/>
+  </url>
 </urlset>

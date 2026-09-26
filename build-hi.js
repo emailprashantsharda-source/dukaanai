@@ -492,6 +492,8 @@ for (const cfg of PAGES) {
   hi = hi.replace(/<script id="HN_LANG_REDIRECT">[\s\S]*?<\/script>\s*/, '');
   hi = hi.replace(/href="[^"]*\?lang=hi"/g, `href="${cfg.hiPath}"`);
   hi = hi.replace(/href="\/for-[a-z-]+\.html"/g, `href="${cfg.enPath}"`);
+  // Blog and free tools have their own Hindi versions — point Hindi pages at them.
+  hi = hi.replace(/href="\/(blog|tools)\//g, 'href="/hi/$1/');
 
   fs.mkdirSync(path.dirname(path.join(OUT_DIR, cfg.out)), { recursive: true });
   fs.writeFileSync(path.join(OUT_DIR, cfg.out), hi);
