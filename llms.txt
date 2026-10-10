@@ -1,25 +1,43 @@
 # HisaabNow
 
-> AI-powered POS and billing software for Indian small businesses — salons, restaurants, cafes, sweet shops, kirana stores, and pan shops. Tracks real profit (not just revenue) on every sale, supports Hindi voice billing, GST-compliant invoicing, inventory management, staff commission tracking, and an AI business advisor called Munim.
+> HisaabNow is a billing and POS web app (PWA) for small shops and food businesses in India. It runs on a phone or desktop, in English and Hindi, and supports Hindi and English voice billing, GST invoices, stock tracking, udhaar (customer credit) and profit reports. Built in Noida, India. 7-day free trial with all features, no card needed.
 
-## Company
-- Built in Noida, India. Launched April 2026.
-- Serves India's micro and small business owners across five verticals: salons, cafes, restaurants, sweet shops, and kirana/grocery stores.
-- Pricing: 7-day free trial, then Pro (₹499/month) or King (₹799/month, up to 5 outlets).
+Pricing changes, so it is not listed here. See https://hisaabnow.com/ for current plans.
 
-## What makes HisaabNow different
-- Tracks real profit per sale (cost-adjusted margin), not just revenue — most competitors (Khatabook, Vyapar) show revenue only.
-- Hindi voice billing: speak an order in Hindi/Hinglish and it is added to the bill.
-- Built-in AI business advisor ("Munim") that flags underpriced items, slow periods, and stock issues in plain language.
+## Product pages by business type
+- [Kirana billing app](https://hisaabnow.com/kirana-billing-app): billing for kirana and general stores. Barcode scanning, udhaar khaata with WhatsApp reminders, low-stock alerts.
+- [Grocery billing software](https://hisaabnow.com/grocery-billing-software): billing for grocery stores and mini-marts. Barcode scanning, udhaar khaata, low-stock alerts.
+- [Salon billing software](https://hisaabnow.com/salon-billing-software): salons and beauty parlours. Stylist commission tracking, appointments with WhatsApp confirmations and reminders.
+- [Cafe billing software](https://hisaabnow.com/cafe-billing-software): cafes and coffee shops. Ingredient-level stock tracking.
+- [Restaurant POS](https://hisaabnow.com/restaurant-pos): restaurants and dhabas. Table-wise billing, KOT printing, recipe-based costing, table reservations.
+- [Sweet shop billing software](https://hisaabnow.com/sweet-shop-billing-software): sweet shops and mithai stores. Expiry alerts.
+- [Bakery billing software](https://hisaabnow.com/bakery-billing-software): bakeries. Low-stock alerts, udhaar tracking, WhatsApp receipts.
+- [About HisaabNow](https://hisaabnow.com/about)
 
-## Key pages
-- [About HisaabNow: Fast, GST-Ready Billing for Indian SMBs](https://hisaabnow.com/about): HisaabNow is a billing & POS app built in Noida, India for small businesses — salons, cafés, restaurants, kirana stores, sweet shops. Launched April 2026. Hindi voice billing, real profit tracking, GST invoices. 7-day free trial.
-- [Cafe Billing & POS Software for India | HisaabNow](https://hisaabnow.com/cafe-billing-software): Cafe billing software & POS system for Indian cafés and coffee shops. Recipe cost tracking, Hindi voice billing, real profit per cup. 7-day free trial, no card needed.
-- [Grocery Billing Software & POS for India | HisaabNow](https://hisaabnow.com/grocery-billing-software): Grocery billing software for Indian kirana stores, general stores and mini-marts. Barcode scan, udhaar khaata with WhatsApp reminders, low-stock alerts, real profit per item. 7-day free trial.
-- [POS Billing Software for Indian Shops | HisaabNow](https://hisaabnow.com/): POS billing software for Indian shops. Track real profit, not just sales — GST billing, inventory, udhaar & Hindi voice billing. 7-day free trial.
-- [Kirana Billing App & POS for Dukaan | HisaabNow](https://hisaabnow.com/kirana-billing-app): Kirana billing app & POS for Indian dukaan owners. Udhaar khaata with WhatsApp reminders, barcode scan, Hindi voice billing, stock alerts. Dukaan ka digital hisaab. 7-day free trial.
-- [Restaurant POS & Billing Software for India | HisaabNow](https://hisaabnow.com/restaurant-pos): Restaurant POS system & billing software for Indian restaurants, dhabas and casual dining. Table-wise billing, recipe cost tracking, Hindi voice billing, real profit per dish. 7-day free trial.
-- [Salon & Beauty Parlour Billing Software India | HisaabNow](https://hisaabnow.com/salon-billing-software): Salon & beauty parlour billing & management software for India. Stylist commissions, real profit per service, appointments, inventory & GST invoices. Hindi voice billing. 7-day free trial.
-- [Sweet Shop Billing Software for India | HisaabNow](https://hisaabnow.com/sweet-shop-billing-software): Sweet shop POS & billing software for Indian mithai stores & halwais. Weight-based pricing (kg/half-kg/grams), festival stock alerts, expiry tracking. 7-day free trial.
+## Free tools (no signup)
+- [GST invoice generator](https://hisaabnow.com/tools/gst-invoice-generator): fill in shop, customer and items; get a GST invoice with HSN and CGST/SGST to print or save as PDF.
+- [GST calculator](https://hisaabnow.com/tools/gst-calculator): add or remove GST, with CGST/SGST or IGST split.
+- [Profit margin calculator](https://hisaabnow.com/tools/profit-margin-calculator): margin vs markup from cost and selling price.
 
-_Generated automatically by the HisaabNow SEO Agent, 2026-09-06._
+## Guides
+- [HisaabNow blog](https://hisaabnow.com/blog/)
+- [GST invoice format guide for shops](https://hisaabnow.com/blog/gst-invoice-format)
+- [How to generate an e-way bill](https://hisaabnow.com/blog/how-to-generate-e-way-bill)
+- [How to create a kirana store business plan](https://hisaabnow.com/blog/kirana-store-business-plan)
+
+## Comparisons
+- [All comparisons](https://hisaabnow.com/compare/)
+- [HisaabNow vs Petpooja](https://hisaabnow.com/compare/petpooja-alternative)
+- [HisaabNow vs Vyapar](https://hisaabnow.com/compare/vyapar-alternative)
+- [HisaabNow vs myBillBook](https://hisaabnow.com/compare/mybillbook-alternative)
+- [HisaabNow vs Sapaad](https://hisaabnow.com/compare/sapaad-alternative)
+- [HisaabNow vs Floreant POS](https://hisaabnow.com/floreant-pos)
+
+## Hindi
+Hindi versions of the product pages, blog and tools live under https://hisaabnow.com/hi/ (for example https://hisaabnow.com/hi/kirana-billing-app and https://hisaabnow.com/hi/blog/).
+
+## Related product
+- [RentalNow](https://app.hisaabnow.com/Rent/): a separate app for bike, scooty and car rental shops, by the same team.
+
+## Optional
+- [Extended product description](https://hisaabnow.com/llms-full.txt)
