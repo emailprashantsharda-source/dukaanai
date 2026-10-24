@@ -315,4 +315,20 @@
     <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/food-costing"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/food-costing"/>
   </url>
+  <url>
+    <loc>https://hisaabnow.com/blog/calculate-profit-percentage</loc>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/calculate-profit-percentage"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/calculate-profit-percentage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/calculate-profit-percentage"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/blog/calculate-profit-percentage</loc>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/calculate-profit-percentage"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/calculate-profit-percentage"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/calculate-profit-percentage"/>
+  </url>
 </urlset>
