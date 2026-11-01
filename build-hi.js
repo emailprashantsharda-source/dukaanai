@@ -236,7 +236,7 @@ const PAGES = [
     hiPath: '/hi/kirana-billing-app',
     rewriteSchemaUrls: true,
     head: {
-      title: "किराना बिलिंग ऐप और दुकान मैनेजमेंट सिस्टम | HisaabNow",
+      title: "Kirana Billing App: किराना बिल, उधार खाता और स्टॉक | HisaabNow",
       desc: "किराना और सुपरमार्केट के लिए HisaabNow — बारकोड से बिल, ऑटो-WhatsApp रिमाइंडर वाला उधार खाता, स्टॉक अलर्ट और हिंदी वॉइस बिलिंग। 7 दिन फ्री में आज़माएं।",
       ogAlt: "HisaabNow किराना ऐप — बिलिंग, उधार खाता और स्टॉक एक ही ऐप में"
     },
