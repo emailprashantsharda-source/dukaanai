@@ -470,10 +470,23 @@ const STATIC_HI = {
   'Built in Noida, India': 'नोएडा, भारत में बना',
   'Details checked 10 October 2026.': 'जानकारी की जांच: 10 अक्टूबर 2026।',
   'Understanding Food Costing for Restaurants': 'रेस्टोरेंट के लिए फूड कॉस्टिंग को समझना',
+  'How to Generate E Way Bill: Step-by-Step Guide': 'भारत में ई वे बिल कैसे जनरेट करें',
+  'How to Create a Kirana Store Business Plan': 'किराना स्टोर बिजनेस प्लान कैसे बनाएं',
+  // kirana page has no schemaText map, so its schema offer descriptions stay English without these
+  '7-day free trial, no card needed; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year.': '7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल।',
+  '7-day free trial; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year': '7 दिन का फ्री ट्रायल; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल',
 };
+// Short bullet strings are only safe to replace inside the key-facts box itself.
+// Elsewhere on the page the same words ("Low-stock alerts") live inside JS i18n tables.
+const GLOBAL_SAFE = (en) => /^(Understanding|How to|7-day free trial[;,] )/.test(en);
 function translateStatic(html) {
   let out = html;
-  for (const [en, hi] of Object.entries(STATIC_HI)) out = out.split(en).join(hi);
+  out = out.replace(/<aside class="keyfacts"[\s\S]*?<\/aside>/, (box) => {
+    let b = box;
+    for (const [en, hi] of Object.entries(STATIC_HI)) b = b.split(en).join(hi);
+    return b;
+  });
+  for (const [en, hi] of Object.entries(STATIC_HI)) if (GLOBAL_SAFE(en)) out = out.split(en).join(hi);
   return out;
 }
 
