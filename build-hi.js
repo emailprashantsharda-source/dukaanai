@@ -442,6 +442,54 @@ const pill = (cfg, active) => `<div class="lang-toggle" role="group" aria-label=
         <a href="${cfg.hiPath}"${active === 'hi' ? ' class="active"' : ''} data-lang-btn="hi" hreflang="hi" aria-label="हिंदी">हिं</a>
       </div>`;
 
+
+/* English-only blocks that other scripts inject into the English pages (key facts box,
+   related-article links). Translate them here so rebuilt Hindi pages never show English. */
+const STATIC_HI = {
+  'aria-label="Key facts"': 'aria-label="मुख्य जानकारी"',
+  'Key facts: Cafe billing software': 'मुख्य जानकारी: कैफ़े बिलिंग सॉफ्टवेयर',
+  'Key facts: Grocery billing software': 'मुख्य जानकारी: ग्रोसरी बिलिंग सॉफ्टवेयर',
+  'Key facts: Salon billing software': 'मुख्य जानकारी: सैलून बिलिंग सॉफ्टवेयर',
+  'Key facts: Restaurant POS': 'मुख्य जानकारी: रेस्टोरेंट POS',
+  'Key facts: Sweet shop billing software': 'मुख्य जानकारी: मिठाई की दुकान का बिलिंग सॉफ्टवेयर',
+  'Key facts: Kirana billing app': 'मुख्य जानकारी: किराना बिलिंग ऐप',
+  'Ingredient-level stock tracking': 'सामग्री (इंग्रीडिएंट) के स्तर पर स्टॉक ट्रैकिंग',
+  'Barcode scanning with the phone camera or a USB scanner': 'फ़ोन कैमरा या USB स्कैनर से बारकोड स्कैनिंग',
+  'Udhaar khaata (customer credit ledger) with WhatsApp reminders': 'WhatsApp रिमाइंडर के साथ उधार खाता (ग्राहक क्रेडिट बही)',
+  'Low-stock alerts': 'कम स्टॉक अलर्ट',
+  'Stylist commission tracking': 'स्टाइलिस्ट कमीशन ट्रैकिंग',
+  'Appointments with WhatsApp confirmations and reminders': 'WhatsApp कन्फ़र्मेशन और रिमाइंडर के साथ अपॉइंटमेंट',
+  'Table-wise billing and KOT printing': 'टेबल-वाइज़ बिलिंग और KOT प्रिंटिंग',
+  'Recipe-based costing': 'रेसिपी के आधार पर कॉस्टिंग',
+  'Table reservations': 'टेबल रिज़र्वेशन',
+  'Expiry alerts': 'एक्सपायरी अलर्ट',
+  'Works on phone and desktop as an installable web app (PWA), in English and Hindi': 'फ़ोन और डेस्कटॉप पर इंस्टॉल होने वाले वेब ऐप (PWA) के रूप में चलता है, हिंदी और अंग्रेज़ी दोनों में',
+  'Hindi and English voice billing': 'हिंदी और अंग्रेज़ी वॉइस बिलिंग',
+  'GST bills with HSN codes, GSTIN, and CGST/SGST/IGST split': 'HSN कोड, GSTIN और CGST/SGST/IGST बंटवारे वाले GST बिल',
+  '7-day free trial with all features, no card needed': 'सभी फीचर के साथ 7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं',
+  'Built in Noida, India': 'नोएडा, भारत में बना',
+  'Details checked 10 October 2026.': 'जानकारी की जांच: 10 अक्टूबर 2026।',
+  'Understanding Food Costing for Restaurants': 'रेस्टोरेंट के लिए फूड कॉस्टिंग को समझना',
+  'How to Generate E Way Bill: Step-by-Step Guide': 'भारत में ई वे बिल कैसे जनरेट करें',
+  'How to Create a Kirana Store Business Plan': 'किराना स्टोर बिजनेस प्लान कैसे बनाएं',
+  // kirana page has no schemaText map, so its schema offer descriptions stay English without these
+  '7-day free trial, no card needed; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year.': '7 दिन का फ्री ट्रायल, कार्ड की ज़रूरत नहीं; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल।',
+  '7-day free trial; Pro ₹499/month or ₹4,990/year; King ₹799/month or ₹7,990/year': '7 दिन का फ्री ट्रायल; Pro ₹499/महीना या ₹4,990/साल; King ₹799/महीना या ₹7,990/साल',
+};
+// Short bullet strings are only safe to replace inside the key-facts box itself.
+// Elsewhere on the page the same words ("Low-stock alerts") live inside JS i18n tables.
+const GLOBAL_SAFE = (en) => /^(Understanding|How to|7-day free trial[;,] )/.test(en);
+function translateStatic(html) {
+  let out = html;
+  out = out.replace(/<aside class="keyfacts"[\s\S]*?<\/aside>/, (box) => {
+    let b = box;
+    for (const [en, hi] of Object.entries(STATIC_HI)) b = b.split(en).join(hi);
+    return b;
+  });
+  for (const [en, hi] of Object.entries(STATIC_HI)) if (GLOBAL_SAFE(en)) out = out.split(en).join(hi);
+  return out;
+}
+
 function fixPillCss(html) {
   return html
     .replace(/\.lang-toggle button \{/g, '.lang-toggle button, .lang-toggle a {\n  text-decoration: none;')
@@ -494,6 +542,7 @@ for (const cfg of PAGES) {
   hi = hi.replace(/href="\/for-[a-z-]+\.html"/g, `href="${cfg.enPath}"`);
   // Blog and free tools have their own Hindi versions — point Hindi pages at them.
   hi = hi.replace(/href="\/(blog|tools)\//g, 'href="/hi/$1/');
+  if (cfg.src !== "index.html") hi = translateStatic(hi);
 
   fs.mkdirSync(path.dirname(path.join(OUT_DIR, cfg.out)), { recursive: true });
   fs.writeFileSync(path.join(OUT_DIR, cfg.out), hi);
