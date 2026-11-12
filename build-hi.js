@@ -450,6 +450,8 @@ const STATIC_HI = {
   'Key facts: Cafe billing software': 'मुख्य जानकारी: कैफ़े बिलिंग सॉफ्टवेयर',
   'Key facts: Grocery billing software': 'मुख्य जानकारी: ग्रोसरी बिलिंग सॉफ्टवेयर',
   'Key facts: Salon billing software': 'मुख्य जानकारी: सैलून बिलिंग सॉफ्टवेयर',
+  'Key facts: Salon &amp; beauty parlour billing software': 'मुख्य जानकारी: सैलून और ब्यूटी पार्लर बिलिंग सॉफ्टवेयर',
+  'Salon software and beauty parlour software in one app: billing, stylist commission and profit per service': 'सैलून और ब्यूटी पार्लर सॉफ्टवेयर एक ही ऐप में: बिलिंग, स्टाइलिस्ट कमीशन और हर सर्विस का मुनाफ़ा',
   'Key facts: Restaurant POS': 'मुख्य जानकारी: रेस्टोरेंट POS',
   'Key facts: Sweet shop billing software': 'मुख्य जानकारी: मिठाई की दुकान का बिलिंग सॉफ्टवेयर',
   'Key facts: Kirana billing app': 'मुख्य जानकारी: किराना बिलिंग ऐप',
