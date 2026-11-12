@@ -1,5 +1,5 @@
 /* HisaabNow free tools — shared logic (GST calculator, GST invoice generator,
-   profit margin calculator). Runs entirely in the browser; nothing is sent
+   profit margin calculator, discount calculator). Runs entirely in the browser; nothing is sent
    anywhere. Language strings come from window.HN_T (set on each page). */
 (function () {
   'use strict';
@@ -283,6 +283,61 @@
     addRow({ desc: '', hsn: '', qty: 1, unit: 'Nos', price: '', gst: 18 });
   }
 
-  function init() { initGstCalc(); initMargin(); initInvoice(); }
+
+  // ── Discount calculator ─────────────────────────────────────────────────
+  function initDiscount() {
+    var box = $('discount-calc'); if (!box) return;
+    var mode = 'off';
+    var L = {
+      off:  ['Original price (₹)', 'Discount (%)'],
+      pct:  ['Original price (₹)', 'Sale price (₹)'],
+      orig: ['Price after discount (₹)', 'Discount (%)']
+    };
+    function show(id, on) { $(id).style.display = on ? '' : 'none'; }
+    function calc() {
+      var a = num($('dc-a').value), b = num($('dc-b').value), d2 = num($('dc-d2').value), g = num($('dc-gst').value);
+      var after, off, pctv, orig = 0, note = '';
+      $('dc-a-label').textContent = L[mode][0];
+      $('dc-b-label').textContent = L[mode][1];
+      if (mode === 'off') {
+        after = a * (1 - b / 100) * (1 - d2 / 100);
+        off = a - after; pctv = a > 0 ? off / a * 100 : 0;
+        if (b > 100 || d2 > 100) note = 'A discount cannot be more than 100%.';
+      } else if (mode === 'pct') {
+        after = b; off = a - b; pctv = a > 0 ? off / a * 100 : 0;
+        if (b > a) note = 'The sale price is higher than the original price, so this is not a discount.';
+      } else {
+        orig = b >= 100 ? 0 : a / (1 - b / 100);
+        after = a; off = orig - a; pctv = b;
+        if (b >= 100) note = 'A discount of 100% or more cannot be reversed.';
+      }
+      var gst = after * g / 100;
+      $('dc-off').textContent = inr(off);
+      $('dc-pct').textContent = pct(pctv);
+      $('dc-after').textContent = inr(after);
+      $('dc-gst-amt').textContent = inr(gst);
+      $('dc-final').textContent = inr(after + gst);
+      $('dc-orig').textContent = inr(orig);
+      show('dc-d2-row', mode === 'off');
+      show('dc-gst-row', mode !== 'orig');
+      show('dc-r-orig', mode === 'orig');
+      show('dc-r-gst', mode !== 'orig');
+      show('dc-r-final', mode !== 'orig');
+      $('dc-note').textContent = note;
+    }
+    box.querySelectorAll('#dc-mode button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        mode = btn.getAttribute('data-mode');
+        box.querySelectorAll('#dc-mode button').forEach(function (x) { x.classList.toggle('on', x === btn); });
+        var defaults = { off: ['1500', '20'], pct: ['1299', '999'], orig: ['800', '20'] }[mode];
+        $('dc-a').value = defaults[0]; $('dc-b').value = defaults[1];
+        calc();
+      });
+    });
+    ['dc-a', 'dc-b', 'dc-d2', 'dc-gst'].forEach(function (id) { $(id).addEventListener('input', calc); });
+    calc();
+  }
+
+  function init() { initGstCalc(); initMargin(); initInvoice(); initDiscount(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

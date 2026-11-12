@@ -20,6 +20,7 @@ Pricing changes, so it is not listed here. See https://hisaabnow.com/ for curren
 - [Grocery bill format and Excel template](https://hisaabnow.com/tools/grocery-bill-format): free kirana store bill template with a GST rate for each item, CGST/SGST split and a summary by rate.
 - [GST calculator](https://hisaabnow.com/tools/gst-calculator): add or remove GST, with CGST/SGST or IGST split.
 - [Profit margin calculator](https://hisaabnow.com/tools/profit-margin-calculator): margin vs markup from cost and selling price.
+- [Discount calculator](https://hisaabnow.com/tools/discount-calculator): price after discount, discount percentage, original price, second discount and GST.
 
 ## Guides
 - [HisaabNow blog](https://hisaabnow.com/blog/)
