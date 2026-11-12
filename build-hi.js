@@ -449,6 +449,8 @@ const STATIC_HI = {
   'aria-label="Key facts"': 'aria-label="मुख्य जानकारी"',
   'Key facts: Cafe billing software': 'मुख्य जानकारी: कैफ़े बिलिंग सॉफ्टवेयर',
   'Key facts: Grocery billing software': 'मुख्य जानकारी: ग्रोसरी बिलिंग सॉफ्टवेयर',
+  'Key facts: Grocery store billing software': 'मुख्य जानकारी: ग्रोसरी स्टोर बिलिंग सॉफ्टवेयर',
+  'Grocery store software for kirana stores, general stores and mini-marts: billing, stock and udhaar in one app': 'किराना, जनरल स्टोर और मिनी-मार्ट के लिए ग्रोसरी स्टोर सॉफ्टवेयर: बिलिंग, स्टॉक और उधार एक ही ऐप में',
   'Key facts: Salon billing software': 'मुख्य जानकारी: सैलून बिलिंग सॉफ्टवेयर',
   'Key facts: Salon &amp; beauty parlour billing software': 'मुख्य जानकारी: सैलून और ब्यूटी पार्लर बिलिंग सॉफ्टवेयर',
   'Salon software and beauty parlour software in one app: billing, stylist commission and profit per service': 'सैलून और ब्यूटी पार्लर सॉफ्टवेयर एक ही ऐप में: बिलिंग, स्टाइलिस्ट कमीशन और हर सर्विस का मुनाफ़ा',
