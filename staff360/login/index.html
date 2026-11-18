@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in · HisaabNow Staff360</title>
+<meta name="description" content="Log in to HisaabNow Staff360 with your mobile number. Owners manage staff and attendance; employees check in and out.">
+<link rel="canonical" href="https://hisaabnow.com/staff360/login/">
+<meta name="theme-color" content="#078C45">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/hn-analytics.js" defer></script>
+<style>
+:root{--primary:#078C45;--primary-dark:#056B36;--primary-hover:#067A3E;--primary-light:#E8F7EE;--heading:#101A3A;--text:#182230;--muted:#667085;--border:#DCE5EF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--text);background:#fff;min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr}
+@media(max-width:900px){body{grid-template-columns:1fr}.side{display:none!important}}
+:focus-visible{outline:3px solid var(--primary);outline-offset:3px;border-radius:6px}
+.mainc{display:flex;flex-direction:column;padding:28px 24px;background:linear-gradient(120deg,#F3FAF6,#fff 60%)}
+.top{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{display:flex;align-items:center;gap:6px;font-weight:800;font-size:21px;letter-spacing:-.03em;color:var(--heading)}
+.logo svg{width:28px;height:28px}
+.tag{background:var(--primary-light);color:var(--primary-dark);font-weight:700;font-size:13px;padding:4px 11px;border-radius:99px;border:1px solid #CBEBD8}
+.form-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:24px 0}
+.box{width:100%;max-width:400px}
+h1{font-size:30px;line-height:1.15;letter-spacing:-.025em;color:var(--heading);margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:26px;line-height:1.5}
+.fld{display:block;margin-bottom:16px}.fld span{display:block;font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:7px}
+.ph{display:flex;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;height:52px}
+.ph:focus-within{border-color:var(--primary);box-shadow:0 0 0 3px rgba(7,140,69,.15)}
+.ph b{display:flex;align-items:center;padding:0 14px;background:#F4F7FA;color:var(--heading);border-right:1px solid var(--border);font-weight:600}
+.ph input,.otp{flex:1;border:0;font:inherit;font-size:18px;padding:0 14px;color:var(--heading);letter-spacing:.04em;background:transparent;min-width:0}
+.ph input:focus,.otp:focus{outline:none}
+.otp{width:100%;height:56px;border:1.5px solid var(--border);border-radius:10px;font-size:24px;text-align:center;letter-spacing:.5em}
+.otp:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(7,140,69,.15)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:52px;border:0;border-radius:10px;background:var(--primary);color:#fff;font:inherit;font-weight:700;font-size:16.5px;cursor:pointer;box-shadow:0 6px 16px rgba(7,140,69,.22)}
+.btn:hover{background:var(--primary-hover)}.btn:disabled{opacity:.6;cursor:default}
+.link{background:none;border:0;color:var(--primary);font:inherit;font-weight:600;cursor:pointer;padding:4px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:14px;color:var(--muted)}
+.err{background:#FEECEC;color:#B42318;border-radius:10px;padding:11px 13px;font-size:14px;margin-bottom:14px}
+.note{font-size:13px;color:var(--muted);margin-top:22px;line-height:1.5}
+.note a{color:var(--primary);font-weight:600}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.who div{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff;font-size:13px;color:var(--muted)}
+.who b{display:block;color:var(--heading);font-size:14px;margin-bottom:2px}
+.side{background:linear-gradient(140deg,var(--primary-dark),var(--primary));color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.side::before{content:'';position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:rgba(255,255,255,.08)}
+.side h2{font-size:34px;line-height:1.15;letter-spacing:-.025em;margin-bottom:16px;position:relative}
+.side ul{list-style:none;position:relative}
+.side li{display:flex;gap:10px;align-items:center;padding:7px 0;font-size:16.5px;color:#E3F5EA}
+.side li::before{content:'✓';width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-size:13px;font-weight:800;flex:none}
+.foot{font-size:12.5px;color:var(--muted);text-align:center}
+.foot a{color:var(--muted)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<section class="mainc">
+  <a class="top" href="/staff360/" aria-label="HisaabNow Staff360 home">
+    <span class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="9" y="35" width="10" height="20" rx="3" fill="#078C45"/><rect x="23" y="25" width="10" height="30" rx="3" fill="#078C45"/><rect x="37" y="14" width="10" height="41" rx="3" fill="#078C45"/><path d="M4 56h52" stroke="#078C45" stroke-width="4" stroke-linecap="round"/><path d="M53 5l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#F59E0B"/></svg>HisaabNow</span>
+    <span class="tag">Staff360</span>
+  </a>
+  <div class="form-wrap"><div class="box">
+    <form id="f-phone" novalidate>
+      <h1>Log in to Staff360</h1>
+      <p class="sub">Owners, managers and staff — use your mobile number. New here? The same steps create your account.</p>
+      <label class="fld"><span>Mobile number</span><div class="ph"><b>+91</b><input id="phone" inputmode="numeric" autocomplete="tel-national" maxlength="10" placeholder="98765 43210" aria-label="10-digit mobile number" required></div></label>
+      <div id="e1" role="alert"></div>
+      <button class="btn" id="send" type="submit">Get OTP</button>
+      <div class="who"><div><b>Owner / manager</b>Manage staff, attendance and reports.</div><div><b>Staff</b>Check in, check out and request leave.</div></div>
+    </form>
+    <form id="f-otp" hidden novalidate>
+      <h1>Enter the OTP</h1>
+      <p class="sub" id="sentto">We sent a 6-digit code by SMS.</p>
+      <label class="fld"><span>6-digit code</span><input class="otp" id="otp" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="••••••" required></label>
+      <div id="e2" role="alert"></div>
+      <button class="btn" id="verify" type="submit">Verify &amp; continue</button>
+      <div class="row"><button type="button" class="link" id="change">← Change number</button><button type="button" class="link" id="resend" disabled>Resend in 30s</button></div>
+    </form>
+    <p class="note">By continuing you agree to the <a href="/legal/terms.html">Terms</a> and <a href="/legal/privacy.html">Privacy Policy</a>. Staff360 never uses face scans or selfies; location is read only when staff tap Check in or Check out.</p>
+    <div id="recaptcha-container"></div>
+  </div></div>
+  <p class="foot">© 2026 HisaabNow · <a href="/staff360/">About Staff360</a> · <a href="https://wa.me/917838361200">Help</a></p>
+</section>
+<aside class="side" aria-hidden="true">
+  <h2>Smart Staff &amp; Workforce Management</h2>
+  <ul><li>Attendance register in one tap</li><li>GPS check-in from the staff's phone</li><li>Shifts, late arrivals &amp; leave</li><li>AI Staff Manager on King PRO</li><li>No face scan, no biometric machine</li></ul>
+</aside>
+
+<script type="module">
+import { initFirebase } from '/staff360/app/shell.js?v=s360sa1';
+import { getAuth, onAuthStateChanged, RecaptchaVerifier, signInWithPhoneNumber } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+
+const app = initFirebase();
+const auth = getAuth(app);
+auth.languageCode = 'en';
+const $ = (id) => document.getElementById(id);
+let leaving = false;
+const next = () => { if (leaving) return; leaving = true; location.replace('/staff360/app/' + location.search); };
+let confirmation = null, verifier = null, timer = null;
+
+onAuthStateChanged(auth, (u) => { if (u) next(); });
+
+function show(el, msg) { $(el).innerHTML = msg ? '<div class="err">' + msg + '</div>' : ''; }
+function friendly(e) {
+  const c = String(e && e.code || '');
+  if (c.includes('invalid-phone-number')) return 'That mobile number does not look right.';
+  if (c.includes('too-many-requests') || c.includes('quota')) return 'Too many attempts. Please wait a few minutes and try again.';
+  if (c.includes('invalid-verification-code')) return 'That code is not right. Check the SMS and try again.';
+  if (c.includes('code-expired')) return 'That code has expired. Tap Resend.';
+  if (c.includes('unauthorized-domain') || c.includes('captcha')) return 'Login is not enabled on this website yet. Please contact HisaabNow support.';
+  if (c.includes('network')) return 'No internet connection. Please try again.';
+  return 'Could not continue (' + (c || 'error') + '). Please try again.';
+}
+function getVerifier() {
+  if (!verifier) verifier = new RecaptchaVerifier(auth, 'recaptcha-container', { size: 'invisible', 'expired-callback': () => { verifier = null; } });
+  return verifier;
+}
+function countdown() {
+  let n = 30; const b = $('resend'); b.disabled = true;
+  clearInterval(timer);
+  timer = setInterval(() => { n--; b.textContent = n > 0 ? 'Resend in ' + n + 's' : 'Resend OTP'; if (n <= 0) { clearInterval(timer); b.disabled = false; } }, 1000);
+}
+async function send() {
+  const p = $('phone').value.replace(/\D/g, '').replace(/^91(?=\d{10}$)/, '').replace(/^0/, '');
+  if (!/^[6-9]\d{9}$/.test(p)) { show('e1', 'Enter your 10-digit mobile number.'); return; }
+  show('e1', ''); const b = $('send'); b.disabled = true; b.textContent = 'Sending…';
+  try {
+    confirmation = await signInWithPhoneNumber(auth, '+91' + p, getVerifier());
+    $('sentto').textContent = 'We sent a 6-digit code to +91 ' + p.slice(0, 5) + ' ' + p.slice(5) + '.';
+    $('f-phone').hidden = true; $('f-otp').hidden = false; $('otp').focus(); countdown();
+    try { window.hnEvent && window.hnEvent('staff360_otp_sent', {}); } catch (e) {}
+  } catch (e) {
+    show('e1', friendly(e)); try { verifier && verifier.clear(); } catch (x) {} verifier = null;
+  } finally { b.disabled = false; b.textContent = 'Get OTP'; }
+}
+$('f-phone').addEventListener('submit', (e) => { e.preventDefault(); send(); });
+$('f-otp').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const c = $('otp').value.replace(/\D/g, '');
+  if (c.length !== 6) { show('e2', 'Enter the 6-digit code.'); return; }
+  const b = $('verify'); b.disabled = true; b.textContent = 'Verifying…'; show('e2', '');
+  try { await confirmation.confirm(c); try { window.hnEvent && window.hnEvent('staff360_login', {}); } catch (x) {} next(); }
+  catch (err) { show('e2', friendly(err)); b.disabled = false; b.textContent = 'Verify & continue'; }
+});
+$('otp').addEventListener('input', (e) => { if (e.target.value.replace(/\D/g, '').length === 6) $('f-otp').requestSubmit(); });
+$('change').onclick = () => { $('f-otp').hidden = true; $('f-phone').hidden = false; $('otp').value = ''; show('e2', ''); };
+$('resend').onclick = () => { $('f-otp').hidden = true; $('f-phone').hidden = false; send(); };
+</script>
+</body>
+</html>
