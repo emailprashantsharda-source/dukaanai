@@ -32,7 +32,7 @@ export function bootApp() {
   window.kfCallable = httpsCallable;
   window.STAFF360_STANDALONE = true;
   window.STAFF360_BASE = '/staff360/app/';
-  window.HISAABNOW_BUILD = window.STAFF360_BUILD || 's360';
+  window.HISAABNOW_BUILD = window.STAFF360_BUILD || 's360sa2';
   const call = (name, data) => httpsCallable(fns, name)(data || {}).then((r) => r.data);
   let tenants = [];
   let user = null;
@@ -108,7 +108,13 @@ export function bootApp() {
     return picker();
   }
 
+  function newBusiness() {
+    ['s360', 's360e'].forEach((id) => { const el = document.getElementById(id); if (el) el.remove(); });
+    signup();
+  }
+
   window.STAFF360_SHELL = {
+    newBusiness,
     menu() {
       const cur = window.MShop && window.MShop.getActive();
       const bg = document.createElement('div');
@@ -122,7 +128,7 @@ export function bootApp() {
         if (!b) return;
         if (b.dataset.t) { location.href = '/staff360/app/?t=' + encodeURIComponent(b.dataset.t); }
         if (b.dataset.a === 'out') signOut(auth);
-        if (b.dataset.a === 'new') { bg.remove(); document.getElementById('s360') && document.getElementById('s360').remove(); document.getElementById('s360e') && document.getElementById('s360e').remove(); signup(); }
+        if (b.dataset.a === 'new') { bg.remove(); newBusiness(); }
       };
       document.body.appendChild(bg);
     },
