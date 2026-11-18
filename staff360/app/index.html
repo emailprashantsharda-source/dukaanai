@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>HisaabNow Staff360</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#078C45">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" id="s360-css" href="/staff360/app/staff360.css?v=s360sa1">
+<script src="/hn-analytics.js" defer></script>
+<style>
+/* Staff360 standalone branding (matches hisaabnow.com/staff360) */
+:root{--primary:#078C45;--primary-dark:#056B36;--primary-light:#E8F7EE;--heading:#101A3A;--text:#182230;--muted:#667085;--border:#DCE5EF}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Inter',system-ui,-apple-system,sans-serif;background:#F8FAFC;color:var(--text)}
+#s360,#s360e,.s360-sheet-bg,#s360-reason{--g:#078C45;--g2:#067A3E;--gt:#E8F7EE;--ink:#101A3A;--bg:#F8FAFC;--line:#E4EAF1}
+#s360 .s360-tt b::before,#s360e .s360-tt b::before{content:'';display:inline-block;width:22px;height:22px;margin-right:7px;vertical-align:-4px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='9' y='35' width='10' height='20' rx='3' fill='%23078C45'/%3E%3Crect x='23' y='25' width='10' height='30' rx='3' fill='%23078C45'/%3E%3Crect x='37' y='14' width='10' height='41' rx='3' fill='%23078C45'/%3E%3Cpath d='M4 56h52' stroke='%23078C45' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M53 5l2 5 5 2-5 2-2 5-2-5-5-2 5-2z' fill='%23F59E0B'/%3E%3C/svg%3E") center/contain no-repeat}
+#boot{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(120deg,#F3FAF6,#fff 55%,#EEF6F1)}
+.card{background:#fff;border:1px solid var(--border);border-radius:20px;box-shadow:0 12px 28px rgba(16,26,58,.08);padding:28px;width:100%;max-width:440px;text-align:left}
+.card h2{color:var(--heading);font-size:24px;letter-spacing:-.02em;margin:10px 0 6px}
+.card p{color:var(--muted);margin:0 0 16px;line-height:1.5}
+.eyebrow{display:inline-block;background:var(--primary-light);color:var(--heading);font-weight:700;font-size:13.5px;padding:5px 12px;border-radius:99px}
+.eyebrow b{color:var(--primary)}
+.fld{display:block;margin-bottom:14px}.fld span{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.in{width:100%;height:48px;border:1.5px solid var(--border);border-radius:10px;padding:0 14px;font:inherit;font-size:16px;color:var(--heading);background:#fff}
+.in:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(7,140,69,.15)}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;height:50px;border:0;border-radius:10px;background:var(--primary);color:#fff;font:inherit;font-weight:700;font-size:16px;cursor:pointer}
+.btn:disabled{opacity:.6;cursor:default}
+.small{font-size:13.5px;color:var(--muted);margin-top:16px!important;text-align:center}.small a{color:var(--primary);font-weight:600}
+.err{background:#FEECEC;color:#B42318;border-radius:10px;padding:10px 12px;font-size:14px;margin-bottom:12px}
+.pick{display:block;width:100%;text-align:left;border:1.5px solid var(--border);background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:10px;cursor:pointer;font:inherit}
+.pick:hover{border-color:var(--primary)}.pick b{display:block;color:var(--heading)}.pick small{color:var(--muted)}
+.spin{width:34px;height:34px;border-radius:50%;border:3px solid var(--primary-light);border-top-color:var(--primary);animation:sp 0.8s linear infinite;margin:0 auto 12px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.menu-bg{position:fixed;inset:0;background:rgba(16,26,58,.4);z-index:9800;display:flex;align-items:flex-start;justify-content:flex-start;padding:12px}
+.menu{background:#fff;border-radius:16px;padding:16px;width:280px;box-shadow:0 18px 40px rgba(0,0,0,.2);display:flex;flex-direction:column;gap:6px;font-family:inherit}
+.menu b{color:var(--heading);font-size:16px}.menu small{color:var(--muted);margin-bottom:6px}
+.menu button{text-align:left;border:0;background:#F4F7FA;border-radius:10px;padding:12px;font:inherit;font-weight:600;color:var(--heading);cursor:pointer}
+.menu button:hover{background:var(--primary-light)}
+:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+</style>
+</head>
+<body>
+<main id="boot" aria-live="polite"><div class="card"><div class="spin" aria-label="Loading"></div><p style="text-align:center">Opening Staff360…</p></div></main>
+<script type="module">
+  import { bootApp } from '/staff360/app/shell.js?v=s360sa1';
+  bootApp();
+</script>
+</body>
+</html>
