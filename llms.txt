@@ -14,6 +14,11 @@ Pricing changes, so it is not listed here. See https://hisaabnow.com/ for curren
 - [Bakery billing software](https://hisaabnow.com/bakery-billing-software): bakeries. Low-stock alerts, udhaar tracking, WhatsApp receipts.
 - [About HisaabNow](https://hisaabnow.com/about)
 
+## Staff attendance (Staff360)
+- [Staff360 staff attendance app](https://hisaabnow.com/staff360/): attendance app for employees of shops and small businesses. Daily attendance register, mobile OTP check-in with GPS captured only at check-in, shifts, leave, overtime, AI insights and draft salary estimates (King PRO, ₹4,999/year). No selfies, face scans or biometrics. Log in at https://hisaabnow.com/staff360/login/.
+- [Attendance management system](https://hisaabnow.com/staff360/attendance-management-system/): features by plan.
+- [PagarBook alternative](https://hisaabnow.com/staff360/pagarbook-alternative/): Staff360 vs PagarBook.
+
 ## Free tools (no signup)
 - [GST invoice generator and Excel template](https://hisaabnow.com/tools/gst-invoice-generator): fill in shop, customer and items; get a GST invoice with HSN and CGST/SGST to print or save as PDF, or download the free .xlsx template.
 - [Salon bill format and Excel template](https://hisaabnow.com/tools/salon-bill-format): free beauty parlour bill template with services, stylist, discount and the 5% GST split.
@@ -21,6 +26,8 @@ Pricing changes, so it is not listed here. See https://hisaabnow.com/ for curren
 - [GST calculator](https://hisaabnow.com/tools/gst-calculator): add or remove GST, with CGST/SGST or IGST split.
 - [Profit margin calculator](https://hisaabnow.com/tools/profit-margin-calculator): margin vs markup from cost and selling price.
 - [Discount calculator](https://hisaabnow.com/tools/discount-calculator): price after discount, discount percentage, original price, second discount and GST.
+- [Attendance sheet format and Excel template](https://hisaabnow.com/tools/attendance-sheet-format): free monthly staff attendance sheet with P/HD/A/L/WO codes, totals, payable days and a salary sheet; attendance percentage calculator.
+- [Salary calculator](https://hisaabnow.com/tools/salary-calculator): staff salary from present days, half-days, leave and week offs, with overtime at 2× and advances.
 
 ## Guides
 - [HisaabNow blog](https://hisaabnow.com/blog/)

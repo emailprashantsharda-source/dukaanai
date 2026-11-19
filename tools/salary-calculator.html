@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salary Calculator from Attendance, with Overtime | HisaabNow</title>
+<meta name="description" content="Free staff salary calculator: monthly salary from present days, half-days, leave and week offs, with overtime at 2× and advances. Per-day and per-hour rate.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#078C45">
+<link rel="canonical" href="https://hisaabnow.com/tools/salary-calculator">
+<link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/salary-calculator">
+<link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/salary-calculator">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HisaabNow">
+<meta property="og:title" content="Salary Calculator from Attendance, with Overtime | HisaabNow">
+<meta property="og:description" content="Free staff salary calculator: monthly salary from present days, half-days, leave and week offs, with overtime at 2× and advances. Per-day and per-hour rate.">
+<meta property="og:url" content="https://hisaabnow.com/tools/salary-calculator">
+<meta property="og:image" content="https://hisaabnow.com/og-image.png">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://hisaabnow.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Free tools",
+     "item": "https://hisaabnow.com/tools/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Salary Calculator",
+     "item": "https://hisaabnow.com/tools/salary-calculator"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "name": "Salary Calculator from Attendance, with Overtime | HisaabNow",
+   "description": "Free staff salary calculator: monthly salary from present days, half-days, leave and week offs, with overtime at 2× and advances. Per-day and per-hour rate.",
+   "url": "https://hisaabnow.com/tools/salary-calculator",
+   "inLanguage": "en-IN",
+   "isPartOf": {
+    "@type": "WebSite",
+    "name": "HisaabNow",
+    "url": "https://hisaabnow.com"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do I calculate salary from attendance?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Per-day salary = monthly salary ÷ days in the month. Payable days = present + paid leave + paid weekly offs + half-days × 0.5. Salary = per-day salary × payable days, plus overtime, minus any advance."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should I divide monthly salary by 30, 26 or the days in the month?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Businesses use all three. Dividing by the calendar days (28 to 31) is the most common when weekly offs are paid. Dividing by 26 is used when only working days are paid. Pick one rule, tell your staff, and use it every month."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How is overtime calculated?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Hourly rate = per-day salary ÷ normal working hours in a day. Overtime pay = hourly rate × overtime hours × the overtime rate. Under the new labour codes, overtime is paid at twice the normal rate of wages."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the overtime rate in India in 2026?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Twice the normal rate of wages under the labour codes, for work beyond the daily or weekly limit (8 hours a day and 48 hours a week under the OSH Code). State rules and your category of establishment can change the details, so confirm with your CA."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can this calculator handle advances given during the month?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Enter the advance or other deduction, and it is taken off the salary to give the amount to pay."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/tools/tools.css">
+<script src="/hn-analytics.js" defer></script>
+</head>
+<body>
+<nav class="nav"><div class="wrap nav-inner">
+  <a href="/" class="brand"><span class="brand-logo"></span><span>HisaabNow</span></a>
+  <div class="nav-right"><a href="/staff360/" class="nav-cta">Staff attendance app</a></div>
+</div></nav>
+
+<nav class="breadcrumb" aria-label="Breadcrumb"><div class="wrap"><a href="/">Home</a><span class="sep">›</span><a href="/tools/">Free tools</a><span class="sep">›</span><span>Salary Calculator</span></div></nav>
+<main>
+<section class="hero"><div class="narrow"><div class="badge">Free · No signup · Works on mobile</div><h1>Salary Calculator from Attendance (with Overtime)</h1><p>Work out a staff member's salary for the month from days present, half-days, paid leave and week offs. Add overtime and advances to get the amount to pay.</p></div></section>
+<div class="narrow">
+<div class="tool" id="sal-calc">
+  <div class="row three">
+    <div><label for="sc-sal">Monthly salary (₹)</label><input id="sc-sal" type="number" inputmode="decimal" min="0" step="any" value="15000"></div>
+    <div><label for="sc-basis">Divide salary by</label><select id="sc-basis"><option value="cal" selected>Days in the month</option><option value="30">30 days</option><option value="26">26 days</option></select></div>
+    <div><label for="sc-month">Days in the month</label><select id="sc-month"><option>28</option><option>29</option><option selected>30</option><option>31</option></select></div>
+  </div>
+  <div class="row three">
+    <div><label for="sc-p">Days present</label><input id="sc-p" type="number" inputmode="decimal" min="0" step="1" value="24"></div>
+    <div><label for="sc-hd">Half-days</label><input id="sc-hd" type="number" inputmode="decimal" min="0" step="1" value="1"></div>
+    <div><label for="sc-l">Paid leave days</label><input id="sc-l" type="number" inputmode="decimal" min="0" step="1" value="0"></div>
+  </div>
+  <div class="row three">
+    <div><label for="sc-wo">Paid weekly offs</label><input id="sc-wo" type="number" inputmode="decimal" min="0" step="1" value="4"></div>
+    <div><label for="sc-hrs">Normal hours per day</label><input id="sc-hrs" type="number" inputmode="decimal" min="1" step="0.5" value="8"></div>
+    <div><label for="sc-ot">Overtime hours this month</label><input id="sc-ot" type="number" inputmode="decimal" min="0" step="0.5" value="6"></div>
+  </div>
+  <div class="row three">
+    <div><label for="sc-rate">Overtime rate</label><select id="sc-rate"><option value="1">1× (same rate)</option><option value="1.5">1.5×</option><option value="2" selected>2× (labour codes)</option></select></div>
+    <div><label for="sc-adv">Advance / deductions (₹)</label><input id="sc-adv" type="number" inputmode="decimal" min="0" step="any" value="1000"></div>
+  </div>
+  <div class="results">
+    <div class="res"><span>Per-day salary</span><b id="sc-day">₹0</b></div>
+    <div class="res"><span>Per-hour salary</span><b id="sc-hour">₹0</b></div>
+    <div class="res"><span>Payable days</span><b id="sc-pd">0</b></div>
+    <div class="res"><span>Salary for days worked</span><b id="sc-earn">₹0</b></div>
+    <div class="res"><span>Overtime pay</span><b id="sc-otp">₹0</b></div>
+    <div class="res hl"><span>Amount to pay</span><b id="sc-net">₹0</b></div>
+  </div>
+  <div class="hint bad" id="sc-note"></div>
+</div>
+<div class="content">
+<h2>How staff salary is calculated from attendance</h2>
+<ol>
+<li><strong>Per-day salary</strong> = monthly salary ÷ the days you divide by (the days in the month, 30 or 26).</li>
+<li><strong>Payable days</strong> = days present + paid leave + paid weekly offs + (half-days × 0.5).</li>
+<li><strong>Salary for days worked</strong> = per-day salary × payable days.</li>
+<li><strong>Overtime pay</strong> = per-day salary ÷ normal hours per day × overtime hours × overtime rate.</li>
+<li><strong>Amount to pay</strong> = salary for days worked + overtime pay − advance or deductions.</li>
+</ol>
+<p><strong>Example:</strong> ₹15,000 a month in a 30-day month is ₹500 a day. With 24 days present, 1 half-day and 4 paid weekly offs, payable days are 28.5 and the salary is ₹14,250. Six hours of overtime at 2× an hourly rate of ₹62.50 adds ₹750. Less a ₹1,000 advance, the amount to pay is <strong>₹14,000</strong>.</p>
+
+<h2>Overtime calculator: the rules in 2026</h2>
+<p>The four labour codes were notified on 21 November 2025, and the central rules followed in 2026. Under them, overtime is paid at <strong>twice the normal rate of wages</strong>, and the normal limit is 8 hours a day and 48 hours a week under the OSH Code, with a cap of 144 overtime hours in a quarter. State rules for shops and establishments can differ in detail, so treat this calculator as a guide and confirm with your CA.</p>
+
+<h2>Salary sheet format</h2>
+<p>To do this for your whole team every month, download the free <a href="/tools/attendance-sheet-format">attendance sheet format</a>. It includes a salary sheet that works out payable days, overtime, advances and net salary for each employee from the attendance codes.</p>
+
+<h2>Let the app do it every month</h2>
+<p><a href="/staff360/">Staff360</a> counts present days, half-days, approved leave and overtime from the attendance register, and on King PRO prepares a draft salary for each employee that you review and approve. It never pays salaries on its own.</p>
+</div>
+<aside class="cta"><h2>Salary day without the calculator</h2><p>Staff360 keeps attendance and works out payable days for every employee.</p><p style="margin-top:12px;"><a class="btn" href="/staff360/login/?utm_source=website&amp;utm_medium=seo&amp;utm_campaign=tool-salary">Try Staff360 free</a></p></aside>
+<p style="margin:14px 0 4px;font-weight:700;font-size:14px;">Also useful</p><div class="related"><a href="/tools/attendance-sheet-format">Attendance sheet format (Excel)</a><a href="/staff360/attendance-management-system/">Attendance management system</a><a href="/tools/gst-calculator">GST calculator</a></div>
+<section class="faq"><h2>Frequently asked questions</h2><details><summary>How do I calculate salary from attendance?</summary><p>Per-day salary = monthly salary ÷ days in the month. Payable days = present + paid leave + paid weekly offs + half-days × 0.5. Salary = per-day salary × payable days, plus overtime, minus any advance.</p></details><details><summary>Should I divide monthly salary by 30, 26 or the days in the month?</summary><p>Businesses use all three. Dividing by the calendar days (28 to 31) is the most common when weekly offs are paid. Dividing by 26 is used when only working days are paid. Pick one rule, tell your staff, and use it every month.</p></details><details><summary>How is overtime calculated?</summary><p>Hourly rate = per-day salary ÷ normal working hours in a day. Overtime pay = hourly rate × overtime hours × the overtime rate. Under the new labour codes, overtime is paid at twice the normal rate of wages.</p></details><details><summary>What is the overtime rate in India in 2026?</summary><p>Twice the normal rate of wages under the labour codes, for work beyond the daily or weekly limit (8 hours a day and 48 hours a week under the OSH Code). State rules and your category of establishment can change the details, so confirm with your CA.</p></details><details><summary>Can this calculator handle advances given during the month?</summary><p>Yes. Enter the advance or other deduction, and it is taken off the salary to give the amount to pay.</p></details></section>
+<aside class="cta" style="font-size:14px"><h2 style="font-size:17px">Sources</h2><p>Overtime and working-hour limits were checked on 19 November 2026 against published summaries of the Code on Wages, 2019 and the OSH Code, 2020 and their 2026 central rules. Rules can change and states may differ, so confirm with your CA.</p></aside>
+</div>
+</main>
+<footer class="footer"><div class="wrap footer-inner">
+  <div>© 2026 HisaabNow · Made in India 🇮🇳</div>
+  <div class="footer-links"><a href="/tools/">Free tools</a><a href="/staff360/">Staff360</a><a href="/compare/">Compare billing apps</a><a href="/blog/">Blog</a><a href="/about">About</a><a href="/legal/privacy.html">Privacy</a><a href="/legal/terms.html">Terms</a><a href="https://wa.me/917838361200">Contact</a></div>
+</div></footer>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var ids=['sc-sal','sc-basis','sc-month','sc-p','sc-hd','sc-l','sc-wo','sc-hrs','sc-ot','sc-rate','sc-adv'];
+function n(i){var v=parseFloat($(i).value);return isFinite(v)&&v>0?v:0}
+function inr(x){return '₹'+(Math.round(x*100)/100).toLocaleString('en-IN',{maximumFractionDigits:2})}
+function run(){
+ var b=$('sc-basis').value, md=parseFloat($('sc-month').value), div=b==='cal'?md:parseFloat(b);
+ var day=n('sc-sal')/div, hrs=n('sc-hrs')||8, hour=day/hrs;
+ var pd=n('sc-p')+n('sc-l')+n('sc-wo')+n('sc-hd')*0.5;
+ var earn=day*pd, ot=hour*n('sc-ot')*parseFloat($('sc-rate').value), net=earn+ot-n('sc-adv');
+ $('sc-day').textContent=inr(day);$('sc-hour').textContent=inr(hour);$('sc-pd').textContent=String(pd);
+ $('sc-earn').textContent=inr(earn);$('sc-otp').textContent=inr(ot);$('sc-net').textContent=inr(net);
+ var note='';if(pd>md)note='Payable days are more than the days in the month — check the numbers.';
+ else if(net<0)note='The advance is more than the salary for this month.';
+ $('sc-note').textContent=note;
+}
+ids.forEach(function(i){$(i).addEventListener('input',run);$(i).addEventListener('change',run)});run();
+})();
+</script>
+</body>
+</html>
