@@ -32,7 +32,7 @@ export function bootApp() {
   window.kfCallable = httpsCallable;
   window.STAFF360_STANDALONE = true;
   window.STAFF360_BASE = '/staff360/app/';
-  window.HISAABNOW_BUILD = window.STAFF360_BUILD || 's360sa2';
+  window.HISAABNOW_BUILD = window.STAFF360_BUILD || 's360v2a';
   const call = (name, data) => httpsCallable(fns, name)(data || {}).then((r) => r.data);
   let tenants = [];
   let user = null;
@@ -46,18 +46,34 @@ export function bootApp() {
     return (e && e.message) || 'Something went wrong';
   }
 
+  let started = false;
   function openTenant(t) {
     try { localStorage.setItem(TKEY, t.id); } catch (e) {}
-    window.MShop = { getActive: () => ({ shopId: t.id, name: t.name, cardType: 'staff360' }) };
-    document.documentElement.setAttribute('data-current-role', t.role === 'employee' ? 'cashier' : t.role);
-    $('boot').hidden = true;
-    const go = () => { window.Staff360.open('overview'); };
-    if (window.Staff360) return go();
-    const s = document.createElement('script');
-    s.src = '/staff360/app/staff360.js?v=' + encodeURIComponent(window.HISAABNOW_BUILD);
-    s.onload = go;
-    s.onerror = () => screen('<div class="card"><h2>Could not load Staff360</h2><p>Check your connection and refresh.</p><button class="btn" onclick="location.reload()">Refresh</button></div>');
-    document.body.appendChild(s);
+    if (started) { location.href = '/staff360/app/?t=' + encodeURIComponent(t.id); return; }
+    screen('<div class="card"><div class="spin" aria-label="Loading"></div><p style="text-align:center">Opening ' + esc(t.name || 'Staff360') + '…</p></div>');
+    window.S360Live.boot({
+      call, tenant: t, tenants, user: { phoneNumber: user && user.phoneNumber, displayName: user && user.displayName },
+      signOut: () => signOut(auth),
+      switchTenant: (id) => { location.href = '/staff360/app/?t=' + encodeURIComponent(id); },
+      newBusiness,
+    }).then((mode) => {
+      started = true;
+      $('boot').hidden = true;
+      if (mode === 'employee') {
+        $('s360emp').hidden = false;
+        if (!/^#\/(home|attendance|leave|profile)/.test(location.hash)) location.replace('#/home');
+        window.S360Emp.start();
+      } else {
+        $('s360v2').hidden = false;
+        window.S360UI.startOwner();
+      }
+      try { window.hnEvent && window.hnEvent('staff360_open', { role: mode }); } catch (x) {}
+    }).catch((e) => {
+      screen(`<div class="card"><h2>Could not open ${esc(t.name || 'Staff360')}</h2><p>${esc(e.userMessage || errMsg(e))}</p><button class="btn" id="rt">Try again</button><p class="small">${tenants.length > 1 ? '<a href="#" id="pk">Choose another business</a> · ' : ''}<a href="#" id="lo">Log out</a></p></div>`);
+      $('rt').onclick = () => openTenant(t);
+      $('lo').onclick = (ev) => { ev.preventDefault(); signOut(auth); };
+      const pk = $('pk'); if (pk) pk.onclick = (ev) => { ev.preventDefault(); picker(); };
+    });
   }
 
   function signup() {
@@ -76,8 +92,7 @@ export function bootApp() {
       try {
         const r = await call('staff360CreateOrg', { name: f.get('name'), businessType: f.get('type'), timezone: Intl.DateTimeFormat().resolvedOptions().timeZone });
         try { window.hnEvent && window.hnEvent('staff360_signup', {}); } catch (x) {}
-        tenants = [{ id: r.id, name: String(f.get('name')), kind: 'org', role: 'owner' }];
-        openTenant(tenants[0]);
+        location.href = '/staff360/app/?t=' + encodeURIComponent(r.id);
       } catch (err) { b.disabled = false; b.textContent = 'Create my Staff360'; $('suerr').innerHTML = `<div class="err">${esc(errMsg(err))}</div>`; }
     };
   }
@@ -109,7 +124,7 @@ export function bootApp() {
   }
 
   function newBusiness() {
-    ['s360', 's360e'].forEach((id) => { const el = document.getElementById(id); if (el) el.remove(); });
+    ['s360v2', 's360emp'].forEach((id) => { const el = document.getElementById(id); if (el) el.hidden = true; });
     signup();
   }
 
