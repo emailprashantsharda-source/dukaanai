@@ -15,7 +15,7 @@ Pricing changes, so it is not listed here. See https://hisaabnow.com/ for curren
 - [About HisaabNow](https://hisaabnow.com/about)
 
 ## Staff attendance (Staff360)
-- [Staff360 staff attendance app](https://hisaabnow.com/staff360/): attendance app for employees of shops and small businesses. Daily attendance register, mobile OTP check-in with GPS captured only at check-in, shifts, leave, overtime, AI insights and draft salary estimates (King PRO, ₹4,999/year). No selfies, face scans or biometrics. Log in at https://hisaabnow.com/staff360/login/.
+- [Staff360 staff attendance app](https://hisaabnow.com/staff360/): attendance app for employees of shops and small businesses. Daily attendance register, mobile OTP check-in with GPS captured only at check-in, shifts, leave, overtime, AI insights and draft salary estimates (King PRO, ₹4,999/year). Plans: Basic free for up to 2 staff, Premium ₹999/month for up to 10 staff, King PRO ₹4,999/year. No selfies, face scans or biometrics. Log in at https://hisaabnow.com/staff360/login/.
 - [Attendance management system](https://hisaabnow.com/staff360/attendance-management-system/): features by plan.
 - [PagarBook alternative](https://hisaabnow.com/staff360/pagarbook-alternative/): Staff360 vs PagarBook.
 
