@@ -33,7 +33,17 @@ export function bootApp() {
   window.STAFF360_STANDALONE = true;
   window.STAFF360_BASE = '/staff360/app/';
   window.HISAABNOW_BUILD = window.STAFF360_BUILD || 's360v2a';
-  const call = (name, data) => httpsCallable(fns, name)(data || {}).then((r) => r.data);
+  // All Staff360 actions go through one always-warm function (staff360Api). Until it's
+  // deployed (first call fails with not-found/internal), fall back to the old per-action ones.
+  let apiOk = null;
+  const direct = (name, data) => httpsCallable(fns, name)(data || {}).then((r) => r.data);
+  const call = (name, data) => {
+    if (!/^staff360/.test(name) || apiOk === false) return direct(name, data);
+    return httpsCallable(fns, 'staff360Api', { timeout: 60000 })(Object.assign({ __op: name }, data || {})).then((r) => { apiOk = true; return r.data; }, (e) => {
+      if (apiOk === null && /not-found|internal|unimplemented/.test(String(e && e.code || ''))) { apiOk = false; return direct(name, data); }
+      throw e;
+    });
+  };
   let tenants = [];
   let user = null;
 
