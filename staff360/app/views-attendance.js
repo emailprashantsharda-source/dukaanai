@@ -3,14 +3,15 @@
   'use strict';
   var St = window.S360Store, U = window.S360UI, esc = U.esc, ic = U.ic;
   var F = U.state;
-  F.adate = F.adate || St.today; F.aemp = F.aemp || ''; F.adesig = F.adesig || ''; F.astatus = F.astatus || ''; F.aview = F.aview || 'list';
-  F.amonth = F.amonth || St.today.slice(0, 7);
+  F.adate = F.adate || ''; F.aemp = F.aemp || ''; F.adesig = F.adesig || ''; F.astatus = F.astatus || ''; F.aview = F.aview || 'list';
+  F.amonth = F.amonth || ''; // set on first view, once today's date is known
   var sel = {}; // selected staff ids for bulk marking
 
   var STATUS_OPTS = [['present', 'Present'], ['late', 'Late'], ['halfday', 'Half day'], ['absent', 'Absent'], ['leave', 'On leave'], ['weeklyoff', 'Weekly off']];
 
   U.views.attendance = function (arg) {
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(F.adate || '') || F.adate > St.today) F.adate = St.today;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(F.adate || '') || F.adate > St.today || F.adate < U.addDays(St.today, -366)) F.adate = St.today;
+    if (!/^\d{4}-\d{2}$/.test(F.amonth || '') || F.amonth > St.today.slice(0, 7) || F.amonth < St.today.slice(0, 4) - 1 + St.today.slice(4, 7)) F.amonth = St.today.slice(0, 7);
     if (/^\d{4}-\d{2}-\d{2}$/.test(arg)) { F.adate = arg > St.today ? St.today : arg; F.aview = 'list'; }
     else if (arg === 'calendar') F.aview = 'calendar';
     var h = U.pageHead('Attendance Register', 'View, mark and correct daily attendance for your team.',

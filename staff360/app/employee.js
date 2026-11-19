@@ -3,7 +3,7 @@
   'use strict';
   var St = window.S360Store, U = window.S360UI, esc = U.esc, ic = U.ic;
   var KEY = 's360v2.emp', DEMO_OTP = '123456';
-  var E = { route: 'login', mobile: '', gpsSim: 'ok', sheet: null, resendAt: 0, calMonth: St.today.slice(0, 7) };
+  var E = { route: 'login', mobile: '', gpsSim: 'ok', sheet: null, resendAt: 0, calMonth: '' };
   function me() { if (St.live) return St.staff({ all: true })[0] || null; var id; try { id = localStorage.getItem(KEY); } catch (e) { id = null; } var p = id && St.person(id); return p && p.status === 'Active' ? p : null; }
   function setMe(id) { try { if (id) localStorage.setItem(KEY, id); else localStorage.removeItem(KEY); } catch (e) { /* ignore */ } }
   var root;
@@ -78,6 +78,7 @@
 
   // ---------- my attendance ----------
   function attendance() {
+    if (!E.calMonth || E.calMonth > St.today.slice(0, 7)) E.calMonth = St.today.slice(0, 7);
     var p = me(), ym = E.calMonth, y = +ym.slice(0, 4), m = +ym.slice(5, 7) - 1, first = new Date(y, m, 1), days = new Date(y, m + 1, 0).getDate();
     var recs = St.range(ym + '-01', ym + '-31').filter(function (x) { return x.staff === p.id; }), c = U.count(recs);
     var h = '<div class="emp-h"><h1>My attendance</h1><div class="date-nav"><button class="icon-btn sm" data-e="cal:-1" aria-label="Previous month">' + ic('left') + '</button><b class="mlabel">' + U.monthLabel(ym) + '</b><button class="icon-btn sm" data-e="cal:1" aria-label="Next month"' + (ym >= St.today.slice(0, 7) ? ' disabled' : '') + '>' + ic('right') + '</button></div></div>';
