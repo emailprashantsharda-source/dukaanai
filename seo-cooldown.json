@@ -1,0 +1,340 @@
+{
+ "note": "Titles and meta descriptions changed in the last 28 days, by hand or by the SEO agent. The agent reviewer reads this file and will not change the same title/meta again until 28 days have passed, so every change can be measured. Add a line whenever you edit a title or description by hand.",
+ "changes": [
+  {
+   "path": "/tools/profit-margin-calculator",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/tools/profit-margin-calculator",
+   "type": "meta_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/tools/gst-calculator",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/tools/gst-calculator",
+   "type": "meta_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/sweet-shop-billing-software",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/sweet-shop-billing-software",
+   "type": "meta_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/salon-billing-software",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/hi/tools/profit-margin-calculator",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/hi/sweet-shop-billing-software",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/hi/kirana-billing-app",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/how-to-start-a-bakery-business-from-home",
+   "type": "meta_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/how-to-generate-e-way-bill",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/how-to-generate-e-way-bill",
+   "type": "meta_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/gst-invoice-format",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/gst-invoice-format",
+   "type": "meta_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/beauty-parlour-license",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/beauty-parlour-license",
+   "type": "meta_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/beauty-parlour-business-plan",
+   "type": "title_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/blog/beauty-parlour-business-plan",
+   "type": "meta_rewrite",
+   "date": "2026-11-26"
+  },
+  {
+   "path": "/tools/salary-calculator",
+   "type": "title_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/tools/salary-calculator",
+   "type": "meta_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/tools/attendance-sheet-format",
+   "type": "title_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/tools/attendance-sheet-format",
+   "type": "meta_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/staff360/pagarbook-alternative/",
+   "type": "title_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/staff360/pagarbook-alternative/",
+   "type": "meta_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/staff360/attendance-management-system/",
+   "type": "title_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/staff360/attendance-management-system/",
+   "type": "meta_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/staff360/",
+   "type": "title_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/staff360/",
+   "type": "meta_rewrite",
+   "date": "2026-11-19"
+  },
+  {
+   "path": "/bakery-billing-software",
+   "type": "meta_rewrite",
+   "date": "2026-11-16"
+  },
+  {
+   "path": "/tools/salon-bill-format",
+   "type": "title_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/tools/salon-bill-format",
+   "type": "meta_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/tools/grocery-bill-format",
+   "type": "title_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/tools/grocery-bill-format",
+   "type": "meta_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/tools/discount-calculator",
+   "type": "title_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/tools/discount-calculator",
+   "type": "meta_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/blog/salon-price-list",
+   "type": "title_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/blog/salon-price-list",
+   "type": "meta_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/about",
+   "type": "meta_rewrite",
+   "date": "2026-11-12"
+  },
+  {
+   "path": "/about",
+   "type": "title_rewrite",
+   "date": "2026-11-11"
+  },
+  {
+   "path": "/restaurant-pos-systems",
+   "type": "title_rewrite",
+   "date": "2026-11-05"
+  },
+  {
+   "path": "/restaurant-pos-software",
+   "type": "title_rewrite",
+   "date": "2026-11-05"
+  },
+  {
+   "path": "/restaurant-point-of-sale-systems",
+   "type": "title_rewrite",
+   "date": "2026-11-05"
+  },
+  {
+   "path": "/pos-system-software-for-restaurant",
+   "type": "title_rewrite",
+   "date": "2026-11-05"
+  },
+  {
+   "path": "/tools/gst-invoice-generator",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/tools/gst-invoice-generator",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/restaurant-pos",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/kirana-billing-app",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/tools/profit-margin-calculator",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/tools/gst-invoice-generator",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/tools/gst-invoice-generator",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/sweet-shop-billing-software",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/salon-billing-software",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/salon-billing-software",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/grocery-billing-software",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/cafe-billing-software",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/blog/how-to-start-a-bakery-business-from-home",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/blog/how-to-start-a-bakery-business-from-home",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/blog/gst-invoice-format",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/hi/blog/gst-invoice-format",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/compare/mybillbook-alternative",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/compare/mybillbook-alternative",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/blog/kirana-store-business-plan",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/blog/kirana-store-business-plan",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/blog/how-to-start-a-bakery-business-from-home",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/",
+   "type": "title_rewrite",
+   "date": "2026-11-01"
+  },
+  {
+   "path": "/",
+   "type": "meta_rewrite",
+   "date": "2026-11-01"
+  }
+ ]
+}
