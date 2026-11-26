@@ -422,4 +422,36 @@
     <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/salary-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/salary-calculator"/>
   </url>
+  <url>
+    <loc>https://hisaabnow.com/blog/gst-tax-invoice-format</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/gst-tax-invoice-format"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/gst-tax-invoice-format"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/gst-tax-invoice-format"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/blog/gst-tax-invoice-format</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/gst-tax-invoice-format"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/gst-tax-invoice-format"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/gst-tax-invoice-format"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/blog/how-to-do-menu-costing</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/how-to-do-menu-costing"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/how-to-do-menu-costing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/how-to-do-menu-costing"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/blog/how-to-do-menu-costing</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/how-to-do-menu-costing"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/how-to-do-menu-costing"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/how-to-do-menu-costing"/>
+  </url>
 </urlset>
