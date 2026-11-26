@@ -482,6 +482,20 @@ const STATIC_HI = {
 };
 // Short bullet strings are only safe to replace inside the key-facts box itself.
 // Elsewhere on the page the same words ("Low-stock alerts") live inside JS i18n tables.
+// Whole English blocks that scripts or the SEO agent added to English pages (exact HTML). Replaced anywhere on the
+// Hindi page: each string is long and specific, so it cannot hit a JS i18n table by accident. (26 Nov 2026)
+const BLOCK_HI = {
+  '<h2>Grocery store software for your shop, and free guides</h2>':
+    '<h2>आपकी दुकान के लिए ग्रोसरी स्टोर सॉफ्टवेयर, और फ्री गाइड</h2>',
+  '<p>HisaabNow works as grocery store software for a kirana store, grocery shop, general store or mini-mart: it bills with barcode scanning, keeps udhaar khaata with WhatsApp reminders, warns you about low stock and shows the real profit on each item. These free guides and templates help you plan and bill correctly:</p>':
+    '<p>HisaabNow किराना स्टोर, ग्रोसरी दुकान, जनरल स्टोर या मिनी-मार्ट के लिए ग्रोसरी स्टोर सॉफ्टवेयर की तरह काम करता है: बारकोड स्कैन से बिल, WhatsApp रिमाइंडर वाला उधार खाता, कम स्टॉक की चेतावनी और हर आइटम का असली मुनाफ़ा। ये फ्री गाइड और टेम्पलेट आपको सही प्लान बनाने और सही बिल काटने में मदद करते हैं:</p>',
+  '>Grocery bill format: free kirana bill template (Excel)</a>': '>ग्रोसरी बिल फॉर्मेट: फ्री किराना बिल टेम्पलेट (Excel)</a>',
+  '>How to create a kirana store business plan</a>': '>किराना स्टोर बिजनेस प्लान कैसे बनाएं</a>',
+  '>GST invoice format guide for shops</a>': '>दुकानों के लिए GST इनवॉइस फॉर्मेट गाइड</a>',
+  '>Free profit margin calculator</a>': '>फ्री प्रॉफ़िट मार्जिन कैलकुलेटर</a>',
+  '<a href="/staff360/">Staff attendance app (Staff360)</a>': '<a href="/staff360/">स्टाफ़ अटेंडेंस ऐप (Staff360)</a>',
+  '<a href="/staff360/">Salon staff attendance app</a>': '<a href="/staff360/">सैलून स्टाफ़ अटेंडेंस ऐप</a>',
+};
 const GLOBAL_SAFE = (en) => /^(Understanding|How to|7-day free trial[;,] )/.test(en);
 function translateStatic(html) {
   let out = html;
@@ -491,6 +505,7 @@ function translateStatic(html) {
     return b;
   });
   for (const [en, hi] of Object.entries(STATIC_HI)) if (GLOBAL_SAFE(en)) out = out.split(en).join(hi);
+  for (const [en, hi] of Object.entries(BLOCK_HI)) out = out.split(en).join(hi);
   return out;
 }
 
@@ -547,6 +562,7 @@ for (const cfg of PAGES) {
   // Blog and free tools have their own Hindi versions — point Hindi pages at them.
   hi = hi.replace(/href="\/(blog|tools)\//g, 'href="/hi/$1/');
   if (cfg.src !== "index.html") hi = translateStatic(hi);
+  else for (const [en, h] of Object.entries(BLOCK_HI)) hi = hi.split(en).join(h); // home skips translateStatic, not the block table
 
   fs.mkdirSync(path.dirname(path.join(OUT_DIR, cfg.out)), { recursive: true });
   fs.writeFileSync(path.join(OUT_DIR, cfg.out), hi);
