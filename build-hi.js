@@ -236,7 +236,7 @@ const PAGES = [
     hiPath: '/hi/kirana-billing-app',
     rewriteSchemaUrls: true,
     head: {
-      title: "Kirana Billing App: किराना बिल, उधार खाता और स्टॉक | HisaabNow",
+      title: "Grocery Bill और Kirana Billing App: किराना बिल, उधार खाता | HisaabNow",
       desc: "किराना और सुपरमार्केट के लिए HisaabNow — बारकोड से बिल, ऑटो-WhatsApp रिमाइंडर वाला उधार खाता, स्टॉक अलर्ट और हिंदी वॉइस बिलिंग। 7 दिन फ्री में आज़माएं।",
       ogAlt: "HisaabNow किराना ऐप — बिलिंग, उधार खाता और स्टॉक एक ही ऐप में"
     },
@@ -270,7 +270,7 @@ const PAGES = [
     hiPath: '/hi/sweet-shop-billing-software',
     rewriteSchemaUrls: true,
     head: {
-      title: "मिठाई की दुकान के लिए बिलिंग सॉफ्टवेयर | HisaabNow",
+      title: "Mithai Ka Bill: मिठाई की दुकान के लिए बिलिंग सॉफ्टवेयर | HisaabNow",
       desc: "भारतीय मिठाई की दुकानों और हलवाइयों के लिए POS और बिलिंग सॉफ्टवेयर। वज़न के हिसाब से कीमत (किलो/आधा किलो/ग्राम), त्योहार स्टॉक अलर्ट, एक्सपायरी ट्रैकिंग। 7 दिन का फ्री ट्रायल।",
       ogAlt: "HisaabNow मिठाई दुकान POS — वज़न से बिलिंग और एक्सपायरी ट्रैकिंग"
     },
