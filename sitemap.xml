@@ -406,4 +406,20 @@
     <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/tools/salary-calculator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/tools/salary-calculator"/>
   </url>
+  <url>
+    <loc>https://hisaabnow.com/blog/how-to-calculate-break-even-point</loc>
+    <lastmod>2026-11-28</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/how-to-calculate-break-even-point"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/how-to-calculate-break-even-point"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/how-to-calculate-break-even-point"/>
+  </url>
+  <url>
+    <loc>https://hisaabnow.com/hi/blog/how-to-calculate-break-even-point</loc>
+    <lastmod>2026-11-28</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://hisaabnow.com/blog/how-to-calculate-break-even-point"/>
+    <xhtml:link rel="alternate" hreflang="hi-in" href="https://hisaabnow.com/hi/blog/how-to-calculate-break-even-point"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hisaabnow.com/blog/how-to-calculate-break-even-point"/>
+  </url>
 </urlset>
